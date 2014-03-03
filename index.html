@@ -1,19 +1,35 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
+---
+layout: main
+---
 
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-  </head>
-  <body>
-    <h1><a href="http://gosu-lang.org/"><img
-          alt="&lt;i&gt;Gosu&lt;/i&gt;"
-          src="http://gosu-lang.org/images/gosu.png" style="border: 0px
-          solid; width: 174px; height: 40px;"></a> ROCKS</h1>
-    You probably wanted the <a href="http://gosu-lang.org/">Gosu home
-      site</a>.&nbsp; We are working on an update for that site.&nbsp;
-    If you are interested in helping with our website design (and by
-    now, I assume you can tell that we need some help).&nbsp; Please <a
-      href="mailto:webmaster@gosu-lang.org">let us know.</a><br>
-    <br>
-  </body>
-</html>
+<div class="hero-unit">
+	
+	<h1 id="hero-text">GOSU</h1>
+	
+	<h2>A pragmatic language for the JVM</h2>
+	
+	<pre class="prettyprint">
+		
+	// Type inference cuts down on the clutter
+	var minLength = 4
+
+	// Literal support for common data structures, such as Lists and Maps
+	var strings = { "red", "green", "blue" }
+
+	// Closures + pragmatic extensions to the core JVM classes
+	print( strings.where( \ s -> s.length() >= minLength ).sort().join( ", " ) )
+
+	// Utilizing the standard Java API
+	var someFile = new java.io.File( "SomeFile.txt" )
+
+	// Enhanced to make your life easier
+	someFile.write( strings.join( ", " ) )
+	
+	</pre>
+	
+	<p>
+		<a class="btn btn-lg btn-primary" href="downloads.html"><i class="fa fa-cloud-download"></i> Download Now</a>
+		<a class="btn btn-lg btn-default" href="docs.html"><i class="fa fa-book"></i> Learn More</a>
+	</p>
+	
+</div>
