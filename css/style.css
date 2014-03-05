@@ -67,3 +67,7 @@ span.kwd {
 span.str {
   color: #008a00;
 }
+
+#results {
+  white-space: pre;
+}
