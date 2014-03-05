@@ -1,7 +1,10 @@
 body {
   padding-top:48px;
   font-family: 'Droid Sans', sans-serif;
-  font-size 1.3em;
+}
+
+li {
+  font-size: 16px;
 }
 
 a.navbar-brand {
@@ -9,6 +12,32 @@ a.navbar-brand {
   font-weight: bold;
   font-size: 25px;
   color: #504849 !important;
+}
+
+pre {
+  font-family: 'Courier New','monospace';
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.dot, .g, .s {
+  font-size: 48px;
+  position: relative;
+}
+
+.dot {
+  font-family: 'helvetica', 'helvetica neue';
+  top:-20px
+}
+
+.g {
+  color: #3E8ACC;
+  top:-20px
+}
+
+.s {
+  color: #079502;
+  top:-10px
 }
 
 #hero-text {

@@ -3,33 +3,45 @@ layout: main
 ---
 
 <div class="hero-unit">
-	
-	<h1 id="hero-text">GOSU</h1>
-	
-	<h2>A pragmatic language for the JVM</h2>
-	
-	<pre class="prettyprint">
-		
-	// Type inference cuts down on the clutter
-	var minLength = 4
-
-	// Literal support for common data structures, such as Lists and Maps
-	var strings = { "red", "green", "blue" }
-
-	// Closures + pragmatic extensions to the core JVM classes
-	print( strings.where( \ s -> s.length() >= minLength ).sort().join( ", " ) )
-
-	// Utilizing the standard Java API
-	var someFile = new java.io.File( "SomeFile.txt" )
-
-	// Enhanced to make your life easier
-	someFile.write( strings.join( ", " ) )
-	
-	</pre>
-	
-	<p>
-		<a class="btn btn-lg btn-primary" href="downloads.html"><i class="fa fa-cloud-download"></i> Download Now</a>
-		<a class="btn btn-lg btn-default" href="docs.html"><i class="fa fa-book"></i> Learn More</a>
-	</p>
-	
+  <h1 id="hero-text"><span class="dot">.</span><span class="g">G</span><span class="s">S</span> GOSU</h1>
 </div>
+
+<div class="row">
+  <div class="col-md-8">
+    <h3><i class="fa fa-coffee"></i> It's a pragmatic language for the JVM</h3>
+      	<pre class="prettyprint">
+
+    // Supports Type Inference
+    var minLength = 4
+
+    // Simple syntax Lists and Maps
+    var strings = { "red", "green", "blue" }
+
+    // Closures + pragmatic extensions to the core JVM classes
+    print( strings.where( \ s -> s.length() >= minLength )
+                  .sort()
+                  .join( ", " ) )
+
+    // Utilizing the standard Java API
+    var someFile = new java.io.File( "SomeFile.txt" )
+
+    // Enhanced to make your life easier
+    someFile.write( strings.join( ", " ) )
+      	</pre>
+  </div>
+  <div class="col-md-4">
+    <h3> <i class="fa fa-bullhorn"></i> Latest News</h3>
+    <ul>
+      {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<p>
+  <a class="btn btn-lg btn-primary" href="downloads.html"><i class="fa fa-cloud-download"></i> Download Now</a>
+  <a class="btn btn-lg btn-default" href="docs.html"><i class="fa fa-book"></i> Learn More</a>
+</p>
