@@ -1,5 +1,5 @@
 ---
-layout: main
+layout: post
 title: Welcome to the new gosu-lang.org Website!
 ---
 
