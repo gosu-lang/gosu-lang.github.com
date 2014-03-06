@@ -9,7 +9,13 @@ layout: main
   <h2>Have A Play</h2>
 </div>
 
-<h4>Enter A Gosu Program</h4>
+<h4>
+  Enter A Gosu Program or Select A Template:
+  <select onchange="if($(this).data('code')){ $('script').val($(this).data('code')); }">
+    <option></option>
+    <option data-code="print('hello world')">Hello World</option>
+  </select>
+</h4>
 
 <p>
   <textarea name="script" class="form-control" id="script">
