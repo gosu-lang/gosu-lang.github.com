@@ -4,21 +4,43 @@ layout: main
 
 <!-- You're the man now dog -->
 <script src="/js/intercooler.js" type="text/javascript"></script>
+<script>
+  $(function(){
+    $("#template-select").change(function(){
+      var option = $(this).find("option:selected").first();
+      if(option.data('code')) {
+        $("#script").val(option.data('code'));
+      }
+    })
+  })
+</script>
 
 <div class="page-header">
   <h2>Have A Play</h2>
 </div>
 
 <h4>
-  Enter A Gosu Program or Select A Template:
-  <select onchange="if($(this).data('code')){ $('script').val($(this).data('code')); }">
+  Enter A Gosu Program
+</h4>
+<p>
+  or select a template <select id="template-select">
     <option></option>
     <option data-code="print('hello world')">Hello World</option>
+    <option data-code="for(i in 1..50) {
+  print(i)
+}">For Loop</option>
+    <option data-code="class MyClass {
+  function spoon() : String {
+    return 'Spoon!'
+  }
+}
+
+print(new MyClass().spoon())">Simple Class</option>
   </select>
-</h4>
+</p>
 
 <p>
-  <textarea name="script" class="form-control" id="script">
+  <textarea rows="10" name="script" class="form-control" id="script">
 1 + 1
   </textarea>
 </p>
