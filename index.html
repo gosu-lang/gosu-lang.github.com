@@ -10,22 +10,20 @@ layout: main
     <h3><i class="fa fa-coffee"></i> Hey look!  It's a pragmatic language for the JVM...</h3>
       	<pre class="prettyprint">
 
-    // Supports Type Inference
-    var minLength = 4
+    // Type inference keeps things clean
+    var aString = "Hello Gosu!"
 
-    // Simple syntax Lists and Maps
+    // Simple literal syntax for Lists & Maps
     var strings = { "red", "green", "blue" }
 
-    // Closures + pragmatic extensions to the core JVM classes
-    print( strings.where( \ s -> s.length() >= minLength )
-                  .sort()
-                  .join( ", " ) )
+    // Closures make data structures fun
+    print( strings.where( \ s -> s.length() > 3 ).sort() )
 
-    // Utilizing the standard Java API
-    var someFile = new java.io.File( "SomeFile.txt" )
+    // You can use familiar Java classes
+    var aFile = new java.io.File( "SomeFile.txt" )
 
-    // Enhanced to make your life easier
-    someFile.write( strings.join( ", " ) )
+    // And they've been enhanced for your pleasure
+    aFile.write( strings.join( ", " ) )
       	</pre>
   </div>
   <div class="col-md-4">
@@ -41,7 +39,7 @@ layout: main
 </div>
 
 <p>
+  <a class="btn btn-lg btn-primary" href="downloads.html"><i class="fa fa-cloud-download"></i> Download</a>
   <a class="btn btn-lg btn-default" href="docs.html"><i class="fa fa-book"></i> Learn</a>
   <a class="btn btn-lg btn-success" href="play.html"><i class="fa fa-play"></i> Play</a>
-  <a class="btn btn-lg btn-primary" href="downloads.html"><i class="fa fa-cloud-download"></i> Download</a>
 </p>
