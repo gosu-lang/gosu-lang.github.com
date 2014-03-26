@@ -75,7 +75,7 @@ layout: main
       <p>The <code>for</code> loop in Gosu allows you to iterate over both arrays and anything that implements
         the <code>java.lang.Iterable</code> interface.</p>
 
-      <pre class="prettyprint">
+      <pre class="prettyprint eval">
  var list = { "one", "two", "three" } // Creates a java.lang.List&lt;String>
  for ( num in list ) {
    print( num )
@@ -83,7 +83,7 @@ layout: main
 
       <p>You can also get access to the zero-based index of the loop by including an <code>index</code> variable:</p>
 
-   <pre class="prettyprint">
+   <pre class="prettyprint eval">
  var list = { "one", "two", "three" }
  for ( num in list index i ) {
    print ( "${i} : ${num}" ) // i is an int, and num is still of type String
@@ -92,27 +92,26 @@ layout: main
       <p>And, if you need access to the iterator for the loop (assuming you are looping over an <code>Iterable</code>)
       you can use the <code>iterator</code> keyword:</p>
 
-      <pre class="prettyprint">
+      <pre class="prettyprint eval">
  var list = { "one", "two", "three" }
  for ( num in list iterator iter ) {
    iter.remove()
- }</pre>
+ }
+ print(list)</pre>
 
-      // TODO MOVE
-      <p>If you're purely interested in iterating over a range of numbers, you can easily do that using the range
-        operator like so:</p>
+      <p>Here are a few examples making use of the Gosu range operator, <code>..</code></p>
 
-      <pre class="prettyprint">
- // Range from 0 through 5
- for ( i in 0..5 ) {
+      <pre class="prettyprint eval">
+
+ for ( i in 0..5 ) {   // Range from 0 through 5
    print ( i ) // Prints 0-5
  }
-
+ print("---")
  // Range from 0 up to 5
  for ( i in 0..|5 ) {
    print ( i ) // Prints 0-4
  }
-
+ print("---")
  // Range from 1 up to 5
  for ( i in 0|..|5 ) {
    print ( i ) // Prints 1-4
