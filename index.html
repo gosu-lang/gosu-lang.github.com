@@ -1,6 +1,7 @@
 ---
 layout: main
 ---
+
 <div class="hero-unit">
   <img src="/img/logo-large.png" style="width:512px;max-width:100%"/>
 </div>
@@ -8,10 +9,9 @@ layout: main
 <div class="row">
   <div class="col-md-8">
     <h3><i class="fa fa-coffee"></i> Hey look!  It's a pragmatic language for the JVM...</h3>
-      	<pre class="prettyprint">
+      	<pre class="prettyprint eval">
 
-    // Type inference keeps things clean
-    var aString = "Hello Gosu!"
+    var aString = "Hello Gosu!" // Type inference keeps things clean
 
     // Simple literal syntax for Lists & Maps
     var strings = { "red", "green", "blue" }
@@ -20,10 +20,12 @@ layout: main
     print( strings.where( \ s -> s.length() > 3 ).sort() )
 
     // You can use familiar Java classes
-    var aFile = new java.io.File( "SomeFile.txt" )
+    var aFile = java.io.File.createTempFile("temp",".txt");
 
     // And they've been enhanced for your pleasure
     aFile.write( strings.join( ", " ) )
+    print( aFile.read() )
+
       	</pre>
     <p>
       <a class="btn btn-lg btn-primary" href="downloads.html"><i class="fa fa-cloud-download"></i> Download</a>

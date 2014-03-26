@@ -14,11 +14,58 @@
 	<link href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/google-code-prettify/prettify.css">
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
+
+
+<script>
+  $(function(){
+    $(".eval").mouseenter(function () {
+      $(this).append(
+        $(".eval-ui")
+          .css('top', $(this).offset().top + $(this).height() - 30)
+          .css('left', $(this).offset().left + $(this).width() - 110)
+          .fadeIn());
+    }).mouseleave(function () {
+        $(".eval-ui").fadeOut();
+        $("#eval-spinner").hide();
+        $("#eval-target").html('Evaluating...');
+        $(".eval-results").hide();
+      });
+    $(".eval-btn").click(function(){
+      $("#eval-spinner").show();
+      $(".eval-results").fadeIn();
+      var txt = $(this).closest('.eval').children('span').text();
+      setTimeout(function(){
+        $.get("http://gosu-eval-service.herokuapp.com/eval", {
+          "script" : txt
+        }, function(results){
+          $("#eval-spinner").fadeOut('fast');
+          $("#eval-target").hide().html(results).fadeIn('fast');
+        });
+      }, 1000)
+    });
+  });
+</script>
+
+<div class="eval-ui" style="font-family: 'Droid Sans', sans-serif;position:fixed;display: none;z-index:1000;white-space: normal; border-radius:5px">
+
+  <div class="eval-btn btn btn-primary">
+    <i class="fa fa-play"></i> Eval Me...
+  </div>
+
+  <div class="eval-results" style="background:#fbffaa;border: 1px solid #dcd965;margin-top:12px;display:none;; border-radius:5px">
+
+    <div style="border-bottom: 1px solid #dcd965;padding: 4px 12px">
+      <strong>Results</strong>
+      <i id="eval-spinner" class="fa fa-spinner fa-spin"></i>
+    </div>
+    <div id="eval-target" style="white-space:pre;padding:8px 12px;font-weight:normal">Evaluating...</div>
+  </div>
+
+</div>
 
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
