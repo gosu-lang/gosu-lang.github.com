@@ -276,10 +276,14 @@ layout: main
  print( c.Names )
 </pre></li>
         </ul>
-      </p>
 
-      <h3>Named Arguments and Default Parameters</h3>
-      <p>Gosu supports names arguments and default parameter values to help smooth out APIs.  Let's say you wanted to make the argument to <code>printNames()</code> optional, with a default value of <code>"> "</code>.  You could change the declaration to:
+      <h3>Named Arguments &amp; Default Parameters</h3>
+
+      <p>Gosu supports both named arguments and default parameter values, which can dramatically improve APIs.<p>
+
+      <p>Let's say you wanted to make the argument to <code>printNames()</code> in the class above optional, with a
+        default value of <code>"> "</code>.  You would change the parameter declaration to:</p>
+
 <pre class="prettyprint">
  // A public function
  function printNames( prefix : String = "> ") {
@@ -288,17 +292,23 @@ layout: main
    }
  }
 </pre>
-        And now invoke it like so:
+        <p>And you could now invoke it like so:</p>
+
         <pre class="prettyprint">
  var c = new SampleClass({"joe", "john", "jack"})
  c.printNames() // No argument is necessary, it will use the default value of "> "
 </pre>
-      Additionally, Gosu allows you to use named arguments when you are working with non-overloaded methods on Gosu classes:
+
+      <p>Additionally, Gosu allows you to use a named argument syntax when you are working with non-overloaded methods
+        on Gosu classes.  You prefix the parameter name with a colon <code>:</code> like so:</p>
+
       <pre class="prettyprint">
  var c = new SampleClass({"joe", "john", "jack"})
  c.printNames(:prefix = "* ")
 </pre>
-      This can be used to clarify code, so you don't end up with stuff like this:
+
+      <p>Named arguments can be used to clarify code, so you don't end up with things like this:</p>
+
       <pre class="prettyprint">
  someMethod(true, false, null, false, true)  //bwah?
  
@@ -306,13 +316,18 @@ layout: main
              :contextObject = null, :trace = false, 
              :summarizeTiming = true)  //Oh, I see
 </pre>    
-      </p>
 
       <h3>Superclasses, Interfaces and Delegates</h3>
-      <p>Gosu classes can extend other classes and implement interfaces, just like in Java, using the <code>extends</code> and <code>implements</code> keywords respectively.
+
+      <p>Gosu classes can extend other classes and implement interfaces just like in Java, using the
+        <code>extends</code> and <code>implements</code> keywords respectively.
       </p>
+
       <p>
-        One interesting additional feature of Gosu is the ability to delegate the implementation of an interface to a class variable:
+        One interesting additional feature of Gosu is the ability to delegate the implementation of an interface to a
+        class variable using the <code>delegate</code> and <code>represents</code> keywords:
+      </p>
+
       <pre class="prettyprint">
  uses java.lang.Runnable
 
@@ -329,7 +344,11 @@ layout: main
    }
  }
 </pre>
-        The class <code>MyRunnable</code> does not declare a <code>run()</code> method, like <code>Runnable</code> requires.  This is because the delegate field <code>_runnable</code> implements the method for it:
+
+      <p>Note that the class <code>MyRunnable</code> does not declare a <code>run()</code> method, as
+        <code>Runnable</code> requires. Rather, it uses the delegate field <code>_runnable</code> to implement the
+        interface:</p>
+
         <pre class="prettyprint">
  var x = new MyRunnable()
  x.Impl = new Runnable() {
@@ -339,11 +358,15 @@ layout: main
  }
  x.run() // prints "Hello, Delegation"
 </pre>
-      Delegates give you a convenient way to favor <a href="http://www.artima.com/lejava/articles/designprinciples4.html">composition over inheritance</a>.</p>
+      <p>Delegates give you a convenient way to favor <a
+        href="http://www.artima.com/lejava/articles/designprinciples4.html">composition over inheritance</a>.</p>
 
-      <h2>The <em>Using</em> Statement</h2>
-      <p>The <code>using</code> statement allows you to wrap sections of code that require connections to be closed to be handled automatically when the block finishes.  Instead of writing code like this:</p>
-<pre class="prettyprint">
+      <h2>The Using Statement</h2>
+
+      <p>The <code>using</code> statement allows you to wrap sections of code that require connections to be closed to
+        be handled automatically when the block finishes. Instead of writing code like this:</p>
+
+      <pre class="prettyprint">
  var conn = getConnection()
  try {
    conn.execute( "Some advanced SQL" )
@@ -351,81 +374,138 @@ layout: main
    conn.close() 
  }
 </pre>
-      <p>You could instead use the <code>using</code> statement which will handle closing the <code>Connection</code> for you:</p>
-<pre class="prettyprint">
+
+      <p>In Gosu, you can use the <code>using</code> statement which will handle closing the <code>Connection</code>
+        for you:</p>
+
+      <pre class="prettyprint">
  using( var conn = getConnection() ) {
    conn.execute( "Some advanced SQL" )
  }
 </pre>
+
+    <p>The <code>using</code> statement works with the following interfaces:</p>
+
+    <ul>
+      <li><code>java.io.Closeable</code></li>
+      <li><code>java.util.concurrent.locks.Lock</code></li>
+      <li><code>gw.lang.IReentrant</code></li>
+      <li><code>gw.lang.IDisposable</code></li>
+    </ul>
     </section>
 
     <!-- Gosu Programs -->
     <section id="gsp">
+
       <div class="page-header">
-        <h1>Gosu Program Files <small>Say goodbye to <code>public static void main()</code></small></h1>
+        <h1>Gosu Program Files</h1>
       </div>
-      <p>Gosu doesn't have the concept of a <code>public static void main(String[] args)</code> entrypoint. Instead, it has programs, which are just bits of code in file ending a <code>.gsp</code> extension.</p>
+
+      <p>Gosu doesn't have the concept of a <code>public static void main(String[] args)</code> entrypoint. Instead, it
+        has programs, which are just bits of code in file ending a <code>.gsp</code> extension.</p>
+
       <p>Here is a simple <em>Hello World</em> application, in the file hello.gsp:</p>
+
 <pre class="prettyprint">
  print ( "Hello World!" )
 </pre>
-      <p>Running the program?  Simple:</p>
-<pre>
+
+      <p>Running the program is simple:</p>
+
+      <pre>
  $> gosu hello.gsp
  Hello World!
 </pre>
-      <h2>Program Classpaths and the Shebang</h2>
-      <p>Gosu programs can embed a classpath in their source, obviating the need for users to pass in a correct classpath externally:
+
+      <h2>Classpath Statements, Program Extends &amp; Shebang</h2>
+
+      <p>Gosu programs can embed a classpath in their source, obviating the need for users to pass in a correct
+        classpath externally:</p>
+
       <pre class="prettyprint">
  #! /path/to/gosu
- classpath "../src,../lib/sweet_lib1.jar"
+ classpath "../src,../lib/lib1.jar"
   
- print( "Here is a sweet library object: ${new SweetLibraryObject()}")
+ print( "Here is a library object: ${new SweetLibraryObject()}")
 </pre>
-      The classpath statement is comma delimited, to avoid system specific dependencies.  Each path on it will be added to the classpath.  If a path points at a folder and that folder contains jars, all those jars will be added to the classpath as well.
+
+      <p>
+        The classpath statement is comma delimited, to avoid system specific dependencies. Each path on it will be added
+        to the classpath. If a path points at a folder and that folder contains jars, all those jars will be added to
+        the classpath as well.
       </p>
-      <p>This makes it much more pleasant to run gosu programs on *nix:
-<pre>
+
+      <p>The classpath can also include Maven coordinates, and Gosu will automatically resolve and download them
+      at runtime:</p>
+
+      <pre class="prettyprint">
+  #! /path/to/gosu
+  classpath "../src,org.gosu-lang.gosu:sparkgs:0.1.0"
+
+  print( "Here is a library object: ${new SweetLibraryObject()}")
+ </pre>
+
+      <p>Gosu supports the Unix shebang standard, so your program can begin with <code>#! gosu</code> and Unix-like
+        shells will execute the script with gosu.  This makes it much more pleasant to run gosu programs:</p>
+
+      <pre>
  $> ./my_sweet_gosu_program.gsp
  Here is a sweet library object: super.SweetLibraryObject@12b27c3
 </pre>
-      No wrapping scripts, no complicated class paths.
+      <p>
+        No wrapping scripts, no complicated class paths.
       </p>
+
+      <p>Finally, you can set the superclass for a program using the <code>extends</code> keyword:</p>
+
+      <pre class="prettyprint">
+   classpath "org.gosu-lang.gosu:sparkgs:0.1.0"
+   extends sparkgs.SparkFile  // this is a sparkfile program
+   get('/', \-> "Hello World")
+</pre>
+
+      <p>This allows you to access methods and features in the parent class within your program, and can be used to
+      create simple Gosu-based scripting tools.</p>
 
     </section>
 
     <!-- Blocks -->
     <a id="blocks"></a>
     <section>
+
       <div class="page-header">
-        <h1>Blocks <small>Also known as closures or lamba expressions</small></h1>
+        <h1>Blocks</h1>
       </div>
-Blocks (also called closures or lambda expressions) are a simple way to specify an inline function.  They have a lot of uses, but they really shine in data structure manipulation:
+
+      <p>Blocks (also called closures or lambda expressions) are a simple way to specify an inline function. They have a
+        lot of uses, but they really shine in data structure manipulation:</p>
+
       <pre class="prettyprint">
  var lstOfStrings = {"This", "is", "a", "list"}
  var longStrings = lstOfStrings.where( \ s -> s.length > 2 )
  print( longStrings.join(", ") )  // prints "This, list"
 </pre>
-      The funny <code>\-></code> thing is the block.  It declares a mini-function that says "Given a String <code>s</code> return whether <code>s.length</code> is greater than two".  You can think of it as an inline version of this function:
+
+      <p>The <code>\ s -> s.length > 2 </code> is the block. It declares an inline function that says "Given a String
+        <code>s</code> return whether <code>s.length</code> is greater than two".</p>
+
+      <p>You can think of it as an inline version of this function:</p>
+
       <pre class="prettyprint">
  function isLongerThanTwo( s : String ) : boolean {
    return s.length > 2
  }
 </pre>
-      Or, if you prefer, this anonymous inner class:
-      <pre class="prettyprint">
- var inner = new com.google.common.base.Predicate&lt;String>() {
-   function apply( s : String ) : boolean {
-     return s.length > 2
-   }
- }
-</pre>      
-      Blocks allow you to express this logic much more succinctly.
-      </p>
+
+      <p>Blocks allow you to express your logic much more succinctly.</p>
+
       <p>
-      Note that I didn't have to declare a type for the block's parameter, <code>s</code>, like I did in the function and anonymous class above.  This because the block is defined in a context where Gosu can figure out the argument is a String.  Typically you will not have to define the types of the arguments of blocks.
-      </p>
-      <p>With blocks you can often remove loads of iterative code you would end up writing in Java.  Consider this java code:
+        Note that the blocks parameter, <code>s</code>, does not have a type annotation.  Gosu does type inference here
+      and figures out that <code>s</code> is a <code>String</code>.</p>
+
+      <p>With blocks you can dramatically reduce the amount of code you write when compared with Java.</p>
+
+      <p>Consider this complicated Java code:</p>
 
       <pre class="prettyprint">
  List&lt;String> lstOfStrings = Arrays.asList("This", "is", "a", "list");
@@ -455,7 +535,7 @@ Blocks (also called closures or lambda expressions) are a simple way to specify 
  System.out.println(sb.toString());
 </pre>
 
-      This code can be written in Gosu like so:
+      <p>This can be rewritten in Gosu as:</p>
 <pre class="prettyprint">
  var lstOfStrings = {"This", "is", "a", "list"}
  var longStrings = lstOfStrings.where( \ s -> s.length > 2 )
@@ -463,28 +543,41 @@ Blocks (also called closures or lambda expressions) are a simple way to specify 
                                .orderBy( \ s -> s )            // there is a .order() method that could be used here instead
  print( longStrings.join(", ") ) // prints "LIST, THIS"
 </pre>
-      In Gosu the code more clearly expressed the algorithm, it is less coupled (there is no mix of algorithmic steps in a for-loop, for example) and certainly less verbose.
-      </p>
       <p>
-      Blocks have other uses, but, by and large, the big win with them is in Collection manipulation.
+        The Gosu code is clearer and far more brief.
       </p>
+
       <h4>Blocks and Interfaces</h4>
+
       <p>
-      Java has many interfaces that contain a single method, which are used as a stand-in for actual closures.  In order to facilitate Java interoperability, Gosu blocks and one-method interfaces are automatically converted between one another:
+        Java has many interfaces that contain a single method, which are used as a stand-in for actual closures. In
+        order to facilitate Java interoperability, Gosu blocks and one-method interfaces are automatically converted
+        between one another:
+      </p>
+
       <pre class="prettyprint">
  var r : Runnable
  r = \-> print("This block was converted to a Runnable")
 </pre>
-      This makes some Java APIs very enjoyable to work with in Gosu.
+      <p>
+      This makes some Java APIs much more pleasant to work with in Gosu.
       </p>
     </section>
 
     <!-- Enhancements -->
     <section id="enhancements">
+
       <div class="page-header">
         <h1>Enhancements</h1>
       </div>
-      <p>Enhancements provide a way to add methods and properties to existing types. They are similar to <a href="http://msdn.microsoft.com/en-us/library/bb383977.aspx">Extension Methods</a> in C#, but do not need to be explicitly imported. Enhancements are defined in files ending with a .gsx suffix and cannot be defined inline with other Gosu resources.  Here is an example enhancement for the type <code>java.lang.String</code></p>
+
+      <p>Enhancements provide a way to add methods and properties to existing types. They are similar to
+        <a href="http://msdn.microsoft.com/en-us/library/bb383977.aspx">Extension Methods</a> in C#, but do not need to
+        be explicitly imported.</p>
+
+      <p>Enhancements are defined in files ending with a .gsx suffix and cannot be defined inline
+        with other Gosu resources. Here is an example enhancement for the type <code>java.lang.String</code></p>
+
 <pre class="prettyprint">
  package example
 
@@ -494,20 +587,33 @@ Blocks (also called closures or lambda expressions) are a simple way to specify 
    }
  }
 </pre>
-      <p>In enhancements, the <code>this</code> symbol refers to the <em>enhanced type</em>, as opposed to the enhancement itself.</p>
-      <p>Once an enhancement has been added to your classpath, you can use it in any place you have an object of the enhanced type with no need to explicitly import the enhancement itself.  Therefore, using the enhancement above is as simple as just calling the new function anywhere you have a String:</p>
-<pre class="prettyprint">
+
+      <p>In enhancements, the <code>this</code> symbol refers to the <em>enhanced type</em>, as opposed to the
+        enhancement itself.</p>
+
+      <p>Once an enhancement has been added to your classpath, you can use it in any place you have an object of the
+        enhanced type with no need to explicitly import the enhancement itself. Therefore, using the enhancement above
+        is as simple as just calling the new function anywhere you have a String:</p>
+
+      <pre class="prettyprint">
  "I'm not sure I can go back to Java".printWarning()
 </pre>
+
      <h2>Semantics And Limitations</h2>
-     The above code can be thought of as shorthand for this code:
+
+     <p>The above code can be thought of as shorthand for this code:</p>
+
      <pre class="prettyprint">
  example.MyStringEnhancement.print( "Warning: " + "Hello World" )
 </pre>
-      Enhancements are <em>statically</em> dispatched.  This means they cannot be used to implement interfaces or to achieve polymorphism</p>
+
+      <p>Enhancements are <em>statically</em> dispatched. This means they cannot be used to implement interfaces or to
+        achieve polymorphism</p>
 
       <h2>Generics</h2>
-      Enhancements can be generic, so you can add an enhancement to <code>List&lt;T></code>:
+
+      <p>Enhancements can be generic, so you can add an enhancement to <code>List&lt;T></code>:</p>
+
       <pre class="prettyprint">
  package example
  
@@ -519,10 +625,18 @@ Blocks (also called closures or lambda expressions) are a simple way to specify 
    }
  }
 </pre>
-      This method will now be available on all generic lists, and will be properly typed.
+
+      <p>This method will now be available on all generic lists, and will be properly typed.</p>
+
       <h3>Type Variable Reification</h3>
+
       <p>
-      Unlike in Java, type variables <em>can</em> be used in general expressions in Gosu.  In Enhancements, the type variables are statically, rather than dynamically, reified, much like enhancement methods are statically, rather than dynamically dispatched.  The enhancement method <code>toTypedArray():T[]</code> on <code>Iterable&lt;T></code> demonstrates this:
+        Unlike in Java, type variables <em>can</em> be used in general expressions in Gosu. In Enhancements, the type
+        variables are statically, rather than dynamically, reified, much like enhancement methods are statically, rather
+        than dynamically dispatched. The enhancement method <code>toTypedArray():T[]</code> on
+        <code>Iterable&lt;T></code> demonstrates this:
+      </p>
+
       <pre class="prettyprint">
  var lstOfStrings : List&lt;String> = {"a", "b", "c"}
  var arrOfStrings = lstOfStrings.toTypedArray() //returns a String[]
@@ -530,11 +644,15 @@ Blocks (also called closures or lambda expressions) are a simple way to specify 
  var lstOfObjs : List&lt;Object> = lstOfStrings //type variables are covariant in Gosu, see <a href="generics.html">generics</a>        
  var arrOfObjs = lstOfObjs.toTypedArray() //returns an Object[]
 </pre>
-      This "best effort" reification usually does what you want, but can occasionally lead to surprising results.
+
+      <p>
+        This "best effort" reification usually does what you want, but can occasionally lead to surprising results.
       </p>
 
       <h3>Enhancing Parameterized Types</h3>
+
       <p>A really neat trick with enhancements is that you can enhance <em>parameterized</em> types:</p>
+
       <pre class="prettyprint">
  package example
   
@@ -542,52 +660,60 @@ Blocks (also called closures or lambda expressions) are a simple way to specify 
   
  enhancement MyListOfDatesEnhancement : List&lt;Date> {
    function allBetween( start : Date, end : Date ) : List&lt;Date>{
-     var lst = new ArrayList&lt;Date>()
-     for( d in this ) {
-       if( start &lt;= d and d &lt;= end ) {
-         lst.add( d )          
-       }
-     }
-     return lst 
-     // NOTE: you would normally write this using blocks:
-     //  return this.where( \ d -> start &lt;= d and d &lt;= end )
+     this.where( \ d -> start &lt;= d and d &lt;= end )
    }
  }
 </pre>
-      This is how all lists of comparable objects have the <code>sort()</code> method on them, while other lists do not.
+
+      <p>
+        This is how all lists of comparable objects have the <code>sort()</code> method on them, while other lists do
+        not.
       </p>
+
     </section>
 
     <!-- Strings -->
     <section id="strings">
+
       <div class="page-header">
-        <h1>Playing with Strings</h1>
+        <h1>Strings &amp; Gosu Templates</h1>
       </div>
-      <p>For starters, String literals can be expressed using either double or single quotes:</p>
+
+      <p>String literals in Gosu can be expressed using either double or single quotes:</p>
+
 <pre class="prettyprint">
  var s1 = "I'm a String"
  var s2 = 'I\'m also a String!'
 </pre>
+
       <p>Strings support concatenation:</p>
-<pre class="prettyprint">
+
+      <pre class="prettyprint">
  var s1 = "Hello"
  var s2 = "World!"
  print ( s1 + " " + s2 )  // prints "Hello World!"
 </pre>
-      <p>Strings also support inline templates:</p>
-<pre class="prettyprint">
+
+      <p>Strings also support inline expressions using the <code>${}</code> syntax:</p>
+
+      <pre class="prettyprint">
  var s1 = "Hello"
  var s2 = "World!"
  print ( "${s1} ${s2}" )  // prints "Hello World!"
 </pre>
-      <p>Because Strings are such a common starting point when dealing with web applications, there are also a bunch of handy <em>enhancements</em> which allows for easy conversion to other types:</p>
-<pre class="prettyprint">
+
+      <p>Because Strings are so common, there are also a bunch of handy <em>enhancements</em> which allows for easy
+        conversion from strings to other types:</p>
+
+      <pre class="prettyprint">
  var bool = "true".toBoolean()
  var integ = "42".toInt()
  var dubble = "42.2".toDouble()
  var date = "01/25/2012".toDate()
 </pre>
-      <p>Here is a short sample of additional enhancements which have also been added to the String type:</p>
+
+      <p>Here is a short sample of additional enhancements on <code>String</code>:</p>
+
       <ul>
         <li><code>repeat(n:int)</code> - Repeat the String <code>n</code> times</li>
         <li><code>chomp()</code> - Removes a trailing newline from the end of the String, if present</li>
@@ -598,103 +724,328 @@ Blocks (also called closures or lambda expressions) are a simple way to specify 
       </ul>
 
       <h2>Gosu Template Files (.gst)</h2>
-        <p>Gosu supports string templates as first class citizens in the language.  A Gosu String Template is a file that ends in the <code>.gst</code> extension.  Here is an example definition, <code>sample.Sample.gst</code>:
+
+      <p>Gosu supports string templates as first class citizens in the language. A Gosu String Template is a file that
+        ends in the <code>.gst</code> extension.</p>
+
+      <p>Here is an example definition, <code>sample.SampleTemplate.gst</code>:
+
       <pre class="prettyprint">
- &lt;% params( names : String[] ) %>
+ &lt;%@ params( names : String[] ) %>
  All Names: &lt;% for( name in names ) { %>
    * ${name} 
  &lt;% } %>
 </pre>
-      The template explicitly declares the names and types of its arguments.  You can render the template by calling the <code>render()</code> or <code>renderToString()</code> methods:
+      <p>The template explicitly declares the names and types of its arguments using the <code>params()</code> directive</p>
+
+      <p>You can render a template by calling the <code>render(w:Writer)</code> or <code>renderToString()</code> static methods:</p>
+
+      <p>For each parameter defined in the <code>params</code> directive, an additional argument with that name and
+      type is added to the <code>render()</code> and <code>renderToString()</code> methods.</p>
+
+      <p>So, given the template definition above, you could render it like so:</p>
+
       <pre class="prettyprint">
- var str = sample.Sample.renderToString( {"Joe", "John", "Josh"} )
+ // render directly to string
+ var str = sample.SampleTemplate.renderToString( {"Joe", "John", "Josh"} )
+ print( str)
+
+ // render directly to writer (potentially more efficient for large strings)
+ var writer = new java.io.StringWriter()
+ sample.SampleTemplate.render(writer, {"Joe", "John", "Josh"})
+ print( writer )
 </pre>
-      Note that the static <code>renderToString()</code> method is statically typed, and takes exactly the parameters specified by the template, so everything is type checked.
-      <p>There is also a static <code>render()</code> method that takes a writer, as well as the arguments to the template, for more efficient creation of large strings.
-      </p>
+
+      <p>Using templates gives you a type safe way to generate large strings in your applications.</p>
+
     </section>
 
     <!-- Collections -->
     <section id="collections">
+
       <div class="page-header">
-        <h1>Collections++ <small>All the things you wanted to do with Java collections, now you can.</small></h1>
+        <h1>Collections In Gosu</h1>
       </div>
-      <h2>Shorthand <em>List</em> and <em>Map</em> Syntax</h2>
-      <p>The Collections types <code>java.util.List</code> and <code>java.util.Map</code> are commonly used datastructures. They can also be fairly verbose to write when applying type information when using Java:</p>
+
+      <h2>List &amp; Map Syntax</h2>
+
+      <p><code>java.util.List</code> and <code>java.util.Map</code> are the two most commonly used
+        data structures in Java. Unfortunately, they can also be fairly verbose to deal with in Java:</p>
+
 <pre class="prettyprint">
- List&lt;Map&lt;String, Object&gt;&gt; list = new ArrayList&lt;Map&lt;String, Object&gt;&gt;();
  Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();
  map.put( "isOverlyVerbose", true );
+ List&lt;Map&lt;String, Object&gt;&gt; list = new ArrayList&lt;Map&lt;String, Object&gt;&gt;();
  list.add( map );
 </pre>
-      <p>Luckily Gosu provides a shorthand syntax for these two types, allowing the above code to simply be written as:</p>
+
+      <p>Luckily Gosu provides a shorthand syntax for these two types, allowing the above code to simply be written
+        as:</p>
+
 <pre class="prettyprint">
- var list = { { "isOverlyVerbose" -> false } }
+ var map = { "isOverlyVerbose" -> false }
+ var list = { map }
 </pre>
-      <h2>Standard Collection / Iterable Enhancements</h2>
+
+      <h2>Enhancements</h2>
+
+      <p>Gosu adds a whole slew of enhancements to collections classes.  Here are some of the most useful ones for
+      <code>java.lang.Iterable&lt;T></code>:</p>
+
             <table class="table table-bordered table-striped">
         <thead>
-          <tr><th>Enhancement Function or Property</th></tr>
+          <tr>
+            <th>Enhancement</th>
+            <th>Description</th>
+          </tr>
         </thead>
-        <tbody>
-<tr><td class="function">allMatch( cond(elt1 : T):boolean ) : boolean
-	<div>Returns true if all elements in this collection match the given condition and false otherwise</div></td></tr>
-<tr><td class="function">average( select:block(elt:T):java.lang.Number ) : BigDecimal<div>Return the average of the mapped value</div></td></tr>
-<tr><td class="function">concat( that : Collection&lt;T> ) : Collection&lt;T><div>Return a new list that is the concatenation of the two lists</div></td></tr>
-<tr><td class="function">Count() : int<div>Return the number of elements in this Iterable object</div></td></tr>
-<tr><td class="function">countWhere( cond(elt:T):boolean ) : int<div>Return the count of elements in this collection that match the given condition</div></td></tr>
-<tr><td class="function">disjunction( that : Collection&lt;T> ) : Set&lt;T><div>Returns a the set disjunction of this collection and the other collection, that is, all elements that are in one collection <em>not</em> and not the other</div></td></tr>
-<tr><td class="function">each( operation(elt : T) )<div>This method will invoke the operation on each element in the Collection</div></td></tr>
-<tr><td class="function">eachWithIndex( operation(elt : T, index : int ) )<div>This method will invoke the operation on each element in the Collection, passing in the index as well as the element</div></td></tr>
-<tr><td class="function">first() : T<div>Returns the first element in this collection.  If the collection is empty, null is returned</div></td></tr>
-<tr><td class="function">firstWhere( cond(elt:T):boolean ) : T<div>Returns the first element in this collection that matches the given condition.
-If no element matches the criteria, null is returned</div></td></tr>
-<tr><td class="function">fold( aggregator(elt1 : T, elt2 : T):T ) : T<div>Returns all the values of this collection folded into a single value</div></td></tr>
-<tr><td class="function">hasMatch( cond(elt1 : T):boolean ) : boolean<div>Returns true if any elements in this collection match the given condition and false otherwise</div></td></tr>
-<tr><td class="function">intersect( that : Collection&lt;T> ) : Set&lt;T><div>Return the set intersection of these two collections</div></td></tr>
-<tr><td class="function">join( delimiter : String  ) : String<div>Coerces each element in the collecion to a string and joins them together with the
-given delimiter</div></td></tr>
-<tr><td class="function">last() : T<div>Returns the last element in this collection.  If the collection is empty, null is returned</div></td></tr>
-<tr><td class="function">lastWhere( cond(elt:T):boolean ) : T<div>Returns the last element in this collection that matches the given condition.
-If the collection is empty, null is returned</div></td></tr>
-<tr><td class="function">map&lt;Q>( mapper(elt : T):Q ) : List&lt;Q><div>Maps the values of the collection to a list of values by calling the
-mapper block on each element</div></td></tr>
-<tr><td class="function">maxBy( comparison(elt : T):Comparable ) : T<div>Returns the maximum value of this collection with respect to the Comparable attribute calculated by the given block.  If more than one element has the maximum value, the first element encountered is returned</div></td></tr>
-<tr><td class="function">max&lt;R extends Comparable>( transform(elt:T):R ) : R<div>Returns the maximum value of the transformed elements</div></td></tr>
-<tr><td class="function">minBy( comparison(elt : T):Comparable ) : T<div>Returns the minimum value of this collection with respect to the Comparable attribute calculated by the given block.  If more than one element has the minimum value, the first element encountered is returned</div></td></tr>
-<tr><td class="function">min&lt;R extends Comparable>( transform(elt:T):R ) : R<div>Returns the minimum value of the transformed elements</div></td></tr>
-<tr><td class="function">partitionUniquely&lt;Q>( mapper(elt : T):Q ) : Map&lt;Q, T><div>Partitions each element into a Map where the keys are the value produce by the mapper block and the values are the elements of the Collection.  If two elements map to the same key an IllegalStateException is thrown</div></td></tr>
-<tr><td class="function">orderBy&lt;R extends Comparable>( value(elt:T):R ) : IOrderedList&lt;T><div>Returns a lazily-computed List that consists of the elements of this Collection, ordered by the value mapped to by the given block</div></td></tr>
-<tr><td class="function">orderByDescending&lt;R extends Comparable>( value(elt:T):R ) : IOrderedList&lt;T><div>Returns a lazily-computed List that consists of the elements of this Collection, descendingly ordered by the value mapped to by the given block</div></td></tr>
-<tr><td class="function">reduce&lt;V>( init : V, aggregator(val : V, elt2 : T):V ) : V<div>Returns all the values of this collection down to a single value</div></td></tr>
-<tr><td class="function">removeWhere( cond(elt:T):boolean ) <div>Removes all elements that match the given condition in this collection</div></td></tr>
-<tr><td class="function">retainWhere( cond(elt:T):boolean ) <div>Retains all elements that match the given condition in this collection</div></td></tr>
-<tr><td class="function">reverse() : List&lt;T><div>Returns a new list of the elements in the collection, in their reverse iteration order</div></td></tr>
-<tr><td class="function">single() : T<div>Returns a single element from this iterable, if only one exists.  It no elements are in this iterable, or if there are more than one elements in it, an IllegalStateException is thrown</div></td></tr>
-<tr><td class="function">singleWhere( cond(elt:T):boolean ) : T<div>Returns a single item matching the given condition.  If there is no such element or if multiple elements match the condition, and IllegalStateException is thrown</div></td></tr>
-<tr><td class="function">subtract( that : Collection&lt;T> ) : Set&lt;T><div>Returns the Set subtraction of that Collection from this Collection</div></td></tr>
-<tr><td class="function">toCollection() : Collection&lt;T><div>If this Iterable is already a Collection, return this Itearble cast to a Collection.
-Otherwise create a new Collection and copy this Iterable into it</div></td></tr>
-<tr><td class="function">toList() : List&lt;T><div>If this Iterable is already a List, return this Iterable cast to a List.
-Otherwise create a new List and copy this Iterable into it</div></td></tr>
-<tr><td class="function">toSet() : Set&lt;T><div>If this Iterable is already a Set, return this Iterable cast to a Set.  Otherwise create a new
-Set based on this Iterable</div></td></tr>
-<tr><td class="function">toTypedArray() : T[]<div>Returns a strongly-typed array of this Iterable, as opposed to the argumentless Iterable#toArray(), which
-returns an Object array.  This method takes advantage of static reification and, therefore, does not necessarily return an array that matches the theoretical runtime type of the Iterable, if actual reification were supported</div></td></tr>
-<tr><td class="function">union( that : Collection&lt;T> ) : Set&lt;T><div>Returns the set union of the two collections</div></td></tr>
-<tr><td class="function">where( cond(elt:T): boolean ) : List&lt;T><div>Returns all the elements of this collection for which the given condition is true</div></td></tr>
-<tr><td class="function">whereTypeIs&lt;R>( type : Type&lt;R> ) : List&lt;R><div>Returns all the elements of this collection that are assignable to the
-given type</div></td></tr>
-        </tbody>
-      </table>
-      <h2>Type-Specific Enhancements</h2>
-      <p>In addition to the enchancements listed above, there are often additional enchancements available based on the type of the Collection you are using. For instance, if you were using a <code>Map</code>, then you could do something like this to quickly write out a properties file:
-<pre class="prettyprint">
- var map = {
-   "app.deploy.port" -> 8080,
-   "app.deploy.vm.maxmem" -> "1024m",
-   "app.deploy.vm.maxperm" -> "256m"
- }.writeToPropertiesFile( new File("/tmp/deploy.properties") )
-</pre>
-      <p>The best part is that if you can't find the enhancement you are looking for, it's trivial to create a new one that you can instantly use anywhere in your application</p>
+              <tbody>
+              <tr>
+                <td class="function">allMatch( cond(elt1 : T):boolean ) : boolean
+                </td>
+                  <td>Returns true if all elements in this collection match the given condition and false otherwise
+                  </td>
+              </tr>
+              <tr>
+                <td class="function">average( select:block(elt:T):java.lang.Number ) : BigDecimal
+                </td>
+              <td>Return the average of the mapped value</td>
+              </tr>
+              <tr>
+                <td class="function">concat( that : Collection&lt;T> ) : Collection&lt;T>
+                </td>
+                <td>Return a new list that is the concatenation of the two lists</td>
+              </tr>
+              <tr>
+                <td class="function">Count() : int
+                </td>
+                <td>Return the number of elements in this Iterable object</td>
+              </tr>
+              <tr>
+                <td class="function">countWhere( cond(elt:T):boolean ) : int
+                </td>
+                <td>Return the count of elements in this collection that match the given condition</td>
+              </tr>
+              <tr>
+                <td class="function">disjunction( that : Collection&lt;T> ) : Set&lt;T>
+                </td>
+                <td>Returns a the set disjunction of this collection and the other collection, that is, all elements
+                  that are in one collection <em>not</em> and not the other
+                </td>
+              </tr>
+              <tr>
+                <td class="function">each( operation(elt : T) )
+                </td>
+                <td>This method will invoke the operation on each element in the Collection</td>
+              </tr>
+              <tr>
+                <td class="function">eachWithIndex( operation(elt : T, index : int ) )
+                </td>
+                <td>This method will invoke the operation on each element in the Collection, passing in the index as
+                  well as the element
+                </td>
+              </tr>
+              <tr>
+                <td class="function">first() : T
+                </td>
+                <td>Returns the first element in this collection. If the collection is empty, null is returned</td>
+              </tr>
+              <tr>
+                <td class="function">firstWhere( cond(elt:T):boolean ) : T
+                </td>
+                <td>Returns the first element in this collection that matches the given condition.
+                  If no element matches the criteria, null is returned
+                </td>
+              </tr>
+              <tr>
+                <td class="function">fold( aggregator(elt1 : T, elt2 : T):T ) : T
+                </td>
+                <td>Returns all the values of this collection folded into a single value</td>
+              </tr>
+              <tr>
+                <td class="function">hasMatch( cond(elt1 : T):boolean ) : boolean
+                </td>
+                <td>Returns true if any elements in this collection match the given condition and false otherwise
+                </td>
+              </tr>
+              <tr>
+                <td class="function">intersect( that : Collection&lt;T> ) : Set&lt;T>
+                </td>
+                <td>Return the set intersection of these two collections</td>
+              </tr>
+              <tr>
+                <td class="function">join( delimiter : String ) : String
+                </td>
+                <td>Coerces each element in the collecion to a string and joins them together with the
+                  given delimiter
+                </td>
+              </tr>
+              <tr>
+                <td class="function">last() : T
+                </td>
+                <td>Returns the last element in this collection. If the collection is empty, null is returned</td>
+              </tr>
+              <tr>
+                <td class="function">lastWhere( cond(elt:T):boolean ) : T
+                </td>
+                <td>Returns the last element in this collection that matches the given condition.
+                  If the collection is empty, null is returned
+                </td>
+              </tr>
+              <tr>
+                <td class="function">map&lt;Q>( mapper(elt : T):Q ) : List&lt;Q>
+                </td>
+                <td>Maps the values of the collection to a list of values by calling the
+                  mapper block on each element
+                </td>
+              </tr>
+              <tr>
+                <td class="function">maxBy( comparison(elt : T):Comparable ) : T
+                </td>
+                <td>Returns the maximum value of this collection with respect to the Comparable attribute calculated
+                  by the given block. If more than one element has the maximum value, the first element encountered is
+                  returned
+                </td>
+              </tr>
+              <tr>
+                <td class="function">max&lt;R extends Comparable>( transform(elt:T):R ) : R
+                </td>
+                <td>Returns the maximum value of the transformed elements</td>
+              </tr>
+              <tr>
+                <td class="function">minBy( comparison(elt : T):Comparable ) : T
+                </td>
+                <td>Returns the minimum value of this collection with respect to the Comparable attribute calculated
+                  by the given block. If more than one element has the minimum value, the first element encountered is
+                  returned
+                </td>
+              </tr>
+              <tr>
+                <td class="function">min&lt;R extends Comparable>( transform(elt:T):R ) : R
+                </td>
+                <td>Returns the minimum value of the transformed elements</td>
+              </tr>
+              <tr>
+                <td class="function">partitionUniquely&lt;Q>( mapper(elt : T):Q ) : Map&lt;Q, T>
+                </td>
+                <td>Partitions each element into a Map where the keys are the value produce by the mapper block and
+                  the values are the elements of the Collection. If two elements map to the same key an
+                  IllegalStateException is thrown
+                </td>
+              </tr>
+              <tr>
+                <td class="function">orderBy&lt;R extends Comparable>( value(elt:T):R ) : IOrderedList&lt;T>
+                </td>
+                <td>Returns a lazily-computed List that consists of the elements of this Collection, ordered by the
+                  value mapped to by the given block
+                </td>
+              </tr>
+              <tr>
+                <td class="function">orderByDescending&lt;R extends Comparable>( value(elt:T):R ) : IOrderedList&lt;T>
+                </td>
+                <td>Returns a lazily-computed List that consists of the elements of this Collection, descendingly
+                  ordered by the value mapped to by the given block
+                </td>
+              </tr>
+              <tr>
+                <td class="function">reduce&lt;V>( init : V, aggregator(val : V, elt2 : T):V ) : V
+                </td>
+                  <td>Returns all the values of this collection down to a single value</td>
+              </tr>
+              <tr>
+                <td class="function">removeWhere( cond(elt:T):boolean )
+                </td>
+                  <td>Removes all elements that match the given condition in this collection</td>
+              </tr>
+              <tr>
+                <td class="function">retainWhere( cond(elt:T):boolean )
+                </td>
+                  <td>Retains all elements that match the given condition in this collection</td>
+              </tr>
+              <tr>
+                <td class="function">reverse() : List&lt;T>
+                </td>
+                  <td>Returns a new list of the elements in the collection, in their reverse iteration order</td>
+              </tr>
+              <tr>
+                <td class="function">single() : T
+                </td>
+                <td>Returns a single element from this iterable, if only one exists. It no elements are in this
+                  iterable, or if there are more than one elements in it, an IllegalStateException is thrown
+                </td>
+              </tr>
+              <tr>
+                <td class="function">singleWhere( cond(elt:T):boolean ) : T
+                </td>
+                <td>Returns a single item matching the given condition. If there is no such element or if multiple
+                  elements match the condition, and IllegalStateException is thrown
+                </td>
+              </tr>
+              <tr>
+                <td class="function">subtract( that : Collection&lt;T> ) : Set&lt;T>
+                </td>
+                <td>Returns the Set subtraction of that Collection from this Collection</td>
+              </tr>
+              <tr>
+                <td class="function">toCollection() : Collection&lt;T>
+                </td>
+                <td>If this Iterable is already a Collection, return this Itearble cast to a Collection.
+                  Otherwise create a new Collection and copy this Iterable into it
+                </td>
+              </tr>
+              <tr>
+                <td class="function">toList() : List&lt;T>
+                </td>
+                <td>If this Iterable is already a List, return this Iterable cast to a List.
+                  Otherwise create a new List and copy this Iterable into it
+                </td>
+              </tr>
+              <tr>
+                <td class="function">toSet() : Set&lt;T>
+                </td>
+                <td>If this Iterable is already a Set, return this Iterable cast to a Set. Otherwise create a new
+                  Set based on this Iterable
+                </td>
+              </tr>
+              <tr>
+                <td class="function">toTypedArray() : T[]
+                </td>
+                <td>Returns a strongly-typed array of this Iterable, as opposed to the argumentless
+                  Iterable#toArray(), which
+                  returns an Object array. This method takes advantage of static reification and, therefore, does not
+                  necessarily return an array that matches the theoretical runtime type of the Iterable, if actual
+                  reification were supported
+                </td>
+              </tr>
+              <tr>
+                <td class="function">union( that : Collection&lt;T> ) : Set&lt;T>
+                </td>
+                <td>Returns the set union of the two collections</td>
+              </tr>
+              <tr>
+                <td class="function">where( cond(elt:T): boolean ) : List&lt;T>
+                </td>
+                <td>Returns all the elements of this collection for which the given condition is true</td>
+              </tr>
+              <tr>
+                <td class="function">whereTypeIs&lt;R>( type : Type&lt;R> ) : List&lt;R>
+                </td>
+                <td>Returns all the elements of this collection that are assignable to the
+                  given type
+                </td>
+              </tr>
+              </tbody>
+            </table>
+
     </section>
+
+  <section>
+
+    <div class="page-header">
+      <h1>Enjoy!</h1>
+    </div>
+
+    <p>That's a good overview of what the Gosu language provides for you.  Please give it a try and, if you have
+    any questions, hit us up on the <a href="http://groups.google.com/group/gosu-lang">Newsgroup</a>!</p>
+
+  </section>
