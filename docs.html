@@ -6,35 +6,58 @@ layout: main
       <div class="page-header">
         <h1>Getting Started</h1>
       </div>
-      <p>Did you <a href="downloads.html">download</a> Gosu yet? Good.</p>
-      <p>Getting started with Gosu is pretty easy. Assuming you have it setup correctly, just type <code>gosu</code> at a command prompt. You should see something like this:</p>
+
+      <p>First, <a href="downloads.html">download</a> the latest Gosu distribution.</p>
+
+      <p>Getting started with Gosu is easy: just type <code>gosu</code> with no arguments at a command prompt, and you
+        should get the built in playground:</p>
+
       <div class="img">
         <img src="/img/tester.png">
-        <div>The Gosu Editor</div>
+        <div>The Gosu Playground</div>
       </div>
-      <p>Once you have the Gosu Editor up, you can being playing around as you like.  No need to worry about defining full <code>class</code> definitions, either.  Simple code snippets work just fine.  Here are some useful keyboard shortcuts:</p>
+
+      <p>Once you have the playground up, simply start banging away with Gosu code: no need to worry about
+        defining full classes, snippets work just fine.</p>
+
+      <p>Here are some useful keyboard shortcuts in the playground:</p>
+
       <ul>
         <li><strong>Ctrl+Space</strong> - Code completion</li>
         <li><strong>Ctrl+T</strong> - Show the inferred type of whatever is below the cursor</li>
         <li><strong>Ctrl+W</strong> - Expand the selection</li>
         <li><strong>F5</strong> - Execute the code</li>
       </ul>
+
+      <p>For the truly impatient, you can do some evaluate some simple gosu expressions online over on the
+        <a href="/play.html">Play</a> page.</p>
+
     </section>
 
     <!-- Getting Started -->
     <section id="basics">
+
       <div class="page-header">
         <h1>The Basics</h1>
       </div>
+
       <h2>Variables and Type Declarations</h2>
-      <p>It's true that gosu is strongly styped, however, you can often get away without explicitly declaring the type.  Check it out:</p>
+
+      <p>Gosu is statically typed, but uses type inference to eliminate the vast majority of syntax overhead usually
+        involved with static typing.</p>
+
+      <p>Check it out:</p>
+
       <pre class="prettyprint">
  var foo = "Foo" // a String
  var one = 1     // a Number
- var guess : String = null  // Must declare the type because it's not inferrable
+ var guess : String = null  // Must declare the type because it can't be inferred
 </pre>
+
       <h2>Operators</h2>
-      <p>Gosu supports all of the standard Java operators, with a few caveats and bonuses:</p>
+
+      <p>Gosu supports the standard Java operators, with a few minor restrictions and some great bonuses:</p>
+
       <ul>
         <li><code>++</code> / <code>--</code> - Just like the Java operators, except they cannot be used within another statement</li>
         <li><code>==</code> - Tests for object equality, just like <code>.equals()</code></li>
@@ -42,29 +65,44 @@ layout: main
         <li><code><></code> - The same as <code>!=</code></li>
         <li><code><</code>,<code>></code>, etc - Standard comparison semantics which also works on <code>java.lang.Comparable</code> objects</li>
       </ul>
+
       <h2>Loops</h2>
-      <p>Gosu supports all the standard loop variations: <code>for</code>, <code>while</code>, <code>do ... while</code> etc.</p>
-      <h3>The <em>for</em> loop</h3>
-      <p>The <code>for</code> loop in Gosu allows you to iterate over arrays as well as anything that implements the <code>java.lang.Iterable</code> interface.</p>
+
+      <p>Gosu supports the standard loop variants: <code>for</code>, <code>while</code>, <code>do ... while</code> etc.</p>
+
+      <h3>The Gosu <em>for</em> loop</h3>
+
+      <p>The <code>for</code> loop in Gosu allows you to iterate over both arrays and anything that implements
+        the <code>java.lang.Iterable</code> interface.</p>
+
       <pre class="prettyprint">
- var list = { "one", "two", "three" } // Create a java.lang.List<String>
+ var list = { "one", "two", "three" } // Creates a java.lang.List&lt;String>
  for ( num in list ) {
-   print ( num ) // num is of type String here
+   print( num )
  }</pre>
-      <p>If you also want to know the index (zero-based) while you iterate:</p>
-<pre class="prettyprint">
+
+      <p>You can also get access to the zero-based index of the loop by including an <code>index</code> variable:</p>
+
+   <pre class="prettyprint">
  var list = { "one", "two", "three" }
  for ( num in list index i ) {
    print ( "${i} : ${num}" ) // i is an int, and num is still of type String
  }</pre>
-      <p>If you need to get at the iterator, you can do that, too:</p>
-<pre class="prettyprint">
+
+      <p>And, if you need access to the iterator for the loop (assuming you are looping over an <code>Iterable</code>)
+      you can use the <code>iterator</code> keyword:</p>
+
+      <pre class="prettyprint">
  var list = { "one", "two", "three" }
  for ( num in list iterator iter ) {
    iter.remove()
  }</pre>
-      <p>If you're purely interested in iterating over a range of numbers, you can easily do that using the range operator like so:</p>
-<pre class="prettyprint">
+
+      // TODO MOVE
+      <p>If you're purely interested in iterating over a range of numbers, you can easily do that using the range
+        operator like so:</p>
+
+      <pre class="prettyprint">
  // Range from 0 through 5
  for ( i in 0..5 ) {
    print ( i ) // Prints 0-5
@@ -80,9 +118,14 @@ layout: main
    print ( i ) // Prints 1-4
  }
 </pre>
+
       <h2>Properties</h2>
-      <p>Gosu properties are an easy way of exposing Class field variables.  Consider the standard Java boilerplate:</p>
-<pre class="prettyprint">
+
+      <p>Gosu <em>properties</em> are a way to abstract field access in Gosu classes.</p>
+
+      <p>Consider this standard Java boilerplate:</p>
+
+      <pre class="prettyprint">
  public class Foo {
    private String _bar = "bar";
    public void setBar( String value ) {
@@ -92,66 +135,105 @@ layout: main
      return _bar;
    }
  }</pre>
-      <p>That's a pretty verbose way of letting users gain access to this field variable, yet Java developers are forced to do it time and again.  Now consider the same field visibility as exposed through Gosu:</p>
-<pre class="prettyprint">
+
+      <p>This is a verbose way to simply expose a field, but exposing the field directly has it's own problems, which
+      is where properties come in.</p>
+
+      <p>Here is the same class in Gosu:</p>
+
+      <pre class="prettyprint">
  public class Foo {
-   var _bar = "bar" as Bar
+   var _bar : String  = "bar" as Bar // the 'as Bar' exposes this field as the property Bar
  }</pre>
-      <p>Only want to expose a getter?  No problem</p>
+
+      <p>If you want the property to be readonly, you can use the <code>readonly</code> modifier:</p>
+
 <pre class="prettyprint">
  public class Foo {
-   var _bar = "bar" readonly as Bar
+  var _bar : String  = "bar" as readonly Bar
  }</pre>
-      <p>Gosu properties aren't limited to simple getter/setter shorthand either.  You can define your own properties however you like:
-<pre class="prettyprint">
+
+      <p>If you want to add some logic to the get or set of a propery, you can use this longer syntax:</p>
+
+      <pre class="prettyprint">
  public class Foo {
-   var _bar = "bar" as Bar
-   var _foo = "foo"
-   property get FooBar() : String {
-     return _foo + _bar
+   var _bar = "bar"
+
+   property get Bar() : String {
+     return _bar
    }
-   property set MyFoo( value : String ) {
-     _foo = value
+   property set Bar( value : String ) {
+     if(value == "Foo") throw "That's not a valid value for Bar!"
+     _bar = value
    }
  }</pre>
-      <p>Accessing properties is super clean, too.  Continuing with the class from above:</p>
-<pre class="prettyprint">
+
+      <p>Reading and writing properties works just like accessing a field:</p>
+
+      <pre class="prettyprint">
  var f = new Foo()
- f.Bar = "su"       // set the private field _bar to a new value
- print ( f.FooBar ) // use our custom readonly property, prints "foosu"
- f.MyFoo = "Go"     // use the custom writable property to set the new value for _foo
- print ( f.FooBar ) // Now prints "Gosu" 
+ f.Bar = "su"
+ print( f.Bar )
 </pre>
+
       <h2>Null Safety</h2>
-      <p>Nobody likes getting NullPointerExceptions. At the same time, sometimes it's just not necessary to know if an intermediary function call evaluates to null or not.  Luckily Gosu provides a way to short-circuit the evaluation of a statement should any intermediate result evaluate to null.  To use the null safe operator, simply replace <code>.</code> with <code>.?</code>.  Consider the following Java code:</p>
-<pre class="prettyprint">
- public class MyTime {
-   public Date timestamp = null;
- } 
 
- ... 
- long timeInMillis = new MyTime().timestamp.getTime();  // NullPointerException because 'timestamp' is null!
+      <p>Gosu offers a few helpful tricks to deal with <code>null</code> in your code.</p>
 
- ...
- long timeInMillis2 = 0l;
- Date time = new MyTime().timestamp;
- if ( time != null ) {
-   timeInMillis2 = time.getTime();
- }</pre>
-      <p>Now compare that same code with the Null-Safe Gosu form:</p>
-<pre class="prettyprint">
- var timeInMillis = new MyTime().timestamp?.Time  // NullPointerException is avoided here because of the null safe ?. operator
+      <h3>Null Safe Method Invocation</h3>
+
+      <p>Consider this code:</p>
+
+      <pre class="prettyprint">
+        var aList = getAListOfStrings()
+        if(aList.get(0).isEmpty()) {
+          print("The first string is empty")
+        }
 </pre>
+
+      <p>This code can cause a <code>NullPointerException</code> if either the list or the first string in the list
+      is null.  We can address this by using the null-safe invocation operator <code>?.</code>:</p>
+
+      <pre class="prettyprint">
+        var aList = getAListOfStrings()
+        if(aList?.get(0)?.isEmpty()) {
+          print("The first string is empty")
+        }
+</pre>
+
+      <p>The null safe invocation operator works on both methods and properties.</p>
+
+      <h3>The Elvis Operator</h3>
+
+      <p>Sometimes you want a default value if an expression is null.  For this use case, Gosu supports the Elvis
+      Operator, <code>?:</code>:</p>
+
+      <pre class="prettyprint">
+        var myString = getAPossiblyNullString() ?: "default"
+</pre>
+
+      <p>If <code>getAPossiblyNullString</code> returns <code>null</code>, then the value <code>"default"</code> will
+      be assigned to <code>myString</code></p>
+
+      <h3>For Loops &amp; If Statements</h3>
+
+      <p>For loops and if statements are null tolerant, and will not throw <code>NullPointerExceptions</code>.  A
+      for loop will simply not execute any loop logic, and an if statement will treat <code>null</code> as false.</p>
 
       <h2>Classes</h2>
-      <p>Gosu classes are defined with much the same syntax as other programming languages.  You can define classes inside of a Gosu program, or in a file ending with the <code>.gs</code> extension.  Here is a basic class:
+
+      <p>Gosu classes have a familiar syntax.  Gosu classes are defined in a file ending with the <code>.gs</code>
+        extension.</p>
+
+        <p>Here is a basic Gosu class:</p>
+
         <pre class="prettyprint">
  package example
 
  uses java.util.List
 
  class SampleClass {
-   var _names : List&lt;String> // a private class variable, which is a list of Strings
+   var _names : List&lt;String> // a private class var
 
    // A public constructor
    construct( names : List&lt;String> ) {
@@ -171,7 +253,11 @@ layout: main
    }
  }
 </pre>
+
+      <p>
         The above code demonstrates the following features:
+      </p>
+
         <ul>
           <li>The <code>uses</code> statement, which is identical to the <code>import</code> statement in Java, and makes a class (or package of classes) available for use without qualification.</li>
           <li>A class variable, declared using the <code>var</code> keyword, just like local variables.  Class variables default to private access.  You can declare them to be <code>static</code> as well.</li>
