@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Asynchronous Methods</title>
+    <link rel="StyleSheet" href="css/webservice-wsi-consuming.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="webservice-wsi-consuming.23.1.html#2003179">Calling WS-I Web Services from Gosu</a> : Asynchronous Methods</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2003179">Asynchronous Methods</a></h3>
+      <div class="B_-_Body"><a name="2043051">Gosu supports optional asynchronous calls to web services. Gosu exposes alternate web service methods signatures on the service with the </a><span class="cv_-_computer_voice">async_</span> prefix. Gosu does not generate the additional method signature if the method is a one-way method. The asynchronous method variants return an <span class="cv_-_computer_voice">AsyncResponse</span> object. Use that object with a polling design pattern (check regularly whether it is done) the choose to get results later (synchronously in relation to the calling code). </div>
+      <div class="B_-_Body"><a name="2042969">See the introductory comments in </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.1.html#2001852', '');" title="Calling WS-I Web Services from Gosu">“Consuming WS-I Web Service Overview”</a> for related information about the basic types of connections for a method.</div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2051322">Be careful not to confuse one-way methods with asynchronous methods. For more information about one-way methods, see </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.3.html#2054441', '');" title="One-Way Methods">“One-Way Methods”</a>.</div>
+      <div class="B_-_Body"><a name="2042250">The </a><span class="cv_-_computer_voice">AsyncResponse</span> object contains the following properties and methods:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2051360">start</a></span> method – initiates the web service request but does not wait for the response</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2051372">get</a></span> method – gets the results of the web service, waiting (blocking) until complete if necessary</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2051194">RequestEnvelope</a></span> – a read-only property that contains the request XML</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2051195">ResponseEnvelope</a></span> – a read-only property that contains the response XML, if the web service responded</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2094480">RequestTransform</a></span> – a block (an in-line function) that Gosu calls to transform the request into another form. For example, this block might add encryption and then add a digital signature.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2094481">ResponseTransform</a></span> – a block (an in-line function) that Gosu calls to transform the response into another form. For example, this block might validate a digital signature and then decrypt the data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2043191">The following is an example of calling the a synchronous version of a method contrasted to using the asynchronous variant of it.</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2051477">var ws = new ws.weather.Weather()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2051478">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042875">// Call the REGULAR version of the method.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042876">var r = ws.GetCityWeatherByZIP("94114")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042877">print( "The weather is " + r.Description )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042878">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042879">// Call the **asynchronous** version of the same method</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071056">// -- Note the "async_" prefix to the method</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042880">var a = ws.</a><span class="s_-_strong">async</span>_GetCityWeatherByZIP("94114")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2051232">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2051268">// By default, the async request does NOT start automatically. </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2051305">// You must start it with the start() method. </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2051307">a.start()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2051308">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042881">print("the XML of the request for debugging... " + a.RequestEnvelope)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042882">print("")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042883">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042893">print ("in a real program, you would check the result possibly MUCH later...")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042894">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042895">// Get the result data of this asynchronous call, waiting if necessary.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042896">var laterResult = a.get()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042897">print("asynchronous reply to our earlier request = " + laterResult.Description)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042898">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2048439">print("response XML = " + a.ResponseEnvelope.asUTFString())</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

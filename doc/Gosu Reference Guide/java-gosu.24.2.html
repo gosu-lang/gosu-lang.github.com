@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Overview of Writing Gosu Code that Calls Java</title>
+    <link rel="StyleSheet" href="css/java-gosu.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="java-gosu.24.1.html#2131006">Calling Java from Gosu</a> : Overview of Writing Gosu Code that Calls Java</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2131006">Overview of Writing Gosu Code that Calls Java</a></h3>
+      <div class="B_-_Body"><a name="2131007">Because Gosu is based on the Java Virtual Machine, Gosu code can directly use Java types. From Gosu, Java classes are first-class types and used like native Gosu classes. In most ways, Java syntax also works in Gosu. For example, instantiate a Java class with the </a><span class="cv_-_computer_voice">new</span> keyword:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2130477">var b = new java.lang.Boolean(false)</a></div>
+      <div class="B_-_Body"><a name="2130480">Gosu adds additional optional features and more concise syntax, such as optional type inference and optional semicolons. For differences between the syntax of Gosu and Java as programming languages, see </a><a href="javascript:WWHClickedPopup('gosu', 'intro.03.01.html#1005113', '');" title="Gosu Introduction">“Gosu Introduction”</a> and <a href="javascript:WWHClickedPopup('gosu', 'intro.03.15.html#1465408', '');" title="Notable Differences Between Gosu and Java">“Notable Differences Between Gosu and Java”</a>.</div>
+      <div class="B_-_Body"><a name="2130823">Gosu code can integrate with Java types in the following ways:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2130824">instantiate Java types</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2130825">manipulate Java classes as native Gosu objects.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2130549">manipulate Java objects as native Gosu objects.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2130561">manipulate Java primitives as native Gosu objects. Gosu automatically converts between primitives and the equivalent object types automatically in most cases.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002480">get instance variables and static variables from Java types</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002481">call methods on Java types. For methods that look like getters and setters, Gosu exposes methods also as </a><span class="e_-_emphasis">Gosu&nbsp;properties</span>. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'java-gosu.24.2.html#2021794', '');" title="Overview of Writing Gosu Code that Calls Java">“Java Get and Set Methods Convert to Gosu Properties”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002630">add new methods to Java types using Gosu </a><span class="e_-_emphasis">enhancements</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002642">add new properties to Java types using Gosu </a><span class="e_-_emphasis">enhancements</span>. (readable, writable, or read/write)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2130000">add new properties to Java types automatically for methods that look like getters and setters. For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'java-gosu.24.2.html#2021794', '');" title="Overview of Writing Gosu Code that Calls Java">“Java Get and Set Methods Convert to Gosu Properties”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002711">create Gosu classes that extend Java classes</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002712">create Gosu interfaces that extend Java interfaces</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002735">use Java enumerations</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2051126">use Java annotations</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2001462">All of these features work with built-in Java types as well as your own Java classes and libraries.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2134273">Many Java Classes are Core Classes for Gosu</a></h4>
+      <div class="B_-_Body"><a name="2134274">Because Gosu is built on the Java Virtual Machine. Many core Gosu classes are Java types. For example:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002442">the class </a><span class="cv_-_computer_voice">java.util.String</span> is the core text object class for Gosu code. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2002454">the basic collection types in Gosu simply reference the Java versions, such as </a><span class="cv_-_computer_voice">java.util.ArrayList</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <PRE class="CL_-_Code_Last_Line"><a name="2002426">print(list.get(0))</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="2131311">Java Packages in Scope</a></h4>
+      <div class="B_-_Body"><a name="2131332">All types in the package </a><span class="cv_-_computer_voice">java.lang.*</span> are automatically in scope. Gosu code that uses them do not need fully-qualified class names or explicit <span class="cv_-_computer_voice">uses</span> statements.</div>
+      <div class="B_-_Body"><a name="2046287">For example, the following code is valid Gosu:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2002034">var f = new java.lang.Float(7.5)</a></div>
+      <div class="B_-_Body"><a name="2002035">However, the code is easier to understand with the simpler syntax:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2002036">var f = new Float(7.5)</a></div>
+      <div class="B_-_Body"><a name="2131472">For a larger list of types always in scope in Gosu, see </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.09.13.html#1560097', '');" title="Importing Types and Package Namespaces">“Importing Types and Package Namespaces”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2047802">Static Members and Static Import in Gosu</a></h4>
+      <div class="B_-_Body"><a name="2002830">Gosu supports </a><span class="e_-_emphasis">static</span> <span class="e_-_emphasis">members</span> (variables, functions, and property declarations) on a type. A static member means that the member exists only on the single type itself, not on <span class="e_-_emphasis">instances</span> of the type. Access static members on Java types just as you would native Gosu types.</div>
+      <div class="B_-_Body"><a name="2002876">For Gosu code that accesses static members, you must qualify the class that declares the static member. For example, to use the </a><span class="cv_-_computer_voice">Math</span> class’s cosine function and its static reference to value <span class="cv_-_computer_voice">PI</span>:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2002857">Math.cos(Math.PI * 0.5)</a></div>
+      <div class="B_-_Body"><a name="2002859">Gosu does not have an equivalent of the </a><span class="e_-_emphasis">static import</span> feature of Java 1.5 and later, which allows you to simply type <span class="cv_-_computer_voice">PI</span> instead of <span class="cv_-_computer_voice">Math.PI</span>.</div>
+      <div class="B_-_Body"><a name="2131552">This is only a syntax difference for using static members from Gosu, independent of whether the type is implemented in Gosu or Java). This does not affect how you write your Java code. For other syntax differences between Gosu and Java, see </a><a href="javascript:WWHClickedPopup('gosu', 'intro.03.15.html#1465408', '');" title="Notable Differences Between Gosu and Java">“Notable Differences Between Gosu and Java”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2021794">Java Get and Set Methods Convert to Gosu Properties</a></h4>
+      <div class="B_-_Body"><a name="2021795">Gosu can call methods on Java types. For methods on Java types that look like getters and setters, Gosu exposes methods instead as properties. Gosu uses the following rules for methods on Java types:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2003334">If the method name starts with </a><span class="cv_-_computer_voice">set</span> and takes exactly one argument, Gosu exposes this as a property. The property name matches the original method but without the prefix <span class="cv_-_computer_voice">set</span>. For example, suppose the Java method signature is <span class="cv_-_computer_voice">setName(String thename)</span>. Gosu exposes this a property setter function for the property called <span class="cv_-_computer_voice">Name</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2003335">If the method name starts with </a><span class="cv_-_computer_voice">get</span> and takes no arguments and returns a value, Gosu exposes this as a getter for the property. The property name matches the original method but without the prefix <span class="cv_-_computer_voice">get</span>. For example, suppose the Java method signature is <span class="cv_-_computer_voice">getName()</span>. Gosu exposes this a <span class="cv_-_computer_voice">property get</span> function for the property named <span class="cv_-_computer_voice">Name</span> of type <span class="cv_-_computer_voice">String</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2125800">Similar to the rules for </a><span class="cv_-_computer_voice">get</span>, the method name starts with <span class="cv_-_computer_voice">is</span> and takes no arguments and returns a Boolean value, Gosu exposes this as a property accessor (a <span class="e_-_emphasis">getter</span>). The property name matches the original method but without the prefix <span class="cv_-_computer_voice">is</span>. For example, suppose the Java method signature is <span class="cv_-_computer_voice">isVisible()</span>. Gosu exposes this a <span class="cv_-_computer_voice">property get</span> function for the property named <span class="cv_-_computer_voice">Visible</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2127956">Gosu does this transformation on static methods as well as regular instance methods.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2125806">Even though from Gosu there is a new property you can access for reading and writing this information, Gosu does not remove the methods. In other words, if a Java object has an </a><span class="cv_-_computer_voice">obj.getName()</span> method, you can use the expression <span class="cv_-_computer_voice">obj.Name</span> or <span class="cv_-_computer_voice">obj.getName()</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2031818">If there is a setter and a getter, Gosu makes the property readable and writable. If the setter is absent, Gosu makes the property read-only. If the getter is absent, Gosu makes the property write-only.</a></div>
+      <div class="B_-_Body"><a name="2003616">For example, create and compile this Java class:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004234">package gw.doc.examples;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004235">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004236">public class Circle {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004237">	  public static final double PI = Math.PI;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004238">	  private double _radius;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004239">	  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004240">	  //Constructor #1 - no arguments</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004241">	  public Circle() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004242">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004243">	  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004244">	  //Constructor #2</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004245">	  public Circle( int dRadius ) { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004246">		  _radius = dRadius; </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004247">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004248">	  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004249">	  // from Java these are METHODS that begin with get, set, is  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004250">	  // from Gosu these are PROPERTY accessors </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004251">	  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004252">	  public double getRadius() { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004253">		  &nbsp;&nbsp;System.out.print("running Java METHOD getRadius() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004254">		  return _radius; </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004255">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004256">	  public void   setRadius(double dRadius) { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004257">		 &nbsp;&nbsp;System.out.print("running Java METHOD setRadius() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004258">		  _radius = dRadius; </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004259">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004260">	  public double getArea() { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004261">		 &nbsp;&nbsp;System.out.print("running Java METHOD getArea() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004262">		  return PI * getRadius() * getRadius(); </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004263">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004264">	  public double getCircumference() { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004265">		 &nbsp;&nbsp;System.out.print("running Java METHOD getCircumference() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004266">		  return 2 * PI * getRadius(); </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004267">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004268">	  public boolean isRound() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004269">		 &nbsp;&nbsp;System.out.print("running Java METHOD isRound() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004270">		  return(true);</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004271">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004272">	  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004273">	  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004274">	  // ** the following methods stay as methods, not properties! **</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004275">	  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004276">	  //  For GET/IS, the method must take 0 args and return a value</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004277">	  public void isMethod1 () {  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004278">		  System.out.print("running Java METHOD isMethod1() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004279">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004280">	  public double getMethod2 (double a, double b) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004281">		  System.out.print("running Java METHOD isMethod2() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004282">		    return 1;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004283">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004284">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004285">	  //  For SET, the method must take 1 args and return void</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004286">	  public void setMethod3 () {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004287">		 &nbsp;&nbsp;System.out.print("running Java METHOD setMethod3() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004288">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2021884">	  public double setMethod4 (double a, double b) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2021885">		 &nbsp;&nbsp;System.out.print("running Java METHOD setMethod4() \n");</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2021886">		 &nbsp;&nbsp;return 1;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004292">	  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004293">	  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004295">}</a></PRE>
+      <div class="B_-_Body"><a name="2004015">The following Gosu code uses this Java class. Note which Java methods become property accessors and which ones do not.</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004316">// instatiate the class with the constructor that takes an argument</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004317">var c = new gw.doc.examples.Circle(10)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004318">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004319">// Use natural property syntax to SET GOSU PROPERTIES. In Java, this was a method.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004320">c.Radius = 10</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004515">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004516">// Use natural property syntax to GET GOSU PROPERTIES</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004517">print("Radius " + c.Radius)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004518">print("Area " + c.Area)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004519">print("Round " + c.Round) // boolean true  coerces to String "true"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004520">print("Circumference " + c.Circumference)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004521">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004522">// the following would be syntax errors if you uncomment. They are not writable (no setter method)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004322">// c.Area = 3 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004406">// c.Circumference = 4 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004420">// c.Round = false </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004333">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004334">// These Java methods do not convert to properties (wrong number of arguments or wrong type)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004337">c.isMethod1()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004338">var temp2 = c.getMethod2(1,2)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004339">c.setMethod3()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004340">var temp4 = c.setMethod4(8,9)</a></PRE>
+      <div class="B_-_Body"><a name="2004352">This Gosu code outputs the following:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004370">running Java METHOD setRadius()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004371">running Java METHOD getRadius()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004372">Radius 10</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004373">running Java METHOD getArea()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004374">running Java METHOD getRadius()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004375">running Java METHOD getRadius()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004376">Area 314.1592653589793</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004377">running Java METHOD isRound()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004378">Round true</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004379">running Java METHOD getCircumference()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004380">running Java METHOD getRadius()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004381">Circumference 62.83185307179586</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004382">running Java METHOD isMethod1()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004383">running Java METHOD isMethod2()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004384">running Java METHOD setMethod3()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2004209">running Java METHOD setMethod4()</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="2020668">Interfaces</a></h4>
+      <div class="B_-_Body"><a name="2135282">Gosu classes can directly implement Java interfaces. For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2135300">class MyGosuClass implements Runnable {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2135301">&nbsp;&nbsp;function run() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2135328">&nbsp;&nbsp;// your code here</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2135312">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2135302">}</a></PRE>
+      <div class="B_-_Body"><a name="2135356">Gosu also supports its own native interface definitions. For details, see </a><a href="javascript:WWHClickedPopup('gosu', 'interfaces.15.1.html#1456637', '');" title="Interfaces">“Interfaces”</a>. Gosu interfaces can directly extend Java interfaces.</div>
+      <h4 class="H2_-_Heading_2"><a name="2020577">Enumerations</a></h4>
+      <div class="B_-_Body"><a name="2020589">Gosu can directly use Java enumerations.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2047848">Annotations</a></h4>
+      <div class="B_-_Body"><a name="2047910">Gosu can directly use Java annotations.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2047899">Java Primitives</a></h4>
+      <div class="B_-_Body"><a name="2047849">Gosu supports the following primitive types: </a><span class="cv_-_computer_voice">int</span>, <span class="cv_-_computer_voice">char</span>, <span class="cv_-_computer_voice">byte</span>, <span class="cv_-_computer_voice">short</span>, <span class="cv_-_computer_voice">long</span>, <span class="cv_-_computer_voice">float</span>, <span class="cv_-_computer_voice">double</span>, <span class="cv_-_computer_voice">boolean</span>, and the special value that means an empty object value: <span class="cv_-_computer_voice">null</span>. This is the full set that Java supports, and the Gosu versions are fully compatible with the Java primitives, in both directions.</div>
+      <div class="B_-_Body"><a name="2047850">Additionally, every Gosu primitive type (other than the special value </a><span class="cv_-_computer_voice">null</span>) has an equivalent object type defined in Java. This is the same as in Java. For example, for <span class="cv_-_computer_voice">int</span> there is the <span class="cv_-_computer_voice">java.lang.Integer</span> type that descends from the <span class="cv_-_computer_voice">Object</span> class. This category of object types that represent the equivalent of primitive types are called <span class="e_-_emphasis">boxed primitive</span> types. In contrast, primitive types are also called <span class="e_-_emphasis">unboxed primitives</span>. In most cases, Gosu converts between boxed and unboxed primitive as needed for typical use. However, they are slightly different types, just as in Java, and on rare occasion these differences are important. </div>
+      <div class="B_-_Body"><a name="2020617">In both Gosu and Java, the language primitive types like </a><span class="cv_-_computer_voice">int</span> and <span class="cv_-_computer_voice">boolean</span> work differently from objects (descendents of the root <span class="cv_-_computer_voice">Object</span> class). For example:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2020618">you can add objects to a collection, but not primitives</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2020619">variables typed to an object type can have the value </a><span class="cv_-_computer_voice">null</span>, but this is not true for primitives</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2020620">The Java classes </a><span class="cv_-_computer_voice">java.lang.Boolean</span> and <span class="cv_-_computer_voice">java.lang.Integer</span> are <span class="cv_-_computer_voice">Object</span> types and can freely be used within Gosu code because of Gosu’s special relationship to the Java language. These wrapper objects are referred to as <span class="e_-_emphasis">boxed types</span> as opposed to the primitive values as <span class="e_-_emphasis">unboxed types</span>. </div>
+      <div class="B_-_Body"><a name="2020623">Gosu can automatically convert values from unboxed to Java-based boxed types as required by the specific API or return value, a feature that is called </a><span class="e_-_emphasis">autoboxing</span>. Similarly, Gosu can automatically convert values from boxed to boxed types, a feature that is called <span class="e_-_emphasis">unboxing</span>.</div>
+      <div class="B_-_Body"><a name="2020626">In most cases, you do not need to worry about differences between boxed and unboxed types because Gosu automatically converts values as required. For example, Gosu implicitly converts between the native language primitive type called </a><span class="cv_-_computer_voice">boolean</span> and the Java-based object class <span class="cv_-_computer_voice">Boolean</span> (<span class="cv_-_computer_voice">java.util.Boolean</span>). In cases you want explicit coercion, simply use the “<span class="cv_-_computer_voice">as ...</span><span class="ps_-_parameter_in_code_snippets">NEWTYPE</span>” syntax, such as “<span class="cv_-_computer_voice">myIntValue as Integer</span>”. </div>
+      <div class="B_-_Body"><a name="2020627">If your code implicitly converts a variable’s value from a boxed type to a unboxed type, if the value is </a><span class="cv_-_computer_voice">null</span>, Gosu standard value type conversion rules apply. For example: </div>
+      <PRE class="CF_-_Code_First_Line"><a name="2020628">var bBoxed : Boolean</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2020629">var bUnboxed : boolean</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2020630">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2020631">bBoxed = null &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// bBoxed can genuinely be NULL</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2061359">bUnboxed = bBoxed&nbsp;&nbsp;// bUnboxed can't be null, so is converted to FALSE!</a></PRE>
+      <div class="B_-_Body"><a name="2061363">For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.4.html#1441372', '');" title="Using Reflection">“Type Object Properties”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2135372">Java Generics</a></h4>
+      <div class="B_-_Body"><a name="2135396">Gosu can directly access types that use Java generics. In typical code, it works identically.</a></div>
+      <div class="B_-_Body"><a name="2135844">Generics information is slightly different at run time if you get the run time type with the </a><span class="cv_-_computer_voice">typeof</span> operator or similar APIs:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2136090">Due to how Java works, the parameterization of the type is erased by the Java compiler as it compiles to Java byte code. In other words, at run time, the run time type </a><span class="cv_-_computer_voice">ArrayList&lt;Integer&gt;</span> for a Java type appears just as <span class="cv_-_computer_voice">ArrayList</span>. This Java behavior is known as <span class="e_-_emphasis">type&nbsp;erasure</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2136097">In contrast, if the type is defined in Gosu, the run time type includes parameterization if present.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

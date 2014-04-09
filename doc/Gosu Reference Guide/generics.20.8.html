@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Generics With Custom ‘Containers’</title>
+    <link rel="StyleSheet" href="css/generics.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="generics.20.1.html#1446802">Gosu Generics</a> : Generics With Custom ‘Containers’</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1446802">Generics With Custom ‘Containers’</a></h3>
+      <div class="B_-_Body"><a name="1446803">Although Gosu generics are most useful with collections and lists, there is no requirement to use these features with built-in </a><span class="cv_-_computer_voice">Collection</span> and <span class="cv_-_computer_voice">List</span> classes. Anything that metaphorically represents a “container” for other objects might be appropriate for using Gosu generics to define the type of items in the container.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1453357">Abstract Example</a></h6>
+      <div class="B_-_Body"><a name="1453487">Suppose you want to write something that stores key-value maps. Instead of writing:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1453429">class Mymapping { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453466">&nbsp;&nbsp;function put( key : Object, value : Object) {...} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453467">&nbsp;&nbsp;function get( key : Object) : Object {...} </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1453468">}</a></PRE>
+      <div class="B_-_Body"><a name="1453373">...you could use generics to define it as:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1453477">class Mymapping&lt;K,V&gt; { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453478">&nbsp;&nbsp;function put( key : K, value : V) {...} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453479">&nbsp;&nbsp;function get( key : K) : V {...} </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1453507">}</a></PRE>
+      <div class="B_-_Body"><a name="1453508">Now you can use this class with strongly typed results:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1453528">myMap = new Mymapping&lt;String, Integer&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453538">myMap.put("ABC", 29)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453539">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1453544">theValue = myMap.get("ABC")</a></PRE>
+      <div class="B_-_Body"><a name="1453555">The </a><span class="cv_-_computer_voice">theValue</span> variable is strongly typed at compile time as <span class="cv_-_computer_voice">Integer</span>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1453509">Real-world Example</a></h6>
+      <div class="B_-_Body"><a name="1453483">Suppose you were writing a program for an automotive manufacturing company and want to track vehicles within different factories during production. Suppose you want to represent cars with a </a><span class="cv_-_computer_voice">Car</span> object, trucks with a <span class="cv_-_computer_voice">Truck</span> object, vans with a <span class="cv_-_computer_voice">Van</span> object, and these all derive from a root class <span class="cv_-_computer_voice">Vehicle</span>.</div>
+      <div class="B_-_Body"><a name="1446431">You could create some sort of custom container object called </a><span class="cv_-_computer_voice">Factory</span> that does not derive from the built-in collection classes. For the purpose of this example, assume that each factory only contains one type of vehicle. A <span class="cv_-_computer_voice">FactoryGroup</span> could contain multiple <span class="cv_-_computer_voice">Car</span> objects, or multiple <span class="cv_-_computer_voice">Truck</span> objects, or multiple <span class="cv_-_computer_voice">Van</span> objects. </div>
+      <div class="B_-_Body"><a name="1446432">Suppose you need APIs to work with all of the following types:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1446433">a </a><span class="cv_-_computer_voice">FactoryGroup</span> containing one or more <span class="cv_-_computer_voice">Car</span> objects</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1446434">a </a><span class="cv_-_computer_voice">FactoryGroup</span> containing one or more <span class="cv_-_computer_voice">Truck</span> objects</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1446435">a </a><span class="cv_-_computer_voice">FactoryGroup</span> containing one or more <span class="cv_-_computer_voice">Van</span> objects</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1446436">You could represent these types of collections using the syntax:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1446437">FactoryGroup</a></span>&lt;<span class="cv_-_computer_voice">Car&gt;</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1446438">FactoryGroup</a></span>&lt;<span class="cv_-_computer_voice">Truck&gt;</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1446439">FactoryGroup</a></span>&lt;<span class="cv_-_computer_voice">Van&gt;</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1446440">Perhaps you want an API that returns all vehicles in the last step in a multi-step manufacturing process. You could define the API could be defined as:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1446441">public function GetLastStepVehicles(groupofvehicles FactoryGroup&lt;T&gt;) : FactoryGroup&lt;T&gt;</a></div>
+      <div class="B_-_Body"><a name="1446442">Because the method uses generics, it works with all types of </a><span class="cv_-_computer_voice">FactoryGroup</span> objects. Because both the same letter <span class="cv_-_computer_voice">T</span> appears more than once in the method signature, this defines parallelism that tells Gosu about relationships between arguments and/or return values. </div>
+      <div class="B_-_Body"><a name="1446443">The definition of this method could be understood in English as:</a></div>
+      <div class="LP_-_List_Para"><a name="1446444">“The method </a><span class="cv_-_computer_voice">GetLastStepVehicles</span> takes one argument that is a factory group containing any one vehicle type. It returns another factory group that is guaranteed to contain the identical type of vehicles as passed into the method.”</div>
+      <div class="B_-_Body"><a name="1446445">Alternatively, you could define your API with bounded wildcards for the type:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1446446">public function GetLastStepVehicles(groupofvehicles FactoryGroup</a><span class="s_-_strong">&lt;? extends Vehicle&gt;</span>) : FactoryGroup&lt;T&gt;</div>
+      <div class="B_-_Body"><a name="1446447">Using this approach might allow your code to make more assumptions about the type of objects in the collection. It also prevents some coding errors, such as accidentally passing </a><span class="cv_-_computer_voice">FactoryGroup&lt;String&gt;</span> or <span class="cv_-_computer_voice">FactoryGroup&lt;Integer&gt;</span>, which fail at compile time. You can find out about your coding errors quickly.</div>
+      <div class="B_-_Body"><a name="1446448">If you want to make code like this, you also need to tell the Gosu compiler that your class is a container class that supports generics. Simply add the bracket notation in the definition of the class, and use a capital letter to represent the type of the class. For example, instead of typing:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1446449">public class MyFactory</a></div>
+      <div class="B_-_Body"><a name="1446450">...you would instead define your class as a container class supporting generics using the syntax:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1446451">public class MyFactory&lt;T&gt;</a></div>
+      <h4 class="H2_-_Heading_2"><a name="1446525">Generics with Non-Containers</a></h4>
+      <div class="B_-_Body"><a name="1452732">There is no technical requirement that you use generics with collections or other containers. However, collections and other containers are the typical uses of generics. You can define any class to use Gosu generics to generalize what it supports or how to work with various types. There is no limit on how you can use generics features for new classes.</a></div>
+      <div class="B_-_Body"><a name="1452162">For example, suppose you want to generalize a class </a><span class="cv_-_computer_voice">MyClass</span> to work differently with different types.</div>
+      <div class="B_-_Body"><a name="1456627">Do not simply define the class </a><span class="cv_-_computer_voice">MyClass</span> as:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1452163">public class MyClass </a></div>
+      <div class="B_-_Body"><a name="1452243">Instead, define it as:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1452280">public class MyClass&lt;T&gt;</a></div>
+      <div class="B_-_Body"><a name="1452312">You also could let your class support multiple dimensions similar to how the </a><span class="cv_-_computer_voice">Map</span> class works with two dimensions. See <a href="javascript:WWHClickedPopup('gosu', 'generics.20.7.html#1446985', '');" title="Multiple Dimensionality Generics">“Multiple Dimensionality Generics”</a>. You could define your class abstracted across multiple types, separated by commas:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1452314">public class MyClass&lt;K, V&gt;</a></div>
+      <div class="B_-_Body"><a name="1455199">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

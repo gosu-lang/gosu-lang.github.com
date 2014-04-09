@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>The Structure of a Gosu Program</title>
+    <link rel="StyleSheet" href="css/gosu-programs.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="gosu-programs.07.1.html#2209327">Gosu Programs</a> : The Structure of a Gosu Program</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2209327">The Structure of a Gosu Program</a></h3>
+      <div class="B_-_Body"><a name="2209328">A simple Gosu program is one or more lines that contain Gosu statements. There are several important other elements of a Gosu program:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.07.2.html#2209342', '');" title="The Structure of a Gosu Program" name="2209332">“Metaline as First Line”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.07.2.html#2209347', '');" title="The Structure of a Gosu Program" name="2209336">“Functions in a Gosu Program”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.07.2.html#2209362', '');" title="The Structure of a Gosu Program" name="2209340">“Setting the Class Path to Call Other Gosu or Java Classes”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2209342">Metaline as First Line</a></h4>
+      <div class="B_-_Body"><a name="2209343">Gosu programs support a single line at the beginning of the program for specifying the executable with which to run a file. This is for compliance with the UNIX standard for shell script files. The metaline is optional. If present must the first line of the program. The meta line looks like the following.</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2209344"> #!/usr/bin/env gosu</a></div>
+      <div class="B_-_Body"><a name="2209345">Note that the # in the meta line does not mean that the </a><span class="cv_-_computer_voice">#</span> symbol can start a line comments later on in Gosu programs. The # character is not a valid line comment start symbol.</div>
+      <h4 class="H2_-_Heading_2"><a name="2209347">Functions in a Gosu Program</a></h4>
+      <div class="B_-_Body"><a name="2209348">Your Gosu program can also define functions in the same file and call them.</a></div>
+      <div class="B_-_Body"><a name="2209349">For example, the following program creates a simple function and calls it twice:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209350">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209351">print (sum(10,4,7));</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209352">print (sum(222,4,3));</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209353">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209354">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209355">function sum (a: int, b: int, c: int) : int {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209356">  return a + b + c;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209357"> }</a></PRE>
+      <div class="B_-_Body"><a name="2209358">When run, this program outputs:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209359">21</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2209360">229</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="2209362">Setting the Class Path to Call Other Gosu or Java Classes</a></h4>
+      <div class="B_-_Body"><a name="2209363">You can call out to any Java or Gosu class as needed. However, you cannot define Gosu classes directly inside your Gosu program file. </a></div>
+      <div class="B_-_Body"><a name="2209364">To tell Gosu where to load additional classes, do either of the following:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2215975">Use the </a><span class="cv_-_computer_voice">classpath</span> argument on the command line tool. See <a href="javascript:WWHClickedPopup('gosu', 'gosu-commandline-emerald.06.3.html#2180195', '');" title="Command Line Arguments">“Command Line Arguments”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2209369">Add a </a><span class="cv_-_computer_voice">classpath</span> statement to the top of your Gosu program.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2209370">The </a><span class="cv_-_computer_voice">classpath</span> statement in a Gosu program improves upon the Java approach, which is to invoke a full and long <span class="cv_-_computer_voice">classpath</span> argument option when running the main class. </div>
+      <div class="B_-_Body"><a name="2209371">To add to the class path for a program from within the program, simply add </a><span class="cv_-_computer_voice">classpath</span> statements before all other statements in the program. If you use a metaline (see <a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.07.2.html#2209342', '');" title="The Structure of a Gosu Program">“Metaline as First Line”</a>), <span class="cv_-_computer_voice">classpath</span> statements appear after the metaline.</div>
+      <div class="B_-_Body"><a name="2209375">The simple version of the </a><span class="cv_-_computer_voice">classpath</span> statement is simply a relative path in quote signs, for example:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2209376">classpath "src"</a></div>
+      <div class="B_-_Body"><a name="2209377">The first character of the path is important to determine the type of path:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2209571">If the path starts with the forward slash (</a><span class="cv_-_computer_voice">"/")</span> character, Gosu assumes it is an <span class="e_-_emphasis">absolute path</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2209430">If the path starts with a character other than a forward slash (</a><span class="cv_-_computer_voice">"/"</span>) character, Gosu assumes it is a <span class="e_-_emphasis">relative path</span>. The path is relative to the folder in which the current program resides. This is the most common use. Use this feature to neatly encapsulate your program and its supporting classes together in one location.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2209379">You can include multiple paths in the same string literal using a comma character as a separator.</a></div>
+      <div class="B_-_Body"><a name="2209380">Typically you place Java classes, Gosu classes, or libraries in subdirectories of your main Gosu program. </a></div>
+      <div class="B_-_Body"><a name="2209381">For example, suppose you have a Gosu program at this location:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2209382">C:\gosu\myprograms\test1\test.gsp</a></div>
+      <div class="B_-_Body"><a name="2209383">Copy your class file for the class </a><span class="cv_-_computer_voice">mypackage.MyClass</span> to the location:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2209384">C:\gosu\myprograms\test1\src\mypackage\MyClass.class</a></div>
+      <div class="B_-_Body"><a name="2209385">Copy your library files to locations such as:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2209386">C:\gosu\myprograms\test1\lib\mylibrary.jar</a></div>
+      <div class="B_-_Body"><a name="2209387">For this example, add classpath values with the following statement:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2209388">classpath "src,lib"</a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2186163">If you use Gosu as an IDE plugin, the host IDE may offer additional UI for adding and configuring additional directories to the classpath.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2215982">Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)</a></h4>
+      <div class="B_-_Body"><a name="2215983">For advanced command line use, Gosu can import Maven GAV dependency configuration information over the network. GAV dependency configuration allows you to specify your own project’s dependencies, and recursively those dependencies can specify their dependencies. For example, this allows a Gosu program to be sent between collaborators without having to explicitly send a ZIP file with libraries. GAV is an acronym for GroupId ArtifactId Version, the basic three terms of a </a><span class="e_-_emphasis">build artifact identity</span>, also known as <span class="e_-_emphasis">coordinates</span>.</div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2215984">This syntax only works with command line Gosu. The Gosu plugin for IntelliJ IDEA ignores the syntax for Maven-style configuration classpath configuration. Although IntelliJ IDEA does not report syntax errors for this syntax, you still must download JAR files and configure the IDE to add the JAR as a dependency. For use with Gosu XML and SOAP APIs, see </a><a href="javascript:WWHClickedPopup('gosu', 'getting-started-gosu-opensource.04.4.html#1512731', '');" title="Using XML and SOAP Libraries with Gosu Community Release">“Using XML and SOAP Libraries with Gosu Community Release”</a></div>
+      <div class="B_-_Body"><a name="2215992">For more details on Maven coordinates, see:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2215993">https://en.wikipedia.org/wiki/Apache_Maven</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2215994">https://maven.apache.org/pom.html#Maven_Coordinates</a></PRE>
+      <div class="B_-_Body"><a name="2215995">Using Maven terminology, you will need to know the following repository information:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2215996">repository ID</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2215997">repository URL</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2215998">artifact coordinates</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="2215999">group ID </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="2216000">artifact ID </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="2216001">version number</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="2216002">Declaring One or More Maven Repositories</a></h6>
+      <div class="B_-_Body"><a name="2216003">Declare a Maven repository with a classpath directive with a </a><span class="cv_-_computer_voice">String</span> that starts with <span class="cv_-_computer_voice">"remote:"</span> using the following syntax</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2216004">classpath "remote:</a><span class="pc_-_parameter_in_code">STATUS</span>:<span class="pc_-_parameter_in_code">REPOT_ID</span>:<span class="pc_-_parameter_in_code">REPOSITORY_URL</span>"</PRE>
+      <div class="B_-_Body"><a name="2216005">In this syntax:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pst_-_parameter_in_code_snippets_table"><a name="2216006">STATUS</a></span> – The release status, must be the value <span class="cv_-_computer_voice">releases</span> or <span class="cv_-_computer_voice">snapshots</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pc_-_parameter_in_code"><a name="2216007">REPOT_ID</a></span> – The repot ID, the canonical identifier for this repot. Be consistent about your use of repository IDs. Sometimes organizations do Maven repository proxies for some repositories and not others, and operate based on repository IDs.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pc_-_parameter_in_code"><a name="2216008">REPOSITORY_URL</a></span> – The URL to the repository on the Internet or intranet. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2216009">For example, for official Gosu language releases, use these values:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pst_-_parameter_in_code_snippets_table"><a name="2216010">STATUS</a></span> = <span class="cv_-_computer_voice">releases</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pc_-_parameter_in_code"><a name="2216011">REPOT_ID</a></span> = <span class="cv_-_computer_voice">gosu-lang.org-releases</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pc_-_parameter_in_code"><a name="2216012">REPOSITORY_URL</a></span> = <span class="cv_-_computer_voice">http://gosu-lang.org/nexus/content/groups/releases/</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2216013">To use this repository in Gosu Community Release, specify this repository as follows:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2216014">classpath "remote:releases:gosu-lang.org-releases:http://gosu-lang.org/nexus/content/groups/releases"</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2216015">Importing Artifacts</a></h6>
+      <div class="B_-_Body"><a name="2216016">After you declare one or more Maven repositories, you can access any resources within any of the repositories by identifying the resource by group ID, artifact ID, and version number. The format of a Maven version number is </a><span class="pst_-_parameter_in_code_snippets_table">major</span>.<span class="pst_-_parameter_in_code_snippets_table">minor</span>.<span class="pst_-_parameter_in_code_snippets_table">[optional_incremental]</span>-<span class="pst_-_parameter_in_code_snippets_table">[optional_qualifier].</span> For example, version <span class="cv_-_computer_voice">5.6.7-beta1</span> or version <span class="cv_-_computer_voice">8.9</span>.</div>
+      <div class="B_-_Body"><a name="2216017">For example, suppose you want your Gosu code to access the following resource by its artifact coordinates:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2216018">group ID = </a><span class="cv_-_computer_voice">org.gosu-lang.gosu</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2216019">artifact ID = </a><span class="cv_-_computer_voice">gosu-xml</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2216020">version number = </a><span class="cv_-_computer_voice">0.10 </span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2216021">Import the resource by its artifact coordinates in a separate </a><span class="cv_-_computer_voice">classpath</span> statement with following syntax</div>
+      <PRE class="CL_-_Code_Last_Line"><a name="2216022">classpath "</a><span class="pc_-_parameter_in_code">GROUP_ID</span>:<span class="pc_-_parameter_in_code">ARTIFACT_ID</span>:<span class="pc_-_parameter_in_code">VERSION_NUMBER</span>"</PRE>
+      <div class="B_-_Body"><a name="2216023">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2216024">classpath "org.gosu-lang.gosu:gosu-xml:0.10"</a></PRE>
+      <div class="B_-_Body"><a name="2216025">To import the XML and SOAP libraries for use with Gosu Community Release for version </a><span class="cv_-_computer_voice">beta08</span>:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2216026">classpath "remote:releases:gosu-lang.org-releases:http://gosu-lang.org/nexus/content/groups/releases"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2216027">classpath "org.gosu-lang.gosu:gosu-xml:</a><span class="s_-_strong">0.10</span>"</PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2216028">classpath "org.gosu-lang.gosu:gosu-webservices:</a><span class="s_-_strong">0.10</span>"</PRE>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="2210550">You must change the version number as appropriate for your desired release. The text above may not correspond to the Gosu Community Release version number for your Gosu plugin or your command line tool version of Gosu. If you are using the Gosu plugin to edit Gosu programs that you will run from the command line use the same version of Gosu Community Release for both.</a></div>
+      <div class="B_-_Body"><a name="2216034">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

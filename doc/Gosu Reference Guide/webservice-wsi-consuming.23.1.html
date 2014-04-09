@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Calling WS-I Web Services from Gosu</title>
+    <link rel="StyleSheet" href="css/webservice-wsi-consuming.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;">Calling WS-I Web Services from Gosu</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h2 class="CT_-_Chapter_Title"><a name="2065452">Calling WS-I Web Services from Gosu</a></h2>
+      <div class="B_-_Body"><a name="2093359">Gosu code can import web services (SOAP APIs) from external systems and call these services as a SOAP client (an API consumer). The Gosu language handles all aspects of object serialization, object deserialization, basic authentication, and SOAP fault handling.</a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2093371">The XML and SOAP APIs are not built-in to the core release of Gosu Community Release. However, these APIs are available as separate downloads. See </a><a href="javascript:WWHClickedPopup('gosu', 'getting-started-gosu-opensource.04.4.html#1512731', '');" title="Using XML and SOAP Libraries with Gosu Community Release">“Using XML and SOAP Libraries with Gosu Community Release”</a></div>
+      <div class="zChapterTopics">This topic includes:<a name="2057751">&nbsp;</a></div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.1.html#2001852', '');" title="Calling WS-I Web Services from Gosu" name="2098392">Consuming WS-I Web Service Overview</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.2.html#2042841', '');" title="Adding WS-I Configuration Options" name="2098397">Adding WS-I Configuration Options</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.3.html#2054441', '');" title="One-Way Methods" name="2098402">One-Way Methods</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.4.html#2003179', '');" title="Asynchronous Methods" name="2098407">Asynchronous Methods</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.5.html#2015087', '');" title="MTOM Attachments" name="2098412">MTOM Attachments</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="H1NB_-_Heading_1_No_Break"><a name="2001852">Consuming WS-I Web Service Overview</a></h3>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2093386">The XML and SOAP APIs are not built-in to the core release of Gosu Community Release. However, these APIs are available as separate downloads. See </a><a href="javascript:WWHClickedPopup('gosu', 'getting-started-gosu-opensource.04.4.html#1512731', '');" title="Using XML and SOAP Libraries with Gosu Community Release">“Using XML and SOAP Libraries with Gosu Community Release”</a></div>
+      <div class="B_-_Body"><a name="2003415">Gosu supports calling WS-I compliant web services. WS-I is an open industry organization that promotes industry-wide best practices for web services interoperability among diverse systems. The organizations provides several different profiles and standards. The WS-I Basic Profile is the baseline for interoperable web services and more consistent, reliable, and testable APIs.</a></div>
+      <div class="B_-_Body"><a name="2043692">Gosu offers native WS-I web service client code with the following features:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2043693">Call web service methods with natural Gosu syntax for method calls</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2043697">Call web services optionally asynchronously. See </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.4.html#2003179', '');" title="Asynchronous Methods">“Asynchronous Methods”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2043698">Support one-way web service methods. See </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.3.html#2054441', '');" title="One-Way Methods">“One-Way Methods”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2043702">Separately encrypt requests and responses. See </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.2.html#2042841', '');" title="Adding WS-I Configuration Options">“Adding WS-I Configuration Options”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2043707">Process attachments that use the multi-step MTOM protocol. See </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.5.html#2015087', '');" title="MTOM Attachments">“MTOM Attachments”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2050670">Sign incoming responses with digital signatures. See </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.2.html#2052910', '');" title="Adding WS-I Configuration Options">“Implementing Advanced Web Service Security with WSS4J”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2003533">One of the big differences between WS-I and older styles of web services is how the client and server encodes API parameters and return results. </a></div>
+      <div class="B_-_Body"><a name="2051022">An older style of web services is called </a><span class="e_-_emphasis">Remote Procedure Call encoded</span> (RPCE) web services. The bulk of the incoming and outgoing data are encoded in a special way that does not conform to XSD files. Many older systems use RPCE web services, but there are major downsides with this approach. Most notably, the encoding is specific to remote procedure calls, so it is difficult to validate XML data in RPC encoded responses. It would be more convenient to use standard XML validators which rely on XSDs to define the structure of the main content.</div>
+      <div class="B_-_Body"><a name="2051119">When you use the WS-I standards, you can use the alternative encoding called Document Literal encoding (</a><span class="cv_-_computer_voice">document/literal</span>). The document-literal-encoded SOAP message contains a complete XML document for each method argument and return value. The schema for each of these documents is an industry-standard XSD file. The WSDL that describes how to talk to the published WS-I service includes a complete XSD describing the format of the embedded XML document. The outer message is very simple, and the inner XML document contains all of the complexity. Anything that an XSD can define becomes a valid payload or return value. </div>
+      <div class="B_-_Body"><a name="2051120">The WS-I standard supports a mode called RPC Literal (</a><span class="cv_-_computer_voice">RPC/literal</span>) instead of Document Literal. Despite the similarity in name, WS-I RPC Literal mode is not closely related to RPC encoding. Gosu supports this WS-I RPC Literal mode for Gosu web service client code. However, it does so by automatically and transparently converting any WSDL for RPC Literal mode into WSDL for Document Literal mode. The focus of the Gosu documentation for WS-I web services is the support for Document Literal encoding. </div>
+      <h4 class="H2_-_Heading_2"><a name="2064509">Loading WS-I WSDL Directly into the File System</a></h4>
+      <div class="B_-_Body"><a name="2056208">To consume an external web service, you must load the WSDL and XML schema files (XSDs) for the web service. You must fetch copies of WSDL files, as well as related WSDL and XSD files, from the web services server. Fetch the copies into an appropriate place in the Gosu class hierarchy on your local system. Place them in the directory that corresponds to the package in which you want new types to appear. For example, place the WSDL and XSD files next to the Gosu class files that call the web service, organized in package hierarchies just like class files. </a></div>
+      <div class="B_-_Body"><a name="2063759">The following sample Gosu code shows how to manually fetch web service WSDLs for test purposes or for command-line use from a web service server. </a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2050478">uses gw.xml.ws.*</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2050479">uses java.net.URL</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2050480">uses java.io.File</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2064053">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2064099">// -- set the web service endpoint URL for the web service WSDL --</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2064100">var </a><span class="s_-_strong">urlStr</span> = "http://www.aGreatWebService.com/GreatWebService?wsdl"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2064060">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2064113">// -- set the location in your file system for the web service WSDL --</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2050481">var </a><span class="s_-_strong">loc</span> = "/wsi/remote/GreatWebService"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2063954">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2063961">// -- load the web service WSDL into Gosu --</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><span class="s_-_strong"><a name="2050483">Wsdl2Gosu.fetch</a></span>(new URL(<span class="s_-_strong">urlStr</span>), new File(<span class="s_-_strong">loc</span>)) </PRE>
+      <div class="B_-_Body"><a name="2063919">The first long string (</a><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt">urlStr)</span> is the URL to the web service WSDL. The second long string (<span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt">loc)</span> is the path on your file system where the fetched WSDL is stored. You can run your version of the preceding sample Gosu code in the Gosu Tester. </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2050521">Security and Authentication</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2050509">The WS-I basic profile requires support for some types of security standards for web services, such as encryption and digital signatures (cryptographically signed messages). See </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.2.html#2042841', '');" title="Adding WS-I Configuration Options">“Adding WS-I Configuration Options”</a>.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2050532">Types of WS-I Client Connections</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2048783">From Gosu, there are three types of WS-I web service client connections:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2048817">Standard round trip methods (synchronous request and response)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2048829">Asynchronous round trip methods (send the request and immediately return to the caller, and check later to see if the request finished). See </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.4.html#2003179', '');" title="Asynchronous Methods">“Asynchronous Methods”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2048859">One-way methods, which indicate a method defined to have no SOAP response at all. See </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.3.html#2054441', '');" title="One-Way Methods">“One-Way Methods”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2013784">How Does Gosu Process WSDL?</a></h4>
+      <div class="B_-_Body"><a name="2048574">Suppose you add a WSDL file directly to your class hierarchy called </a><span class="cv_-_computer_voice">MyService.wsdl</span> in the package <span class="cv_-_computer_voice">example.pl.gs.wsic</span>. Gosu creates all the types for your web service in the namespace:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2048575">example.pl.gs.wsic.myservice.*</a></div>
+      <div class="B_-_Body"><a name="2047367">The name of </a><span class="cv_-_computer_voice">MyService</span> becomes lowercase <span class="cv_-_computer_voice">myservice</span> in the package hierarchy for the XML objects because the Gosu convention for package names is lowercase. There are other name transformations as Gosu imports types from XSDs. For details, see <a href="javascript:WWHClickedPopup('gosu', 'xml.22.08.html#1650973', '');" title="XSD-based Properties and Types">“Normalization of Gosu Generated XSD-based Names”</a>.</div>
+      <div class="B_-_Body"><a name="2045713">The structure of a WSDL comprises the following:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2045780">One or more services</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2045781">For each service, one or more ports </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="2056988">A port represents a protocol or other context that might change how the WSDL defines that service. For example, methods might be defined differently for different versions of SOAP, or an additional method might be added for some ports. WSDL might define one port for SOAP 1.1 clients, one port for SOAP 1.2 clients, one port for HTTP non-SOAP access, and so on. See discussion later in this topic for what happens if multiple ports exist in the WSDL.</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2045754">For each port, one or more methods</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="2057021">A method, also called an operation or action, performs a task and optionally returns a result. The WSDL includes XML schemas (XSDs), or it imports other WSDL or XSD files. Their purposes are to describe the data for each method argument type and each method return type.</a></div>
+      <div class="B_-_Body"><a name="2045890">Suppose the WSDL looks like the following:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2003444">&lt;wsdl&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2003445">  &lt;types&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2003446">    &lt;schema&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2003447">      &lt;import schemaLocation="yourschema.xsd"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2013751">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- now define various operations (API methods) in the WSDL ... --&gt;</a></PRE>
+      <div class="B_-_Body"><a name="2014118">The details of the web service APIs are omitted in this example WSDL. Assume the web service contains exactly one service called </a><span class="cv_-_computer_voice">SayHello</span>, and that service contains one method called <span class="cv_-_computer_voice">helloWorld</span>. Let us assume for this first example that the method takes no arguments, returns no value, and is published with no authentication or security requirements.</div>
+      <div class="B_-_Body"><a name="2014119">In Gosu, you can call the remote service represented by the WSDL using code such as:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014120">// get a reference to the service in the namespace of the </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014121">var service = new </a>example.pl.gs.wsic.myservice.SayHello()</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014122">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014126">// call a method on the service</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014127">service.helloWorld()</a></PRE>
+      <div class="B_-_Body"><a name="2013759">Of course, real APIs need to transfer data also. In our example WSDL, notice that the WSDL refers a secondary schema called </a><span class="cv_-_computer_voice">yourschema.xsd</span>.</div>
+      <div class="B_-_Body"><a name="2071808">Add any additional XSD into the </a><span class="pst_-_parameter_in_code_snippets_table">web_service_name</span><span class="cv_-_computer_voice">.wsdl.resources</span> subdirectory.</div>
+      <div class="B_-_Body"><a name="2014053">Let us suppose the contents of your </a><span class="cv_-_computer_voice">yourschema.xsd</span> file looks like the following:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2013760">&lt;schema&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2013761">  &lt;element name="Root" type="xsd:int"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2013762">&lt;/schema&gt;</a></PRE>
+      <div class="B_-_Body"><a name="2024297">Note that the element name is </a><span class="cv_-_computer_voice">"root"</span> and it contains a simple type (<span class="cv_-_computer_voice">int</span>). This XSD represents the format of an element for this web service. The web service could declare a <span class="cv_-_computer_voice">&lt;root&gt;</span> element as a method argument or return type.</div>
+      <div class="B_-_Body"><a name="2013753">Now let us suppose there is another method in the </a><span class="cv_-_computer_voice">SayHello</span> service called <span class="cv_-_computer_voice">doAction</span> and this method takes one argument that is a <span class="cv_-_computer_voice">&lt;root&gt;</span> element.</div>
+      <div class="B_-_Body"><a name="2003454">In Gosu, you can call the remote service represented by the WSDL using code similar to the following:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014438">// get a reference to the service</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014439">var service = new ws.myservice.SayHello()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014440">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2043268">// create an XML document from the WSDL using the Gosu XML API</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2043269">var x = new ws.myservice.Root()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2043270">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2013131">// call a method that the web service defines</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2013124">var ret = service.doAction( x )</a></PRE>
+      <div class="B_-_Body"><a name="2003460">The package names are different if you place your WSDL file in a different part of the package hierarchy.</a></div>
+      <div class="B_-_Body"><a name="2047745">For each web service API call, Gosu first evaluates the method parameters. Internally, Gosu serializes the root </a><span class="cv_-_computer_voice">XmlElement</span> instance and its child elements into XML raw data using the associated XSD data from the WSDL. Next, Gosu sends the resulting XML document to the web service. In the SOAP response, the main data is an XML document, whose schema is contained in (or referenced by) the WSDL.</div>
+      <h4 class="H2_-_Heading_2"><a name="2047933">Learning Gosu XML APIs</a></h4>
+      <div class="B_-_Body"><a name="2047934">All WS-I method argument types and return types are defined from schemas (the XSD embedded in the WSDL). From Gosu, all these objects are instances of subclasses of </a><span class="cv_-_computer_voice">XmlElement</span>, with the specific subclass defined by the schemas in the WSDL. From Gosu, working with WS-I web service data requires that you understand Gosu XML APIs. </div>
+      <div class="B_-_Body"><a name="2047950">In many cases, Gosu hides much of the complexity of XML so you do not need to worry about it. For example, for XSD-types, in Gosu you do not have to directly manipulate XML as bytes or text. Gosu handles common types like number, date, or Base64 binary data. You can directly get or set values (such as a </a><span class="cv_-_computer_voice">Date</span> object rather than a serialized <span class="cv_-_computer_voice">xsd:date</span> object). The <span class="cv_-_computer_voice">XmlElement</span> class, which represents an XML element hide much of the complexity.</div>
+      <div class="B_-_Body"><a name="2048704">Other notable tips to working with XML in Gosu:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2047899">When using a schema (an XSD, or a WSDL that references an XSD), Gosu exposes shortcuts for referring to child elements using the name of the element. For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'xml.22.08.html#1539306', '');" title="XSD-based Properties and Types">“XSD-based Properties and Types”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2043857">When setting properties in an XML document, Gosu creates intermediate XML element nodes in the graph automatically. Use this feature to significantly improve the readability of your XML-related Gosu code. For details, see </a><a href="javascript:WWHClickedPopup('gosu', 'xml.22.12.html#1540977', '');" title="Automatic Creation of Intermediary Elements">“Automatic Creation of Intermediary Elements”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2043823">For properties that represent child elements that can appear more than once, Gosu exposes that property as a list. For list-based types like this, there is a special shortcut to be aware of. If you assign to the list index equal to the size of the list, then Gosu treats the index assignment as an insertion. This is also true if the size of the list is zero: use the </a><span class="cv_-_computer_voice">[0]</span> array/list index notation and set the property. This inserts the value into the list, which is equivalent to adding an element to the list. However, you do not have to worry about whether the list exists yet. If you are creating XML objects in Gosu, by default the lists do not yet exist. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="2048741">In other words, use the syntax:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2048751">element.PropertyName[0] = childElement</a></div>
+      <div class="LP_-_List_Para"><a name="2048759">If the list does&nbsp;not&nbsp;exist yet for a list property at all, Gosu creates the list upon the first insertion. In other words, suppose an element contains child elements that represent an address and the child element has the name </a><span class="cv_-_computer_voice">Address</span>. If the XSD declares the element could exist more than once, the <span class="cv_-_computer_voice">element.Address</span> property is a list of addresses. The following code creates a new <span class="cv_-_computer_voice">Address</span>:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2048035">element.Address[0] = new my.package.xsdname.elements.Address()</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2048072">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.08.html#1673851', '');" title="XSD-based Properties and Types" name="2070966">“Automatic Insertion into Lists”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.08.html#1539306', '');" title="XSD-based Properties and Types" name="2048082">“XSD-based Properties and Types”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.01.html#1470967', '');" title="Gosu and XML" name="2048096">“Gosu and XML” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.01.html#1470967', '');" title="Gosu and XML">Gosu Reference Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2043632">What Gosu Creates from Your WSDL</a></h4>
+      <div class="B_-_Body"><a name="2043633">Within the namespace of the package of the WSDL, Gosu creates some new types.</a></div>
+      <div class="B_-_Body"><a name="2013538">For each service in the web service, Gosu creates a service by name. For example, if the external service has a service called </a><span class="cv_-_computer_voice">GeocodeService</span> and the WSDL is in the package <span class="cv_-_computer_voice">examples.gosu.wsi</span>, then the service has the fully-qualified type <span class="cv_-_computer_voice">examples.gosu.wsi.GeocodeService</span>. Create a new instance of this type, and you then you can call methods on it for each method.</div>
+      <div class="B_-_Body"><a name="2013532">For each operation in the web service, generally speaking Gosu creates two local methods:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2013379">One method with the method name in its natural form, for example suppose a method is called </a><span class="cv_-_computer_voice">doAction</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2013391">One method with the method name with the </a><span class="cv_-_computer_voice">async_</span> prefix, for example <span class="cv_-_computer_voice">async_doAction</span>. This version of the method handles asynchronous API calls. For details, see <a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.4.html#2003179', '');" title="Asynchronous Methods">“Asynchronous Methods”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2047863">Special Behavior For Multiple Ports</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2047864">Gosu automatically processes ports from the WSDL identified as either SOAP 1.1 or SOAP 1.2. If both are available for any service, Gosu ignores the SOAP 1.1 ports. In some cases, the WSDL might define more than one available port (such as two SOAP 1.2 ports with different names). </a></div>
+      <div class="B_-_Body"><a name="2047867">For example, suppose you add a WSDL file to your class hierarchy called </a><span class="cv_-_computer_voice">MyService.wsdl</span> in the package <span class="cv_-_computer_voice">example.pl.gs.wsic</span>. Gosu chooses a default port to use and creates types for the web service at the following path:</div>
+      <div class="CS_-_Code_Single_Line"><span class="pc_-_parameter_in_code"><a name="2055011">ROOT_PACKAGE</a></span>.<span class="pc_-_parameter_in_code">WSDL_NAME_NORMALIZED</span>.<span class="pc_-_parameter_in_code">NORMALIZED_SERVICE_NAME</span></div>
+      <div class="B_-_Body"><a name="2055058">The </a><span class="pc_-_parameter_in_code">NORMALIZED_SERVICE_NAME</span><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt"> </span>name of the package is the name of the service as defined by the WSDL, with capitalization and conflict resolution as necessary. For example, if there are two services in the WSDL named <span class="cv_-_computer_voice">Report</span> and <span class="cv_-_computer_voice">Echo</span>, then the API types are in the location</div>
+      <div class="CS_-_Code_Single_Line"><a name="2055066">example.pl.gs.wsic.myservice.Report</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2055078">example.pl.gs.wsic.myservice.Echo</a></div>
+      <div class="B_-_Body"><a name="2054975">Gosu chooses a default port for each service. If there is a SOAP 1.2 version, Gosu prefers that version.</a></div>
+      <div class="B_-_Body"><a name="2055103">Additionally, Gosu provides the ability to explicitly choose a port. For example, if there is a SOAP 1.1 port and a SOAP 1.2 port, you could explicitly reference one of those choices. Gosu creates all the types for your web service ports within the </a><span class="cv_-_computer_voice">ports</span> subpackage, with types based on the name of each port in the WSDL:</div>
+      <div class="CS_-_Code_Single_Line"><span class="pc_-_parameter_in_code"><a name="2054959">ROOT_PACKAGE</a></span>.<span class="pc_-_parameter_in_code">WSDL_NAME_NORMALIZED</span>.ports.<span class="pc_-_parameter_in_code">SERVICE_AND_PORT_NAME</span></div>
+      <div class="B_-_Body"><a name="2047870">The </a><span class="pc_-_parameter_in_code">SERVICE_AND_PORT_NAME</span> is the service name, followed by an underscore, followed by the port name. </div>
+      <div class="B_-_Body"><a name="2055159">For example, suppose the ports are called </a><span class="cv_-_computer_voice">p1</span> and <span class="cv_-_computer_voice">p2</span> and the service is called <span class="cv_-_computer_voice">Report</span>. Gosu creates types within the following packages:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2054986">example.pl.gs.wsic.myservice.ports.Report_p1</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2047871">example.pl.gs.wsic.myservice.ports.Report_p2</a></div>
+      <div class="B_-_Body"><a name="2055180">Additionally, if the port name happens to begin with the service name, Gosu removes the duplicate service name before constructing the Gosu type. For example, if the ports are called </a><span class="cv_-_computer_voice">ReportP1</span>, and <span class="cv_-_computer_voice">helloP2</span>, Gosu creates types within the following packages:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2055206">example.pl.gs.wsic.myservice.ports.Report_P1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// NOTE: it is not Report_ReportP1</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2055207">example.pl.gs.wsic.myservice.ports.Report_helloP2&nbsp;&nbsp;// not a duplicate, so Gosu does not remove "Hello"</a></div>
+      <div class="B_-_Body"><a name="2055208">Each one of those hierarchies would include method names for that port for that service.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2047856">A Real Example: Weather</a></h4>
+      <div class="B_-_Body"><a name="2047857">There is a public free web service that provides the weather. You can get the WSDL for this web service at the URL </a><span class="cv_-_computer_voice">http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl</span>. This web service does not require authentication or encryption.</div>
+      <div class="B_-_Body"><a name="2042835">The following Gosu code gets the weather in San Francisco:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042836">var ws = new ws.weather.Weather()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042837">var r = ws.GetCityWeatherByZIP(94114)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2042838">print( r.Description )</a></PRE>
+      <div class="B_-_Body"><a name="2042839">Depending on the weather, your result might be something like:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2042840">Mostly Sunny</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2069072">Request XML Complexity Affects Appearance of Method Arguments</a></h4>
+      <div class="B_-_Body"><a name="2069125">A WS-I operation defines a request element. If the request element is simply a sequence of elements, Gosu converts these elements into multiple method arguments for the operation. For example, if the request XML has a sequence of five elements, Gosu exposes this operation as a method with five arguments.</a></div>
+      <div class="B_-_Body"><a name="2069386">If the request XML definition uses complex XML features into the operation definition itself, Gosu does not extract individual arguments. Instead Gosu treats the entire request XML as a single XML element based on an XSD-based type. </a></div>
+      <div class="B_-_Body"><a name="2070826">For example, if the WSDL defines the operation request XML with restrictions or extensions, Gosu exposes that operation in Gosu as a method with a single argument. That argument contains one XML element with a type defined from the XSD.</a></div>
+      <div class="B_-_Body"><a name="2070007">Use the regular Gosu XML APIs to navigate that XML document from the XSD types in the WSDL. See </a><a href="javascript:WWHClickedPopup('gosu', 'xml.22.03.html#1515855', '');" title="Introduction to the XML Element in Gosu">“Introduction to the XML Element in Gosu” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.03.html#1515855', '');" title="Introduction to the XML Element in Gosu">Gosu Reference Guide</a></span>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

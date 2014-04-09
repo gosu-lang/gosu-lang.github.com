@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Array Types</title>
+    <link rel="StyleSheet" href="css/datatypes.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="datatypes.08.1.html#1441394">Types</a> : Array Types</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1441394">Array Types</a></h3>
+      <div class="B_-_Body"><a name="1491390">An </a><span class="e_-_emphasis">array</span> is a collection of data values, with each element of the array associated with a number or <span class="e_-_emphasis">index</span>. In typical Gosu code, simply use angle brackets after the type name, such as <span class="cv_-_computer_voice">String[]</span> to represent an array of <span class="cv_-_computer_voice">String</span> objects. Use a zero-based index number to access an array member.</div>
+      <div class="B_-_Body"><a name="1441401">If you create an array, you must explicitly define the size of the array or implicitly define the size by simultaneously defining the array elements. </a></div>
+      <div class="B_-_Body"><a name="1535514">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1441402">// arrays of strings, all examples contain exactly four members</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441403">var s1 = new String[4]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441404">var s2 = new String[ ] {"This", "is", "a", "test"}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441405">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441406">// arrays of integers, all examples contain exactly three members</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441407">var int1 = new int[3]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441408">var int2 = new int[] {1,2,3} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441409">var int3 : int[] = {1,2,3} </a></PRE>
+      <div class="B_-_Body"><a name="1441410">To access the elements of an array, use the following syntax.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1441411">Syntax</a></h6>
+      <PRE class="CF_-_Code_First_Line"><span class="pc_-_parameter_in_code"><a name="1441412">EXPRESSION</a></span>[<span class="pc_-_parameter_in_code">INDEX_VALUE</span>]</PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1441414">Examples</a></h6>
+      <div class="T_-_Table"><a name="1441428">&nbsp;</a></div>
+      <table class="withoutHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1441417">Expression</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1441419">Result</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1441421">Claim.Exposures[0] </a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1441423">An exposure </a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1441425">gw.api.util.StringUtil.splitWhitespace( "a b c d e" )[2]</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1441427">"c" </a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1441432">You can iterate through the members of an array using a </a><span class="cv_-_computer_voice">for</span> loop. See <a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1512833', '');" title="Gosu Conditional Execution and Looping">“Iteration in For Statements”</a> for details.</div>
+      <div class="B_-_Body"><a name="1535729">You can create a new array with a default value for each array member using an included Gosu enhancement on the Arrays object. Call the </a><span class="cv_-_computer_voice">makeArray</span> method and pass a default value and the size of the array. Gosu uses the type of the object to type the array. For example, create an array of 10 items initialized to the Boolean value <span class="cv_-_computer_voice">false</span> with the following code:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1441436">var x = Arrays.makeArray( false, 10 ) </a></div>
+      <h4 class="H2_-_Heading_2"><a name="1535845">List Access Using Array Index Notation</a></h4>
+      <div class="B_-_Body"><a name="1535846">In Gosu, you can Java language list members using standard array index notation. For much more information about Java lists and other collections in Gosu, see </a><a href="javascript:WWHClickedPopup('gosu', 'collections.21.1.html#1448766', '');" title="Collections">“Collections”</a>. Also see <a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1456475', '');" title="Gosu Conditional Execution and Looping">“For Statements”</a> for examples of lists with array-style access syntax.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1535853">Example</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1535856">var list = new java.util.ArrayList()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535857">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535858">//Populate the list with values.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535859">list.add("zero")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535860">list.add("one")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535861">list.add("two")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535862">list.add("three")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535863">list.add("four")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535864">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535865">//Assign a value to a member.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535866">list[3] = "threeUPDATED"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535867">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535868">//Automatically iterate through list members and print.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535869">for ( member in list ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535870">&nbsp;&nbsp;print(member)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535871">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535872">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535873">//Iterate through list members using array notation and print.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535874">for (member in list index i) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535875">&nbsp;&nbsp;print(list[i])</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535876">}</a></PRE>
+      <div class="B_-_Body"><a name="1535877">The output for this code is:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535878">zero</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535879">one</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535880">two</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1535881">threeUPDATED</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1535882">four</a></PRE>
+      <div class="B_-_Body"><a name="1535883">In many situations, it is best to use collections such as </a><span class="cv_-_computer_voice">java.util.List</span> or <span class="cv_-_computer_voice">java.util.Map</span> rather than to use arrays. The <span class="cv_-_computer_voice">List</span> and <span class="cv_-_computer_voice">Map</span> classes inherit from the Java language although Gosu adds additional enhancement methods. For Gosu APIs related to using lists, maps, and other collections, see <a href="javascript:WWHClickedPopup('gosu', 'collections.21.1.html#1448766', '');" title="Collections">“Collections”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="1535889">Array Expansion</a></h4>
+      <div class="B_-_Body"><a name="1535892">Gosu supports an operator that expands arrays and lists: the </a><span class="cv_-_computer_voice">*.</span> operator. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'collections.21.4.html#1466311', '');" title="List and Array Expansion (*.)">“List and Array Expansion (*.)”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="1535394">Associative Array Syntax for Property Access</a></h4>
+      <div class="B_-_Body"><a name="1536263">For most types, you can use </a><span class="e_-_emphasis">associative array syntax</span> to access properties of the object. Instead of using a numeric index surrounded by brackets, use a <span class="cv_-_computer_voice">String</span> value containing the property name. This syntax is useful if the property name is unknown at compile time, but can be determined at run time with user-entered data. </div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="1539561">Using associative array syntax, Gosu cannot check at compile time that you correctly typed the property name for that type. Be careful with this feature to prevent unexpected run time errors. Use typesafe property access instead where possible.</a></div>
+      <div class="B_-_Body"><a name="1537254">The following simple example shows associative array syntax:</a></div>
+      <PRE class="CL_-_Code_Last_Line"><a name="1536264">var str = "PostalCode"&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1536265">var pc = myContact[str]</a></PRE>
+      <div class="B_-_Body"><a name="1535430">Associative arrays are similar to using the Java map class </a><span class="cv_-_computer_voice">java.util.Map</span>, which Gosu supports, in that you can use a non-numeric key to a value. For more information about maps and other collections, see <a href="javascript:WWHClickedPopup('gosu', 'collections.21.1.html#1448766', '');" title="Collections">“Collections”</a>.</div>
+      <div class="B_-_Body"><a name="1539498">The associative array syntax for property access works with most classes, including the </a><span class="cv_-_computer_voice">Map</span> class and any object type that does not naturally take a numeric array-style index. The <span class="cv_-_computer_voice">java.lang.String</span> class does not work with the associative array syntax. A <span class="cv_-_computer_voice">String</span> object behaves as an ordered list of characters in Gosu, so it requires a numeric array-style index.</div>
+      <div class="B_-_Body"><a name="1537237">Accessing property information at run time is part of a programming feature called </a><span class="e_-_emphasis">reflection</span>. There are other APIs for reflection. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.4.html#1455649', '');" title="Using Reflection">“Using Reflection”</a>.</div>
+      <div class="B_-_Body"><a name="1539173">If the property name does not exist at run time, Gosu throws an exception. For example, suppose that you have an instance of a general type, say </a><span class="cv_-_computer_voice">Object</span>, as a function argument:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1539174">function getDisplayName( obj : Object) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1539175">&nbsp;&nbsp;var name : String</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1539176">&nbsp;&nbsp;name = obj.DisplayName &nbsp;&nbsp;&nbsp;&nbsp;// Compile error - no DisplayName property on Object</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1539177">&nbsp;&nbsp;name = obj["DisplayName"]&nbsp;&nbsp;// Ok, so long as there is a DisplayName property at runtime</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1539178">}</a></PRE>
+      <div class="B_-_Body"><a name="1539181">In this example, if the function caller passes an object parameter that does not have a </a><span class="cv_-_computer_voice">DisplayName</span> property, at run time Gosu throws an exception.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1539182">Examples</a></h6>
+      <div class="T_-_Table"><a name="1539202">&nbsp;</a></div>
+      <table class="withoutHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1539185">Expression</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1539187">Result</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1539189">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1539191">person["StreetAddress"] </a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1539193">"123 Main Street"</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1539195">example of a single associative array access</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1539197">person["Address"]["City"]</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1539199">"Birmingham" </a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1539201">example of a double associative array access. This is equivalent to the code </a><span class="cvt_-_computer_voice_table">person.Address.City</span>.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1539543">You can use associative array syntax to set properties and values as well as get them. For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1539544">var address : Address</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1539545">var city = address["City"]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// get a property</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1539546">address["City"] = "San Mateo" &nbsp;// set a property</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1537144">Legacy Array Type</a></h4>
+      <div class="B_-_Body"><a name="1535908">For compatibility with prior Gosu versions, there is type called </a><span class="cv_-_computer_voice">Array</span>. Do not use that for new code. Instead use the <span class="p_-_parameter">TYPE_NAME</span><span class="cv_-_computer_voice">[]</span> syntax with a specific type name.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using Template Files</title>
+    <link rel="StyleSheet" href="css/templates.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="templates.25.1.html#1454571">Gosu Templates</a> : Using Template Files</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1454571">Using Template Files</a></h3>
+      <div class="B_-_Body"><a name="1464451">Instead of defining your templates in inline text, you can store a Gosu template as a separate file. Template files support all the features that inline templates support, as described in </a><a href="javascript:WWHClickedPopup('gosu', 'templates.25.2.html#1464501', '');" title="Template Overview">“Template Overview”</a>. In addition, with template files you get additional advantages and features:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1461720">Separate your template definition from code that uses the template.</a></span> For example, define a template that generates a report or a notification email. You can then call this template from many places but define the template only once. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1461721">Encapsulate your template definition for better change control. </a></span>By defining the template in a separate file, your teams can edit and track template changes over time separate from code that uses the template.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1461680">Run Gosu statements (and return no value) using scriptlet syntax.</a></span> You can define one or more Gosu statements as a <span class="e_-_emphasis">statement list</span> embedded in the template. Contrast this with the template expression syntax described in <a href="javascript:WWHClickedPopup('gosu', 'templates.25.2.html#1464501', '');" title="Template Overview">“Template Overview”</a>, which require Gosu <span class="e_-_emphasis">expressions</span> rather than Gosu <span class="e_-_emphasis">statements</span>. The result of scriptlet tags generate no output. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'templates.25.4.html#1461443', '');" title="Using Template Files">“Template Scriptlet Tags”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1461592">Define template parameters.</a></span> Template files can define parameters that you pass to the template at run time. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'templates.25.4.html#1463866', '');" title="Using Template Files">“Template Parameters”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1464597">Extend a template from a class to simplify static method calls.</a></span> If you call static methods on one main class in your template, you can simplify your template code using the <span class="cv_-_computer_voice">extends</span> feature. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'templates.25.4.html#1455745', '');" title="Using Template Files">“Extending a Template From a Class”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="1464601">Creating and Running a Template File</a></h4>
+      <div class="B_-_Body"><a name="1464602">Gosu template files have the extension </a><span class="cv_-_computer_voice">.gst</span>. Create template files within the package hierarchy in the file system just as you create Gosu classes. Choose the package hierarchy carefully because you use this package name to access and run your template.</div>
+      <div class="B_-_Body"><a name="1455608">In your template file, include the template body with no surrounding quote marks. The following is a simple template:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1455609">One plus one equals ${ 1 + 1 }.</a></div>
+      <div class="B_-_Body"><a name="1466568">To create a new template, add a template file (ending with </a><span class="cv_-_computer_voice">.gst</span>) in the class hierarchy. Add it within the directory whose path matches the package in which you want this template to appear. For example, your Gosu program can have a </div>
+      <div class="B_-_Body"><a name="1461854">The template is a first-class object in the Gosu type system within its package namespace. To run a template, get a reference to your template and call the </a><span class="cv_-_computer_voice">renderToString</span> method of the template. </div>
+      <div class="B_-_Body"><a name="1461859">For example, suppose you create a template file </a><span class="cv_-_computer_voice">NotifyAdminTemplate.gst</span> within the package <span class="cv_-_computer_voice">mycompany.templates</span>. Your fully-qualified name of the template is <span class="cv_-_computer_voice">mycompany.templates.NotifyAdminTemplate</span>. </div>
+      <div class="B_-_Body"><a name="1464581">Use the following code to render (run) your template:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1464667">var x = mycompany.templates.NotifyAdminTemplate.renderToString()</a></div>
+      <div class="B_-_Body"><a name="1464668">The variable </a><span class="cv_-_computer_voice">x</span> contains the <span class="cv_-_computer_voice">String</span> output of your template.</div>
+      <div class="B_-_Body"><a name="1464669">If you want to pass template parameters to your template, add additional parameters as arguments to the </a><span class="cv_-_computer_voice">renderToString</span> method. See <a href="javascript:WWHClickedPopup('gosu', 'templates.25.4.html#1463866', '');" title="Using Template Files">“Template Parameters”</a> for details.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1456283">Output to a Writer</a></h6>
+      <div class="B_-_Body"><a name="1461869">The </a><span class="cv_-_computer_voice">renderToString</span> method outputs the template results to a <span class="cv_-_computer_voice">String</span> value. Optionally, you can render the template directly to a Java writer object. Your writer must be an instance of <span class="cv_-_computer_voice">java.io.Writer</span>. To output to the writer, get a reference to the template and call its <span class="cv_-_computer_voice">render</span> method, passing the writer as an argument to the method. </div>
+      <div class="B_-_Body"><a name="1461926">For example, suppose you create a template file </a><span class="cv_-_computer_voice">NotifyAdminTemplate.gst</span> within the package <span class="cv_-_computer_voice">mycompany.templates</span>. If your variable <span class="cv_-_computer_voice">myWriter</span> contains an instance of <span class="cv_-_computer_voice">java.io.Writer</span>, the following Gosu statement renders the template to the writer:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1455905">mycompany.templates.NotifyAdminTemplate.render(</a><span class="cv_-_computer_voice">myWriter</span>)</div>
+      <div class="B_-_Body"><a name="1456257">If you use template parameters in your template, add your additional parameters after the writer argument. See </a><a href="javascript:WWHClickedPopup('gosu', 'templates.25.4.html#1463866', '');" title="Using Template Files">“Template Parameters”</a> for details.</div>
+      <h4 class="H2_-_Heading_2"><a name="1461443">Template Scriptlet Tags</a></h4>
+      <div class="B_-_Body"><a name="1461487">Text enclosed with the text </a><span class="cv_-_computer_voice">&lt;%</span> and <span class="cv_-_computer_voice">%&gt;</span> evaluate at run time in the order the parser encounters the text but generates nothing as output based on the result. These are called <span class="e_-_emphasis">scriptlet tags</span>. It is important to note that this type of tag has no equals sign in the opening tag. All plain text between scriptlet tags generate to the output within the scope and the logic of the scriptlet code.</div>
+      <div class="B_-_Body"><a name="1461445">The following simple template uses a scriptlet tag to run code to assign a variable and uses the result later:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1461446">&lt;% var MyCalc = 1 + 2 %&gt;One plus two is ${ MyCalc }</a></div>
+      <div class="B_-_Body"><a name="1461448">This prints the following:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1461521">One plus two is 3</a></div>
+      <div class="B_-_Body"><a name="1461522">It is important to note that the result of the scriptlet tag at the beginning of the template does </a><span class="s_-_strong">not</span> generate anything to the output. The value <span class="cv_-_computer_voice">3</span> exports to the result because later expression surrounded with the <span class="e_-_emphasis">expression</span> delimiters <span class="cv_-_computer_voice">${</span> and <span class="cv_-_computer_voice">}</span> instead of the scriptlet delimiters <span class="cv_-_computer_voice">&lt;%</span> and <span class="cv_-_computer_voice">%&gt;</span><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt">.</span></div>
+      <div class="B_-_Body"><a name="1461451">The scope of the Gosu continues </a><span class="s_-_strong">across</span> scriptlet tags. Use this feature to write advanced logic that uses Gosu code that you spread across multiple scriptlet tags. For example, the following template code outputs “x is 5” if the variable x has the value 5, otherwise outputs <span class="cv_-_computer_voice">"x is not 5"</span>:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1461452">&lt;% if (x == 5) { %&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1461453">x is 5</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1461454">&lt;% } else { %&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1461455">x is not 5</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1461456">&lt;% } %&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1461457">Notice that the </a><span class="cv_-_computer_voice">if</span> statement actually controls the flow of execution of later elements in the template. This feature allows you to control the export of static text in the template as well as template expressions.</div>
+      <div class="B_-_Body"><a name="1464719">Scriptlet tags are particularly useful when used with template parameters because you can define conditional logic as shown in the previous example. See </a><a href="javascript:WWHClickedPopup('gosu', 'templates.25.4.html#1463866', '');" title="Using Template Files">“Template Parameters”</a> for details.</div>
+      <div class="B_-_Body"><a name="1463736">Use this syntax to iterate across lists, arrays, and other iterable objects. You can combine this syntax with the expression syntax to generate output from the inner part of your loop. Remember that the scriptlet syntax does not itself support generating output text.</a></div>
+      <div class="B_-_Body"><a name="1463748">For example, suppose you set a variable called </a><span class="cv_-_computer_voice">MyList</span> that contains a <span class="cv_-_computer_voice">List</span> of objects with a <span class="cv_-_computer_voice">Name</span> property. The following template iterates across the list:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1463422">&lt;% for (var obj in MyList) { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1463497">&nbsp;&nbsp;var theName = obj.Name %&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1463498">&nbsp;&nbsp;Name: ${ theName }</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1463499">&lt;% } %&gt;	</a></PRE>
+      <div class="B_-_Body"><a name="1462390">This might generate output such as:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1462403">Name: John Smith</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1462413">Name: Wendy Wheathers</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1462420">Name: Alice Applegate</a></PRE>
+      <div class="B_-_Body"><a name="1463558">This example also shows a common design pattern for templates that need to combine complex logic in scriptlet syntax with generated text into the template within a loop:</a></div>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="1463559">Begin a template scriptlet (starting it with </a><span class="cv_-_computer_voice">&lt;%</span> ) to begin your loop.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1463560">Before ending the scriptlet, set up a variable with your data to export</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1463520">End the scriptlet (closing it with </a><span class="cv_-_computer_voice">%&gt;</span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1463616">Optionally, generate some static text</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1463623">Insert a template expression to export your variable, surrounding a Gosu expression with </a><span class="cv_-_computer_voice">${</span> and <span class="cv_-_computer_voice">}</span> tags.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1463860">Add another template scriptlet (with </a><span class="cv_-_computer_voice">&lt;%</span> and <span class="cv_-_computer_voice">%&gt;</span>) to contain code that closes your loop. Remember that scriptlets share scope across all scriptlets in that file, so you can reference other variables or close loops or other Gosu structural elements.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1464849">There is no supported API to generate template output from within a template scriptlet. Instead, design your template to combine template scriptlets and template expressions using the code pattern in this topic.</a></div>
+      <div class="B_-_Body"><a name="1464839">The scriptlet tags are available in template files, but not within </a><span class="cv_-_computer_voice">String</span> literals using template syntax.</div>
+      <h4 class="H2_-_Heading_2"><a name="1463866">Template Parameters</a></h4>
+      <div class="B_-_Body"><a name="1455615">You can pass parameters of any type to your self-contained Gosu template files. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1455737">To support parameters in a template</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="1455795">Create a template file as described earlier in this topic.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1455807">At the top of the template, create a parameter definition with the following syntax:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="1455818">&lt;%@ params(</a><span class="pc_-_parameter_in_code">ARGLIST</span>) %&gt;</div>
+      <div class="LP_-_List_Para"><a name="1455843">In this case, </a><span class="p_-_parameter">ARGLIST</span> is an argument list just as with a standard Gosu function. For example, the following argument list includes a <span class="cv_-_computer_voice">String</span> argument and a <span class="cv_-_computer_voice">boolean</span> argument:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1455861">&lt;%@ params(x : String, y : boolean) %&gt;</a></div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1456195">Later in the template, use template tags that use the values of those parameters. You can use both the template expression syntax (</a><span class="cv_-_computer_voice">${</span> and <span class="cv_-_computer_voice">}</span>) and template scriptlet syntax (<span class="cv_-_computer_voice">&lt;%</span> and <span class="cv_-_computer_voice">%&gt;</span>). Remember that the expression syntax always returns a result and generates additional text. In contrast, the scriptlet syntax only executes Gosu statements.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1456329">To run the template, add your additional parameters to the call to the </a><span class="cv_-_computer_voice">renderToString</span> method or after the writer parameter to the <span class="cv_-_computer_voice">render</span> methods.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1456423">For example, suppose you create a template file </a><span class="cv_-_computer_voice">NotifyAdminTemplate.gst</span> within the package <span class="cv_-_computer_voice">mycompany.templates</span>. Edit the file to contain the following contents:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1456471">&lt;%@ params(personName : String, contactHR: boolean) %&gt;</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1456460">The person ${ personName } must update their contact information in the company directory.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1456482">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1456489">&lt;% if (contactHR) { %&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1456496">Call the human resources department immediately.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465193">&lt;% } %&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1465194">In this example, the </a><span class="cv_-_computer_voice">if</span> statement (including its trailing curly brace) is within scriptlet tags. The <span class="cv_-_computer_voice">if</span> statement uses the parameter value at run time to conditionally run elements that appear later in the template. This template exports the warning to call the human resources department <span class="s_-_strong">only</span> if the <span class="cv_-_computer_voice">contactHR</span> parameter is <span class="cv_-_computer_voice">true</span>. Use if statements and other control statements to control the export of static text in the template as well as template expressions.</div>
+      <div class="B_-_Body"><a name="1456432">Run your template with the following code:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1456358">var x : String = mycompany.templates.NotifyAdminTemplate.renderToString("hello", true)</a></div>
+      <div class="B_-_Body"><a name="1456350">If you want to export to a character writer, use code like the following:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1465101">var x : String = mycompany.templates.NotifyAdminTemplate.render(myWriter, "hello", true)</a></div>
+      <div class="B_-_Body"><a name="1461794">You can use template parameters in template files, but not within </a><span class="cv_-_computer_voice">String</span> literals that use template syntax.</div>
+      <h4 class="H2_-_Heading_2"><a name="1455745">Extending a Template From a Class</a></h4>
+      <div class="B_-_Body"><a name="1456550">Gosu provides a special syntax to simplify calling static methods on a class of your choosing. The metaphor for this template shortcut is that your template can </a><span class="e_-_emphasis">extend</span> from a type that you define. Technically, templates are not instantiated as objects. However, your template can call <span class="s_-_strong">static</span> methods on the specified class without fully-qualifying the class. Static methods are methods defined directly on a class, rather than on instances of the class. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'classes.13.5.html#2445687', '');" title="Modifiers">“Modifiers”</a>.</div>
+      <div class="B_-_Body"><a name="1465044">To use this feature, at the top of the template file, add a line with the following syntax:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1456579">&lt;%@ extends </a><span class="pc_-_parameter_in_code">CLASSNAME</span> %&gt;</div>
+      <div class="B_-_Body"><span class="p_-_parameter"><a name="1455746">CLASSNAME</a></span> must be a fully-qualified class name. You cannot use a package name or hierarchy.</div>
+      <div class="B_-_Body"><a name="1456678">For example, suppose your template wants to clean up the email address with the </a><span class="cv_-_computer_voice">sanitizeEmailAddress</span> static method on the class <span class="cv_-_computer_voice">gw.api.email.EmailTemplate</span>. The following template takes one argument that is an email address:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1456679">&lt;%@ params(address : String) %&gt;</a></PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1455748">&lt;%@ extends gw.api.email.EmailTemplate %&gt;</a></PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1455725">Hello! The email address is ${sanitizeEmailAddress(address)}</a></PRE>
+      <div class="B_-_Body"><a name="1456992">Notice that the class name does </a><span class="s_-_strong">not</span> appear immediately before the call to the static method.</div>
+      <div class="B_-_Body"><a name="1462057">You can use the </a><span class="cv_-_computer_voice">extends</span> syntax in template files, but not within <span class="cv_-_computer_voice">String</span> literals that use template syntax.</div>
+      <h4 class="H2_-_Heading_2"><a name="1463274">Template Comments</a></h4>
+      <div class="B_-_Body"><a name="1463275">You can add comments within your template. Template comments do not affect template output.</a></div>
+      <div class="B_-_Body"><a name="1463276">The syntax of a template comments is the following:</a></div>
+      <div class="CS_-_Code_Single_Line"><span class="cv_-_computer_voice"><a name="1463277">&lt;%--</a></span> <span class="pc_-_parameter_in_code">your comment here</span> --%&gt; </div>
+      <div class="B_-_Body"><a name="1463278">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1463279">My name is &lt;%-- this is a comment --%&gt;John.</a></div>
+      <div class="B_-_Body"><a name="1463280">If you render this template file, it outputs:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1463281">My name is John.</a></div>
+      <div class="B_-_Body"><a name="1463282">You can use template comments in template files, but not within </a><span class="cv_-_computer_voice">String</span> literals that use template syntax.</div>
+      <h3 class="H1NB_-_Heading_1_No_Break"><a name="1465221">Template Export Formats</a></h3>
+      <div class="B_-_Body"><a name="1465222">Because HTML and XML are text-based formats, there is no fundamental difference between designing a template for HTML or XML export compared to a plain text file. The only difference is that the text file must conform to HTML and XML specifications.</a></div>
+      <div class="B_-_Body"><a name="1465223">HTML results must be a well-formed HTML, ensuring that all properties contain no characters that might invalidate the HTML specification, such as unescaped “</a><span class="cv_-_computer_voice">&lt;</span>” or “<span class="cv_-_computer_voice">&amp;</span>” characters. This is particularly relevant for especially user-entered text such as descriptions and notes.</div>
+      <div class="B_-_Body"><a name="1465225">Systems that process XML typically are </a><span class="s_-_strong">very strict</span> about syntax and well-formedness. Be careful not to generate text that might invalidate the XML or confuse the recipient. For instance, beware of unescaped “<span class="cv_-_computer_voice">&lt;</span>” or “<span class="cv_-_computer_voice">&amp;</span>” characters in a notes field. If possible, you could export data within an XML <span class="cv_-_computer_voice">&lt;CDATA&gt;</span> tag, which allows more types of characters and character strings without problems of unescaped characters.</div>
+      <div class="B_-_Body"><a name="1457167">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Basic Lists</title>
+    <link rel="StyleSheet" href="css/collections.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="collections.21.1.html#1451966">Collections</a> : Basic Lists</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1451966">Basic Lists</a></h3>
+      <div class="B_-_Body"><a name="1451988">Lists in Gosu inherit from the Java interface </a><span class="cv_-_computer_voice">java.util.List</span> and its common subclasses such <span class="cv_-_computer_voice">java.util.ArrayList</span>.</div>
+      <h4 class="H2_-_Heading_2"><a name="1451974">Creating a List</a></h4>
+      <div class="B_-_Body"><a name="1451975">To create a list with nothing it, specify the type of object it contains in brackets using generics&nbsp;notation, such as in this example using an </a><span class="cv_-_computer_voice">ArrayList</span> of <span class="cv_-_computer_voice">String</span> objects:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1452254">var myemptylist = new ArrayList&lt;String&gt;()</a></div>
+      <div class="B_-_Body"><a name="1452332">For more information about generics, see </a><a href="javascript:WWHClickedPopup('gosu', 'generics.20.1.html#1455314', '');" title="Gosu Generics">“Gosu Generics”</a>.</div>
+      <div class="B_-_Body"><a name="1452259">In many cases you might want to initialize (load) it with data. Gosu has special features that allow a natural syntax for initializing lists similar to initializing arrays.</a></div>
+      <div class="B_-_Body"><a name="1452285">For example, the following is an example simple array initializer:</a></div>
+      <PRE class="CL_-_Code_Last_Line"><a name="1451976">var s2 = new String[ ] {</a><span class="cvt_-_computer_voice_table">"</span>This<span class="cvt_-_computer_voice_table">"</span>, <span class="cvt_-_computer_voice_table">"</span>is<span class="cvt_-_computer_voice_table">"</span>, <span class="cvt_-_computer_voice_table">"</span>a<span class="cvt_-_computer_voice_table">"</span>, <span class="cvt_-_computer_voice_table">"</span>test.<span class="cvt_-_computer_voice_table">"</span>}</PRE>
+      <div class="B_-_Body"><a name="1451977">In comparison, the following is an example new </a><span class="cv_-_computer_voice">ArrayList</span>:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1451978">var strs = new ArrayList&lt;String&gt;(){"a", "ab", "abc"}</a></div>
+      <div class="B_-_Body"><a name="1451979">The previous line is effectively shorthand for the following code:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1451980">var strs = new ArrayList&lt;String&gt;()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1451981">strs.add("a")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1451982">strs.add("ab")</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1451983">strs.add("abc")</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1452009">Type Inference and List Initialization</a></h4>
+      <div class="B_-_Body"><a name="1467102">Because of Gosu’s intelligent type inference, you can use an even more concise initializer syntax for lists:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1467017">var s3 = {"a", "ab", "abc"}</a></div>
+      <div class="B_-_Body"><a name="1467138">The type of </a><span class="cv_-_computer_voice">s3</span> is <span class="cv_-_computer_voice">java.util.ArrayList&lt;String&gt;</span> (a list of String objects) because all list members have the type <span class="cv_-_computer_voice">String</span>.</div>
+      <div class="B_-_Body"><a name="1467152">Gosu infers the type of the </a><span class="cv_-_computer_voice">List</span> to be the least upper bound of the components of the list. In the simple case above, the type of the variable <span class="cv_-_computer_voice">x</span> at compile time is <span class="cv_-_computer_voice">List&lt;String&gt;</span>. If you pass different types of objects, Gosu finds the most specific type that includes all of the items in the list. </div>
+      <div class="B_-_Body"><a name="1466027">If the types implement interfaces, Gosu attempts to preserve commonality of interface support in the list type. This ensures your list acts as expected with APIs that rely on support for the interface. In some cases, the resulting type is a compound&nbsp;type, which combines a class and one or more interfaces into a single type. For example, the following code initializes an </a><span class="cv_-_computer_voice">int</span> and a <span class="cv_-_computer_voice">double</span>:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1466028">var s  = {0, 3.4} </a></div>
+      <div class="B_-_Body"><a name="1466029">The resulting type of </a><span class="cv_-_computer_voice">s</span> is <span class="cv_-_computer_voice">ArrayList&lt;java.lang.Comparable &amp; java.lang.Number&gt;</span>. This means that it is an array list of the compound type of the class <span class="cv_-_computer_voice">Number</span> and the interface <span class="cv_-_computer_voice">Comparable</span>. </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1466030">The </a><span class="cv_-_computer_voice">Number</span> class does not implement the interface <span class="cv_-_computer_voice">Comparable</span>. If it did, then the type of <span class="cv_-_computer_voice">s</span> would simply be <span class="cv_-_computer_voice">ArrayList&lt;java.lang.Number&gt;</span>. However, since it does not implement that interface, but both <span class="cv_-_computer_voice">int</span> and <span class="cv_-_computer_voice">double</span> implement that interface, Gosu assigns the compound type that includes the interfaces that they have in common.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1466039">See also</a></h6>
+      <div class="B_-_Body"><a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.5.html#1442091', '');" title="Compound Types" name="1487865">“Compound Types”</a></div>
+      <h4 class="H2_-_Heading_2"><a name="1467078">Getting and Setting List Values</a></h4>
+      <div class="B_-_Body"><a name="1467079">The following verbose code sets and gets </a><span class="cv_-_computer_voice">String</span> values from a list using the native Java <span class="cv_-_computer_voice">ArrayList</span> class:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1467080">var strs = new ArrayList&lt;String&gt;(){"a", "ab", "abc"}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1467081">strs.set(0, "b")</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1467082">var firstStr = strs.get(0)</a></PRE>
+      <div class="B_-_Body"><a name="1467227">You can write this in Gosu instead in the more natural index syntax using Gosu shortcuts:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1467228">var strs = {"a", "ab", "abc"}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1467229">strs[0] = "b"</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1467230">var firstStr = strs[0]</a></PRE>
+      <div class="B_-_Body"><a name="1467231">Gosu does not automatically resize lists using this syntax. If a list has only three items, the following code does not work:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1467088">strs[3] = "b" // index number 2 is the higest supported number</a></div>
+      <div class="B_-_Body"><a name="1467089">Gosu provides additional initializer syntax for both lists and maps similar to Gosu’s compact initializer syntax for arrays.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="1466017">Special Behavior of </a><span class="cvh_-_computer_voice_in_heading">List</span> Interface in Gosu</h4>
+      <div class="B_-_Body"><a name="1466018">In </a><span class="cv_-_computer_voice">new</span> expressions, you can use the interface type <span class="cv_-_computer_voice">List</span> rather than the class type <span class="cv_-_computer_voice">ArrayList</span> to instantiate a class. Gosu treats this special case as an attempt to initialize an instance of the class type <span class="cv_-_computer_voice">ArrayList</span>.</div>
+      <div class="B_-_Body"><a name="1452315">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1452055">var strs = new List&lt;String&gt;(){"a", "ab", "abc"}</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Generics and Blocks</title>
+    <link rel="StyleSheet" href="css/generics.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="generics.20.1.html#1447291">Gosu Generics</a> : Generics and Blocks</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1447291">Generics and Blocks</a></h3>
+      <div class="B_-_Body"><a name="1447292">The Gosu generics feature is often used in conjunction with another Gosu feature called blocks, which are anonymous functions that can be passed around as objects to other functions. You can use generics to describe or use blocks in two basic ways.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1447293">Blocks Can Have Arguments Defined With Generics</a></h6>
+      <div class="B_-_Body"><a name="1447588">You can create a block with arguments and return values that work like the earlier-described function definitions defined with generics. Your block can support multiple types of collections and return the same type of collection passed into it. Use a question mark (</a><span class="cv_-_computer_voice">?</span>) wildcard symbol to represent the type, such as <span class="cv_-_computer_voice">ArrayList&lt;?&gt;</span>. </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1447704">In block definitions you cannot use a letter as a wildcard symbol, such as </a><span class="cv_-_computer_voice">ArrayList&lt;T&gt;</span>. Gosu only supports the letter syntax for parameterized classes and methods.</div>
+      <div class="B_-_Body"><a name="1447589">The following example uses the </a><span class="cv_-_computer_voice">&lt;?&gt;</span> syntax to define an <span class="cv_-_computer_voice">ArrayList</span> using generics:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1447533">uses java.util.ArrayList</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447534">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447535">// set up some sample data in a string list</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447536">var s = new ArrayList&lt;String&gt;() {"one", "two", "three" }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447537">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447538">// define a block that gets the first item from a list</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447539">var getFirstItem = \ aList : List&lt;?&gt; -&gt; aList[0]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447540">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447541">// call your block. notice that the variable is strongly typed as String, not as Object</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447542">var first = getFirstItem(s)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447543">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1447544">print(first)</a></PRE>
+      <div class="B_-_Body"><a name="1447531">This code prints the value:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1447567">one</a></div>
+      <div class="B_-_Body"><a name="1447726">Notice that the return result is strongly typed and Gosu infers the appropriate type from the block.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1447526">Functions that Take Blocks as Arguments </a></h6>
+      <div class="B_-_Body"><a name="1447527">Also, there is a more complex type of interaction between blocks and generics. You can pass blocks as objects to other functions. If a function takes a </a><span class="s_-_strong">block</span> <span class="s_-_strong">as an argument</span>, you can define that function argument using generics to abstractly describe the appropriate set of acceptable blocks. </div>
+      <div class="B_-_Body"><a name="1447298">To answer questions like “what kind of block does this function support?”, determine the number of arguments, the argument types, and the return type. For example, consider a block that takes a </a><span class="cv_-_computer_voice">String</span> and returns another <span class="cv_-_computer_voice">String</span>. The type definition of the block itself indicates one argument, the parameter type <span class="cv_-_computer_voice">String</span>, and the return type <span class="cv_-_computer_voice">String</span>. </div>
+      <div class="B_-_Body"><a name="1457201">If you want to support a wide variety of types or collections of various types, define the block using generics. If you define your APIs this way, you permit consumers of your APIs to it with a wide variety of types and use strong typing and type inference.</a></div>
+      <div class="B_-_Body"><a name="1447916">If a class method on a parameterized class (a class using generics) takes a block as an argument, Gosu uses the types of the arguments. You can </a><span class="s_-_strong">omit</span> the type of the arguments as you define the block.</div>
+      <div class="B_-_Body"><a name="1448158">A typical example of this is the list method </a><span class="cv_-_computer_voice">sortBy,</span> which takes a block. That block takes exactly one argument, which must be the same type as the items in the list. For example, if the list is <span class="cv_-_computer_voice">ArrayList&lt;String&gt;</span>, the block must be a <span class="cv_-_computer_voice">String</span>. The method is defined as an <span class="e_-_emphasis">enhancement</span> with the following signature:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1448159">enhancement GWBaseListEnhancement&lt;T&gt; : java.util.List&lt;T&gt;</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1448149">...</a></PRE>
+      <div class="CS_-_Code_Single_Line"><a name="1447935">&nbsp;&nbsp;public function sortBy( value(T):Comparable ) : java.util.List&lt;T&gt;</a></div>
+      <div class="B_-_Body"><a name="1447933">Note the use of the letter T in the enhancement definition and in the method signature:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1448119">value(T):Comparable</a></div>
+      <div class="B_-_Body"><a name="1448120">That syntax means that the argument is a block that takes one argument of type T and returns a Comparable value (such as an </a><span class="cv_-_computer_voice">Integer</span> or <span class="cv_-_computer_voice">String</span>).</div>
+      <div class="B_-_Body"><a name="1448121">Suppose you had an array list of strings:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1447882">var myStrings = new ArrayList&lt;String&gt;(){"a", "abcd", "ab", "abc"}</a></div>
+      <div class="B_-_Body"><a name="1447883">You could easily resort the list based on the length of the strings using blocks. Create a block that takes a </a><span class="cv_-_computer_voice">String</span> and returns the sort key, in this case the text length. Let the <span class="cv_-_computer_voice">List.sortBy(...)</span> method handle the rest of the sorting algorithm details and return the new sorted array.</div>
+      <div class="CS_-_Code_Single_Line"><a name="1447884">var resortedStrings = myStrings.sortBy( \ str -&gt; str.Length() as Integer )</a></div>
+      <div class="B_-_Body"><a name="1448227">It is important to understand that this example omitted the type of the block argument </a><span class="cv_-_computer_voice">str</span>. You do not have to type:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1457270">var resortedStrings = myStrings.sortBy( \ </a><span class="s_-_strong">str : String</span> -&gt; str.Length() as Integer )</div>
+      <div class="B_-_Body"><a name="1457271">Type inference in cases like this valuable for easy-to-understand and concise Gosu code that uses generics.</a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1452516">If you define a block as an argument to a method, you can omit the argument types in the block in some cases. Omit the type if Gosu can infer the type from the arguments required of that method. Omitting the type in cases in which you can do so leads to concise easy-to-read code.</a></div>
+      <div class="B_-_Body"><a name="1447401">Practical examples of this approach, including the method definitions of the built-in </a><span class="cv_-_computer_voice">sortBy</span> method are shown in the following section, <a href="javascript:WWHClickedPopup('gosu', 'generics.20.6.html#1441541', '');" title="How Generics Help Define Collection APIs">“How Generics Help Define Collection APIs”</a>.</div>
+      <div class="B_-_Body"><a name="1447311">For extensive information about similar APIs with blocks, see </a><a href="javascript:WWHClickedPopup('gosu', 'blocks.19.1.html#1445150', '');" title="Gosu Blocks">“Gosu Blocks”</a>. For specific examples of built-in APIs that use generics with blocks, see <a href="javascript:WWHClickedPopup('gosu', 'collections.21.1.html#1448766', '');" title="Collections">“Collections”</a>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

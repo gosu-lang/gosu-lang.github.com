@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Properties</title>
+    <link rel="StyleSheet" href="css/classes.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="classes.13.1.html#2447772">Classes</a> : Properties</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2447772">Properties</a></h3>
+      <div class="B_-_Body"><a name="2447773">Gosu classes can define properties, which appear to other objects like variables on the class in that they can use simple intuitive syntax with the period symbol (</a><span class="cv_-_computer_voice">.</span>) to access a property for setting or getting the property. However, you can implement get and set functionality with Gosu code. Although code that gets or sets properties might simply get or set an instance variable, you can implement properties in other more dynamic ways. </div>
+      <div class="B_-_Body"><a name="2447774">To get and set properties from an object with </a><span class="cv_-_computer_voice">Field1</span> and <span class="cv_-_computer_voice">Field2</span> properties, just use the period symbol like getting and setting standard variables:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2447775">// create a new class instance</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447776">var a = new MyClass()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447777">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447778">// set a property</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447779">a.Field1 = 5</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447780">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447781">// get a property</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447782">print (a.Field2)</a></PRE>
+      <div class="B_-_Body"><a name="2447783">In its most straightforward form, a class defines properties like functions except with the keywords “</a><span class="cv_-_computer_voice">property&nbsp;get</span>” or “<span class="cv_-_computer_voice">property&nbsp;set</span>” before it instead of “<span class="cv_-_computer_voice">function</span>”. The <span class="cv_-_computer_voice">get</span> property function must take zero parameters and the <span class="cv_-_computer_voice">set</span> property function always takes exactly one parameter.</div>
+      <div class="B_-_Body"><a name="2447784">For example, the following code defines a property that supports both set and get functionality:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447785">class MyClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447786">&nbsp;&nbsp;property get Field3() : String &nbsp;&nbsp;{ </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447787">&nbsp;&nbsp;&nbsp;&nbsp;return "myFirstClass" // in this simple example, do not really return a saved value</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447788">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447789">&nbsp;&nbsp;property set Field3(str : String) &nbsp;&nbsp;{ </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447790">&nbsp;&nbsp;&nbsp;&nbsp;print (str) // print only ---- in this simple example, do not save the value</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447791">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447792">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447793">}</a></PRE>
+      <div class="B_-_Body"><a name="2447794">The </a><span class="cv_-_computer_voice">set property</span> function does not save the value in that simple example. In a more typical case, you probably want to create a class instance variable to store the value in a private variable:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447795">class MyClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447796">&nbsp;&nbsp;private var _field4 : String</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447797">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447798">&nbsp;&nbsp;property get Field4() : String &nbsp;&nbsp;{ </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447799">&nbsp;&nbsp;&nbsp;&nbsp;return _field4 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447800">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447801">&nbsp;&nbsp;property set Field4(str : String) &nbsp;&nbsp;{ </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447802">&nbsp;&nbsp;&nbsp;&nbsp;_field4 = str</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447803">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447804">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447805">}</a></PRE>
+      <div class="B_-_Body"><a name="2447806">Although the data is stored in private variable </a><span class="cv_-_computer_voice">_field4</span>, code that accesses this data does not access the private instance variable directly. Any code that wants to use it simply uses the period symbol (<span class="cv_-_computer_voice">.</span>) with the property name:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2447807">var f = new MyClass()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447808">f.Field4 = "Yes" // sets to "Yes" by calling the set property function</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447809">var g = f.Field4 // calls the get property function</a></PRE>
+      <div class="B_-_Body"><a name="2447811">For some classes, your property getter and setter methods may do very complex calculations or store the data in some other way than as a class variable. However, it is also common to simply get or set a property with data stored as a common instance variable. Gosu provides a shortcut to implement properties as instance variables using </a><span class="e_-_emphasis">variable alias</span> syntax using the <span class="cv_-_computer_voice">as</span> keyword followed by the property name to access the property. Use this approach to make simple automatic getter and setter property methods backed by an class instance variable. </div>
+      <div class="B_-_Body"><a name="2447815">For example, the following code is functionally identical to the previous example but is much more concise:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447816">class MyClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447817">&nbsp;&nbsp;private var _field4 : String as Field4</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447818">}</a></PRE>
+      <div class="B_-_Body"><a name="2451113">The standard Gosu style is to use public properties backed by private variables instead of using public variables. </a></div>
+      <div class="B_-_Body"><a name="2451114">In other words, write your Gosu classes to look like:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2451115">private var _firstName : String as FirstName</a></div>
+      <div class="B_-_Body"><a name="2476981">This declares a private variable called </a><span class="cv_-_computer_voice">_firstname</span>, which Gosu exposes as a public property called <span class="cv_-_computer_voice">FirstName</span>.</div>
+      <div class="B_-_Body"><a name="2451116">Do not write your classes to look like:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2451117">public var FirstName : String </a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2451128">The standard Gosu style is to use public properties backed by private variables instead of using public variables. Do not use public variables in new Gosu classes.</a></div>
+      <div class="B_-_Body"><a name="2451508">Code defined in that class does not need to access the property name. Classes can access their own private variables. In the previous example, other methods in that class could reference </a><span class="cv_-_computer_voice">_field4</span> or <span class="cv_-_computer_voice">_firstname</span> variables rather than relying on the property accessors <span class="cv_-_computer_voice">Field4</span> or <span class="cv_-_computer_voice">FirstName</span>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2447819">Read Only Properties</a></h6>
+      <div class="B_-_Body"><a name="2451120">The default for properties is read-write, but you can make a property read-only by adding the keyword </a><span class="cv_-_computer_voice">readonly</span> before the property name: </div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447820">class MyClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447821">&nbsp;&nbsp;private var _firstname : String as readonly FirstName</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447822">}</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="2477145">Properties Act Like Data But They Are Dynamic and Virtual Functions</a></h4>
+      <div class="B_-_Body"><a name="2447825">In contrast to standard instance variables, </a><span class="cv_-_computer_voice">get&nbsp;property</span> and <span class="cv_-_computer_voice">set&nbsp;property</span> functions are <span class="e_-_emphasis">virtual</span>, which means you can override them in subclasses and implement them from interfaces. The following illustrates how you would override a property in a subclass and you can even call the superclass’s get or set property function:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447826">class MyClass</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447827">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447828">  var _easy : String as Easy</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447829">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447830">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447831">class MySubClass extends MyClass</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447832">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447833">  override property get Easy() : String</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447834">  {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447835">&nbsp;&nbsp;&nbsp;&nbsp;return super.Easy + " from MySubClass" </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447836">  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447837">}</a></PRE>
+      <div class="B_-_Body"><a name="2447838">The overridden </a><span class="cv_-_computer_voice">property get </span>function first calls the implicitly defined get function from the superclass, which gets class variable called <span class="cv_-_computer_voice">_easy</span>, then appends a string. This get function does <span class="s_-_strong">not</span> change the value of the class variable <span class="cv_-_computer_voice">_easy</span>, but code that accesses the <span class="cv_-_computer_voice">Easy</span> property from the subclass gets a different value.</div>
+      <div class="B_-_Body"><a name="2447839">For example, if you write the following code in the Gosu Tester:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2447840">var f = new MyClass()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447841">var b = new MySubClass()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447842">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447843">f.Easy = "MyPropValue"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447844">b.Easy = "MyPropValue"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447845">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447846">print(f.Easy)</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447847">print(b.Easy)</a></PRE>
+      <div class="B_-_Body"><a name="2447848">This code prints:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2447849">MyPropValue</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447850">MyPropValue from MySubClass</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="2465283">Property Paths are Null Tolerant</a></h4>
+      <div class="B_-_Body"><a name="2498712">In Gosu, a period character gets a property from an object or calls a method. </a></div>
+      <div class="B_-_Body"><a name="2498713">By default, the period operator is not null-safe. This means that if the value on the left side of the period evaluates to </a><span class="cv_-_computer_voice">null</span> at runtime, Gosu throws a <span class="e_-_emphasis">null pointer exception</span> (NPE). For example, <span class="cv_-_computer_voice">obj.PropertyA.PropertyB</span> throws an exception if <span class="cv_-_computer_voice">obj</span> or <span class="cv_-_computer_voice">obj.PropertyA</span> are null at run time.</div>
+      <div class="B_-_Body"><a name="2498714">Gosu provides a variant of the period operator that is always null-safe for both property access and method access. The null-safe period operator has a question mark before it: </a><span class="cv_-_computer_voice">?.</span></div>
+      <div class="B_-_Body"><a name="2498715">If the value on the left of the </a><span class="cv_-_computer_voice">?.</span> operator is <span class="cv_-_computer_voice">null</span>, the expression evaluates to <span class="cv_-_computer_voice">null</span>.</div>
+      <div class="B_-_Body"><a name="2498716">For example, the following expression evaluates left-to-right and contains three null-safe property operators:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2498717">obj?.PropertyA?.PropertyB?.PropertyC</a></div>
+      <div class="B_-_Body"><a name="2498718">If any object to the left of the period character is </a><span class="cv_-_computer_voice">null</span>, the null-safe period operator does not throw a <span class="e_-_emphasis">null pointer exception</span> (NPE) and the expression returns <span class="cv_-_computer_voice">null</span>. Gosu null-safe property paths tends to simplify real-world code. Often, a <span class="cv_-_computer_voice">null</span> expression result has the same meaning whether the final property access is <span class="cv_-_computer_voice">null</span> or whether earlier parts of the path are <span class="cv_-_computer_voice">null</span>. For such cases in Gosu, do not bother to check for <span class="cv_-_computer_voice">null</span> value at every level of the path. This makes your Gosu code easier to read and understand.</div>
+      <div class="B_-_Body"><a name="2498719">For example, suppose you had a variable called </a><span class="cv_-_computer_voice">house</span>, which contained a property called <span class="cv_-_computer_voice">Walls</span>, and that object had a property called <span class="cv_-_computer_voice">Windows</span>. You could get the <span class="cv_-_computer_voice">Windows</span> value with the following syntax:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2498720">house.Walls.Windows</a></div>
+      <div class="B_-_Body"><a name="2498721">In some languages, you must worry that if </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span> or <span class="cv_-_computer_voice">house.Walls</span> is <span class="cv_-_computer_voice">null</span>, your code throws a <span class="cv_-_computer_voice">null</span> pointer exception. This causes programmers to use the following common coding pattern:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2498722">// initialize to null</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2498723">var x : ArrayList&lt;Windows&gt; = null </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2498724">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2498725">// check earlier parts of the path for null to avoid a null pointer exceptions (NPEs)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2498726">if( house != null and house.Walls != null ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2498727">   x = house.Walls.Windows</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2498728">}</a></PRE>
+      <div class="B_-_Body"><a name="2498729">The following concise Gosu code is equivalent to the previous example and avoids any null pointer exceptions:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2498730"> var x = house?.Walls?.Windows</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2498731">Null Safe Method Calls</a></h6>
+      <div class="B_-_Body"><a name="2498732">By default, method calls are not null safe. This means that if the right side of a period character is a method call, Gosu throws a null pointer exception if the left side of the period is </a><span class="cv_-_computer_voice">null</span>.</div>
+      <div class="B_-_Body"><a name="2498733">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2498734">house.myaction()</a></div>
+      <div class="B_-_Body"><a name="2498735">If </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws an NPE exception. Gosu assumes that method calls <span class="s_-_strong">might</span> have side effects, so Gosu cannot quietly skip the method call and return <span class="cv_-_computer_voice">null</span>.</div>
+      <div class="B_-_Body"><a name="2498736">In contrast, a </a><span class="e_-_emphasis">null-safe method call</span> does not throw an exception if the left side of the period character is <span class="cv_-_computer_voice">null</span>. Gosu just returns null from that expression. In contrast, using the ?. operator calls the method with null safety:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2498737">house?.myaction()</a></div>
+      <div class="B_-_Body"><a name="2498738">If </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span>, Gosu does not throw an exception. Gosu simply returns <span class="cv_-_computer_voice">null</span> from the expression.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2498739">Null-Safe Versions of Other Operators</a></h6>
+      <div class="B_-_Body"><a name="2498740">Gosu provides other null-safe versions of other common operators:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2498741">The null-safe default operator (</a><span class="cv_-_computer_voice">?:)</span>. This operator lets you specify an alternate value if the value to the left of the operator is null. For example:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="2498742">var displayName = Book.Title ?: "(Unknown Title)" // return "(Unknown Title)" if Book.Title is null</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2498743">The null-safe index operator (</a><span class="cv_-_computer_voice">?[])</span>. Use this operator with lists and arrays. It returns null if the list or array value is null at run time, rather than throwing an exception. For example:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="2498744">var book = bookshelf?[bookNumber] // return null if bookshelf is null</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2498745">The null-safe math operators (</a><span class="cv_-_computer_voice">?+</span>, <span class="cv_-_computer_voice">?-</span>, <span class="cv_-_computer_voice">?*</span>, <span class="cv_-_computer_voice">?/</span>, and <span class="cv_-_computer_voice">?%</span>). For example: </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="2498746">var displayName = cost ?* 2&nbsp;&nbsp;&nbsp;// multiply times 2, or return null if cost is null</a></div>
+      <div class="B_-_Body"><a name="2498750">See </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.09.19.html#1655838', '');" title="Handling Null Values In Expressions">“Handling Null Values In Expressions”</a>. </div>
+      <h6 class="HS_-_Head_Sub"><a name="2498751">Design Code for Null Safety</a></h6>
+      <div class="B_-_Body"><a name="2498752">Use null-safe operators where appropriate. They make code easy to read and easier to handle edge cases.</a></div>
+      <div class="B_-_Body"><a name="2498753">You can also design your code to take advantage of this special language feature. For example, expose data as </a><span class="e_-_emphasis">properties</span> in Gosu classes and interfaces rather setter and getter methods. This allows you to use the null-safe property operator (the <span class="cv_-_computer_voice">?.</span> operator), which can make your code both powerful and concise.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2498754">See Also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2498758">For more examples and discussion, see </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.09.19.html#1655838', '');" title="Handling Null Values In Expressions">“Handling Null Values In Expressions”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2465340">Expose public data as properties rather than as getter functions. This allows you to take advantage of Gosu null-safe property accessor paths. Additionally, note it is standard Gosu practice to separate your implementation from your class’s interaction with other code by using properties rather than public instance variables. Gosu provides a simple shortcut with the </a><span class="cv_-_computer_voice">as</span> keyword to expose an instance variable as a property. See <a href="javascript:WWHClickedPopup('gosu', 'classes.13.4.html#2447772', '');" title="Properties">“Properties”</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2474798">Design APIs Around Null Safe Property Paths</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2474799">You may also want to design your Gosu code logic around this feature. For example, Gosu uses the </a><span class="cv_-_computer_voice">java.util.String</span> class as its native text class. This class includes a built-in method to check whether the <span class="cv_-_computer_voice">String</span> is empty. The method is called <span class="cv_-_computer_voice">isEmpty</span>, and Gosu exposes this as the <span class="cv_-_computer_voice">Empty</span> property. This is difficult to use with Gosu property accessor paths. For example, consider the following <span class="cv_-_computer_voice">if</span> statement:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2474800">if (obj.StringProperty.Empty)</a></div>
+      <div class="B_-_Body"><a name="2474801">Because </a><span class="cv_-_computer_voice">null</span> coerces implicitly to the type <span class="cv_-_computer_voice">Boolean</span> (the type of the <span class="cv_-_computer_voice">Empty</span> property), the expression evaluates to <span class="cv_-_computer_voice">false</span> in either of the following cases:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2474802">if </a><span class="cv_-_computer_voice">obj.StringProperty</span> has the value <span class="cv_-_computer_voice">null</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2474803">the </a><span class="cv_-_computer_voice">String</span> is non-null but its <span class="cv_-_computer_voice">Empty</span> property evaluates to <span class="cv_-_computer_voice">false</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2474804">In typical code, it is important to distinguish these two very different conditions cases. For example, if you wanted to use the value </a><span class="cv_-_computer_voice">obj.StringProperty</span> only if the value is non-empty, it is insufficient to just check the value <span class="cv_-_computer_voice">obj.StringProperty.Empty</span>.</div>
+      <div class="B_-_Body"><a name="2474805">To work around this, Gosu adds an enhancement property to </a><span class="cv_-_computer_voice">java.util.String</span> called <span class="cv_-_computer_voice">HasContent</span>. This effectively is the reverse of the logic of the <span class="cv_-_computer_voice">Empty</span> property. The <span class="cv_-_computer_voice">HasContent</span> property only returns <span class="cv_-_computer_voice">true</span> if it has content. As a result, you can use property accessor paths such as the following:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2474806">if (obj.StringProperty.HasContent)</a></div>
+      <div class="B_-_Body"><a name="2474807">Because </a><span class="cv_-_computer_voice">null</span> coerces implicitly to Boolean (the type of the <span class="cv_-_computer_voice">Empty</span> property), the expression evaluates to <span class="cv_-_computer_voice">false</span> in either of the following cases:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2474808">if </a><span class="cv_-_computer_voice">obj.StringProperty</span> is null</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2474809">the </a><span class="cv_-_computer_voice">String</span> is non-null but the string has no content (its <span class="cv_-_computer_voice">HasContent</span> property evaluates to <span class="cv_-_computer_voice">false</span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2474810">These cases are much more similar semantically than for the variant that uses </a><span class="cv_-_computer_voice">Empty</span> (<span class="cv_-_computer_voice">obj.StringProperty.Empty</span><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt">). </span>This means you are more likely to rely on path expressions like this.</div>
+      <div class="B_-_Body"><a name="2474811">Be sure to consider null-safety of property paths as you design your code, particularly with Boolean properties. </a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2474812">Consider null-safety of property paths as you design your code.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2449277">Static Properties</a></h4>
+      <div class="B_-_Body"><a name="2449285">You can use properties directly on the class without creating a new instance of the class. For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'classes.13.5.html#2446412', '');" title="Modifiers">“Static Modifier”</a>. </div>
+      <h4 class="H2_-_Heading_2"><a name="2447851">More Property Examples</a></h4>
+      <div class="B_-_Body"><a name="2447852">The following examples illustrate how to create and use Gosu class properties and get/set methods. </a></div>
+      <div class="B_-_Body"><a name="2449506">There are two classes, one of which extends the other. </a></div>
+      <div class="B_-_Body"><a name="2447854">The class </a><span class="cv_-_computer_voice">myFirstClass</span>:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2447855">package mypackage</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447856">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447857">class MyFirstClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447858">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447859">&nbsp;&nbsp;// Explicit property getter for Fred</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447860">&nbsp;&nbsp;property get Fred() : String &nbsp;&nbsp;{ </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447861">&nbsp;&nbsp;&nbsp;&nbsp;return "myFirstClass" </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447862">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447863">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447864">}</a></PRE>
+      <div class="B_-_Body"><a name="2447866">The class </a><span class="cv_-_computer_voice">mySecondClass</span>:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2447867">package mypackage</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447868">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447869">class MySecondClass extends MyFirstClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447870">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447871">&nbsp;&nbsp;// Exposes a public F0 property on _f0 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447872">&nbsp;&nbsp;private var _f0 : String as F0 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447873">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447874">&nbsp;&nbsp;// Exposes a public read-only F1 property on _f1 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447875">&nbsp;&nbsp;private var _f1 : String as readonly F1 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447876">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447877">&nbsp;&nbsp;// Simple variable with explicit property get/set methods </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447878">&nbsp;&nbsp;private var _f2 : String </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447879">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447880">&nbsp;&nbsp;// Explicit property getter for _f2 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447881">&nbsp;&nbsp;property get F2() : String { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447882">&nbsp;&nbsp;&nbsp;&nbsp;return _f2 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447883">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447884">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447885">&nbsp;&nbsp;// Explicit property setter for _f2, visible only to classes in this package </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447886">&nbsp;&nbsp;internal property set F2( value : String ) { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447887">&nbsp;&nbsp;&nbsp;&nbsp;_f2 = value </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447888">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447889">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447890">&nbsp;&nbsp;// A simple calculated property (not a simple accessor) </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447891">&nbsp;&nbsp;property get Calculation() : Number { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447892">&nbsp;&nbsp;&nbsp;&nbsp;return 88 </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447893">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447894">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447895">&nbsp;&nbsp;// Overrides MyFirstClass's Fred property getter </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447896">&nbsp;&nbsp;property get Fred() : String { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447897">&nbsp;&nbsp;&nbsp;&nbsp;return super.Fred + " suffix" </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447898">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447899">}</a></PRE>
+      <div class="B_-_Body"><a name="2447900">Try the following lines in Gosu Tester to test these classes</a></div>
+      <div class="B_-_Body"><a name="2449311">First, create an instance of your class:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2447901">var test = new mypackage.MySecondClass()</a></div>
+      <div class="B_-_Body"><a name="2447903">Assign a property value. This internally calls a hidden method to assign </a><span class="cv_-_computer_voice">"hello"</span> to variable <span class="cv_-_computer_voice">_f0</span>: </div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447904">test.F0 = "hello"</a></PRE>
+      <div class="B_-_Body"><a name="2449427">The following line is invalid since f1 is read-only:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2449433">// This gives a compile error. </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2449428">test.F1 = "hello" </a></PRE>
+      <div class="B_-_Body"><a name="2447909">Get a property value. This indirectly calls the </a><span class="cv_-_computer_voice">mySecondClass</span> property getter function for <span class="cv_-_computer_voice">F2</span>:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447910">print( test.F2 ) // prints null because it is not set yet</a></PRE>
+      <div class="B_-_Body"><a name="2447912">The following line is invalid because F2 is not visible outside of the package namespace of </a><span class="cv_-_computer_voice">MySecondClass</span>. F2 is publicly read-only. </div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447913">// This gives a compile error. </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447914">test.F2 = "hello"</a></PRE>
+      <div class="B_-_Body"><a name="2447916">Print the </a><span class="cv_-_computer_voice">Calculation</span> property: </div>
+      <div class="CS_-_Code_Single_Line"><a name="2447917">print( test.Calculation ) // prints 88</a></div>
+      <div class="B_-_Body"><a name="2447919">The following line is invalid since </a><span class="cv_-_computer_voice">Calculation</span> is read-only (it does not have a setter function): </div>
+      <PRE class="CF_-_Code_First_Line"><a name="2449485">//This gives a compiler error. </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447920">test.Calculation = 123 </a></PRE>
+      <div class="B_-_Body"><a name="2447922">Demonstrate that properties can be overridden through inheritance because properties are virtual:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2447923">print( test.Fred ) // prints "myFirstClass suffix"</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

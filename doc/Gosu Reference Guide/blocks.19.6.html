@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Block Type Literals</title>
+    <link rel="StyleSheet" href="css/blocks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="blocks.19.1.html#1443700">Gosu Blocks</a> : Block Type Literals</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1443700">Block Type Literals</a></h3>
+      <div class="B_-_Body"><span class="e_-_emphasis"><a name="1444002">Block literals</a></span> are a form of type literal, which means the way you reference a <span class="e_-_emphasis">block type</span>. The block literal specifically what kinds of arguments the block takes and what type of return value it returns. </div>
+      <h6 class="HS_-_Head_Sub"><a name="1444012">Block Types In Declarations</a></h6>
+      <div class="B_-_Body"><a name="1444208">If you define a variable to contain a block in a variable declaration, the preferred syntax is:</a></div>
+      <div class="CS_-_Code_Single_Line"><span class="pc_-_parameter_in_code"><a name="1444005">variableName</a></span>( <span class="pc_-_parameter_in_code">list_of_types</span> ) : <span class="pc_-_parameter_in_code">return_type</span></div>
+      <div class="B_-_Body"><a name="1443895">For example, to declare that </a><span class="cv_-_computer_voice">x</span> is a variable that can contain a block that takes a single <span class="cv_-_computer_voice">String</span> argument and returns a <span class="cv_-_computer_voice">String</span> value, use this code:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1444050">var x( String ) : String</a></div>
+      <div class="B_-_Body"><a name="1444088">In declarations, you can also optionally use the </a><span class="cv_-_computer_voice">block</span> keyword, although this is discouraged in declarations:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1444094">block( </a><span class="pc_-_parameter_in_code">list_of_types</span> ) : <span class="pc_-_parameter_in_code">return_type</span></div>
+      <div class="LP_-_List_Para"><a name="1444089">For example, this code declares the same block type as described earlier:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1444097">var x : block( String ) : String</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1444213">Block Types Not Part of Declarations</a></h6>
+      <div class="B_-_Body"><a name="1444090">Where a block type literal is </a><span class="s_-_strong">not</span> part of a declaration, the <span class="cv_-_computer_voice">block</span> keyword is strictly required:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1444198">block( </a><span class="pc_-_parameter_in_code">list_of_types</span> ) : <span class="pc_-_parameter_in_code">return_type</span></div>
+      <div class="B_-_Body"><a name="1444068">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1444232">var b = block( String ) : Number</a></div>
+      <div class="B_-_Body"><a name="1443937">This means that the </a><span class="cv_-_computer_voice">b</span> variable is <span class="s_-_strong">assigned</span> a value that is a block type. Since the block type literal is not directly part of the declaration, the <span class="cv_-_computer_voice">block</span> keyword must be specified.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1446019">Block Types In Argument Lists</a></h6>
+      <div class="B_-_Body"><a name="1446020">Within function definition, a function argument can be a block. As you define the block argument, provide a </a><span class="s_-_strong">name</span> for that block parameter so you can use it within the function. Do this using the following syntax for block types in argument lists:</div>
+      <div class="CS_-_Code_Single_Line"><span class="e_-_emphasis"><a name="1443321">parameter_variable_name</a></span>( <span class="pc_-_parameter_in_code">list_of_types</span> ) : <span class="e_-_emphasis">return_type</span></div>
+      <div class="B_-_Body"><a name="1443322">For example, suppose you want to declare a function that took one argument, which is a block. Suppose the block takes a single </a><span class="cv_-_computer_voice">String</span> argument and returns no value. If you want refer to this block by name as <span class="cv_-_computer_voice">myCallback</span>, define the argument using the syntax:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1443215">myCallBack( String ) : void</a></div>
+      <div class="B_-_Body"><a name="1437502">It might be easier to understand with an actual example. The following Gosu class includes a function that takes a callback block. The argument is called </a><span class="p_-_parameter">myCallBack</span>, which is a block that takes a single string argument and returns no value. The outer function calls that callback function with a <span class="cv_-_computer_voice">String</span>.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1444295">package mytest</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1444300">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1444301">class test1 {</a></PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1437544">&nbsp;&nbsp;function myMethod( </a><span class="s_-_strong">myCallBack( String ) : void</span> ) {</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1444358">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1444355">&nbsp;&nbsp;&nbsp;&nbsp;// call your callback block and pass it a String argument</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437545">&nbsp;&nbsp;&nbsp;&nbsp;myCallBack("Hello World")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437546">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1444359">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1444302">}</a></PRE>
+      <div class="B_-_Body"><a name="1444272">Test this code as follows:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1444279">var a = new mytest.test1()</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1444280">a.myMethod( \ s : String -&gt; print("&lt;contents&gt;" + s + "&lt;/contents&gt;") )</a></PRE>
+      <div class="B_-_Body"><a name="1444422">For even more concise code, you can omit the argument type “</a><span class="cv_-_computer_voice">: String</span>” in the in-line block. The block is defined in-line as an argument to a method whose argument types are already defined. In other words, you can simply use the following code</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1444460">var a = new mytest.test1()</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1444461">a.myMethod( \ s -&gt; print("&lt;contents&gt;" + s + "&lt;/contents&gt;") )</a></PRE>
+      <div class="B_-_Body"><a name="1444469">Both versions print the following:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1444470">&lt;contents&gt;Hello World&lt;/contents&gt;</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1443672">Block Types BNF Notation </a></h6>
+      <div class="B_-_Body"><a name="1435137">For those interested in formal BNF notation, the notation of a block literal is:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1435139">blockliteral -&gt; </a><span class="pc_-_parameter_in_code">block_literal_1</span> | <span class="pc_-_parameter_in_code">block_literal_2</span></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437324">block_literal_1 -&gt; block ( </a><span class="pc_-_parameter_in_code">type_list</span> ) : type</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1435142">block_literal_2 -&gt; </a><span class="e_-_emphasis">parameter_name</span> ( <span class="pc_-_parameter_in_code">type_list</span> ) : <span class="e_-_emphasis">return_type</span></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1437331">type_list -&gt; type | </a><span class="pc_-_parameter_in_code">type_list</span> , | null</PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

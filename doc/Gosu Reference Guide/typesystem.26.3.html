@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Basic Type Checking</title>
+    <link rel="StyleSheet" href="css/typesystem.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="typesystem.26.1.html#1441193">Type System</a> : Basic Type Checking</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1441193">Basic Type Checking</a></h3>
+      <div class="B_-_Body"><a name="1443898">Gosu uses the </a><span class="cv_-_computer_voice">typeis</span> operator to compare an expression’s type with a specified type. The result is always <span class="cv_-_computer_voice">Boolean</span>. A <span class="cv_-_computer_voice">typeis</span> expression cannot be fully determined at compile time. For example, at run time the expression may evaluate to a more specific subtype than the variable is declared as. </div>
+      <h6 class="HS_-_Head_Sub"><a name="1443899">Typeis Syntax</a></h6>
+      <div class="CS_-_Code_Single_Line"><span class="pc_-_parameter_in_code"><a name="1443951">OBJECT</a></span> typeis <span class="pc_-_parameter_in_code">TYPE</span></div>
+      <h6 class="HS_-_Head_Sub"><a name="1443901">Typeis Examples</a></h6>
+      <div class="T_-_Table"><a name="1443923">&nbsp;</a></div>
+      <table class="withoutHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1443904">Expression</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1443906">Result</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1443908">42 typeis Number</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1443910">true</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1443912">"auto" typeis String </a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1443914">true</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1443916">person typeis Person</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1443918">true</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1443920">person typeis Company</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1443922">false</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1443924">Similarly, you can use the </a><span class="cv_-_computer_voice">typeof </span><span class="pc_-_parameter_in_code">object</span> operator to test against a specific type. </div>
+      <h6 class="HS_-_Head_Sub"><a name="1454161">Typeof Syntax</a></h6>
+      <div class="CS_-_Code_Single_Line"><a name="1454122">typeof </a><span class="pc_-_parameter_in_code">expression</span></div>
+      <h6 class="HS_-_Head_Sub"><a name="1454123">Typeof Examples</a></h6>
+      <div class="T_-_Table"><a name="1454141">&nbsp;</a></div>
+      <table class="withoutHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1454126">Expression</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1454128">Result</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1454130">typeof 42</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1454132">Number</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1454134">typeof "auto"</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1454136">String</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1454138">typeof (4 + 5) </a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1454140">Number</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1454172">In real-world code, typically you need to check an object against a type </a><span class="s_-_strong">or</span> its subtypes, not just a single type. In such cases, it is better to use <span class="cv_-_computer_voice">typeis</span> instead of <span class="cv_-_computer_voice">typeof</span>. The <span class="cv_-_computer_voice">typeof</span> keyword returns the exact type. If you test this value with simple equality with another type, it returns <span class="cv_-_computer_voice">false</span> if the object is a subtype. </div>
+      <div class="B_-_Body"><a name="1443925">For example, the following expression returns </a><span class="cv_-_computer_voice">true</span>:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1443927">"hello" typeis Object</a></div>
+      <div class="B_-_Body"><a name="1454228">In contrast, the following expression returns </a><span class="cv_-_computer_voice">false</span> because <span class="cv_-_computer_voice">String</span> is a subtype of <span class="cv_-_computer_voice">Object</span> but is a different type:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1443928">typeof "hello" == Object</a></div>
+      <div class="B_-_Body"><a name="1441201">If you want information from the type itself, you can access a type by name (typing its </a><span class="e_-_emphasis">type literal</span>) or use the <span class="cv_-_computer_voice">typeof</span> operator to get an object’s type. For example:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1441203">var s = "hello"</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1441204">var t = typeof s</a></PRE>
+      <div class="B_-_Body"><a name="1455235">In this example, the type of </a><span class="cv_-_computer_voice">s</span> is <span class="cv_-_computer_voice">String</span>, so the value of the <span class="cv_-_computer_voice">t</span> variable is now <span class="cv_-_computer_voice">String</span>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1465194">Static Type (‘statictypeof’)</a></h6>
+      <div class="B_-_Body"><a name="1465195">To get the compile-time type of an object and use it programmatically, use the </a><span class="cv_-_computer_voice">statictypeof</span> keyword. The result of an <span class="cv_-_computer_voice">statictypeof</span> expression does not vary at run time. Contrast this with the <span class="cv_-_computer_voice">typeof</span> keyword, which performs a run-time check of the object.</div>
+      <div class="B_-_Body"><a name="1465249">The following example illustrates this difference:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465348">var i : Object = "hello"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465350">print(typeof i)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465340">print(statictypeof i)</a></PRE>
+      <div class="B_-_Body"><a name="1465362">This example prints the output:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465382">java.lang.String</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465383">java.lang.Object</a></PRE>
+      <div class="B_-_Body"><a name="1465374">The variable is declared as </a><span class="cv_-_computer_voice">Object</span>. However, at run time it contains an object whose type is <span class="cv_-_computer_voice">String</span>, which is a subtype of <span class="cv_-_computer_voice">String</span>.</div>
+      <div class="B_-_Body"><a name="1465410">The following example also illustrates how this difference can affect </a><span class="cv_-_computer_voice">null</span> values and unexpected conditions:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465269">var i : Boolean;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465270">i = null;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465272">print(typeof i)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465258">print(statictypeof i)</a></PRE>
+      <div class="B_-_Body"><a name="1465127">This prints the output:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465306">void</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1465307">java.lang.Boolean</a></PRE>
+      <div class="B_-_Body"><a name="1465291">At run time, the value of </a><span class="cv_-_computer_voice">i</span> is <span class="cv_-_computer_voice">null</span>, so its type is <span class="cv_-_computer_voice">void</span>. However, the compile-time type of this variable is <span class="cv_-_computer_voice">Boolean</span>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1465333">Is Assignable From</a></h6>
+      <div class="B_-_Body"><a name="1465284">For advanced manipulation of type objects, including the method called </a><span class="cv_-_computer_voice">isAssignableFrom</span> that exists on types, see <a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.4.html#1455649', '');" title="Using Reflection">“Using Reflection”</a>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1455236">Even Types Have Types</a></h6>
+      <div class="B_-_Body"><a name="1455237">All objects have types. This even applies to types (such as the type called </a><span class="cv_-_computer_voice">String</span>). The expression <span class="cv_-_computer_voice">typeof&nbsp;String</span> evaluates to a parameterized version of the type <span class="cv_-_computer_voice">Type</span>. Specifically:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1455247">Type&lt;java.lang.String&gt;</a></div>
+      <div class="B_-_Body"><a name="1455250">For advanced manipulation of the </a><span class="cv_-_computer_voice">Type</span> object, see <a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.4.html#1455649', '');" title="Using Reflection">“Using Reflection”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="1455253">Automatic Downcasting for ‘typeis’ and ‘typeof’</a></h4>
+      <div class="B_-_Body"><a name="1455254">To improve the readability of your Gosu code, Gosu automatically downcasts after a </a><span class="cv_-_computer_voice">typeis</span> expression if the type is a subtype of the original type. This is particularly valuable for <span class="cv_-_computer_voice">if</span> statements and similar Gosu structures. Within the Gosu code bounded by the <span class="cv_-_computer_voice">if</span> statement, you do not need to do casting (<span class="cv_-_computer_voice">as</span>&nbsp;<span class="ps_-_parameter_in_code_snippets">TYPE</span> expressions) to that subtype. Because Gosu confirms that the object has the more specific subtype, Gosu implicitly considers that variable’s type to be the <span class="s_-_strong">subtype</span>, at least within that block of code. </div>
+      <div class="B_-_Body"><a name="1441213">For example, a common pattern for this feature looks like the following:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1441214">var VARIABLE_NAME : TYPE_NAME</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441215">&nbsp;</a></PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1441216">if (VARIABLE_NAME&nbsp;typeis&nbsp;SUBTYPE_NAME) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441217">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441218">&nbsp;&nbsp;// use the VARIABLE_NAME as SUBTYPE_NAME without casting</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441219">&nbsp;&nbsp;// This assumes SUBTYPE_NAME is a subtype of TYPE_NAME</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1441220">}</a></PRE>
+      <div class="B_-_Body"><a name="1441221">For example, the following example shows a variable declared as an </a><span class="cv_-_computer_voice">Object</span>, but downcasted to <span class="cv_-_computer_voice">String</span> within the <span class="cv_-_computer_voice">if</span> statement.</div>
+      <div class="B_-_Body"><a name="1441885">Because of downcasting, the following code is valid:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441223">var x : Object = "nice"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441224">var strlen = 0</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441225">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441226">if( x typeis String ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441227">&nbsp;&nbsp;strlen = x.length </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441933">}</a></PRE>
+      <div class="B_-_Body"><a name="1441934">It is important to note that </a><span class="cv_-_computer_voice">length</span> is a property on <span class="cv_-_computer_voice">String</span>, not <span class="cv_-_computer_voice">Object</span>. The downcasting from <span class="cv_-_computer_voice">Object</span> to <span class="cv_-_computer_voice">String</span> means that you do not need an additional casting around the variable <span class="cv_-_computer_voice">x</span>. In other words, the following code is equivalent but has an <span class="s_-_strong">unnecessary</span> cast:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441230">var x : Object = "nice"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441231">var strlen = 0</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441232">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441233">if( x typeis String ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441234">&nbsp;&nbsp;strlen = </a><span class="s_-_strong">(x as String)</span>.length // "length" is a property on String, not Object</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441235">}</a></PRE>
+      <div class="B_-_Body"><a name="1441977">Do not write Gosu code with unnecessary casts. Use automatic downcasting to write easy-to-read and concise Gosu code.</a></div>
+      <div class="B_-_Body"><a name="1441236">The automatic downcasting happens for the following types of statements;</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1441240">if</a></span> statements. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1142199', '');" title="Gosu Conditional Execution and Looping">“If - Else Statements”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1441244">switch</a></span> statements. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1137580', '');" title="Gosu Conditional Execution and Looping">“Switch() Statements”</a>. For example:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455762">uses java.util.Date</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455763"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455764">var x : Object = "neat"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455765">switch( typeof( x ) ){</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455766">&nbsp;&nbsp;case String :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455767">&nbsp;&nbsp;&nbsp;&nbsp;print( x.charAt( 0 ) ) // without automatic downcasting, this method call fails without casting</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455768">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455769">&nbsp;&nbsp;case Date :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455770">&nbsp;&nbsp;&nbsp;&nbsp;print( x.Time ) // without automatic downcasting, this property access fails without casting</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455771">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1455772">} </a></PRE>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1441245">ternary conditional expression, such as “</a><span class="cv_-_computer_voice">x typeis String ? x.length : 0</span>”. Downcasting only happens in the part of the expression that corresponds to it being true (the first part). For more information, see <a href="javascript:WWHClickedPopup('gosu', 'expressions.09.14.html#1595356', '');" title="Conditional Ternary Expressions">“Conditional Ternary Expressions”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1441249">This automatic downcasting works when the item to the left of the </a><span class="cv_-_computer_voice">typeis</span> keyword is a symbol, but not on other expressions.</div>
+      <div class="B_-_Body"><a name="1441250">There are a several situations that cancel the </a><span class="cv_-_computer_voice">typeis</span> inference:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1441251">Reaching the end of the extent of the scope for which inference is appropriate. In other words:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1441252">The end of an </a><span class="cv_-_computer_voice">if</span> statement</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1441253">The end of a </a><span class="cv_-_computer_voice">switch</span> statement</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1441254">The end of a ternary conditional expression in its </a><span class="cv_-_computer_voice">true</span> clause</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1456232">Assigning any value to the symbol (the variable) you checked with </a><span class="cv_-_computer_voice">typeis</span> or <span class="cv_-_computer_voice">typeof</span>. This applies to <span class="cv_-_computer_voice">if</span> and <span class="cv_-_computer_voice">switch</span> statements.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1441258">An </a><span class="cv_-_computer_voice">or</span> keyword in a logical expression</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1455646">The end of an expression negated with the </a><span class="cv_-_computer_voice">not</span> keyword</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1456139">In a </a><span class="cv_-_computer_voice">switch</span> statement, a <span class="cv_-_computer_voice">case</span> section does not use automatic downcasting if the previous case section is unterminated by a <span class="cv_-_computer_voice">break</span> statement. For example, the following Gosu code us valid and both <span class="cv_-_computer_voice">case</span> sections using automatic downcasting:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455667">uses java.util.Date</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455668"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455669">var x : Object = "neat"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455670">switch( typeof( x ) ){</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455671">&nbsp;&nbsp;case String :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455716">&nbsp;&nbsp;&nbsp;&nbsp;print( x.charAt( 0 ) ) // without automatic downcasting, this method call fails without casting</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455717">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455718">&nbsp;&nbsp;case Date :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455719">&nbsp;&nbsp;&nbsp;&nbsp;print( x.Time ) // without automatic downcasting, this property access fails without casting</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455676">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1455677">}</a></PRE>
+      <div class="LP_-_List_Para"><a name="1455855">However, Gosu allows you to remove the first </a><span class="cv_-_computer_voice">break</span> statement. Removing a break statement allows the execution to fall through to the next <span class="cv_-_computer_voice">case</span> section. In other words, if the type is <span class="cv_-_computer_voice">String</span>, Gosu runs the <span class="cv_-_computer_voice">print</span> statement in the <span class="cv_-_computer_voice">String</span> case section. Next, Gosu run statements in the next <span class="cv_-_computer_voice">case</span> section also. This does not change the type system behavior of the section whose <span class="cv_-_computer_voice">break</span> statement is now gone (the first section). However, there is no downcasting for the following <span class="cv_-_computer_voice">case</span> section since two different cases share that series of Gosu statements. The compile time type of the switched object reverts to the compile-time type of that variable at the beginning of the <span class="cv_-_computer_voice">switch</span> statement.</div>
+      <div class="LP_-_List_Para"><a name="1456087">For example, the following code has a compile error because it relies on downcasting.</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455883">uses java.util.Date</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455884"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455885">var x : Object = "neat"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455886">switch( typeof( x ) ){</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455887">&nbsp;&nbsp;case String :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455888">&nbsp;&nbsp;&nbsp;&nbsp;print( x.charAt( 0 ) ) // without automatic downcasting, this method call fails without casting</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455890">&nbsp;&nbsp;case Date :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455891">&nbsp;&nbsp;&nbsp;&nbsp;print( x.Time ) // COMPILE ERROR. The compile time type reverts to Object (no Time property!)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455892">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1455893">}</a></PRE>
+      <div class="LP_-_List_Para"><a name="1455875">To work around this problem, remember that the compile time type of the switched object reverts to whatever the compile-time type is before the </a><span class="cv_-_computer_voice">switch</span> statement. Simply cast the variable with the <span class="cv_-_computer_voice">as</span> keyword before accessing type-specific methods or properties. For example:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455927">uses java.util.Date</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455928"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455929">var x : Object = "neat"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455930">switch( typeof( x ) ){</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455931">&nbsp;&nbsp;case String :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455932">&nbsp;&nbsp;&nbsp;&nbsp;print( x.charAt( 0 ) ) // without automatic downcasting, this method call fails without casting</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455933">&nbsp;&nbsp;case Date :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455934">&nbsp;&nbsp;&nbsp;&nbsp;print( (x as Date).Time ) // this is now valid Gosu code</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455935">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1455936">}</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

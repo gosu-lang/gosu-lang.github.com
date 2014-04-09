@@ -1,0 +1,85 @@
+
+div.WebWorks_MiniTOC
+{
+  margin-left: 10pt;
+  background-color: #FFFFFF;
+  border-color: #000000;
+  border-width: 0px;
+  border-style: solid;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+
+a.WebWorks_MiniTOC_Link
+{
+  text-decoration: underline;
+}
+
+
+/* copied from Bullet Item -- yes, I know there isn't bullets though
+ */
+div.WebWorks_MiniTOC_Level1
+{
+  color: #000000;
+  font-family: Verdana, 'Trebuchet MS', Arial;
+  font-size: 10pt;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  margin-bottom: 3.0pt;
+  margin-left: 72pt;
+  margin-right: 5pt;
+  margin-top: 5pt;
+  text-align: Left;
+  text-indent: -15pt;
+  text-transform: none;
+  vertical-align: baseline;
+   /*  display: list-item;
+  list-style-type: disc; */
+}
+
+
+
+div.UT_-_Upgrade_Task.a
+{
+  color: #000000;
+  text-decoration: none;
+}
+
+
+td.div.UT_-_Upgrade_Task.a
+{
+  color: #000000;
+  text-decoration: none;
+}
+
+
+div.UT_-_Upgrade_Task a
+{
+  color: #000000;
+  text-decoration: none;
+}
+
+
+
+
+/* THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE (however, 
+ *   we seem to need to redefine .popup in each file or it doesnt work in firefox, so that
+ * is redfined in each .html file, typically through the page.asp file
+ */
+.popup  { border: 1px #999999 solid; background-color: #FBFBFB;}
+.popupText { font-family: Verdana, 'Trebuchet MS', Arial; font-size: 9pt; color: #444444;white-space:nowrap}
+.popupURLText { font-family: Verdana, 'Trebuchet MS', Arial; font-size: 9pt; color: #444444;width:275px;min-width:275px;}
+.popupTitle { font-family: Verdana, 'Trebuchet MS', Arial; font-size: 9pt; color: #222222; padding: 6px;background-color: #EECCCC; padding: 4px 4px 4px 4px; font-weight: bold; }
+.popupClosebox { vertical-align: text-top;position:absolute;right:1px;top:2px;border:0}
+  
+  
+#linkToThisPage {   position: fixed; right: 4px; top: 0px; width: 300px; }
+   
+
+* html #linkToThisPage{ /*funny hack for IE6 only rule, applied on top of the default above because it doesn't support position fixed!!!!! */
+position: absolute;
+top: expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px" : body.scrollTop+"px");
+}
+

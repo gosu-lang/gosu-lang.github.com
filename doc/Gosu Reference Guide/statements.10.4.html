@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Gosu Conditional Execution and Looping</title>
+    <link rel="StyleSheet" href="css/statements.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="statements.10.1.html#1440734">Statements</a> : Gosu Conditional Execution and Looping </span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1440734">Gosu Conditional Execution and Looping </a></h3>
+      <div class="BKN_-_Body_002c_Keep_Next"><a name="1440735">Gosu uses the following constructions to perform program flow:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1142199', '');" title="Gosu Conditional Execution and Looping" name="1141004">If - Else Statements</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1456475', '');" title="Gosu Conditional Execution and Looping" name="1141009">For Statements</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1141335', '');" title="Gosu Conditional Execution and Looping" name="1141014">While() Statements</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1137579', '');" title="Gosu Conditional Execution and Looping" name="1141019">Do…While() Statements</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'statements.10.4.html#1137580', '');" title="Gosu Conditional Execution and Looping" name="1141031">Switch() Statements</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="1142199">If - Else Statements</a></h4>
+      <div class="B_-_Body"><a name="1142200">The most commonly used statement block within the Gosu language is the </a><span class="cv_-_computer_voice">if</span> block. The <span class="cvt_-_computer_voice_table">if</span> block uses a multi-part construction. The <span class="cvt_-_computer_voice_table">else </span>block is optional.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1138324">Syntax</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1138546">if ( &lt;expression&gt; ) &lt;statement&gt; </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1138547">[ else &lt;statement&gt; ]</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1140176">Example</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1140185">if( a == b ) { print( "a equals b" ) } </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140190">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140191">if( a == b || b == c ) { print( "a equals b or b equals c" ) } </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140195">else { print( "a does not equal b and b does not equal c" ) } </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140199">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140201">if( a == b ) { print( "a equals b" ) } </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140205">else if( a == c ) { print( "a equals c" ) } </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1140209">else { print( "a does not equal b, nor does it equal c" ) } </a></PRE>
+      <div class="B_-_Body"><a name="1456493">To improve the readability of your Gosu code, Gosu automatically downcasts after a </a><span class="cv_-_computer_voice">typeis</span> expression if the type is a subtype of the original type. This is particularly useful for <span class="cv_-_computer_voice">if</span> statements and similar Gosu structures. Within the Gosu code bounded by the <span class="cv_-_computer_voice">if</span> statement, you do not need to do casting (<span class="cv_-_computer_voice">as</span>&nbsp;<span class="ps_-_parameter_in_code_snippets">TYPE</span> expressions) to that subtype. Because Gosu confirms that the object has the more specific subtype, Gosu implicitly considers that variable’s type to be the <span class="s_-_strong">subtype</span>, at least within that block of code. For details, see <a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.3.html#1441193', '');" title="Basic Type Checking">“Basic Type Checking”</a></div>
+      <h4 class="H2_-_Heading_2"><span class="cvh_-_computer_voice_in_heading"><a name="1456475">For</a></span> Statements</h4>
+      <div class="B_-_Body"><a name="1143327">The </a><span class="cvt_-_computer_voice_table">for</span> statement block uses a multi-part construction.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1138651">Syntax</a></h6>
+      <div class="CS_-_Code_Single_Line"><a name="1138675">for ( [var] &lt;identifier&gt; in &lt;expression&gt; [ index &lt;identifier&gt; ] ) { &lt;statement&gt; }</a></div>
+      <div class="B_-_Body"><a name="1197251">The scope of the </a><span class="cv_-_computer_voice">&lt;identifier&gt;</span> is limited to the statement block itself. The keyword <span class="cv_-_computer_voice">var</span> before the local variable identifier is optional.</div>
+      <div class="B_-_Body"><a name="1514624">The </a><span class="cv_-_computer_voice">&lt;expression&gt;</span> in the <span class="cv_-_computer_voice">in</span> clause must evaluate to one of the following:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt; margin-bottom: 2.0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="cv_-_computer_voice"><a name="1197252">Array</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1197253">Java </a><span class="cv_-_computer_voice">List</span> (or any Java collection)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1197254">Java </a><span class="cv_-_computer_voice">Iterator</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1197249">String</a></span> (as a list of characters)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1197269">See also </a><a href="javascript:WWHClickedPopup('gosu', 'datatypes.08.7.html#1535845', '');" title="Array Types">“List Access Using Array Index Notation”</a> for details on using lists as arrays and accessing list members using array notation.</div>
+      <div class="B_-_Body"><a name="1482807">Gosu provides backwards compatibility for the use of the older style </a><span class="cv_-_computer_voice">foreach(...)</span> statement. However, it is best to use the <span class="cv_-_computer_voice">for(...)</span> statement instead.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1512833">Iteration in </a><span class="cvh_-_computer_voice_in_heading">For</span> Statements</h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1512834">There are several ways to iterate through members of a list or array using the </a><span class="cv_-_computer_voice">for</span> statement. </div>
+      <div class="B_-_Body"><a name="1512841">Use automatic iteration to iterate automatically through the array or list members. Iteration starts with the initial member and continues sequentially until terminating at the last member. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1512835">Automatic Iteration With Variable</a></h6>
+      <div class="B_-_Body"><a name="1512994">The standard form of iteration is to use an iteration variable. Use the following syntax:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1513001">for ( member in </a><span class="pc_-_parameter_in_code">OBJ </span>) { ... }</PRE>
+      <div class="B_-_Body"><a name="1513021">The </a><span class="p_-_parameter">OBJ</span> value can have any of the following types:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1513737">An iterator – an object that implements the Java </a><span class="cv_-_computer_voice">Iterable</span> interface. Iteration starts with the initial member and continues sequentially until terminating at the last member.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1513738">A Java list or collection class, such as </a><span class="cv_-_computer_voice">java.util.ArrayList</span>. Iteration starts with the initial member and continues sequentially until terminating at the last member.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1513739">An integer – Gosu iterates through the list that many times, and the variable contains the current zero-based index value.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1513372">A Gosu interval – See </a><a href="javascript:WWHClickedPopup('gosu', 'intervals.11.1.html#1454333', '');" title="Intervals">“Intervals”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1513918">Examples:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1513919">for( property in myListOfProperties )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1513952">for ( name in  {"John" , "Mary", "David"} )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1513920">for( i in 0..|100 )</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1513921">for( i in 100 )</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1184965">Automatic Iteration with No Variable - For Numerical Intervals Only</a></h6>
+      <div class="B_-_Body"><a name="1512858">If the object to loop across is numerical iterator type, the variable declaration is optional. For example:</a></div>
+      <div class="B_-_Body"><a name="1513875">For example, the following example uses a numerical interval and defines no variable:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1513876">for (1..10) { </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1513986">&nbsp;&nbsp;print( "hello!") </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1513996">}</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1184971">Automatic Iteration with Index</a></h6>
+      <div class="B_-_Body"><a name="1186216">Use index iteration if you need to determine the exact position of a particular element within an array or list. This technique adds an explicit variable to contain the index value. This can be useful to read members of the array or list in a non-sequential fashion using array notation. Specify iteration with an index variable with the following syntax:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1186278">for ( </a><span class="pc_-_parameter_in_code">member</span> in <span class="pc_-_parameter_in_code">OBJ</span> index <span class="pc_-_parameter_in_code">loopcount </span>)</PRE>
+      <div class="B_-_Body"><a name="1184995">Example:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186380">//This example prints the index of the highest score in an array of test scores. </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186386">//This particular example prints "3".</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186387">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186325">var testScores = new Number[] {91, 75, 97, 100, 89, 99}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186326">print( getIndexOfHighestScore( testScores ) )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186327"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186328">function getIndexOfHighestScore( scores : Number[] ) : Number {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186330">&nbsp;&nbsp;var highIndex = 0</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186388">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186331">&nbsp;&nbsp;for( score in scores index i ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186333">    if( score &gt; scores[highIndex] ) { highIndex = i }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186337">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186389">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186338">&nbsp;&nbsp;return highIndex</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186390">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186339">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186340">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186319">//Result</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1210144">3</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1514775">Iterator Method Iteration Example</a></h6>
+      <div class="B_-_Body"><a name="1514776">Use this type of iteration if the object over which you are iterating is </a><span class="s_-_strong">not</span> a list or array, but it is an iterator. </div>
+      <div class="B_-_Body"><a name="1514777">Specify this type of iteration by using the following syntax:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1514736">for(</a><span class="pc_-_parameter_in_code">member</span> in <span class="pc_-_parameter_in_code">object</span>.iterator() )</PRE>
+      <div class="B_-_Body"><a name="1185401">Example</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186471">//This example iterates over the color values in a map</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186392">var mapColorsByName = new java.util.HashMap()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186393">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186394">mapColorsByName.put( new java.awt.Color( 1, 0, 0 ), "red" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186395">mapColorsByName.put( new java.awt.Color( 0, 1, 0 ), "green" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186396">mapColorsByName.put( new java.awt.Color( 0, 0, 1 ), "blue" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186397">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186399">for( color in mapColorsByName.values().iterator() ) {  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186401">  print( color )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186402">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1185331">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186415">//Result</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186425">red</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186426">green</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1186427">blue</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1186421">Examples</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1186274">The following examples illustrate the different methods for iterating through the members of an array or list in a </a><span class="cv_-_computer_voice">for</span> block.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1140286">// Example 1: Prints all the letters with the index. </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1185261">for( var letter in gw.api.util.StringUtil.splitWhitespace( "a b c d e" ) index i ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140289">&nbsp;&nbsp;print( "Letter " + i + ": " + letter ) </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140290">} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140291">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140292">// Example 2: Print a message for the first exposure with 'other coverage'. </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1185262">for( var exp in Claim.Exposures ) { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140294">&nbsp;&nbsp;if( exp.OtherCoverage ) { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// OtherCoverage is a Boolean property.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140297">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print( "Found an exposure with other coverage." ) </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140298">&nbsp;&nbsp;&nbsp;&nbsp;// Transfer control to statement following this for…in statement</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140299">&nbsp;&nbsp;&nbsp;&nbsp;break </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140300">&nbsp;&nbsp;} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140301">} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140303">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140304">// Example 3: Prints numbers 0 - 99 using simple iteration.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140305">for( i in 100 ) { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186002">&nbsp;&nbsp;print( i + " of 100" ) </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1186003">} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1141496">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1141510">// Example 4: Prints all Claim properties using reflection.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1141497">for( property in Claim.TypeInfo.Properties ) { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1141499">&nbsp;&nbsp;print( property ) </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1141500">} </a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1141335">While() Statements</a></h4>
+      <div class="B_-_Body"><a name="1138818">Gosu evaluates the </a><span class="cv_-_computer_voice">while()</span> expression, and uses the Boolean result (it must evaluate to <span class="cv_-_computer_voice">true</span> or <span class="cv_-_computer_voice">false</span>) to determine the next course of action:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1138888">If the expression is initially </a><span class="cv_-_computer_voice">true</span>, Gosu executes the statements in the statement block repeatedly until the expression becomes <span class="cv_-_computer_voice">false</span>. At this point, Gosu exits the <span class="cv_-_computer_voice">while</span> statement and continues statement execution at the next statement after the <span class="cv_-_computer_voice">while()</span> statement.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1138892">If the expression is initially </a><span class="cv_-_computer_voice">false</span>, Gosu never executes any of the statements in the statement block, and continues statement execution at the next statement after the <span class="cv_-_computer_voice">while()</span> statement.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="1138346">Syntax</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1138832">while( &lt;expression&gt; ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1138833">&nbsp;&nbsp;&lt;statements&gt;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1187838">}</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1140337">Example</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1140343">// Print the digits</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140344">var i = 0</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140345">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140346">while( i &lt; 10 ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140348">&nbsp;&nbsp;print( i )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1141124">&nbsp;&nbsp;i = i + 1</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1140349">}</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1137579">Do…While() Statements</a></h4>
+      <div class="B_-_Body"><a name="1139022">The </a><span class="cv_-_computer_voice">do...while()</span> block is similar to the <span class="cv_-_computer_voice">while()</span> block in that it evaluates an expression and uses the <span class="cv_-_computer_voice">Boolean</span> result to determine the next course of action. The principal difference, however, is the Gosu tests the expression for validity <span class="s_-_strong">after</span> executing the statement block, instead of prior to executing the statement block. This means that the statements in the statement block executes at least once (initially).</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1139023">If the expression is initially </a><span class="cv_-_computer_voice">true</span>, Gosu executes the statements in the statement block repeatedly until the expression becomes <span class="cv_-_computer_voice">false</span>. At this point, Gosu exits the <span class="cv_-_computer_voice">do...while()</span> block and continues statement execution at the next statement after the <span class="cv_-_computer_voice">do...while()</span> statement.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1139045">If the expression is initially </a><span class="cv_-_computer_voice">false</span>, Gosu executes the statements in the statement block once, then evaluates the condition. If nothing in the statement block has changed so that the expression still evaluates to <span class="cv_-_computer_voice">false</span>, Gosu continues statement execution at the next statement after the <span class="cv_-_computer_voice">do...while()</span> block. If action in the statement block causes the expression to evaluate to <span class="cv_-_computer_voice">true</span>, Gosu executes the statement block repeatedly until the expression becomes <span class="cv_-_computer_voice">false</span>, as in the previous case.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="1138365">Syntax</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1138949">do { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1187830">&nbsp;&nbsp;&lt;statements&gt; </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1187831">} while( &lt;expression&gt; )</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1140368">Example</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1140377">// Print the digits</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140378">var i = 0</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140379">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140380">do {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140382">&nbsp;&nbsp;print( i )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1141125">&nbsp;&nbsp;i = i + 1</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1140383">} while( i &lt; 10 )</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1137580">Switch() Statements</a></h4>
+      <div class="B_-_Body"><a name="1139098">Gosu evaluates the </a><span class="cv_-_computer_voice">switch()</span> expression, and uses the result to choose one course of action from a set of multiple choices. Gosu evaluate the expression, then iterates through the case expressions in order until it finds a match.</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1139102">If a case value equals the expression, Gosu execute its accompanying statement list. Statement execution continues until Gosu encounters a </a><span class="cv_-_computer_voice">break</span> statement, or the switch statement ends. Gosu continues to the next case (Gosu executes multiple case sections) if you omit the <span class="cv_-_computer_voice">break</span> statement.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1478763">If no case value equals the expression, Gosu skips to the default case, if one exists. The default case is a case section with the label </a><span class="cv_-_computer_voice">default:</span> rather than <span class="cv_-_computer_voice">case </span><span class="p_-_parameter">VALUE</span><span class="cv_-_computer_voice">:</span>. The default case must be the last case in the list of sections.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1478764">The </a><span class="cvt_-_computer_voice_table">switch()</span> statement block uses a multi-part construction. The <span class="cvt_-_computer_voice_table">default</span> statement is optional. However, in most cases, it is best to implement a default case to handle any unexpected conditions.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1138383">Syntax</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1139117">switch( &lt;expression&gt; ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139118">&nbsp;&nbsp;case label1 :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139119">&nbsp;&nbsp;&nbsp;&nbsp;[statementlist1]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139120">&nbsp;&nbsp;&nbsp;&nbsp;[break]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139121">&nbsp;&nbsp;[ ...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139122">&nbsp;&nbsp;[ case labelN :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139123">&nbsp;&nbsp;&nbsp;&nbsp;[statementlistN]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139124">&nbsp;&nbsp;&nbsp;&nbsp;[break] ] ]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139125">&nbsp;&nbsp;[ default :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1139126">&nbsp;&nbsp;&nbsp;&nbsp;[statementlistDefault]]</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1139127">} </a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1140404">Example</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1140410">switch( strDigitName ) {  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140412">&nbsp;&nbsp;case "one":    </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140413">&nbsp;&nbsp;&nbsp;&nbsp;strOrdinalName = "first"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140414">&nbsp;&nbsp;&nbsp;&nbsp;break  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140415">&nbsp;&nbsp;case "two":    </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140416">&nbsp;&nbsp;&nbsp;&nbsp;strOrdinalName = "second"    </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140417">&nbsp;&nbsp;&nbsp;&nbsp;break  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140418">&nbsp;&nbsp;case "three":    </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140419">&nbsp;&nbsp;&nbsp;&nbsp;strOrdinalName = "third"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140420">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140421">&nbsp;&nbsp;case "five":</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140422">&nbsp;&nbsp;&nbsp;&nbsp;strOrdinalName = "fifth"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140423">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140424">&nbsp;&nbsp;case "eight":</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140425">&nbsp;&nbsp;&nbsp;&nbsp;strOrdinalName = "eighth"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140426">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140427">&nbsp;&nbsp;case "nine":</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140428">&nbsp;&nbsp;&nbsp;&nbsp;strOrdinalName = "ninth"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140429">&nbsp;&nbsp;&nbsp;&nbsp;break</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140430">&nbsp;&nbsp;default:</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140431">&nbsp;&nbsp;&nbsp;&nbsp;strOrdinalName = strDigitName + "th"</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1140432">} </a></PRE>
+      <div class="B_-_Body"><a name="1456510">To improve the readability of your Gosu code, Gosu automatically downcasts the object after a </a><span class="cv_-_computer_voice">typeis</span> expression if the type is a subtype of the original type. This is particularly valuable for <span class="cv_-_computer_voice">if</span> statements and similar Gosu structures such as <span class="cv_-_computer_voice">switch</span>. Within the Gosu code bounded by the <span class="cv_-_computer_voice">if</span> or <span class="cv_-_computer_voice">switch</span> statement, you do not need to do casting (<span class="cv_-_computer_voice">as</span>&nbsp;<span class="ps_-_parameter_in_code_snippets">TYPE</span> expressions) to that subtype for that case. Because Gosu confirms that the object has the more specific subtype, Gosu implicitly considers that variable’s type to be the <span class="s_-_strong">subtype</span> for that block of code. There are several special cases that turn off the downcasting. For details, see <a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.3.html#1441193', '');" title="Basic Type Checking">“Basic Type Checking”</a>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

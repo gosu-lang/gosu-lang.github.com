@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Objects</title>
+    <link rel="StyleSheet" href="css/datatypes.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="datatypes.08.1.html#1530997">Types</a> : Objects</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1530997">Objects</a></h3>
+      <div class="B_-_Body"><a name="1535131">The root type for all object types in Gosu is the Java class </a><span class="cv_-_computer_voice">java.lang.Object</span>. An object encapsulates some data (variables and properties) and methods (functions that act on the object). Because it is always in scope, simply type <span class="cv_-_computer_voice">Object</span> unless a similarly-named type is in scope and requires disambiguation. </div>
+      <div class="B_-_Body"><a name="1535160">Do not create objects directly with the root object type </a><span class="cv_-_computer_voice">Object</span>. However, you can create classes that extend the root object type <span class="cv_-_computer_voice">Object</span>. If you do not declare a new class to extend a specific class, your new class extends the <span class="cv_-_computer_voice">Object</span> class.</div>
+      <div class="B_-_Body"><a name="1530999">In some cases you may need to declare a variable that use the type </a><span class="cv_-_computer_voice">Object</span> to support a variety of object subclasses. For example, you can define a collection to can contain a heterogeneous mix of various object types, all of which extend the root object type Object.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1531006">Examples</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1534826">var a : Address</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1534828">var map = new java.util.HashMap()</a></PRE>
+      <div class="B_-_Body"><a name="1534832">To create or use objects, see </a><a href="javascript:WWHClickedPopup('gosu', 'datatypes.08.4.html#1538265', '');" title="Objects">“Object Instantiation”</a>.</div>
+      <div class="B_-_Body"><a name="1531024">For more information about the Gosu type system, see </a><a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.1.html#1444075', '');" title="Type System">“Type System”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="1538265">Object Instantiation</a></h4>
+      <div class="B_-_Body"><a name="1538267">A Gosu object is an instance of a type. A type can be a class or other construct exposed to Gosu through the type system. A class is a collection of object data and methods. To instantiate the class means to use the class definition to create an in-memory copy of the object with its own object data. Other code can get or set properties on the object. Other code can call methods on the object, which are functions that perform actions on that instance unique of the object.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1538936">Creating New Objects</a></h6>
+      <div class="B_-_Body"><a name="1538938">You use the Gosu </a><span class="cv_-_computer_voice">new</span> operator to create an instance from a class definition or other type that can be instantiated. </div>
+      <div class="B_-_Body"><a name="1539067">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1538939">new java.util.ArrayList()&nbsp;//&nbsp;Create an instance of an ArrayList.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1538286">new Number[5]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Create an array of numbers.</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1538287">new LossCause[3] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Create an array of loss causes.</a></PRE>
+      <div class="B_-_Body"><a name="1538291">See </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.09.10.html#1595812', '');" title="New Object Expressions">“New Object Expressions”</a> for more details.</div>
+      <h4 class="H2_-_Heading_2"><a name="1538294">Object Property Assignment</a></h4>
+      <div class="B_-_Body"><a name="1538295">Property assignment is similar to variable assignment.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1538296">Syntax</a></h6>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538297">&lt;object-property-path&gt; = &lt;expression&gt;</a></span></div>
+      <div class="B_-_Body"><a name="1538298">Some properties are write-protected. For example, the following Gosu code:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1538299">Activity.UpdateTime = "Mar 17, 2006"</a></div>
+      <div class="B_-_Body"><a name="1538300">That code causes the following error:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1551865">Property, UpdateTime, of class Activity, is not writable</a></div>
+      <div class="B_-_Body"><a name="1551872">Other properties are read-protected but can be written.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1551866">Example</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1551867">myObject.Prop = "Test Value" </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1538304">var startTime = myObject.UpdateTime</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1551781">Property Assignment Triggers Instantiation of Intermediate Objects</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1551782">In general, if you try to assign a property on an variable, and the variable evaluates to </a><span class="cv_-_computer_voice">null</span> at runtime, Gosu throws a null pointer exception.</div>
+      <div class="B_-_Body"><a name="1580983">However, if you set a property using property path syntax containing at least two objects, in some cases Gosu can automatically instantiate an intermediate object in the path. </a></div>
+      <div class="B_-_Body"><a name="1581600">For example, suppose the following:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1581622">You have Gosu classes called </a><span class="cv_-_computer_voice">AClass</span> and <span class="cv_-_computer_voice">BClass</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1581631">AClass</a></span> has a property called <span class="cv_-_computer_voice">B</span> that contains a reference to an instance of class <span class="cv_-_computer_voice">BClass</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1581641">The </a><span class="cv_-_computer_voice">BClass</span> class has a property called <span class="cv_-_computer_voice">Name</span> that contains a <span class="cv_-_computer_voice">String</span> value.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1583150">Some code has a variable called </a><span class="cv_-_computer_voice">a</span> that contains an instance of type <span class="cv_-_computer_voice">AClass</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1581843">At run time, if </a><span class="cv_-_computer_voice">a.B</span> contains a non-null reference, it is easy to predict what the following code does:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1581997">a.B.Name = "John"</a></PRE>
+      <div class="B_-_Body"><a name="1582019">Gosu first evaluates </a><span class="cv_-_computer_voice">a.B</span>, and then on the result object sets the <span class="cv_-_computer_voice">Name</span> property to the value <span class="cv_-_computer_voice">"John"</span>.</div>
+      <div class="B_-_Body"><a name="1582551">However, if the </a><span class="cv_-_computer_voice">AClass.B</span> property supports instantiation of intermediate objects, the same code works even if <span class="cv_-_computer_voice">a.B</span> is <span class="cv_-_computer_voice">null</span> at run time. </div>
+      <div class="B_-_Body"><a name="1583263">At run time, if Gosu detects that </a><span class="cv_-_computer_voice">a.B</span> is <span class="cv_-_computer_voice">null</span>:</div>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="1582413">Gosu instantiates a new instance of </a><span class="cv_-_computer_voice">BClass</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1582419">Gosu sets </a><span class="cv_-_computer_voice">a.B</span> to the new instance</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1582451">Gosu sets </a><span class="cv_-_computer_voice">a.B.Name</span> property on it.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1582685">You can add instantiation of intermediate objects to any Gosu class property. On the line before the property declaration, add the line:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1583571">@Autocreate</a></div>
+      <h4 class="H2_-_Heading_2"><a name="1538306">Object Property Access</a></h4>
+      <div class="B_-_Body"><a name="1538307">Gosu retrieves a property’s value using the period operator. You can chain this expression with additional property accessors. For important details about how Gosu handles </a><span class="cv_-_computer_voice">null</span> values in the expression to the left of the period, see <a href="javascript:WWHClickedPopup('gosu', 'expressions.09.19.html#1655838', '');" title="Handling Null Values In Expressions">“Handling Null Values In Expressions”</a>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1538311">Syntax</a></h6>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538312">object.</a></span><span class="pc_-_parameter_in_code">PROPERTY_NAME</span></div>
+      <h6 class="HS_-_Head_Sub"><a name="1538313">Examples</a></h6>
+      <div class="T_-_Table"><a name="1551747">&nbsp;</a></div>
+      <table class="withoutHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1551756">Expression</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1551758">Result</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1551760">Claim.Contacts.Attorney.Name </a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1551762">Some Name</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1551764">Claim.Addresses.State</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1551766">New Mexico</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <h4 class="H2_-_Heading_2"><a name="1551631">Object Methods</a></h4>
+      <div class="B_-_Body"><a name="1551632">An object property can be any valid data type, including an array, a function, or another object. An object function is generally called a </a><span class="e_-_emphasis">method</span>. Invoking a method on an object is similar to accessing an object property, with the addition of parenthesis at the end to denote the function. Gosu uses the dot notation to call a method on a object instance. For more details about how Gosu handles <span class="cv_-_computer_voice">null</span> values in the expression to the left of the period, see <a href="javascript:WWHClickedPopup('gosu', 'expressions.09.19.html#1655838', '');" title="Handling Null Values In Expressions">“Handling Null Values In Expressions”</a>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1538336">Syntax</a></h6>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="pc_-_parameter_in_code"><a name="1538337">object</a></span><span class="cvt_-_computer_voice_table">.</span><span class="pc_-_parameter_in_code">METHOD_NAME</span><span class="cvt_-_computer_voice_table">()</span></div>
+      <h6 class="HS_-_Head_Sub"><a name="1538338">Example</a></h6>
+      <div class="T_-_Table"><a name="1538352">&nbsp;</a></div>
+      <table class="withoutHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1538341">Expression</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1538343">Result</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538345">claim.isClosed()</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538347">Return a Boolean value indicating the status of Claim</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538349">claim.resetFlags()</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538351">Reset flags for this claim</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1539956">See </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.09.17.html#1161201', '');" title="Static Method Calls">“Static Method Calls”</a> for more details. See also <a href="javascript:WWHClickedPopup('gosu', 'typesystem.26.4.html#1455649', '');" title="Using Reflection">“Using Reflection”</a> for regarding using type information to determine methods of an object.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

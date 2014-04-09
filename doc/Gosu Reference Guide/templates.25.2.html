@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Template Overview</title>
+    <link rel="StyleSheet" href="css/templates.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="templates.25.1.html#1464501">Gosu Templates</a> : Template Overview</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1464501">Template Overview</a></h3>
+      <div class="B_-_Body"><a name="1464502">Templates are text with embedded Gosu code within a larger block of text. The embedded Gosu code optionally can calculate a value and export the result as text in the location the code appears in the template text. There are two mechanisms to use Gosu templates:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1464088">Template syntax inside text literals.</a></span> Inside your Gosu code, use template syntax for an inline <span class="cv_-_computer_voice">String</span> literal values with embedded Gosu expressions. Gosu template syntax combines static text that you provide with dynamic Gosu code that executes at run time and returns a result. Gosu uses the result of the Gosu expression to output the dynamic output at run time as a <span class="cv_-_computer_voice">String</span> value.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1464218">Separate template files.</a></span> Define Gosu templates as separate files that you can execute from other code to perform actions and generate output. If you use separate template files, there are additional features you can use such as passing custom parameters to your template. For more details, see <a href="javascript:WWHClickedPopup('gosu', 'templates.25.4.html#1454571', '');" title="Using Template Files">“Using Template Files”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1464222">The simplest way to use to templates is to embed Gosu expressions that evaluate at run time and generate text in the place of the embedded Gosu expressions. </a></div>
+      <h4 class="H2_-_Heading_2"><a name="1464080">Template Expressions</a></h4>
+      <div class="B_-_Body"><a name="1464081">Use the following syntax to embed a Gosu expression in </a><span class="cv_-_computer_voice">String</span> text:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1453682">${ </a><span class="pc_-_parameter_in_code">EXPRESSION</span> }</div>
+      <div class="B_-_Body"><a name="1453683">For example, suppose you want to display text with some calculation in the middle of the text:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453684">var mycalc = 1 + 1</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453685">var s = "One plus one equals " + mycalc + "."</a></PRE>
+      <div class="B_-_Body"><a name="1453686">Instead of this multiple-line code, embed the calculation directly in the </a><span class="cv_-_computer_voice">String</span> as a template:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1453687">var s = "One plus one equals ${ 1 + 1 }."</a></div>
+      <div class="B_-_Body"><a name="1453688">If you print this variable, Gosu outputs:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1453689">One plus one equals 2.</a></div>
+      <div class="B_-_Body"><a name="1464293">Gosu runs your template expression at run time. The expression can include variables or dynamic calculations that return a value:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1464345">var s1 = "One plus one equals ${ myVariable }."</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1464357">var s2 = "The total is ${ myVariable.calculateMyTotal() }."</a></div>
+      <div class="B_-_Body"><a name="1464308">At compile time, Gosu uses the built-in type checking system to ensure the embedded expression is valid and type safe. </a></div>
+      <div class="B_-_Body"><a name="1464381">If the expression does not return a value of type </a><span class="cv_-_computer_voice">String</span>, Gosu attempts to coerce the result to the type <span class="cv_-_computer_voice">String</span>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1464392">Alternate Template Expression Syntax &lt;%= ... %&gt;</a></h6>
+      <div class="B_-_Body"><a name="1464393">The syntax </a><span class="cv_-_computer_voice">${</span> <span class="pc_-_parameter_in_code">EXPRESSION</span> <span class="cv_-_computer_voice">}</span> is the preferred style for template expressions. </div>
+      <div class="B_-_Body"><a name="1464401">Additionally, Gosu provides an alternate template style. Use the three-character text </a><span class="cv_-_computer_voice">&lt;%=</span> to begin the expression. Use the two-character text <span class="cv_-_computer_voice">%&gt;</span> to end the expression. For example, you can rewrite the previous example as the following concise code:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1464155">var s = "One plus one equals &lt;%= 1 + 1 %&gt;."</a></div>
+      <div class="B_-_Body"><a name="1465313">Any surrounding text exports to the output directly. </a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

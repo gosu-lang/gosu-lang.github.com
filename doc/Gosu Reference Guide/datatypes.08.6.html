@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Sequences of Characters</title>
+    <link rel="StyleSheet" href="css/datatypes.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="datatypes.08.1.html#1490231">Types</a> : Sequences of Characters</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1490231">Sequences of Characters</a></h3>
+      <div class="B_-_Body"><a name="1531165">To represent a sequence of characters in Gosu, use the Java type </a><span class="cv_-_computer_voice">java.lang.String</span>. Because it is always in scope, simply type <span class="cv_-_computer_voice">String</span> unless a similarly-named type is in scope and requires disambiguation. Create a <span class="cv_-_computer_voice">String</span> object by enclosing a string of characters in beginning and ending double-quotation marks. Example values for the <span class="cv_-_computer_voice">String</span> data type are <span class="cv_-_computer_voice">"hello"</span>, <span class="cv_-_computer_voice">"123456"</span>, and <span class="cv_-_computer_voice">""</span> (the empty string).</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1490237">String Variables Can Have Content, Be Empty, or Be Null</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1490238">It is important to understand that the value </a><span class="cv_-_computer_voice">null</span> represents the absence of an object reference and it is distinct from the empty <span class="cv_-_computer_voice">String</span> value <span class="cv_-_computer_voice">""</span>. The two are not interchangeable values. A variable declared to type <span class="cv_-_computer_voice">String</span> can hold the value <span class="cv_-_computer_voice">null</span>, the empty <span class="cv_-_computer_voice">String</span> (<span class="cv_-_computer_voice">""</span>), or a non-empty <span class="cv_-_computer_voice">String</span>.</div>
+      <div class="B_-_Body"><a name="1490239">To test for a populated </a><span class="cv_-_computer_voice">String</span> object versus a <span class="cv_-_computer_voice">null</span> or empty <span class="cv_-_computer_voice">String</span> object, use the <span class="cv_-_computer_voice">HasContent</span> method. When you combine it with the null-tolerant property access in Gosu, <span class="cv_-_computer_voice">HasContent</span> returns <span class="cv_-_computer_voice">false</span> if either the value is <span class="cv_-_computer_voice">null</span> or an empty <span class="cv_-_computer_voice">String</span> object. </div>
+      <div class="B_-_Body"><a name="1495270">Compare the behavior of properties </a><span class="cv_-_computer_voice">HasContent</span> and <span class="cv_-_computer_voice">Empty</span>:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490240">var s1 : String = null</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490241">var s2 : String = ""</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490242">var s3 : String = "hello"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490243">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1550499">print("has content = " + s1?.HasContent)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1550500">print("has content = " + s2?.HasContent)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1550501">print("has content = " + s3?.HasContent)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1550502">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1550503">print("is empty = " + s1?.Empty)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1550504">print("is empty = " + s2?.Empty)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1550505">print("is empty = " + s3?.Empty)</a></PRE>
+      <div class="B_-_Body"><a name="1490258">This code outputs:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490259">has content = false</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490260">has content = false</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490261">has content = true</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490262">is empty = false</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490263">is empty = true</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490264">is empty = false</a></PRE>
+      <div class="B_-_Body"><a name="1490265">Notice that whether the variable holds an empty </a><span class="cv_-_computer_voice">String</span> or <span class="cv_-_computer_voice">null</span>, the <span class="cv_-_computer_voice">HasContent</span> method returns <span class="cv_-_computer_voice">false</span>. This means that the <span class="cv_-_computer_voice">HasContent</span> method is more intuitive in typical cases where <span class="cv_-_computer_voice">null</span> represents absence of data.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1490330">Other Methods on String Objects</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1490331">Gosu provides various methods to manipulate strings and characters. For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1490332">var str = "bat"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490333">str = str.replace( "b", "c" )</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1490334">print(str)</a></PRE>
+      <div class="B_-_Body"><a name="1490335">This prints:</a></div>
+      <PRE class="CL_-_Code_Last_Line"><a name="1490336">cat</a></PRE>
+      <div class="B_-_Body"><a name="1490337">Type </a><span class="cv_-_computer_voice">"new String()"</span> into the Gosu Tester and then press period to see the full list of methods.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1490339">String Utilities</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1490340">You can access additional </a><span class="cv_-_computer_voice">String</span> methods in API library <span class="cv_-_computer_voice">gw.api.util.StringUtil</span>. Type <span class="cv_-_computer_voice">gw.api.util.StringUtil</span> into the Gosu Tester and press period to see the full list of methods.</div>
+      <div class="B_-_Body"><a name="1490341">For example, instead of the Java native method </a><span class="cv_-_computer_voice">replace</span> on <span class="cv_-_computer_voice">java.lang.String</span>, to perform search and replace you can use the <span class="cv_-_computer_voice">StringUtil</span> method <span class="cv_-_computer_voice">substituteGlobalCaseInsensitive</span>. </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1490343">In-line String Templates</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1490344">If you define a </a><span class="cv_-_computer_voice">String</span> literal directly in your Gosu code, you can embed Gosu code directly in the <span class="cv_-_computer_voice">String</span> data. This feature is called templates. For example, the following String assignment uses template features:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1490345">var s = "One plus one equals ${ 1 + 1 }."</a></div>
+      <div class="B_-_Body"><a name="1490346">If you print this variable, Gosu outputs:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1490347">One plus one equals 2.</a></div>
+      <div class="B_-_Body"><a name="1490351">For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'templates.25.1.html#1453662', '');" title="Gosu Templates">“Gosu Templates”</a>.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1490353">Escaping Special Characters in Strings</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1490354">In Gosu strings, the backslash character (\) indicates that the character directly after it requires special handling. As it is used to “escape” the usual meaning of the character in the string, the backslash is called an escape character. The combination of the backslash and its following character is called an escape sequence.</a></div>
+      <div class="B_-_Body"><a name="1490355">For example, you use the backslash escape character to insert a double-quotation mark into a string without terminating it. The following list describes some common uses for the backslash in Gosu strings.</a></div>
+      <div class="T_-_Table"><a name="1490381">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1490358">Sequence</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1490360">Result</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1490362">\\</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1490364">Inserts a backslash into the string without forcing an escape sequence.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1490366">\"</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1490368">Inserts a double-quotation mark into the string without terminating it. </a></div>
+            <div class="TT_-_Table_Text"><span class="s_-_strong"><a name="1490369">Note: </a></span>This does not work inside embedded code within Gosu templates. In such cases, do not escape the double quote characters. See <a href="javascript:WWHClickedPopup('gosu', 'templates.25.1.html#1453662', '');" title="Gosu Templates">“Gosu Templates”</a>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1490374">\n</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1490376">Inserts a new line into the string so that the remainder of the text begins on a new line if printed.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1490378">\t</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1490380">Inserts a tab into the string to add horizontal space in the line if printed.</a></div>
+          </td>
+        </tr>
+      </table>
+      <h6 class="HS_-_Head_Sub"><a name="1490382">Examples</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1490383">Claim["ClaimNumber"]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490384">var address = "123 Main Street"</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1490385">"LOGGING: \n\"Global Activity Assignment Rules\""</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1490386">Gosu String Templates</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1490387">In addition to simple text values surrounded by quote signs, you can embed small amounts of Gosu code directly in the </a><span class="cv_-_computer_voice">String</span> as you define a <span class="cv_-_computer_voice">String</span> literal. Gosu provides two different template styles. At compile time, Gosu uses its native type checking to ensure the embedded expression is valid and type safe. If the expression does not return a value of type <span class="cv_-_computer_voice">String</span>, Gosu attempts to coerce the result to the type <span class="cv_-_computer_voice">String</span>.</div>
+      <div class="B_-_Body"><a name="1490388">Use the following syntax to embed a Gosu expression in the </a><span class="cv_-_computer_voice">String</span> text:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1490389">${ </a><span class="pc_-_parameter_in_code">EXPRESSION</span> }</div>
+      <div class="B_-_Body"><a name="1490390">For example, suppose you need to display text with some calculation in the middle of the text:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490391">var mycalc = 1 + 1</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490392">var s = "One plus one equals " + mycalc + "."</a></PRE>
+      <div class="B_-_Body"><a name="1490393">Instead of this multiple-line code, embed the calculation directly in the </a><span class="cv_-_computer_voice">String</span> as a template:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1490394">var s = "One plus one equals ${ 1 + 1 }."</a></div>
+      <div class="B_-_Body"><a name="1490395">If you print this variable, Gosu outputs:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1490396">One plus one equals 2.</a></div>
+      <div class="B_-_Body"><a name="1490397">This style is the preferred </a><span class="cv_-_computer_voice">String</span> template style.</div>
+      <div class="B_-_Body"><a name="1490398">However, Gosu provides an alternative template style. Use the three-character text </a><span class="cv_-_computer_voice">&lt;%=</span> to begin the expression. Use the two-character text <span class="cv_-_computer_voice">%&gt;</span> to end the expression. For example, you can rewrite the previous example as the following concise code:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1490399">var s = "One plus one equals &lt;%= 1 + 1 %&gt;."</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490400">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490401">print("one")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490402">var s = "Hello. &lt;% print("two") %&gt;We will go to France&lt;% print("three") %&gt;."</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490403">print(s)</a></PRE>
+      <div class="B_-_Body"><a name="1490404">Within a code expression, do not attempt to escape double quote characters inside templates using the special syntax for quote characters in </a><span class="cv_-_computer_voice">String</span> values. In other words, the following is valid Gosu code:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1490405">&nbsp;&nbsp;&nbsp; var s= "&lt;% var myvalue = {"a", "b"} %&gt;"</a></div>
+      <div class="B_-_Body"><a name="1490406">However, the following is invalid due to improper escaping of the internal double quotes:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1490407">&nbsp;&nbsp;&nbsp; var foo = "&lt;% var bar = {\"a\", \"b\"} %&gt;"</a></div>
+      <div class="B_-_Body"><a name="1491356">For much more information about Gosu templates, see </a><a href="javascript:WWHClickedPopup('gosu', 'templates.25.1.html#1453662', '');" title="Gosu Templates">“Gosu Templates”</a><span style="font-family: Arial; font-size: 8.0pt">.</span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

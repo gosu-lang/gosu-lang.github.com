@@ -7,34 +7,15 @@ layout: main
         <h1>Getting Started</h1>
       </div>
 
-      <p>First, <a href="downloads.html">download</a> the latest Gosu distribution.</p>
-
-      <p>Getting started with Gosu is easy: just type <code>gosu</code> with no arguments at a command prompt, and you
-        should get the built in playground:</p>
-
-      <div class="img">
-        <img src="/img/tester.png">
-        <div>The Gosu Playground</div>
-      </div>
-
-      <p>Once you have the playground up, simply start banging away with Gosu code: no need to worry about
-        defining full classes, snippets work just fine.</p>
-
-      <p>Here are some useful keyboard shortcuts in the playground:</p>
-
-      <ul>
-        <li><strong>Ctrl+Space</strong> - Code completion</li>
-        <li><strong>Ctrl+T</strong> - Show the inferred type of whatever is below the cursor</li>
-        <li><strong>Ctrl+W</strong> - Expand the selection</li>
-        <li><strong>F5</strong> - Execute the code</li>
-      </ul>
-
+      <p>The <a href="downloads.html">Gosu Plugin for IntelliJ</a> is the recommended way to use Gosu. 
+      The plugin is hosted on the IntelliJ IDEA Plugin Repository and you can download it directly from within 
+      IntelliJ IDEA. To download and install the plugin, follow <a href="http://gosu-lang.org/doc/wwhelp/wwhimpl/api.htm?&context=gosu&src=getting-started-gosu-opensource&topic=Getting_Started_With_IntelliJ_IDEA_Gosu_Plugin">detailed installation instructions in the documentation</a>.</p>
+       
       <p>For the truly impatient, you can do some evaluate some simple gosu expressions online over on the
         <a href="/play.html">Play</a> page.</p>
 
     </section>
 
-    <!-- Getting Started -->
     <section id="basics">
 
       <div class="page-header">
@@ -142,14 +123,14 @@ layout: main
 
       <pre class="prettyprint">
  public class Foo {
-   var _bar : String  = "bar" as Bar // the 'as Bar' exposes this field as the property Bar
+   var _bar : String as Bar = "bar" // the 'as Bar' exposes this field as the property Bar
  }</pre>
 
       <p>If you want the property to be readonly, you can use the <code>readonly</code> modifier:</p>
 
 <pre class="prettyprint">
  public class Foo {
-  var _bar : String  = "bar" as readonly Bar
+  var _bar : String as readonly Bar = "bar" 
  }</pre>
 
       <p>If you want to add some logic to the get or set of a propery, you can use this longer syntax:</p>
@@ -184,20 +165,20 @@ layout: main
       <p>Consider this code:</p>
 
       <pre class="prettyprint">
-        var aList = getAListOfStrings()
-        if(aList.get(0).isEmpty()) {
-          print("The first string is empty")
-        }
+  var aList = getAListOfStrings()
+  if(aList.get(0).isEmpty()) {
+    print("The first string is empty")
+  }
 </pre>
 
       <p>This code can cause a <code>NullPointerException</code> if either the list or the first string in the list
       is null.  We can address this by using the null-safe invocation operator <code>?.</code>:</p>
 
       <pre class="prettyprint">
-        var aList = getAListOfStrings()
-        if(aList?.get(0)?.isEmpty()) {
-          print("The first string is empty")
-        }
+  var aList = getAListOfStrings()
+  if(aList?.get(0)?.isEmpty()) {
+    print("The first string is empty")
+  }
 </pre>
 
       <p>The null safe invocation operator works on both methods and properties.</p>
@@ -208,7 +189,7 @@ layout: main
       Operator, <code>?:</code>:</p>
 
       <pre class="prettyprint">
-        var myString = getAPossiblyNullString() ?: "default"
+  var myString = getAPossiblyNullString() ?: "default"
 </pre>
 
       <p>If <code>getAPossiblyNullString</code> returns <code>null</code>, then the value <code>"default"</code> will

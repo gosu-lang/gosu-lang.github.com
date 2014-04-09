@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Basic Block Definition and Invocation</title>
+    <link rel="StyleSheet" href="css/blocks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="blocks.19.1.html#1435054">Gosu Blocks</a> : Basic Block Definition and Invocation</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1435054">Basic Block Definition and Invocation</a></h3>
+      <div class="B_-_Body"><a name="1435675">To define a Gosu block, type use the backslash character (</a><span class="cv_-_computer_voice">\</span>) followed by a series of arguments. The arguments must be name/type pairs separated by a colon character (<span class="cv_-_computer_voice">:</span>) just as if defining arguments in a method. Next, add a hyphen character (<span class="cv_-_computer_voice">-</span>) and a greater-than character (<span class="cv_-_computer_voice">&gt;</span>) to form the arrow-like pair characters&nbsp;<span class="cv_-_computer_voice">-&gt;</span>. Finally, add a Gosu expression or a statement list surrounded by curly braces. </div>
+      <div class="B_-_Body"><a name="1453864">In other words, the syntax is:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1453865">\ </a><span class="pc_-_parameter_in_code">argumentList</span> -&gt; <span class="pc_-_parameter_in_code">blockBody</span></div>
+      <div class="B_-_Body"><a name="1453866">The argument list (</a><span class="p_-_parameter">argumentList</span>) is a standard function argument list, for example:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1453867">x : Number, y : Number</a></div>
+      <div class="B_-_Body"><a name="1454163">The argument list defines what parameters must be passed to the block. The parameter list uses identical syntax as parameters to regular functions. However, in some cases you can omit the types of the parameters, such as passing a block directly into a class method such that the parameter type can be inferred. For examples, see </a><a href="javascript:WWHClickedPopup('gosu', 'blocks.19.5.html#1437906', '');" title="Argument Type Inference Shortcut In Certain Cases">“Argument Type Inference Shortcut In Certain Cases”</a>.</div>
+      <div class="B_-_Body"><a name="1453868">The block body (</a><span class="p_-_parameter">blockBody</span>) can be either of the following:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1453892">a simple expression. This includes anything legal on the </a><span class="s_-_strong">right-hand</span> side of an assignment statement. For example, the following is a simple expression:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="1453869">"a concatenated string " + "is a simple expression"</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1454012">a statement list with one or more statements surrounded by braces and separated by semi-colon characters, such as the following simple one-statement statement list:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="1454013">\ x : Number, y : Number -&gt; { return x + y }</a></div>
+      <div class="LP_-_List_Para"><a name="1454106">For single-statement statement lists, you </a><span class="e_-_emphasis">must</span> explicitly include the brace characters. In particular, note that variable assignment operations are always statements not expressions. Thus, the following expression is invalid:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1454107">names.each( \ n -&gt; myValue += n ) </a></div>
+      <div class="LP_-_List_Para"><a name="1454108">Instead, change it to the following:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1454040">names.each( \ n -&gt; { myValue += n } ) </a></div>
+      <div class="LP_-_List_Para"><a name="1453930">For multiple statements, separate the statements with a semi-colon character. For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1453914">\ x : Number, y : Number -&gt; { var i = x + y; return i }</a></div>
+      <div class="B_-_Body"><a name="1437644">The following block multiplies a number with itself, which is known as squaring a number:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1437645">var square = \ x : Number-&gt; x * x &nbsp;&nbsp;&nbsp;//no need for braces here</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437646">var myResult = square(10)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// call the block</a></PRE>
+      <div class="B_-_Body"><a name="1435978">The value of </a><span class="cv_-_computer_voice">myResult</span> in this example is 100. </div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1445289">All parameter names in a block definition’s argument list must not conflict with any existing in-scope&nbsp;variables, including but not limited to local variables.</a></div>
+      <div class="B_-_Body"><a name="1445884">The Gosu editor displays a block definition’s backslash character as a Greek lambda character. This improves code appearance and honors the theoretical framework from which blocks derive, called </a><span class="e_-_emphasis">lambda&nbsp;calculus</span>. The Gosu editor displays the pair of characters <span class="cv_-_computer_voice">-&gt;</span> as an arrow symbol.</div>
+      <div class="B_-_Body"><a name="1445886">For example, you could type the following Gosu block:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1445887">var square = \ x : Number -&gt; x * x </a></div>
+      <div class="B_-_Body"><a name="1444769">The Gosu editor displays it as:</a></div>
+      <div class="FI_-_Figure_Indent"><a name="1444778"><img class="Default" src="images/gscript-block-visual.png" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="B_-_Body"><a name="1444677">In general, the standard Gosu style is to omit all semicolon characters in Gosu at the end of lines. Gosu code is more readable without optional semicolons. However, if you provide statement lists on one line, such as within block definitions, use semicolons to separate statements. For other style guidelines, see </a><a href="javascript:WWHClickedPopup('gosu', 'style.31.2.html#1445054', '');" title="General Coding Guidelines">“General Coding Guidelines”</a>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1442836">Return Values and Return Type</a></h6>
+      <div class="B_-_Body"><a name="1443575">Notice that the block definition does not explicitly declare the </a><span class="e_-_emphasis">return type</span>, which is the type of the return value of the block. This is because the return type is inferred from either the expression (if you defined the block with an expression) or for statement list by examining the <span class="cv_-_computer_voice">return</span> statements. This frees you of the burden of explicitly typing the return type. This also allows the block to appear short and elegant. However, it is important to understand that the return type is actually <span class="e_-_emphasis">statically typed</span> even though the type is not explicitly visible in the code.</div>
+      <div class="B_-_Body"><a name="1443576">For example, note the following simple block:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1442730">var blockWithStatementBody = \ -&gt; { return "hello blocks" } </a></PRE>
+      <div class="B_-_Body"><a name="1442756">Because the statement </a><span class="cv_-_computer_voice">return "hello blocks"</span> returns a <span class="cv_-_computer_voice">String</span>, that means the block’s return type is <span class="cv_-_computer_voice">String</span>.</div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1436172">Gosu infers a block’s return type by the returned value of the return statements of the statement list. If an expression is provided instead of a statement list, Gosu uses the type of the expression. That type is static (fixed) at compile time although it is not explicitly visible in the code.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1436466">Using and Invoking Blocks</a></h6>
+      <div class="B_-_Body"><a name="1445349">Blocks are invoked just like normal functions by referencing a variable to which you previously assigned the block. To use a block, type:</a></div>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="1445354">the name of the block variable or an expression that resolves to a block</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1445362">an open parenthesis</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1445366">a series of argument expressions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1445368">a closing parenthesis</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1436448">For example, suppose you create a Gosu block with no arguments and a simple return statement:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1436352">var blockWithStatementBody = \-&gt; { return "hello blocks" } </a></PRE>
+      <div class="B_-_Body"><a name="1436572">Because the statement list returns a </a><span class="cv_-_computer_voice">String</span>, Gosu infers that the block returns a <span class="cv_-_computer_voice">String</span>. The new block is assigned to a new variable <span class="cv_-_computer_voice">blockWithStatementBody</span>, and the block has a return type of <span class="cv_-_computer_voice">String</span> even though this fact is not explicit in the code text.</div>
+      <div class="B_-_Body"><a name="1436573">To call this block and assign the result to variable </a><span class="cv_-_computer_voice">myresult</span>, simply use this code:</div>
+      <PRE class="CL_-_Code_Last_Line"><a name="1436326">var myresult = blockWithStatementBody()</a></PRE>
+      <div class="B_-_Body"><a name="1436586">The value of the variable </a><span class="cv_-_computer_voice">myresult</span> is the <span class="cv_-_computer_voice">String</span> value <span class="cv_-_computer_voice">"hello blocks"</span> after this line executes:</div>
+      <div class="B_-_Body"><a name="1435086">The following example creates a simple block that adds two numbers as parameters and returns the result: </a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1436668">var adder = \ x : Number, y : Number -&gt; { return x + y }</a></div>
+      <div class="B_-_Body"><a name="1436669">After defining this block, you can call it with code such as:</a></div>
+      <PRE class="CL_-_Code_Last_Line"><a name="1436670">var mysum = adder(10, 20)</a></PRE>
+      <div class="B_-_Body"><a name="1436657">The variable </a><span class="cv_-_computer_voice">mysum</span> has the type <span class="cv_-_computer_voice">Number</span> and has the value 30 after the line is executed.</div>
+      <div class="B_-_Body"><a name="1436789">You can also implement the same block behavior by using an expression rather than a statement list, which allows an even more concise syntax:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1436843">var adder = \ x : Number, y : Number -&gt; x + y</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

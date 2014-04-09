@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using Gosu Generics</title>
+    <link rel="StyleSheet" href="css/generics.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="generics.20.1.html#1465521">Gosu Generics</a> : Using Gosu Generics</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1465521">Using Gosu Generics</a></h3>
+      <div class="B_-_Body"><a name="1465522">If a function or method has already defined arguments or a return value by using Gosu generics, a “consumer” of this API finds the API easy to use. The only important thing to know is that you define the type of collection with the angle bracket notation </a><span class="ps_-_parameter_in_code_snippets">COLLECTION_CLASS</span><span class="cv_-_computer_voice">&lt;</span><span class="ps_-_parameter_in_code_snippets">OF_TYPE</span><span class="cv_-_computer_voice">&gt;</span>. For example, an array list of <span class="cv_-_computer_voice">Address</span> objects would use the syntax <span class="cv_-_computer_voice">ArrayList&lt;Address&gt;</span>. </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1442361">In practice, you sometimes do not need to define the collection type due to type inference or special object constructors. See </a><a href="javascript:WWHClickedPopup('gosu', 'collections.21.2.html#1451966', '');" title="Basic Lists">“Basic Lists”</a> and <a href="javascript:WWHClickedPopup('gosu', 'collections.21.3.html#1452058', '');" title="Basic Hash Maps">“Basic Hash Maps”</a>.</div>
+      <div class="B_-_Body"><a name="1442262">For example, suppose you want a list of </a><span class="cv_-_computer_voice">String</span> objects. One way to define the list would be:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1442226">var theList= new ArrayList&lt;String&gt;() { address1, address2, address3, address4 }</a></div>
+      <div class="B_-_Body"><a name="1453834">You could create a function that takes a specific type of list, in this case a list of strings:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1453835">function printStrings( strs : ArrayList&lt;String&gt; ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453836">&nbsp;&nbsp;for( s in strs ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453837">&nbsp;&nbsp;print( s )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453838">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1453839">}</a></PRE>
+      <div class="B_-_Body"><a name="1442188">If you want to call a method using Gosu generics to take an array list of any type, simply call the method:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1447195">r = printStrings(theList)</a></div>
+      <div class="B_-_Body"><a name="1453737">If Gosu knows the return result type of a function, it can infer the type of other things, which makes your code more concise:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1453874">var strs = new ArrayList&lt;String&gt;(){"a", "ab", "abc"}</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1453913">var longerStrings = strs.findAll( \ str -&gt; str.length &gt;= 2 )</a></PRE>
+      <div class="B_-_Body"><a name="1453914">In the previous example, the resulting value of </a><span class="cv_-_computer_voice">longerStrings</span> is strongly typed as <span class="cv_-_computer_voice">ArrayList&lt;String&gt;</span>. This is because Gosu knows the return type of the <span class="cv_-_computer_voice">findAll</span> method called on any array list of <span class="cv_-_computer_voice">String</span> values. If you get an object from value of <span class="cv_-_computer_voice">longerStrings</span>, it has the correct expected <span class="cv_-_computer_voice">String</span> type, not simply <span class="cv_-_computer_voice">Object</span>.</div>
+      <div class="B_-_Body"><a name="1466012">Using functions defined with generics typically is even simpler because of Gosu generics. The return value can be </a><span class="s_-_strong">strongly typed</span> to match the exact type of collection you passed into it or one of its items. For example, return a “list of <span class="cv_-_computer_voice">MyClass</span> objects” or “a <span class="cv_-_computer_voice">MyClass</span> object”, rather than a “list of <span class="cv_-_computer_voice">Object</span>” or just an <span class="cv_-_computer_voice">Object</span>. Although generics are abstract, using APIs other people defined with generics typically is straightforward and intuitive.</div>
+      <div class="B_-_Body"><a name="1466014">Although you can specify a specific type of collection, the greatest power of Gosu generics is defining APIs that work with multiple types, not just a single type. This requires a special syntax called </a><span class="e_-_emphasis">parameterization</span>. </div>
+      <div class="B_-_Body"><a name="1454423">Without Gosu generics, the way to support multiple types would be define a utility class method that takes a standard </a><span class="cv_-_computer_voice">Collection</span> object and returns another <span class="cv_-_computer_voice">Collection</span> object. That would allow you to use the method with a wide variety of collections: a <span class="cv_-_computer_voice">Collection</span> of <span class="cv_-_computer_voice">MyClass</span> objects, a <span class="cv_-_computer_voice">Collection</span> of <span class="cv_-_computer_voice">Address</span> objects, and so on. However, any code that extracted items from the collection after an API call would have to add code with a coercion “<span class="cv_-_computer_voice">x&nbsp;as&nbsp;TYPE</span>” if extracting an object from it:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454468">var c = myCollection.iterator.next()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><span class="s_-_strong"><a name="1454424">(c as MyClass)</a></span>.myClassMethod()</PRE>
+      <div class="B_-_Body"><a name="1454475">Note the code </a><span class="cv_-_computer_voice">(c as MyClass)</span>. That approach typically results in hard-to-read code, since you must manually add casting to a specific type for a variety of APIs due to this issue. Additionally, it is dangerous because the actual casting happens at run time and you could make a mistake by casting it to the wrong object. Most importantly, the casting could <span class="s_-_strong">fail at run&nbsp;time</span> in some cases if you make other types of errors, rather than identified and flagged at compile&nbsp;time. </div>
+      <div class="B_-_Body"><a name="1466236">Fortunately, with generics this type of casting is not necessary if you use APIs designed with generics and design any new APIs with generics. For example, suppose that the local variable (in this case, </a><span class="cv_-_computer_voice">c</span>) already carried with it the information about the type of the object in the collection. That allows you to remove the <span class="cv_-_computer_voice">"as MyClass</span><span class="cvt_-_computer_voice_table">"</span> before calling methods on the object:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454486">var c = new ArrayList&lt;</a><span class="cv_-_computer_voice">MyClass</span>&gt;() { c1, c2, c3 }</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454488">...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454495">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454489">// the result of this is strongly typed</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1454490">var first = c.iterator.next().myClassMethod()</a></PRE>
+      <div class="B_-_Body"><a name="1454505">From quickly looking at the code, you might assume from the text that the </a><span class="cv_-_computer_voice">first</span> variable is not strongly typed after removing the cast. However, it is strongly typed at compile time. </div>
+      <div class="B_-_Body"><a name="1454471">If you want to make full use of the language’s ability to use generic types, you have two choices:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="e_-_emphasis"><a name="1454616">parameterize</a></span> a class, which means to add generic types to the class definition</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="e_-_emphasis"><a name="1454667">parameterize</a></span> a method, which means to add generic types to a method definition</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="1454721">Parameterized Classes</a></h4>
+      <div class="B_-_Body"><a name="1456059">If you want a class that always operates with a generic type, define the class with the angle bracket notation </a><span class="cv_-_computer_voice">CLASSNAME&lt;</span><span class="ps_-_parameter_in_code_snippets">GENERIC_TYPE_NAME</span><span class="cv_-_computer_voice">&gt;</span> in the class definition. By convention, for the <span class="ps_-_parameter_in_code_snippets">GENERIC_TYPE_NAME</span> string, use a one-letter variable, preferably <span class="cv_-_computer_voice">T</span>. For example, you could define a class <span class="cv_-_computer_voice">MyClass</span> as <span class="cv_-_computer_voice">MyClass&lt;T&gt;</span>.</div>
+      <div class="B_-_Body"><a name="1456060">In the following example, the class </a><span class="cv_-_computer_voice">Genericstest</span> has one method that returns the first item in a list. Gosu strongly types the return value to match the type of the items in the collection:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1454514">package com.example</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454515">uses java.util.ArrayList</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454516">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454517">class Genericstest&lt;T&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454518">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454519">  // print out (for debugging) and then return the first item in the list, strongly typed</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454520">  public function PrintAndReturnFirst(aList : ArrayList&lt;T&gt;) : T {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454521">    print(aList[0])</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454522">    return aList[0] </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454523">  }</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1454524">}</a></PRE>
+      <div class="B_-_Body"><a name="1454525">Now, some other code could use this class and pass it an array list of any type:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1454526">var myStrings = new ArrayList&lt;String&gt;(){"a", "abcd", "ab", "abc"}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454527">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454528">var t = new Genericstest&lt;String&gt;()</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1454529">var first = t.PrintAndReturnFirst( myStrings )</a></PRE>
+      <div class="B_-_Body"><a name="1454530">After this code runs, the value of the variable </a><span class="cv_-_computer_voice">first</span> is <span class="s_-_strong">strongly typed</span> as <span class="cv_-_computer_voice">String</span> because of how it used the method that was defined with generics. </div>
+      <div class="B_-_Body"><a name="1453766">This also works with multiple dimensions of types. Suppose you want to write something that stores key-value maps. Instead of writing:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1453767">class Mymapping { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453768">&nbsp;&nbsp;function put( key : Object, value : Object) {...} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453769">&nbsp;&nbsp;function get( key : Object) : Object {...} </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1453770">}</a></PRE>
+      <div class="B_-_Body"><a name="1453771">...you could use generics to define it as:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1453772">class Mymapping&lt;K,V&gt; { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453773">&nbsp;&nbsp;function put( key : K, value : V) {...} </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453774">&nbsp;&nbsp;function get( key : K) : V {...} </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1453775">}</a></PRE>
+      <div class="B_-_Body"><a name="1453776">Now you can use this class with strongly typed results:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1453777">myMap = new Mymapping&lt;String, Integer&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453778">myMap.put("ABC", 29)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1453779">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1453780">theValue = myMap.get("ABC")</a></PRE>
+      <div class="B_-_Body"><a name="1453781">The </a><span class="cv_-_computer_voice">theValue</span> variable is strongly typed at compile time as <span class="cv_-_computer_voice">Integer</span>, not <span class="cv_-_computer_voice">Object</span>.</div>
+      <div class="B_-_Body"><a name="1457756">Within the method definition, the values in angle brackets have special meanings as type names in a parameterized class definition. In this case, the </a><span class="cv_-_computer_voice">K</span> and <span class="cv_-_computer_voice">V</span> symbols. Use these symbols in method signatures in that class to represent <span class="s_-_strong">types</span> in arguments, return values, and even Gosu code inside the method. </div>
+      <div class="B_-_Body"><a name="1457774">You can think about it as at the time the method runs, the symbols </a><span class="cv_-_computer_voice">K</span> and <span class="cv_-_computer_voice">V</span> are <span class="e_-_emphasis">pinned</span> (assigned) to specific types already. By the time this method runs, some other code created new instances of the parameterized class with specific types already. The compiler can tell which method to call and what types <span class="cv_-_computer_voice">K</span> and <span class="cv_-_computer_voice">V</span> really represent. In the earlier example, the concrete types are <span class="cv_-_computer_voice">String</span> (for <span class="cv_-_computer_voice">K</span>) and <span class="cv_-_computer_voice">Integer</span> (for <span class="cv_-_computer_voice">V</span>).</div>
+      <div class="B_-_Body"><a name="1452344">Gosu generics offer this power to define APIs once and abstract the behavior across multiple types. Define your APIs with the generics and wildcards to generalize your APIs to work with different types of types or collections. Your code is strongly-typed code at compile time, which improves reliability of code at run time.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="1454736">Parameterized Methods</a></h4>
+      <div class="B_-_Body"><a name="1455228">You can add a finer granularity of type usage by adding the generic type modifiers to the method, immediately after the method name. In Gosu this is called </a><span class="e_-_emphasis">parameterizing</span> the method. In other languages, this is known as making a <span class="e_-_emphasis">polymorphic method with a generic type</span>.</div>
+      <div class="B_-_Body"><a name="1455229">For example, in the following example, the class is not parameterized but one method is:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1454848">package com.example</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454809">uses java.util.ArrayList</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454810">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454811">class Test3</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454812">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454813">  // return the last item in the list</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454814">  public function ReturnLast&lt;T&gt;(a : ArrayList&lt;T&gt;) : T{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454815">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454816">    var lastItemIndex = a.size - 1</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454817">    return a[lastItemIndex]  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454818">  }</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1454819">}</a></PRE>
+      <div class="B_-_Body"><a name="1454806">Within the method’s Gosu code, the symbol </a><span class="cv_-_computer_voice">T</span> can be used as a type and this code works automatically, matching <span class="cv_-_computer_voice">T</span> to the type of the collection passed into it.</div>
+      <div class="B_-_Body"><a name="1454935">Code can use this class:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454877">var myStrings = new ArrayList&lt;String&gt;(){"a", "abcd", "ab", "123"}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454878">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454879">var t = new com.example.Test3()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454880">     </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454881">var last = t.ReturnLast( myStrings )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1454882">     </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1454883">print("last item is: " + last)</a></PRE>
+      <div class="B_-_Body"><a name="1454998">The variable </a><span class="cv_-_computer_voice">last</span> is strongly typed as <span class="cv_-_computer_voice">String</span>, not <span class="cv_-_computer_voice">Object</span>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Annotations at Run Time</title>
+    <link rel="StyleSheet" href="css/annotations.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="annotations.17.1.html#1472881">Annotations</a> : Annotations at Run Time</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1472881">Annotations at Run Time</a></h3>
+      <div class="B_-_Body"><a name="1439926">You can get annotation information from a class either directly by getting the type from an object at runtime. You can get an object’s type at runtime using the </a><span class="cv_-_computer_voice">typeof</span> operator, such as: <span class="cv_-_computer_voice">typeof</span>&nbsp;<span class="ps_-_parameter_in_code_snippets">TYPE</span></div>
+      <div class="B_-_Body"><a name="1439984">You can get annotation information from a type, a constructor, a method, or a property by accessing their type information objects attached to the type. You can call the </a><span class="cv_-_computer_voice">getAnnotation</span> method to get all instances of specific annotation, as a list of annotation instances. In the examples in the table, the variable <span class="cv_-_computer_voice">i</span> represents the index in the list. In practice, you would probably search for it by name using <span class="cv_-_computer_voice">List</span> methods like <span class="cv_-_computer_voice">list.firstWhere(\ s -&gt; s.Name = "MethodName")</span>.</div>
+      <div class="T_-_Table"><a name="1439996">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1440150">Get annotations on a specific instance of a...</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1440152">Example using the @Deprecated annotation</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1440154">Type</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1440156">(typeof obj).TypeInfo.getAnnotation(Deprecated)</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1440158">Constructor</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1440160">(typeof obj).TypeInfo.Constructors[i].getAnnotation(Deprecated)</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1440162">Method</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1440170">(typeof obj).TypeInfo.Methods[i].getAnnotation(Deprecated)</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1440166">Property</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1440168">(typeof obj).TypeInfo.Properties[i].getAnnotation(Deprecated)</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1440227">Using these methods, the return result is automatically statically typed as a list of the proper type. Using the examples in the previous table, the result would be of type:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1440283">List&lt;Deprecated&gt;</a></div>
+      <div class="B_-_Body"><a name="1440287">This type is shown using generics syntax, and it means “a list of instances of the </a><span class="cv_-_computer_voice">Deprecated</span> annotation class”. For more information about generics, see <a href="javascript:WWHClickedPopup('gosu', 'generics.20.1.html#1455314', '');" title="Gosu Generics">“Gosu Generics”</a>.</div>
+      <div class="B_-_Body"><a name="1440301">You can additionally get all annotations (not just one annotation type) using the two properties </a><span class="cv_-_computer_voice">Annotations</span> and <span class="cv_-_computer_voice">DeclaredAnnotations</span>. These two properties are slightly different and resemble the Java versions of annotations with the same name. On types and interfaces, <span class="cv_-_computer_voice">Annotations</span> returns all annotations on this type/interface and on all its supertypes/superinterfaces. <span class="cv_-_computer_voice">DeclaredAnnotations</span> returns annotations only on the given types, ignoring supertypes/superinterfaces. In constructors, properties, and methods, the <span class="cv_-_computer_voice">Annotations</span> and <span class="cv_-_computer_voice">DeclaredAnnotations</span> properties return the same thing: all annotations including supertypes/superinterfaces. In the examples in the table, the variable <span class="cv_-_computer_voice">i</span> represents the index in the list. In practice, you would probably search for it by name using <span class="cv_-_computer_voice">List</span> methods like <span class="cv_-_computer_voice">list.firstWhere(\ s -&gt; s.Name = "MethodName")</span>.</div>
+      <div class="T_-_Table"><a name="1440249">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1440230">Get all annotations on...</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1440232">Example</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1440234">Type</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1440236">(typeof obj).TypeInfo.Annotations</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1440238">Constructor</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1440240">(typeof obj).TypeInfo.Constructors[i].Annotations</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1440242">Method</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1440244">(typeof obj).TypeInfo.Methods[i].Annotations</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1440246">Property</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1440248">(typeof obj).TypeInfo.Properties[i].Annotations</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1439906">For a detailed example of accessing annotations at run time, see </a><a href="javascript:WWHClickedPopup('gosu', 'annotations.17.4.html#1440328', '');" title="Defining Your Own Annotations">“Defining Your Own Annotations”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="1491415">Gosu Class Function Parameter Argument Annotations at Run Time</a></h4>
+      <div class="B_-_Body"><a name="1491503">The syntax for getting annotations at run time from Gosu has a different calling style than annotations on types, constructors, methods, or properties.</a></div>
+      <div class="B_-_Body"><a name="1491661">For a Gosu class, first get access to the Java backing class for the Gosu class. Next, use the native Java reflection APIs to access the parameter annotations.</a></div>
+      <div class="B_-_Body"><a name="1492319">The following example gets the first annotation of the first parameter of a method:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1492320">// Get the Java backing class for the Gosu class, using reflection (not type safe)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1492321">IGosuClass gsClass = (IGosuClass)TypeSystem.getByFullName( "my.gosu.Sample" );</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1492315">Class cls = gsClass.getBackingClass();</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1492316">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491970">// Get a reference to the method using reflection (not type safe)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491882">Method fooMethod = cls.getMethod( "foo" );</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1492075">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1492077">// Using the native Java API for annotations, get the annotations list</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491883">Annotation[][] paramAnnotations = fooMethod.getParameterAnnotations();</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1492173">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1492175">// In this artificial example, get the first annotation of the first parameter...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491486">Annotation firstAnnotationOnFirstParameter = paramAnnotations[0][0];</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491478">System.out.println( "First annotation on first parameter: " + firstAnnotationOnFirstParameter ); </a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

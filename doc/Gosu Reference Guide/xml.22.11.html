@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Access the Nillness of an Element</title>
+    <link rel="StyleSheet" href="css/xml.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="xml.22.01.html#1594523">Gosu and XML</a> : Access the Nillness of an Element</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1594523">Access the Nillness of an Element</a></h3>
+      <div class="B_-_Body"><a name="1610533">XML has a concept of whether an element is </a><span class="cv_-_computer_voice">nil</span>. This is not exactly same as being <span class="cv_-_computer_voice">null</span>. An element can be <span class="cv_-_computer_voice">nil</span> (and must have no child elements) but still have attributes. Additionally, an XSD can define whether an element is <span class="e_-_emphasis">nillable</span>, which means that element is allowed to be <span class="cv_-_computer_voice">nil</span>.</div>
+      <div class="B_-_Body"><a name="1610534">If an XSD-based element is nillable, the </a><span class="cv_-_computer_voice">XmlElement</span> object exposes a property with the name <span class="cv_-_computer_voice">$Nil</span>. All non-XSD elements also have this property, but it is called <span class="cv_-_computer_voice">Nil</span> (with no dollar sign prefix). Nillability is an XSD concept, so for non-XSD elements the element always potentially can be <span class="cv_-_computer_voice">nil</span>.</div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1610527">For XSD-based elements not marked as nillable, this property is unsupported. In the Gosu editor, if you attempt to use the </a><span class="cv_-_computer_voice">$Nil</span> property, Gosu generates a deprecation warning.</div>
+      <div class="B_-_Body"><a name="1747116">Setting this property on an element to </a><span class="cv_-_computer_voice">true</span> affects whether upon serialization Gosu adds an <span class="cv_-_computer_voice">xsi:nil</span> attribute on the element. Getting this property returns the state of that flag (<span class="cv_-_computer_voice">true</span> or <span class="cv_-_computer_voice">false</span>).</div>
+      <div class="B_-_Body"><a name="1747117">Nillability is an aspect of XSD-based elements, not an aspect of the XSD type itself. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1747121">Example XSD</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1610598">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1540658">&nbsp;&nbsp;&lt;xsd:element name="Element1" type="xsd:int" nillable="true"/&gt;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1540659">&lt;/xsd:schema&gt;</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1540660">Code</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1540661">var xml = new schema.Element1()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1540662">xml.$Nil = true</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1540663">xml.print()</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1540664">Output</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1540667">&lt;?xml version="1.0"?&gt;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1540668">&lt;Element1 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1747142">For more on the distinction between </a><span class="cv_-_computer_voice">XmlElement</span> and its backing type, see <a href="javascript:WWHClickedPopup('gosu', 'xml.22.03.html#1515855', '');" title="Introduction to the XML Element in Gosu">“Introduction to the XML Element in Gosu” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.03.html#1515855', '');" title="Introduction to the XML Element in Gosu">Gosu Reference Guide</a></span>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

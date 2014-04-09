@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Concurrent Cache</title>
+    <link rel="StyleSheet" href="css/concurrency.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="concurrency.29.1.html#1444233">Concurrency</a> : Concurrent Cache</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1444233">Concurrent Cache</a></h3>
+      <div class="B_-_Body"><a name="1444234">A similar class to the </a><span class="cv_-_computer_voice">LazyVar</span> class is the <span class="cv_-_computer_voice">Cache</span> class. It declares a cache of values you can look up quickly and in a thread-safe way. It declares a concurrent cache similar to a Least Recently Used (LRU) cache. Because the <span class="cv_-_computer_voice">Cache</span> class uses the Java concurrency libraries, access to the cache is thread-safe.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1444399">To create a thread-safe cache</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="1444507">Decide the key and value types for your cache based on input data. For example, perhaps you want to pass a </a><span class="cv_-_computer_voice">String</span> and get an <span class="cv_-_computer_voice">Integer</span> back from the cache. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1444508">Use the key and value types to parameterize the Cache type using Gosu generics syntax. For example, if you want to pass a </a><span class="cv_-_computer_voice">String</span> and get an <span class="cv_-_computer_voice">Integer</span> back from the cache, create a new <span class="cv_-_computer_voice">Cache&lt;String, Integer&gt;</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1444451">In the constructor, pass the following arguments:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1444400">a name for your cache as a </a><span class="cv_-_computer_voice">String</span> - the implementation uses this name to generate logging for cache misses</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1444409">the size of your cache, as a number of slots</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1444425">a block that defines a function that calculates a value from an input value. Presumably this is a resource-intensive calculation.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="1444562">For example,</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1444613">// A cache of string values to their upper case values</a></PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1444586">var myCache = new Cache&lt;String, String&gt;( "My Uppercase Cache", 100, \ s -&gt; s.toUpperCase() ) </a></PRE>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1444577">To use the cache, just call the get method and pass the input value (the key). If the value is in the cache, it simply returns it from the cache. If it is not cached, Gosu calls the block and calculates it from the input value (the key) and then caches the result. For example:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="1444735">print(myCache.get("Hello world")</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1444751">print(myCache.get("Hello world")</a></div>
+      <div class="LP_-_List_Para"><a name="1444711">This prints:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1444763">"HELLO WORLD"</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1444775">"HELLO WORLD"</a></div>
+      <div class="LP_-_List_Para"><a name="1444833">In this example, the first time you call the </a><span class="cv_-_computer_voice">get</span> method, it calls the block to generate the upper case value. The second time you call the <span class="cv_-_computer_voice">get</span> method, the value is the same but Gosu uses the cached value. Any times you call the <span class="cv_-_computer_voice">get</span> method later, the value is the same but Gosu uses the cached value, assuming it still in the cache. If too many items were added to the cache and your desired item is unavailable, Gosu reruns the block to regenerate the value. Gosu then caches the result.</div>
+      <div class="B_-_Body"><a name="1444884">Alternatively, if you want to use a cache within some other class, you can define a static instance of the cache. The static variable definition itself defines your block. Again, because the </a><span class="cv_-_computer_voice">Cache</span> class uses the Java concurrency libraries, it is thread-safe. For example, in your class definition, define a static variable like this:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1444401">static var _upperCaseCache = new Cache&lt;Foo, Bar&gt;( 1000, \ foo -&gt; getBar( foo ) )</a></PRE>
+      <div class="B_-_Body"><a name="1444357">To use your cache, your class can get a value from the cache using code like the following. In this example, </a><span class="cv_-_computer_voice">inputString</span> is a <span class="cv_-_computer_voice">String</span> variable that may or may not contain a <span class="cv_-_computer_voice">String</span> that you used before with this cache:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1445029">var fastValue = _upperCaseCache.get( inputString )</a></PRE>
+      <div class="B_-_Body"><a name="1445081">The first time you call the </a><span class="cv_-_computer_voice">get</span> method, it calls the block to generate the upper case value.</div>
+      <div class="B_-_Body"><a name="1445082">Any later times you call the </a><span class="cv_-_computer_voice">get</span> method, the value is the same but Gosu uses the cached value, assuming it still in the cache. If too many items were added to the cache and your desired item is unavailable, Gosu reruns the block to regenerate the value. Gosu then caches the result in the concurrent cache object.</div>
+      <div class="B_-_Body"><a name="1444324">An even better way to use the cache is to abstract the cache implementation into a property accessor function. Let the private static object </a><span class="cv_-_computer_voice">Cache</span> object (as shown in the previous example) handle the actual cache. For example, define a property accessor function such as:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1445188">static property get function UpperCaseQuickly( str : String ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1445189">    return _upperCaseCache.get( str )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1445190">  }</a></PRE>
+      <div class="B_-_Body"><a name="1447572">These are demonstrations only with a simple and non-resource-intensive operation in the block. Generally speaking, it is only worth the overhead of maintaining the cache if your calculation is resource-intensive combined with potentially repeated access with the same input values.</a></div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="1453394">Caching can be difficult and error prone in complex applications. It can lead to run time errors and data corruption if you do not do it carefully. Only use caches as a last resort for performance issues. Because of the complexity of cache code, always have multiple experienced programmers review any cache-related code.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Argument Type Inference Shortcut In Certain Cases</title>
+    <link rel="StyleSheet" href="css/blocks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="blocks.19.1.html#1437906">Gosu Blocks</a> : Argument Type Inference Shortcut In Certain Cases</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1437906">Argument Type Inference Shortcut In Certain Cases</a></h3>
+      <div class="B_-_Body"><a name="1445539">The Gosu parser provides additional type inference in a common case. If a block is defined within a method call parameter list, Gosu can infer the type of the block’s arguments from the parameter argument. You do not need to explicitly specify the argument type in this case. </a></div>
+      <div class="B_-_Body"><a name="1445540">In other words, if you pass a block to a method, in some cases Gosu can infer the type so you can omit it for more concise code. This is particularly relevant for using collection-related code that takes blocks as arguments.</a></div>
+      <div class="B_-_Body"><a name="1442935">For example, suppose you had this code:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1445014">var x = new ArrayList&lt;String&gt;(){"a", "b", "c"}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1445034">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1445015">var y = x.map( \ str : String -&gt; str.length )</a></PRE>
+      <div class="B_-_Body"><a name="1445570">You could instead omit the argument type (</a><span class="cv_-_computer_voice">String</span>). The <span class="cv_-_computer_voice">map</span> method signature allows Gosu to infer the argument type in the block because of how the <span class="cv_-_computer_voice">map</span> method is defined. </div>
+      <div class="B_-_Body"><a name="1445574">You could use the more concise code:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1445571">var x = new ArrayList&lt;String&gt;(){"a", "b", "c"}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1445035">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1435113">var y = x.map( \ str -&gt; str.length )</a></PRE>
+      <div class="B_-_Body"><a name="1443060">The list method </a><span class="cv_-_computer_voice">map()</span> is a built-in list enhancement method that takes a block with one argument. That argument is always the same as the list’s type. Therefore Gosu infers that <span class="cv_-_computer_voice">str</span> must be of type <span class="cv_-_computer_voice">String</span> and the you do not need to explicitly define the type of arguments nor the return type.</div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1443062">The </a><span class="cv_-_computer_voice">map</span> method is implemented using a built-in Gosu enhancement of the Java language <span class="cv_-_computer_voice">List</span> class. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'collections.21.1.html#1448766', '');" title="Collections">“Collections”</a>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using XML and SOAP Libraries with Gosu Community Release</title>
+    <link rel="StyleSheet" href="css/getting-started-gosu-opensource.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1512731">Getting Started with Gosu Community Release</a> : Using XML and SOAP Libraries with Gosu Community Release</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1512731">Using XML and SOAP Libraries with Gosu Community Release</a></h3>
+      <div class="B_-_Body"><a name="1512811">The Gosu XML APIs and Gosu SOAP APIs are no longer built-in to the core Gosu Community Release command line tool or the Gosu plugin for IntelliJ IDEA. </a></div>
+      <div class="B_-_Body"><a name="1513621">However, they are available as a separate download or using Maven-style remote configuration. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1512812">To use XML or SOAP by downloading JAR files (for IntelliJ IDEA or command line use)</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="1512813">Download the JAR files directly from the Gosu web site. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="1513881">For XML, go to this URL:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1513882">http://gosu-lang.org/nexus/content/repositories/gosu/org/gosu-lang/gosu/gosu-xml/</a></div>
+      <div class="LP_-_List_Para"><a name="1513894">For SOAP, go to this URL:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1513913">http://gosu-lang.org/nexus/content/repositories/gosu/org/gosu-lang/gosu/gosu-webservices</a></div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1512815">Click on the version number of your version of Gosu.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1512816">Right-click on the main JAR file in your browser, and save that file to a </a><span class="cv_-_computer_voice">lib</span> subdirectory of your project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="1514000">For XML, this has the file name </a><span class="cv_-_computer_voice">gosu-xml-</span><span class="pst_-_parameter_in_code_snippets_table">VERSIONNUMBER</span><span class="cv_-_computer_voice">.jar</span>.</div>
+      <div class="LP_-_List_Para"><a name="1514012">For SOAP, this has the file name </a><span class="cv_-_computer_voice">gosu-webservices-</span><span class="pst_-_parameter_in_code_snippets_table">VERSIONNUMBER</span><span class="cv_-_computer_voice">.jar</span>.</div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1515585">Include the JAR files directly in your project as a dependency or add to your classpath. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="1515586">For IntelliJ IDEA, if you are not using Maven, this requires configuring your project to explicitly add a dependency for that JAR file. </a></div>
+      <div class="LP_-_List_Para"><a name="1515597">For command line Gosu, add a </a><span class="cv_-_computer_voice">classpath</span> statement to your program. See <a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.07.2.html#2209362', '');" title="The Structure of a Gosu Program">“Setting the Class Path to Call Other Gosu or Java Classes”</a>.</div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1515408">The Gosu plugin for IntelliJ IDEA ignores the syntax for Maven-style configuration classpath configuration. For command line use, see </a><a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.07.2.html#2215982', '');" title="The Structure of a Gosu Program">“Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)”</a>. Although IntelliJ IDEA does not report syntax errors for that syntax, you must download JAR files and configure the IDE to add the JAR as a dependency.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1514861">For command-line use only, use Maven-style remote configuration</a></h6>
+      <div class="B_-_Body"><a name="1514862">If you are using command-line Gosu, you can use advanced Maven-style configuration classpath configuration. See </a><a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.07.2.html#2215982', '');" title="The Structure of a Gosu Program">“Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)”</a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1514184">The Gosu plugin for IntelliJ IDEA ignores the syntax for Maven-style configuration classpath configuration. To use IntelliJ IDEA with XML and SOAP APIs, see the earlier procedure for downloading JARs.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1515198">To use XML and SOAP using Maven POM files in IntelliJ</a></h6>
+      <div class="B_-_Body"><a name="1515199">If you are using IntelliJ with a Maven project file and POM file, the Maven plugin for IntelliJ IDEA adds the dependencies automatically to the local cached IntelliJ file. </a></div>
+      <div class="B_-_Body"><a name="1515200">Use the following repository information:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pst_-_parameter_in_code_snippets_table"><a name="1515201">STATUS</a></span> = <span class="cv_-_computer_voice">releases</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pst_-_parameter_in_code_snippets_table"><a name="1515202">REPOT_ID</a></span> = <span class="cv_-_computer_voice">gosu-lang.org-releases</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="pc_-_parameter_in_code"><a name="1515203">REPOSITORY_URL</a></span> = <span class="cv_-_computer_voice">http://gosu-lang.org/nexus/content/groups/releases/</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1515204">group ID </a>– <span class="cv_-_computer_voice">org.gosu-lang.gosu</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1515205">artifact ID</a> – For XML, use <span class="cv_-_computer_voice">gosu-xml</span>. For SOAP, use gosu-webservices</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1515206">version number </a>– <span class="e_-_emphasis">your current Gosu version</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1514053">See the related section </a><a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.07.2.html#2215982', '');" title="The Structure of a Gosu Program">“Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)”</a>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

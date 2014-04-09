@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Command Line Arguments</title>
+    <link rel="StyleSheet" href="css/gosu-commandline-emerald.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="gosu-commandline-emerald.06.1.html#2180195">Gosu Command Line Shell</a> : Command Line Arguments</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2180195">Command Line Arguments</a></h3>
+      <div class="B_-_Body"><a name="2180197">There are two ways you can access command line arguments to programs: </a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="2183238">Manipulating raw arguments.</a></span> You can get the full list of arguments as they appear on the command line. If any option has multiple parts separated by space characters (such as <span class="cv_-_computer_voice">-username jsmith</span>), each component is a separate raw argument.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="2183349">Advanced argument processing.</a></span> You can use parse the command line for options with a hyphen prefix and optional additional values associated with the preceding command line option. For example, <span class="cv_-_computer_voice">"-username jsmith"</span> is a single option to set the <span class="cv_-_computer_voice">username</span> option to the value <span class="cv_-_computer_voice">jsmith</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2183366">Raw Argument Processing</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2183458">To get the full list of command line arguments as a list of </a><span class="cv_-_computer_voice">String</span> values, use the <span class="cv_-_computer_voice">CommandLineAccess</span> class. Call its <span class="cv_-_computer_voice">getRawArgs</span> method, which returns an array of <span class="cv_-_computer_voice">String</span> values.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2183459">uses gw.lang.cli.CommandLineAccess</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2183473">print( "CommandLineArgs: " + CommandLineAccess.getRawArgs() )</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2183494">Advanced Argument Processing</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2183549">A more advanced way to access command line arguments is to write your own class that populate all your properties from the individual command line options. This approach supports Boolean flags or setting values from the command line.</a></div>
+      <div class="B_-_Body"><a name="2183603">This approach requires you to define a simple Gosu class upon which you define static properties. Define one static property for each command line option. Static properties are properties stored exactly once on the class itself, rather than on instances of the class.</a></div>
+      <div class="B_-_Body"><a name="2183624">You can then initialize those properties by passing your custom class to the </a><span class="cv_-_computer_voice">CommandLineAccess.initialize(...)</span> method. The <span class="cv_-_computer_voice">initialize</span> method overrides the static property values with values extracted from the command line. After processing, you can use an intuitive Gosu property syntax to get the values from the static properties in your own Gosu class.</div>
+      <div class="B_-_Body"><a name="2183529">First, create a Gosu class that defines your properties. It does not need to extend from any particular class. The following example defines two properties, one </a><span class="cv_-_computer_voice">String</span> property named <span class="cv_-_computer_voice">Name</span> and an a <span class="cv_-_computer_voice">boolean</span> property called <span class="cv_-_computer_voice">Hidden</span>:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2180212">package test</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2180214">uses gw.lang.cli.*</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2180215"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2180216">class Args { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183766">&nbsp;&nbsp;// String argument</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2180222">&nbsp;&nbsp;static var _name : String as </a><span class="cv_-_computer_voice">Name</span> </PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183734">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183745">&nbsp;&nbsp;// boolean argument -- no value to set on the command line</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2180227">&nbsp;&nbsp;static var _hidden : boolean as Hidden </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183789">}</a></PRE>
+      <div class="B_-_Body"><a name="2183790">Note that the publicly-exposed property name is the symbol after the “</a><span class="cv_-_computer_voice">as</span>” keyword (in this case <span class="cv_-_computer_voice">Name</span> and <span class="cv_-_computer_voice">Hidden</span>), not the private static variable itself. These are the names that are the options, although the case can vary, such as: “<span class="cv_-_computer_voice">-name jsmith</span>” instead of “<span class="cv_-_computer_voice">-Name jsmith</span>”. </div>
+      <div class="B_-_Body"><a name="2184070">Choose a directory to save your command line tool. Create a subdirectory named </a><span class="cv_-_computer_voice">src</span>. Inside that create a subdirectory called <span class="cv_-_computer_voice">test</span> (the package name). Save this Gosu class file as the file <span class="cv_-_computer_voice">Args.gs</span> in that <span class="cv_-_computer_voice">src/test</span> directory. </div>
+      <div class="B_-_Body"><a name="2183838">Next, run the following command</a></div>
+      <div class="B_-_Body"><a name="2183845">Paste in the following code for your program:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183863">classpath "src"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183865">uses gw.lang.cli.*</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183866">uses test.*</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183871">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183884">CommandLineAccess.initialize ( Args)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183872">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183852">print("hello " + Args.Name)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183891">print("you are " + (Args.Hidden ? "hidden" : "visible") + "!!!!")</a></PRE>
+      <div class="B_-_Body"><a name="2180231">Click </a><span class="ui_-_UI_element">Save As</span> and save this new command line tool as <span class="cv_-_computer_voice">myaction.gsp</span> in the directory two levels up from the <span class="cv_-_computer_voice">Args.gs</span> file.</div>
+      <div class="B_-_Body"><a name="2183946">From the command batch window, enter the following command</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2183960">gosu myaction.gsp -name John -hidden false</a></div>
+      <div class="B_-_Body"><a name="2180240">This outputs:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184008">hello John</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2183993">you are visible!!!!</a></PRE>
+      <div class="B_-_Body"><a name="2183971">One nice benefit of this approach is that these properties are available globally to all Gosu code as static properties. After initialization, all Gosu code can access properties merely by accessing the type (the class), without pass a object instance to contain the properties.</a></div>
+      <div class="B_-_Body"><a name="2180246">Note that you can access the properties uncapitalized to better fit normal command line conventions.</a></div>
+      <div class="B_-_Body"><a name="2180248">The </a><span class="cv_-_computer_voice">String</span> property in this example (<span class="cv_-_computer_voice">Name</span>) requires an argument value to follow the option. This is true of all non-boolean property types. </div>
+      <div class="B_-_Body"><a name="2210662">However, the </a><span class="cv_-_computer_voice">boolean</span> property in this example (<span class="cv_-_computer_voice">Hidden</span>) does not require an argument value, and this type is special for this reason. If a property is declared with type <span class="cv_-_computer_voice">boolean</span> and the option is specified with no following value, Gosu assumes the value <span class="cv_-_computer_voice">true</span> by default.</div>
+      <div class="B_-_Body"><a name="2180252">Only properties declared with modifiers </a><span class="cv_-_computer_voice">public</span>, <span class="cv_-_computer_voice">static</span>, and <span class="cv_-_computer_voice">writable</span> properties on your command line class participate in command line argument initialization.</div>
+      <div class="B_-_Body"><a name="2184296">If a user enters an incorrect option, </a><span class="cv_-_computer_voice">CommandLineAccess.initialize()</span> prints a help message and exits with a -1 return code. If you do not want this exit behavior, there is a secondary (overloaded) version of the <span class="cv_-_computer_voice">initialize</span> method that you can use instead. Simply add the value <span class="cv_-_computer_voice">false</span> a second parameter to the method to suppress exiting on bad arguments.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2180264">Special Annotations for Command Line Options</a></h6>
+      <div class="B_-_Body"><a name="2180265">You can use Gosu annotations from the </a><span class="cv_-_computer_voice">gw.lang.cli.*</span> package on the static properties defined in your command line class. Simply add one of the following annotation lines immediately before the line that defines the property:</div>
+      <div class="T_-_Table"><a name="2184576">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="2184541">Annotation</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="2184543">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="2184545">@Required()</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="2184547">This command line tool will not parse unless this property is included</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="2184549">@DefaultValue(String) </a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="2184551">The default string value of this property.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="2210688">@ShortName(String) </a></span></div>
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="2210808">@LongName(String) </a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="2211206">By default, Gosu also exposes the property name automatically with the single hyphen option. If the property uses mixed case (</a><span class="e_-_emphasis">camel case</span>) after the first letter, Gosu converts each capital letter to an underscore and the lowercase letter.</div>
+            <div class="TT_-_Table_Text"><a name="2210690">The short and long name of this option.</a></div>
+            <div class="BIT_-_Bullet_Item_Table_outer" style="margin-left: 2.16pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="BIT_-_Bullet_Item_Table_inner" style="width: 7.199999999999999pt; white-space: nowrap">
+                      <span class="but_-_bullet_in_table">•	</span>
+                    </div>
+                  </td>
+                  <td width="100%">
+                    <div class="BIT_-_Bullet_Item_Table_inner"><a name="2210886">Gosu uses the short name when used with a hyphen and one letter argument. </a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="BIT_-_Bullet_Item_Table_outer" style="margin-left: 2.16pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="BIT_-_Bullet_Item_Table_inner" style="width: 7.199999999999999pt; white-space: nowrap">
+                      <span class="but_-_bullet_in_table">•	</span>
+                    </div>
+                  </td>
+                  <td width="100%">
+                    <div class="BIT_-_Bullet_Item_Table_inner"><a name="2210898">Gosu uses the long name when used with a double hyphen and one-or-more letter argument </a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="TT_-_Table_Text"><a name="2210882">For example, suppose you use the following annotations with the property called </a><span class="cv_-_computer_voice">DataBaseChoice</span>.</div>
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="2210978">@ShortName("d")<br />@LongName("database")</a></span></div>
+            <div class="TT_-_Table_Text"><a name="2210975">You can use either of the following arguments to the command line tool:</a></div>
+            <div class="BIT_-_Bullet_Item_Table_outer" style="margin-left: 2.16pt; margin-bottom: 0.0pt; margin-top: 0.0pt; vertical-align: baseline">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="BIT_-_Bullet_Item_Table_inner" style="width: 7.199999999999999pt; white-space: nowrap; color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                      <span class="but_-_bullet_in_table">•	</span>
+                    </div>
+                  </td>
+                  <td width="100%">
+                    <div class="BIT_-_Bullet_Item_Table_inner" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="cvt_-_computer_voice_table"><a name="2211606">-data_base_choice</a></span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="BIT_-_Bullet_Item_Table_outer" style="margin-left: 2.16pt; margin-bottom: 0.0pt; margin-top: 0.0pt; vertical-align: baseline">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="BIT_-_Bullet_Item_Table_inner" style="width: 7.199999999999999pt; white-space: nowrap; color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                      <span class="but_-_bullet_in_table">•	</span>
+                    </div>
+                  </td>
+                  <td width="100%">
+                    <div class="BIT_-_Bullet_Item_Table_inner" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="cvt_-_computer_voice_table"><a name="2211085">-d</a></span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="BIT_-_Bullet_Item_Table_outer" style="margin-left: 2.16pt; margin-bottom: 0.0pt; margin-top: 0.0pt; vertical-align: baseline">
+              <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="BIT_-_Bullet_Item_Table_inner" style="width: 7.199999999999999pt; white-space: nowrap; color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                      <span class="but_-_bullet_in_table">•	</span>
+                    </div>
+                  </td>
+                  <td width="100%">
+                    <div class="BIT_-_Bullet_Item_Table_inner" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="cvt_-_computer_voice_table"><a name="2211092">--database</a></span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="2184577">For example:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184661">package test</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184662">uses gw.lang.cli.*</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184663"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184664">class Args { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184665">&nbsp;&nbsp;// String argument</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184666">&nbsp;&nbsp;@Required()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184667">&nbsp;&nbsp;static var _name : String as Name </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184668">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184669">&nbsp;&nbsp;// boolean argument -- no value to set on the command line</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184670">&nbsp;&nbsp;@ShortName("s")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184671">&nbsp;&nbsp;static var _hidden : boolean as Hidden </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2184672">}</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

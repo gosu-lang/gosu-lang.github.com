@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Annotating a Class, Method, Type, Class Variable, or Argument</title>
+    <link rel="StyleSheet" href="css/annotations.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="annotations.17.1.html#1490759">Annotations</a> : Annotating a Class, Method, Type, Class Variable, or Argument</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1490759">Annotating a Class, Method, Type, Class Variable, or Argument</a></h3>
+      <div class="B_-_Body"><a name="1490760">Annotations are a simple syntax to add metadata to a Gosu class, a class member, a function parameter. </a></div>
+      <div class="B_-_Body"><a name="1490794">For example, annotations could add indicate what a method returns, or indicate what kinds of exceptions the method might throw. You can add custom annotations and read this information at run time. </a></div>
+      <div class="B_-_Body"><a name="1490871">To add an annotation, type the at sign (</a><span class="cv_-_computer_voice">@</span>), followed by the annotation name immediately before the declaration of what it annotates. </div>
+      <div class="B_-_Body"><a name="1490926">For example, the following simple example declares a class is deprecated:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1490927">@Deprecated</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490928">class MyServiceAPI {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490929">&nbsp;&nbsp;public function myRemoteMethod() {}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490930">}</a></PRE>
+      <div class="B_-_Body"><a name="1436812">In some cases, you follow the annotation name with an argument list within parentheses. The following example specifies a function might throw a specific exception using arguments to the annotation:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1436813">class MyClass{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1436814">&nbsp;&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1434796">@Throws(java.text.ParseException, "If text is invalid format, throws ParseException")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1436710">&nbsp;&nbsp;public function myMethod() {}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1434797">}</a></PRE>
+      <div class="B_-_Body"><a name="1500658">The annotation may not require any arguments, or the arguments may be optional. If so, you can omit the parentheses. For example, suppose you add an annotation called </a><span class="cv_-_computer_voice">MyAnnotation</span> that takes no arguments. You could use it in the following (verbose) syntax:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1500659">@MyAnnotation() </a></PRE>
+      <div class="B_-_Body"><a name="1500660">Since there are no arguments, you can optionally omit the parentheses:</a></div>
+      <PRE class="CL_-_Code_Last_Line"><a name="1471840">@MyAnnotation</a></PRE>
+      <div class="B_-_Body"><a name="1471860">You can use annotations that were defined natively in Gosu and you can also directly use Java annotations.</a></div>
+      <div class="B_-_Body"><a name="1491065">If you do not type the fully-qualified name of the annotation when you use it, add a </a><span class="cv_-_computer_voice">uses</span> line at the top of the file for that annotation class. See <a href="javascript:WWHClickedPopup('gosu', 'expressions.09.13.html#1560097', '');" title="Importing Types and Package Namespaces">“Importing Types and Package Namespaces”</a>.</div>
+      <div class="B_-_Body"><a name="1471891">Gosu requires argument lists to be in the same format as regular function or method argument lists:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1471972">// standard Gosu argument lists</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491314">@KnownBreak("user", "branch", "ABC-xxxxx")</a></PRE>
+      <div class="B_-_Body"><a name="1474002">Gosu annotations support the named arguments calling convention:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1474003">@KnownBreak(:targetUser = "user", :targetBranch = "branch", :jira = "ABC-xxxxx")</a></div>
+      <div class="B_-_Body"><a name="1473845">For related information about named arguments, see </a><a href="javascript:WWHClickedPopup('gosu', 'statements.10.5.html#1483902', '');" title="Gosu Functions">“Named Arguments and Argument Defaults”</a>.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1491328">Function Argument Annotations</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1491399">The Gosu language supports annotations on function parameters, including Gosu block declarations. In some cases you need to explicitly add uses lines to declare which annotation class to use. </a></div>
+      <div class="B_-_Body"><a name="1492668">For example:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491367">package test</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491368">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491369">uses java.lang.Integer</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491370">uses java.lang.Deprecated</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491371">uses javax.annotation.Nonnull</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491372">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491373">class TestABC {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491374">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491375">function add (@Nonnull a : Integer, b : Integer) : Integer {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491376">  return a + b</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491377">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491378">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491379">function addAndLog (@Deprecated a : Integer, b : Integer) : Integer {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491380">  return a + b</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491381">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491382">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1491383">}</a></PRE>
+      <div class="B_-_Body"><a name="1492413">There are currently no compile time APIs for changing IDE behavior based on the annotations.</a></div>
+      <div class="B_-_Body"><a name="1492566">You can get the function parameter annotations using Java reflection APIs. See </a><a href="javascript:WWHClickedPopup('gosu', 'annotations.17.3.html#1491415', '');" title="Annotations at Run Time">“Gosu Class Function Parameter Argument Annotations at Run Time”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="1471842">Built-in Annotations</a></h4>
+      <div class="B_-_Body"><a name="1436600">The Gosu language includes built-in annotations defined in the </a><span class="cv_-_computer_voice">gw.lang.*</span> package, which is always in scope, so their fully-qualified name is not required. </div>
+      <div class="B_-_Body"><a name="1438599">The following table lists the built-in general annotations:</a></div>
+      <div class="T_-_Table"><a name="1438691">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1438602">Annotation</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1438604">Description</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1438606">Usage limits</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1438608">Parameters</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1438610">@Param</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438612">Specifies the documentation of a parameter. </a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438614">Methods only</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438616">(1) The name of the parameter. (2) Documentation in Javadoc format for the method’s parameter.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1438618">@Returns</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438620">Specifies the documentation for the return result of the method. </a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438622">Methods only, but only once per method</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438624">(1) Documentation in Javadoc format for the method’s return value.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1438626">@Throws</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438628">Specifies what exceptions might be thrown by this method.</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438630">Methods only</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438632">(1) An exception type. (2) A description in Javadoc format of what circumstances it would throw that exception, and how to interpret that exception.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1438684">@Deprecated</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438686">Specifies not to use a class, method, constructor, or property. It will go away in a future release. Begin rewriting code to avoid using this class, method, constructor, property, or function parameter.</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438688">Can appear anywhere, but only once for any specific class, method, constructor, property, or function argument.</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1438690">(1) A warning string to display if this deprecated class, method, or constructor is used.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1436833">The following code uses several built-in annotations:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437129">package com.mycompany</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437130">uses java.lang.Exception</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437131">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437132">@WsiWebService </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437133">class Test</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437134">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437139">&nbsp;&nbsp;@Param("Name", "The user's name. Must not be an empty string.")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437140">&nbsp;&nbsp;@Returns("A friendly greeting with the user's name")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437141">&nbsp;&nbsp;@Throws(Exception, "General exception if the string passed to us is empty or null")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437142">&nbsp;&nbsp;public function FriendlyGreeting(Name : String) : String { </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437143">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437144">&nbsp;&nbsp;&nbsp;&nbsp;if (Name == null or Name.length == 0) throw "Requires a non-empty string!"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437145">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437146">&nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + Name + "!"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437147">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437115">}</a></PRE>
+      <div class="B_-_Body"><a name="1472970">The following example specifies that a method is </a><span class="e_-_emphasis">deprecated</span>. A deprecated API is temporarily available but a future release will remove it. Immediately start to refactor code that uses deprecated APIs. This ensures your code is compatible with future releases. Following this advice will simplify future ssupgrades.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1438900">class MyClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1438901">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1438118">&nbsp;&nbsp;@Deprecated("Don't use MyClass.myMethod(). Instead, use betterMethod()")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1438104">&nbsp;&nbsp;public function myMethod() {print("Hello")}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1438117">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1438108">&nbsp;&nbsp;public function betterMethod() {print("Hello, World!")}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1436885">}</a></PRE>
+      <div class="B_-_Body"><a name="1435230">Because annotations are implemented as Gosu classes (see </a><a href="javascript:WWHClickedPopup('gosu', 'annotations.17.4.html#1440328', '');" title="Defining Your Own Annotations">“Defining Your Own Annotations”</a>), the annotation class that you are implicitly using must be in the current Gosu scope. You can ensure that it is in scope by fully qualifying the annotation. For example, if the <span class="cv_-_computer_voice">SomeAnnotation</span> annotation is defined within the package <span class="cv_-_computer_voice">com.mycompany.some.package</span>, specify the annotation like:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1437035">@com.mycompany.some.package.SomeAnnotation</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437079">class SomeClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437056">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1437075">}</a></PRE>
+      <div class="B_-_Body"><a name="1437076">Alternatively, import the package using the Gosu </a><span class="cv_-_computer_voice">uses</span> statement and then use the annotation more naturally and concisely by using only its name:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1434819">uses com.mycompany.some.package.SomeAnnotation.*</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437090">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437091">@SomeAnnotation</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1437092">class SomeClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1435260">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1435261">}</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

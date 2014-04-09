@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Compound Types</title>
+    <link rel="StyleSheet" href="css/typesystem.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="typesystem.26.1.html#1442091">Type System</a> : Compound Types</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1442091">Compound Types</a></h3>
+      <div class="B_-_Body"><a name="1442092">To implement some other features, Gosu supports a special kind of type called a </a><span class="e_-_emphasis">compound type</span>. A compound type combines one base class and additional interfaces that the type supports. You can declare a variable to have a compound type. However, typical usage is only when Gosu automatically creates a variable with a compound type.</div>
+      <div class="B_-_Body"><a name="1442093">For example, suppose you use the following code to initialize list values:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1442053">var x : List&lt;String&gt; = {"a", "b", "c"}</a></div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1442054">The angle bracket notation indicates support for parameterized types, using Gosu generics features. For more information, refer to </a><a href="javascript:WWHClickedPopup('gosu', 'generics.20.1.html#1455314', '');" title="Gosu Generics">“Gosu Generics”</a>.</div>
+      <div class="B_-_Body"><a name="1442058">You could also use this syntax using the </a><span class="cv_-_computer_voice">new</span> operator:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1442059">var x = new List&lt;String&gt;(){"a", "b", "c"}</a></div>
+      <div class="B_-_Body"><a name="1442060">Gosu also supports an extremely compact notation that does not explicitly include the type of the variable:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1442061">var x = {"a", "b", "c"}</a></div>
+      <div class="B_-_Body"><a name="1442062">It might surprise you that this last example is valid Gosu and is typesafe. Gosu infers the type of the </a><span class="cv_-_computer_voice">List</span> to be the least upper bound of the components of the list. In the simple case above, the type of the variable <span class="cv_-_computer_voice">x</span> at compile time is <span class="cv_-_computer_voice">List&lt;String&gt;</span>. If you pass different types of objects, Gosu finds the most specific type that includes all of the items in the list. </div>
+      <div class="B_-_Body"><a name="1442063">If the types implement interfaces, Gosu attempts to preserve the commonality of interface support in the list type. This means your list acts as expected with APIs that rely on support for the interface. In some cases, the resulting type is a </a><span class="e_-_emphasis">compound&nbsp;type</span>, which combines the following into a single type:</div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="s_-_strong"><a name="1455000">at most</a></span> one <span class="e_-_emphasis">class</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1455014">one or more </a><span class="e_-_emphasis">interfaces</span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1455022">For example, the following code initializes an </a><span class="cv_-_computer_voice">int</span> and a <span class="cv_-_computer_voice">double</span>:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1442064">var s  = {0, 3.4} </a></div>
+      <div class="B_-_Body"><a name="1442065">The resulting type of </a><span class="cv_-_computer_voice">s</span> is <span class="cv_-_computer_voice">ArrayList&lt;java.lang.Comparable &amp; java.lang.Number&gt;</span>. This means that it is an array list of the compound type of the class <span class="cv_-_computer_voice">Number</span> and the interface <span class="cv_-_computer_voice">Comparable</span>. </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1442066">The </a><span class="cv_-_computer_voice">Number</span> class does not implement the interface <span class="cv_-_computer_voice">Comparable</span>. If it did, then the type of <span class="cv_-_computer_voice">s</span> would simply be <span class="cv_-_computer_voice">ArrayList&lt;java.lang.Number&gt;</span>. However, since it does not implement that interface, but both <span class="cv_-_computer_voice">int</span> and <span class="cv_-_computer_voice">double</span> implement that interface, Gosu assigns the compound type that includes the interfaces that they have in common.</div>
+      <div class="B_-_Body"><a name="1442067">This new compound type with type inference works with maps, as shown in the following examples:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1442068">var numbers = {0 -&gt; 1, 3 -&gt; 3.4} </a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1442069">var strings = {"a" -&gt; "value"} </a></div>
+      <div class="B_-_Body"><a name="1442070">This also works with sets, as shown in the following example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1442189">var s : Set = {1,2,3}</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1454896">Compound Types using Composition (Delegates)</a></h6>
+      <div class="B_-_Body"><a name="1454909">Gosu also creates compound types in the special case of using the delegate keyword with multiple interfaces. For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'composition.16.2.html#2198113', '');" title="Using Gosu Composition">“Using Gosu Composition”</a>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

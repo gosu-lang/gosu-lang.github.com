@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>List and Array Expansion (*.)</title>
+    <link rel="StyleSheet" href="css/collections.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="collections.21.1.html#1466311">Collections</a> : List and Array Expansion (*.)</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1466311">List and Array Expansion (*.)</a></h3>
+      <div class="B_-_Body"><a name="1466314">Gosu includes a special operator for array expansion and list expansion. This array and list expansion can be useful and powerful. The expansion operator is an asterisk followed by a period, for example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1466316">names*.Length</a></div>
+      <div class="B_-_Body"><a name="1466317">The return value is as follows:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466318">If you use it on an array, the expansion operator gets a property from every item in the array and returns all instances of that property in a new array. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466319">If you use it on a list, the expansion operator gets a property from every item in the list and returns all instances of that property in a new list.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1466320">For example, suppose you have an array of </a><span class="cv_-_computer_voice">Book</span> objects, each of which has a <span class="cv_-_computer_voice">String</span> property <span class="cv_-_computer_voice">Name</span>. You could use array expansion to extract the <span class="cv_-_computer_voice">Name</span> property from each item in the array. Array expansion creates a new array containing just the <span class="cv_-_computer_voice">Name</span> properties of all books in the array.</div>
+      <div class="B_-_Body"><a name="1466321">If a variable named </a><span class="cv_-_computer_voice">myArrayOfBooks</span> holds your array, use the following code to extract the <span class="cv_-_computer_voice">Name</span> properties:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1466322">var nameArray = myArrayOfBooks*.Name</a></div>
+      <div class="B_-_Body"><a name="1466323">The </a><span class="cv_-_computer_voice">nameArray</span> variable contains an array whose length is exactly the same as the length of <span class="cv_-_computer_voice">myArrayofBooks</span>. The first item is the value <span class="cv_-_computer_voice">myArrayofBooks[0].Name</span>, the second item is the value of <span class="cv_-_computer_voice">myArrayofBooks[1].Name, </span>and so on.</div>
+      <div class="B_-_Body"><a name="1466324">For another example, suppose you wanted to get a list of the groups a user belongs to so you can display the display names of each group. Suppose a </a><span class="cv_-_computer_voice">User</span> object contains a <span class="cv_-_computer_voice">MemberGroups</span> property that returns a read-only array of groups that the user belongs to. In other words, the Gosu syntax <span class="cv_-_computer_voice">user.MemberGroups</span> returns an array of <span class="cv_-_computer_voice">Group</span> objects, each one of which has a <span class="cv_-_computer_voice">DisplayName</span> property. If you want to get the display names from each group, use the following Gosu code </div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466325">user.MemberGroups*.DisplayName</a></PRE>
+      <div class="B_-_Body"><a name="1466326">Because </a><span class="cv_-_computer_voice">MemberGroups</span> is an array, Gosu expands the array by the <span class="cv_-_computer_voice">DisplayName</span> property on the <span class="cv_-_computer_voice">Group</span> component type. The result is an array of the names of all the Groups to which the user belongs. The type is <span class="cv_-_computer_voice">String[]</span>.</div>
+      <div class="B_-_Body"><a name="1466327">The result might look like the following:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1466328">["GroupName1", "GroupName2", "GroupName14", "GroupName22"]</a></div>
+      <div class="B_-_Body"><a name="1466329">The expansion operator works with methods also. Gosu uses the type that the method returns to determine how to expand it:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466431">If the original object is an array, Gosu creates an expanded array.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466487">If the original method is a list, Gosu creates an expanded list.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1466514">The following example calls a method on the </a><span class="cv_-_computer_voice">String</span> component of the <span class="cv_-_computer_voice">List</span> of <span class="cv_-_computer_voice">String</span> objects. It generates the list of initials, in other words the first character in each word.</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466330">var s = {"Fred", "Garvin"}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466331">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466332">// get the character array [F, G]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466333">var charArray = s*.charAt( 0 )</a></PRE>
+      <div class="B_-_Body"><a name="1466334">Array expansion is valuable if you need a single one-dimensional array or list through which you can iterate. </a></div>
+      <div class="B_-_Body"><a name="1466338">Important notes about the expansion operator:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466339">The generated array or list itself is always read-only from Gosu. You can never assign values to elements within the array, such as setting </a><span class="cv_-_computer_voice">nameArray[0]</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466340">The expansion operator </a><span class="cv_-_computer_voice">*.</span> works only for array expansion, never standard property accessing.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466341">When using the </a><span class="cv_-_computer_voice">*.</span> expansion operator, only component&nbsp;type&nbsp;properties are accessible.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466342">When using the </a><span class="cv_-_computer_voice">*.</span> expansion operator, array properties are never accessible.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1466343">The expansion operator applies not only to arrays, but to any </a><span class="cv_-_computer_voice">Iterable</span> type and all <span class="cv_-_computer_voice">Iterator</span> types and it preserves the type of array/list. For instance, if you apply the *. operator to a <span class="cv_-_computer_voice">List</span>, the result is a <span class="cv_-_computer_voice">List</span>. Otherwise, the expansion behavior is the same as with arrays.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="1487978">See also</a></h6>
+      <div class="B_-_Body"><a href="javascript:WWHClickedPopup('gosu', 'collections.21.5.html#1488062', '');" title="Enhancement Reference for Collections and Related Types" name="1487991">“Enhancement Reference for Collections and Related Types”</a></div>
+      <h4 class="H2_-_Heading_2"><a name="1466345">Array Flattening to Single Dimensional Array</a></h4>
+      <div class="B_-_Body"><a name="1466346">If the property value on the original item returns an array of items, expansion behavior is slightly different. Instead of returning an array of arrays (an array where every item is an array), Gosu returns an array containing all individual elements of all the values in each array. </a></div>
+      <div class="B_-_Body"><a name="1466348">Some people refer to this approach as </a><span class="e_-_emphasis">flattening</span> the array. </div>
+      <div class="B_-_Body"><a name="1466349">To demonstrate this, create the following test Gosu class:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466350">package test</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466351">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466352">class Family {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466353">  var _members : String[] as Members</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466354">}</a></PRE>
+      <div class="B_-_Body"><a name="1466355">Next, paste the following in to the Gosu Tester window</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466356">uses java.util.Map</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466357">uses test.Family</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466358">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466359">// create objects that each contain a Members property that is an array</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466360">var obj1 = new Family() { :Members = {"Peter", "Dave", "Scott"} }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466361">var obj2 = new Family() { :Members = {"Carson", "Gus", "Maureen"} }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466362">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466363">// Create a list of objects, each of which has an array property</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466364">var familyList : List&lt;Family&gt; = {obj1, obj2}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466365">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466366">// List expansion, with FLATTENING of the arrays into a single-dimensional array</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466367">var allMembers = familyList*.Members</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466368">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1466369">print(allMembers)</a></PRE>
+      <div class="B_-_Body"><a name="1466370">This program prints the following single-dimensional array:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1466371">["Peter", "Dave", "Scott", "Carson", "Gus", "Maureen"]</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

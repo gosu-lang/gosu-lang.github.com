@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>How Generics Help Define Collection APIs</title>
+    <link rel="StyleSheet" href="css/generics.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="generics.20.1.html#1441541">Gosu Generics</a> : How Generics Help Define Collection APIs</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1441541">How Generics Help Define Collection APIs</a></h3>
+      <div class="B_-_Body"><a name="1440982">By using Gosu generics to define function parameters, you can enforce type safety yet make logical assumptions about interaction between different APIs. This is most notable the Gosu feature called </a><span class="e_-_emphasis">blocks</span>, which allows in-line creation of anonymous functions that you can pass to other APIs.</div>
+      <div class="B_-_Body"><a name="1441006">For example, you could easily resort a list of </a><span class="cv_-_computer_voice">String</span> objects based on the length of the strings using these two features combined:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1440974">var myStrings = new ArrayList&lt;String&gt;(){"a", "abcd", "ab", "abc"}</a></div>
+      <PRE class="CL_-_Code_Last_Line"><a name="1441033">var resortedStrings = myStrings.sortBy( \ str -&gt; str.length as Integer)</a></PRE>
+      <div class="B_-_Body"><a name="1441056">If you want to print the contents, you could print them with:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1441057">resortedStrings.each( \ str  -&gt; print( str )  )</a></div>
+      <div class="B_-_Body"><a name="1441034">...which would produce the output:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1441061">a</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441071">ab</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1441072">abc</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447274">abcd</a></PRE>
+      <div class="B_-_Body"><a name="1447275">This concise syntax is possible because the </a><span class="cv_-_computer_voice">sortBy</span> method is defined a single time with Gosu generics. </div>
+      <div class="B_-_Body"><a name="1447287">It uses the wildcard features of Gosu generics to work with </a><span class="s_-_strong">all</span> lists of type <span class="cv_-_computer_voice">T</span>, where <span class="cv_-_computer_voice">T</span> could be any type of object, not just built-in types. The method is defined as a Gosu&nbsp;enhancement to all <span class="cv_-_computer_voice">List</span> objects. This means that the method automatically works with all Java objects of that class from Gosu code, although the method is not defined in Java. Enhancement definitions look similar to classes. The enhancement for the <span class="cv_-_computer_voice">sortBy</span> method looks like:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1447276">enhancement GWBaseListEnhancement&lt;T&gt; : java.util.List&lt;T&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447277">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447278">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447279">&nbsp;&nbsp;public function sortBy( value(T):Comparable ) : java.util.List&lt;T&gt; {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447280">&nbsp;&nbsp;&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447281">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1455024">}</a></PRE>
+      <div class="B_-_Body"><a name="1455025">That means that it works with all lists of type </a><span class="cv_-_computer_voice">T</span>, and the symbol <span class="cv_-_computer_voice">T</span> is treated as the type of the collection. Consequently, the <span class="cv_-_computer_voice">sortBy</span> method uses the type of collection (in the earlier example, an array list of <span class="cv_-_computer_voice">String</span> objects). If the collection is a list of <span class="cv_-_computer_voice">String</span> objects, method must takes a comparison function (a <span class="e_-_emphasis">block</span>) that takes a <span class="cv_-_computer_voice">String</span> object as an argument and returns a <span class="cv_-_computer_voice">Comparable</span> object. The symbol <span class="cv_-_computer_voice">T</span> is used again in the return result, which is a list that has the same type passed into it.</div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1455183">For a reference of extremely powerful collection-related APIs that use blocks and Gosu generics, see </a><a href="javascript:WWHClickedPopup('gosu', 'collections.21.1.html#1448766', '');" title="Collections">“Collections”</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebWorksHelpBooks version="5.0" name="Welcome to Gosu" expandalltopentries="false" showbooks="true" xmlns="urn:WebWorks-Help-Books-Schema">
+  <Book directory="Welcome%20to%20Gosu" />
+  <Book directory="Gosu%20Reference%20Guide" />
+</WebWorksHelpBooks>

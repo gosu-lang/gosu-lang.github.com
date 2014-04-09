@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Defining Your Own Annotations</title>
+    <link rel="StyleSheet" href="css/annotations.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="annotations.17.1.html#1440328">Annotations</a> : Defining Your Own Annotations</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1440328">Defining Your Own Annotations</a></h3>
+      <div class="B_-_Body"><a name="1439896">You can define new annotations to add entirely new metadata annotations, apply them to various kinds of programming declarations, and then retrieve this information at run time. You can also get information at run time about objects annotated with built-in annotations. For example, you could mark a Gosu class with metadata and retrieve it at run time.</a></div>
+      <div class="B_-_Body"><a name="1438213">Annotations are implemented as Gosu classes, and an annotation is simply a call to the annotation class’s constructor. A class constructor is similar to a class method. However, Gosu automatically calls the constructor if it creates a new instance of the class, such as if Gosu code uses the </a><span class="cv_-_computer_voice">new</span> keyword.</div>
+      <div class="B_-_Body"><a name="1438223">You can define new annotation types that can be used throughout Gosu. Annotations are defined just like classes except they must extend the interface </a><span class="cv_-_computer_voice">IAnnotation</span>. The <span class="cv_-_computer_voice">IAnnotation</span> interface is a marker interface that designates a class as an <span class="e_-_emphasis">annotation definition</span>.</div>
+      <div class="B_-_Body"><a name="1439062">Suppose you want a new annotation that allows us to annotate which people wrote a Gosu class. You could use the annotation at run time for debugging information or to file a bug in certain error conditions. To do this, you can create an annotation called </a><span class="cv_-_computer_voice">Author</span>.</div>
+      <div class="B_-_Body"><a name="1434945">For example, the following example defines a new annotation </a><span class="cv_-_computer_voice">Author</span> in the <span class="cv_-_computer_voice">com.guidewire.pl.docexamples.annotations</span> package</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1434651">package com.guidewire.pl.docexamples.annotations</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1434652">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1434653">class Author implements IAnnotation {</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1434654">}</a></PRE>
+      <div class="B_-_Body"><a name="1434656">In this case the annotation has no constructor, which implies the annotation takes no parameters. You can call it as:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1437217">@Author()</a></div>
+      <div class="B_-_Body"><a name="1437218">Because there are no arguments, you can optionally omit the parentheses:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1437219">@Author</a></div>
+      <div class="B_-_Body"><a name="1439163">However, as written in this example so far, you used the annotation but not specified any authors. Annotations can define arguments so you can pass information to the annotation, which might stored in private variables. Annotations can have properties or arguments of any type. However, if defining properties and arguments, be careful you never define circular references between annotation classes and regular classes.</a></div>
+      <div class="B_-_Body"><a name="1439166">This example requires only a single </a><span class="cv_-_computer_voice">String</span> argument, so define the annotation <span class="cv_-_computer_voice">Author</span> to take one argument to its constructor. Gosu calls the constructor once for the type after initializing Gosu at run time. In your constructor, save the constructor arguments value in a private variable:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1471494">package com.guidewire.pl.docexamples.annotations</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471495">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471496">class Author implements IAnnotation</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471497">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471498">  // Define a public property Author, backed by private var named _author</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471499">  private var _author : String as AuthorName</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471500">  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471501">  construct(a : String)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471502">  {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471503">    // The constructor takes a String, which means the Author of this item</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471504">    _author = a;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471505">  }</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1471506">}</a></PRE>
+      <div class="B_-_Body"><a name="1439106">In this example, the annotation saves the </a><span class="cv_-_computer_voice">String</span> argument in a class instance variable called <span class="cv_-_computer_voice">_author</span>. Because of the phrase “<span class="cv_-_computer_voice">as Author</span>” in the definition of the variable, at run time you can extract this information as the annotation’s public property <span class="cv_-_computer_voice">Author</span>.</div>
+      <div class="B_-_Body"><a name="1439189">By default, this annotation can be used on any method, type, property, or constructor, and as many times as desired. For example, you could specify multiple authors for a class or even multiple authors for methods on a class, or both. You can customize these settings and restrict the annotation’s usage, as discussed in </a><a href="javascript:WWHClickedPopup('gosu', 'annotations.17.4.html#1434674', '');" title="Defining Your Own Annotations">“Customizing Annotation Usage”</a>.</div>
+      <div class="B_-_Body"><a name="1439210">Test this annotation by using it on a newly defined type, such as a new Gosu class. Create the following class in the </a><span class="cv_-_computer_voice">com.guidewire.pl.docexamples.annotations</span> package:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471535">package com.guidewire.pl.docexamples.annotations</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471536">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471537">uses com.guidewire.pl.docexamples.annotations.Author</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471538">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471539">@Author("A. C. Clarke")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471541">class Spaceship {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471542">  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1439225">}</a></PRE>
+      <div class="B_-_Body"><a name="1439246">You can get annotation information from a class either directly by getting the type from an object at runtime. First can get an object’s type at runtime using the </a><span class="cv_-_computer_voice">typeof</span> operator or by getting the <span class="cv_-_computer_voice">Type</span> property from an object. Next, get its <span class="cv_-_computer_voice">TypeInfo</span> property and call the <span class="cv_-_computer_voice">getAnnotation</span> method, passing your annotation class name directly as a parameter. Call the <span class="cv_-_computer_voice">Instance</span> property to get the annotation and cast it to your desired more specific annotation class using the <span class="cv_-_computer_voice">as</span> operator. The <span class="cv_-_computer_voice">Instance</span> property throws an exception if there is more than one instance of that annotation on the type in that context.</div>
+      <div class="B_-_Body"><a name="1439337">For example, add the example classes from earlier in this topic into your Gosu environment and then paste the following code into the Gosu&nbsp;Tester:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1471564">uses com.guidewire.pl.docexamples.annotations.Author</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1473191">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1473192">var a = Spaceship.Type.TypeInfo.getAnnotation(Author).Instance as Author</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1473193">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1473194">print(typeof a)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1473195">print ("The author name from the annotation is ${a.AuthorName}")</a></PRE>
+      <div class="B_-_Body"><a name="1473466">This example prints the following:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1473493">com.mycompany.Author</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1473495">The author name from the annotation is A. C. Clarke</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1434674">Customizing Annotation Usage</a></h4>
+      <div class="B_-_Body"><a name="1434676">Usage of each annotation can be customized, such as allowing it under certain conditions. For example, notice that the built-in annotation </a><span class="cv_-_computer_voice">@Returns</span> can appear only on methods. To restrict, usage like this, use the <span class="cv_-_computer_voice">AnnotationUsage</span> meta-annotation within your annotation definition. </div>
+      <div class="B_-_Body"><a name="1501126">The </a><span class="cv_-_computer_voice">AnnotationUsage</span> meta-annotation takes two parameters, the <span class="e_-_emphasis">target</span> and the <span class="e_-_emphasis">modifier</span>. </div>
+      <div class="B_-_Body"><a name="1437299">The </a><span class="e_-_emphasis">target</span> defines where the annotation can be used. Declare with values of the <span class="cv_-_computer_voice">gw.lang.annotation.UsageTarget</span> enumeration:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1437300">MethodTarget</a></span> – This annotation can be used on a method</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1437301">TypeTarget</a></span> – This annotation can be used on a type, including classes</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1437303">PropertyTarget</a></span> – This annotation can be used on a property</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1500717">ConstructorTarget</a></span> – This annotation can be used on a constructor</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1500928">ParameterTarget</a></span> – This annotation can be used on a function argument (a parameter)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1500944">AllTarget</a></span> – This annotation can be used on all targets listed above</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1437305">The </a><span class="e_-_emphasis">modifier</span> defines how many times the annotation can be used for that target. Declare with values of the <span class="cv_-_computer_voice">gw.lang.annotation.UsageModifier</span> enumeration:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1437306">None</a></span> – This annotation cannot exist on that target</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1437307">Once</a></span> – This annotation can only appear once on that target</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1437308">Many</a></span> – This annotation can appear many (unlimited) times on that target</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1434994">For example, the built-in annotation called </a><span class="cv_-_computer_voice">@Returns</span> annotation can only appear on methods and can only appear once. Define such requirements right before the class definition with a line such as:</div>
+      <PRE class="CL_-_Code_Last_Line"><a name="1435717">@AnnotationUsage(annotation.UsageTarget.Method, annotation.UsageModifier.One)</a></PRE>
+      <div class="B_-_Body"><a name="1434687">The default availability is universal targets and modifiers. In other words, if no </a><span class="cv_-_computer_voice">AnnotationUsage</span> attribute is defined on an annotation, the usage defaults to allow the annotation unlimited times on all parts of a type or class. </div>
+      <div class="B_-_Body"><a name="1501469">If you use any </a><span class="cv_-_computer_voice">AnnotationUsage</span> annotation in an annotation definition, all targets default to <span class="cv_-_computer_voice">None</span> for any targets not otherwise specified. If you use <span class="cv_-_computer_voice">AnnotationUsage</span> once, Gosu requires you to explicitly specify supported targets using <span class="cv_-_computer_voice">AnnotationUsage</span> meta-annotations. </div>
+      <div class="B_-_Body"><a name="1501525">Add multiple lines to describe each type of use you want to permit.</a></div>
+      <div class="B_-_Body"><a name="1439379">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

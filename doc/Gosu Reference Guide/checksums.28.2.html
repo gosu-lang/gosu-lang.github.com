@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Overview of Checksums</title>
+    <link rel="StyleSheet" href="css/checksums.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="checksums.28.1.html#1457217">Checksums</a> : Overview of Checksums</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1457217">Overview of Checksums</a></h3>
+      <div class="B_-_Body"><a name="1457218">To improve detection of accidental modification of data in transit, you can use </a><span class="e_-_emphasis">checksums</span>. A checksum is a computed value generated from an arbitrary block of digital source data. To check the integrity of the data at a later time, recompute the checksum and compare it with the stored checksum. If the checksums do not match, the data was almost certainly altered (either intentionally or unintentionally). For example, this technique can help detection of physical data corruption or errors in a communication channel.</div>
+      <div class="B_-_Body"><a name="1457198">Be aware that checksums cannot perfectly protect against intentional corruption by a malicious agent. A malicious attacker could modify the data so as to preserve its checksum value, or depending on the transport could substitute a new checksum for the modified data. To guard against malicious changes, use encryption at the data level (a cryptographic hash) or the transport level (such as SSL/HTTPS).</a></div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="1442124">Checksums improve detection from accidental modification of data but cannot detect intentional corruption by a malicious agent. If you need that level of protection, use encryption instead of checksums, or in addition to checksums.</a></div>
+      <div class="B_-_Body"><a name="1442246">You can also use fingerprints to design caching and syncing algorithms that check whether data changed since the last cached copy. You can save the fingerprint of the cached copy and an external system can generate a fingerprint of its most current data. If you have both fingerprints, compare them to determine if you must resync the data. To work effectively, the fingerprint algorithm must provide near-certainty that a real-world change would change the fingerprint. In essence, a fingerprint uniquely identifies the data for most practical purposes, although in fact collisions (changed data with matching fingerprints) is theoretically possible.</a></div>
+      <div class="B_-_Body"><a name="1442311">Gosu provides support for 64-bit checksums in the class </a><span class="cv_-_computer_voice">FP64</span> in the package <span class="cv_-_computer_voice">gw.util.fingerprint</span>. </div>
+      <div class="B_-_Body"><a name="1442312">The </a><span class="cv_-_computer_voice">FP64</span> class provides methods for computing 64-bit fingerprints of the following kinds of data:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1442317">String</a></span> objects</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1442329">character arrays</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1442344">byte arrays</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1442352">input streams</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1442567">This implementation is based on an original idea of Michael O. Rabin, with refinements by Andrei Broder. Fingerprints provide a probabilistic guarantee that defines a mathematical upper bound on the probability of a collision (a collision occurs if two different strings have the same fingerprint). Using 64-bit fingerprints, the odds of a collision are extremely small. The odds of a collision between two randomly chosen texts a million characters long are less than 1 in a trillion. </a></div>
+      <div class="B_-_Body"><a name="1442693">Suppose you have a set </a><span class="cv_-_computer_voice">S</span> of <span class="cv_-_computer_voice">n</span> distinct strings each of which is at most <span class="cv_-_computer_voice">m</span> characters long. The odds of any two different strings in <span class="cv_-_computer_voice">S</span> having the same fingerprint is described by the following equation (<span class="cv_-_computer_voice">k</span> is the number of bits in the fingerprint):</div>
+      <div class="CS_-_Code_Single_Line"><a name="1442694">(nm^2) / 2^k</a></div>
+      <div class="B_-_Body"><a name="1442880">For practical purposes, you can treat fingerprints as uniquely identifying the bytes that produced them. In mathematical notation given two </a><span class="cv_-_computer_voice">String</span> variables <span class="cv_-_computer_voice">s1</span> and <span class="cv_-_computer_voice">s2,</span>using the → symbol to mean “<span class="e_-_emphasis">implies</span>”<span class="cv_-_computer_voice">:</span></div>
+      <div class="CS_-_Code_Single_Line"><a name="1442881">new FP64(s1).equals(new FP64(s2)) → s1.equals(s2)</a></div>
+      <div class="B_-_Body"><a name="1442949">Do not fingerprint the value of (the raw bytes of) a fingerprint. In other words, do not fingerprint the output of the </a><span class="cv_-_computer_voice">FP64</span> methods <span class="cv_-_computer_voice">toBytes</span> and <span class="cv_-_computer_voice">toHexString</span>. If you do so, due to the shorter length of the fingerprint itself, the probabilistic guarantee is invalid and may lead to unexpected collisions.</div>
+      <h3 class="H1NB_-_Heading_1_No_Break"><a name="1442951">Creating Fingerprints</a></h3>
+      <div class="B_-_Body"><a name="1442959">To create a fingerprint object, use the constructor to the FP64 object and pass it one of the supported objects:</a></div>
+      <div class="B_-_Body"><a name="1443259">An example of passing a </a><span class="cv_-_computer_voice">String</span> object:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1443301">var s = "hello"</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1443450">var f = new FP64(s)</a></PRE>
+      <div class="B_-_Body"><a name="1443302">An example of passing a character array:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1443383">var s = "hello"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1443384">var ca : char[] = {s[0], s[1], s[2], s[3], s[4]}</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1443314">var f = new FP64(ca)</a></PRE>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1443563">There is an alternate method signature that takes extra parameters for start position and length of the desired series of characters in the array.</a></div>
+      <div class="B_-_Body"><a name="1443315">An example of passing a byte array:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1443334">var ba = "hello".Bytes // or use "hello".getBytes(</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1443422">var f = new FP64(ba)</a></PRE>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1443578">There is an alternate method signature that takes extra parameters for start position and length of the desired series of byes in the array.</a></div>
+      <div class="B_-_Body"><a name="1443730">An example of passing a stream:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1443731">var s = "testInputStreamConstructor"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1443732">new FP64(new ByteArrayInputStream(gw.util.StreamUtil.toBytes(s))));</a></PRE>
+      <div class="B_-_Body"><a name="1443744">An example of passing an input stream:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1443833">var s = "testInputStreamConstructor"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1443834">new FP64(new StringBuffer(g));</a></PRE>
+      <div class="B_-_Body"><a name="1443858">An example of passing another </a><span class="cv_-_computer_voice">FP64</span> fingerprint object to the constructor to duplicate the fingerprint:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1443859">var s = "hello"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1443664">var f = new FP64(s)</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1443676">var f2 = new FP64(f)</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1443786">How to Output Data Inside a Fingerprint</a></h4>
+      <div class="B_-_Body"><a name="1443901">To generate output data from a finger print, use the </a><span class="cv_-_computer_voice">FP64</span> method <span class="cv_-_computer_voice">toBytes()</span>, which returns the value of this fingerprint as a newly-allocated array of 8 bytes.</div>
+      <div class="B_-_Body"><a name="1443941">Instead of the no-argument method, you can also use the alternate method signature that takes a byte array buffer and the method writes the bytes there. The buffer must have length at least 8 bytes.</a></div>
+      <div class="B_-_Body"><a name="1443954">Alternatively, you can use a method </a><span class="cv_-_computer_voice">toHexString()</span>. This method returns the fingerprint as an unsigned integer encoded in base 16 (hexadecimal) and padded with leading zeros to a total length of 16 characters.</div>
+      <h3 class="H1NB_-_Heading_1_No_Break"><a name="1442456">Extending Fingerprints</a></h3>
+      <div class="B_-_Body"><a name="1444060">This class also provides methods for </a><span class="e_-_emphasis">extending</span> an existing fingerprint by more bytes or characters. This is useful if you are sure the only change to the source data was appending a known series of bytes to the <span class="s_-_strong">end</span> of the original <span class="cv_-_computer_voice">String</span> data.</div>
+      <div class="B_-_Body"><a name="1444071">Extending the fingerprint of one </a><span class="cv_-_computer_voice">String</span> by another <span class="cv_-_computer_voice">String</span> produces a fingerprint equivalent to the fingerprint of the concatenation of the two String objects. Given the two <span class="cv_-_computer_voice">String</span> variables <span class="cv_-_computer_voice">s1</span> and <span class="cv_-_computer_voice">s2</span>, this means the following is true:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1442457">new FP64(s1 + s2).equals( new FP64(s1).extend(s2) )</a></div>
+      <div class="B_-_Body"><a name="1442151">All operations for extending a fingerprint are </a><span class="s_-_strong">destructive</span>. In other words, they modify the fingerprint object directly (<span class="e_-_emphasis">in-place</span>). All operations return the resulting <span class="cv_-_computer_voice">FP64</span> object, so you can chain method calls together, such as the following:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1442708">new FP64("x").extend(foo).extend(92))</a></div>
+      <div class="B_-_Body"><a name="1442722">If you want to make a copy of a fingerprint, use the FP64 constructor and pass the FP64 object to copy:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1442746">var original = new FP64("Hello world")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1442772">var copy = new FP64(original) // a duplicate of the original fingerprint</a></PRE>
+      <div class="B_-_Body"><a name="1441932">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

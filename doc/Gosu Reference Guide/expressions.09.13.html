@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Importing Types and Package Namespaces</title>
+    <link rel="StyleSheet" href="css/expressions.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="expressions.09.01.html#1560097">Gosu Operators and Expressions</a> : Importing Types and Package Namespaces</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1560097">Importing Types and Package Namespaces</a></h3>
+      <div class="B_-_Body"><a name="1560098">To use types and namespaces in Gosu scripts without fully qualifying the full class name including the package, use the Gosu </a><span class="cv_-_computer_voice">uses</span> operator. The <span class="cv_-_computer_voice">uses</span> operator behaves in a similar fashion to the Java language’s <span class="cv_-_computer_voice">import</span> command, although note a minor difference mentioned later in the section. By convention, put <span class="cv_-_computer_voice">uses</span> imports at the beginning of the file or script.</div>
+      <div class="B_-_Body"><a name="1560173">While the </a><span class="cv_-_computer_voice">uses</span> operator is technically an unary operator in that it takes a single operand, the functionality it provides is only useful with a second statement. In other words, the only purpose of using a <span class="cv_-_computer_voice">uses</span> expression is to simplify other lines of code in which you can omit the fully-qualified type name.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1560103">Syntax</a></h6>
+      <div class="B_-_Body"><a name="1560104">After the </a><span class="cv_-_computer_voice">uses</span> operator, specify a package namespace or a specific type such as a fully-qualified class name:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1560105">uses </a><span class="pc_-_parameter_in_code">type</span></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1560106">uses </a><span class="pc_-_parameter_in_code">namespace</span></PRE>
+      <div class="B_-_Body"><a name="1560107">Namespaces can be specified with an asterisk (*) character to indicate a hierarchy, such as:</a></div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1560108">uses toplevelpackage.subpackage.*</a></span></div>
+      <h6 class="HS_-_Head_Sub"><a name="1560109">Example 1</a></h6>
+      <div class="B_-_Body"><a name="1560110">The following code uses a fully-qualified type name:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1560111">var map = new java.util.HashMap()</a></div>
+      <div class="B_-_Body"><a name="1560112">Instead, you can use the following code that declares an explicit type with the </a><span class="cv_-_computer_voice">uses</span> operator:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1560113">// This "uses" expression...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1560114">uses java.util.HashMap</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1560115">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1560116">// Use this simpler expression without specifying the full package name:</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1560117">var map = new HashMap()</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1560118">Example 2</a></h6>
+      <div class="B_-_Body"><a name="1560119">The following code uses a fully-qualified type name:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1560120">var map = new java.util.HashMap()</a></div>
+      <div class="B_-_Body"><a name="1560121">Instead, you can use the following code that declares a package hierarchy with the </a><span class="cv_-_computer_voice">uses</span> operator:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1560122">// This "uses" expression...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1560123">uses java.util.*</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1560124">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1560125">// Use this simpler expression without specifying the full package name:</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1560126">var map = new HashMap()</a></PRE>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1560127">Explicit types always have precedence over wildcard namespace references. This is different compared to the behavior of the Java </a><span class="cv_-_computer_voice">import</span> operator.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1560219">Packages Always in Scope</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1560220">Some built-in packages are always in scope, which means you do not need to use fully-qualified type names or the </a><span class="cv_-_computer_voice">uses</span> operator for these types. These include the following packages:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1560981">soap.*</a></span> – only if SOAP type loader is available</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1560985">xsd.*</a></span> – only if XML/XSD type loader is available</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1560861">No packages always in scope refer to Java language types. It may appear that some Java packages are always in scope because </a><span class="cv_-_computer_voice">Boolean</span>, <span class="cv_-_computer_voice">String</span>, <span class="cv_-_computer_voice">Number</span>, <span class="cv_-_computer_voice">List</span>, and <span class="cv_-_computer_voice">Object</span> do not require qualification. However, those do not need full package qualification because these are built-in types.</div>
+      <div class="B_-_Body"><a name="1570536">The type </a><span class="cv_-_computer_voice">List</span> is special in the Gosu type system. Gosu resolves it to <span class="cv_-_computer_voice">java.util.List</span> in general use but it resolves to <span class="cv_-_computer_voice">java.util.ArrayList</span> in the special case where it is used in a <span class="cv_-_computer_voice">new</span> expression. For example, the following code creates an <span class="cv_-_computer_voice">ArrayList</span> but issues a warning suggesting instead using <span class="cv_-_computer_voice">ArrayList</span>:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1570537">var x = new List()</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

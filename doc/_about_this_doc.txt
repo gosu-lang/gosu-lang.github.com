@@ -1,0 +1,474 @@
+When sending questions to customer support, include this:
+
+ ** PRODUCT Gosu 0.10.2-C
+ ** PRODUCTCODE OSLANG
+ ** BRANCH //depot/eng/doc/emerald/active/docs/
+ ** DATE 8/1/2013 9:37:06 PM
+ ** SERVER DOCBUILD
+ ** LINK TO A PAGE: Click on "LINK TO THIS PAGE" in the upper-right of any HTML page. Copy that URL.
+
+The following is an auto-generated summary of the structure of all books in the doc set.
+
+
+
+=Gosu Reference Guide=
+
+
+===About This Document===
+* Downloads, Technical Questions, and Submitting Feedback
+* Conventions in This Document
+
+===Gosu Introduction===
+* Welcome to Gosu
+** Control Flow
+** Blocks
+** Enhancements
+** Collections
+** Access to Java Types
+** Gosu Classes and Properties
+*** Functions
+*** Class Variables and Properties
+*** From Gosu, Java Get and Set Methods Become Properties
+*** Property Accessor Paths are Null Safe
+*** Static Members
+** Interfaces
+** List and Array Expansion Operator *.
+** Comparisons
+** Case Sensitivity
+** Compound Assignment Statements
+** Delegating Interface Implementation with Composition
+** Concurrency
+** Exceptions
+** Annotations
+** Gosu Templates
+** XML and XSD Support
+** Web Service Support (Consuming WSDL)
+** Gosu Character Set
+* Running Gosu Programs and Calling Other Classes
+* More About the Gosu Type System
+** Compile Time Error Prevention
+** Type Inference
+** Intelligent Code Completion and Other Gosu Editor Tools
+** Null Safety for Properties and Other Operators
+** Generics in Gosu
+** Gosu Primitives Types
+* Gosu Case Sensitivity and Capitalization
+* Gosu Statement Terminators
+* Gosu Comments
+* Gosu Reserved Words
+* Notable Differences Between Gosu and Java
+* Get Ready for Gosu
+
+===Getting Started with Gosu Community Release===
+* System Requirements
+* Getting Started With IntelliJ IDEA Gosu Plugin
+** Install the IntelliJ Gosu Plugin
+** Create a New Gosu Project with the IntelliJ IDEA Gosu plugin
+** Do Not Depend Directly on Gosu JARs
+** The Gosu Scratchpad
+** Keep Only One Project Open at a Time
+* Getting Started With Gosu Command Line Tools
+** Advanced Gosu Command Line Tool Usage
+* Using XML and SOAP Libraries with Gosu Community Release
+* Advanced Examples
+** Servlet Example
+
+===What's New and Changed in Gosu Community Release ===
+* What's New in Gosu 0.10.2-C 
+** New Assert Statement
+** In For Loop Declarations, Local Variable is Now Optional
+** Final Local Variable and Class Variable Initialization Separate from Declaration
+** The new Operator is Now Optionally a Statement
+** Support Annotations on Function Parameters
+* Changed in Gosu 0.10.2-C
+** Gosu Map Enhancement Method Changes
+
+===Gosu Command Line Shell===
+* Gosu Command Line Tool Basics
+** Command Line Tool Options
+** Writing a Simple Gosu Command Line Program
+* Command Line Arguments
+*** Raw Argument Processing
+*** Advanced Argument Processing
+* Gosu Interactive Shell
+* Helpful APIs for Command Line Gosu Programs
+
+===Gosu Programs===
+* The Structure of a Gosu Program
+** Metaline as First Line
+** Functions in a Gosu Program
+** Setting the Class Path to Call Other Gosu or Java Classes
+** Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)
+
+===Types===
+* Access to Java Types
+* Primitive Types
+* Objects
+** Object Instantiation
+** Object Property Assignment
+*** Property Assignment Triggers Instantiation of Intermediate Objects
+** Object Property Access
+** Object Methods
+* Boolean Values
+* Sequences of Characters
+*** String Variables Can Have Content, Be Empty, or Be Null
+*** Other Methods on String Objects
+*** String Utilities
+*** In-line String Templates
+*** Escaping Special Characters in Strings
+*** Gosu String Templates
+* Array Types
+** List Access Using Array Index Notation
+** Array Expansion
+** Associative Array Syntax for Property Access
+** Legacy Array Type
+* Numeric Literals
+*** Scientific Notation, Including Floating Point
+* Compatibility with Earlier Gosu Releases
+** DateTime
+** Number
+** Array
+
+===Gosu Operators and Expressions===
+* Gosu Operators
+** Operator Precedence
+* Standard Gosu Expressions
+* Arithmetic Expressions
+*** Addition and Concatenation Operator (+)
+*** Subtraction Operator (-)
+*** Multiplication Operator (*)
+*** Division Operator (/)
+*** Arithmetic Modulo Operator (%)
+*** Bitwise AND (&)
+*** Bitwise Inclusive OR (|)
+*** Bitwise Exclusive OR (^)
+*** Bitwise Left Shift (<<)
+*** Bitwise Right Shift and Preserve Sign (>>)
+*** Bitwise Right Shift Right Shift and Clear Sign (>>>)
+* Equality Expressions
+*** == Operator
+*** === Operator Compares Object Equality
+*** != or <> Operator
+* Evaluation Expressions
+* Existence Testing Expressions
+* Logical Expressions
+*** Supported Logical Operators
+*** Logical AND
+*** Logical OR
+*** Logical NOT
+*** Typeis Expressions
+* New Object Expressions
+*** Optionally Omit Type Name with the new Keyword When Type is Determined From Context
+*** Object Initializer Syntax
+*** Special Syntax for Initializing Lists, Collections, and Maps
+* Relational Expressions
+*** > Operator
+*** >= Operator
+*** < Operator
+*** <= Operator
+* Unary Expressions
+*** Numeric Negation
+*** Typeof Expressions
+*** Bit-wise NOT
+* Importing Types and Package Namespaces
+*** Packages Always in Scope
+* Conditional Ternary Expressions
+* Special Gosu Expressions
+** Function Calls
+** Static Method Calls
+** Static Property Paths
+* Handling Null Values In Expressions
+** Null-safe Property Access
+*** How the Standard Period Operator Handles Null
+*** How the Null-Safe Period Operator Handles Null
+** Null-safe Default Operator
+** Null-safe Indexing for Arrays, Lists, and Maps
+** Null-safe Math Operators
+
+===Statements===
+* Gosu Statements
+** Statement Lists
+** New Is Optionally a Statement
+* Gosu Variables
+** Variable Type Declaration
+** Variable Assignment
+* Gosu Conditional Execution and Looping 
+** If - Else Statements
+** For Statements
+*** Iteration in For Statements
+*** Examples
+** While() Statements
+** Do…While() Statements
+** Switch() Statements
+* Gosu Functions
+** Named Arguments and Argument Defaults
+** Public and Private Functions
+
+===Intervals===
+* What are Intervals?
+** Reversing Interval Order
+** Granularity (Step and Unit)
+* Writing Your Own Interval Type
+** Custom Iterable Intervals Using Sequenceable Items
+** Custom Iterable Intervals Using Manually-written Iterators
+*** Example: Color Interval Written With Manual Iterators
+** Custom Non-iterable Interval Types
+
+===Exception Handling===
+* Try-Catch-Finally Constructions
+* Throw Statements
+* Catching Exceptions in Gosu
+* Object Lifecycle Management ('using' Clauses)
+*** Assigning Variables Inside 'using' Expression Declaration
+*** Passing Multiple Items to the 'using' Statement
+** Disposable Objects
+** Closeable Objects and 'using' Clauses
+** Reentrant Objects and 'using' Clauses
+** Returning Values from 'using' Clauses
+* Assert Statements
+
+===Classes===
+* What Are Classes?
+* Creating and Instantiating Classes
+** Creating a New Instance of a Class
+** Naming Conventions for Packages and Classes
+* Properties
+** Properties Act Like Data But They Are Dynamic and Virtual Functions
+** Property Paths are Null Tolerant
+*** Design APIs Around Null Safe Property Paths
+** Static Properties
+** More Property Examples
+* Modifiers
+** Access Modifiers
+** Override Modifier
+** Abstract Modifier
+** Final Modifier
+*** Final Types
+*** Final Class Variables
+*** Final Functions and Properties
+*** Final Local Variables
+*** Final Function Parameters
+** Static Modifier
+* Inner Classes
+** Named Inner Classes
+** Anonymous Inner Classes
+*** Gosu Block Shortcut for Anonymous Classes Implementing an Interface
+
+===Enumerations===
+* Using Enumerations
+** Extracting Information from Enumerations
+** Comparing Enumerations
+
+===Interfaces===
+* What is an Interface?
+* Defining and Using an Interface
+** Defining and Using Properties with Interfaces
+** Modifiers and Interfaces
+
+===Composition===
+* Using Gosu Composition
+** Overriding Methods Independent of the Delegate Class
+** Declaring Delegate Implementation Type in the Variable Definition
+** Using One Delegate for Multiple Interfaces
+** Using Composition With Built-in Interfaces
+
+===Annotations===
+* Annotating a Class, Method, Type, Class Variable, or Argument
+*** Function Argument Annotations
+** Built-in Annotations
+* Annotations at Run Time
+** Gosu Class Function Parameter Argument Annotations at Run Time
+* Defining Your Own Annotations
+** Customizing Annotation Usage
+
+===Enhancements===
+* Using Enhancements
+** Syntax for Using Enhancements
+** Creating a New Enhancement
+** Syntax for Defining Enhancements
+** Enhancement Naming and Package Conventions
+** Enhancements on Arrays
+
+===Gosu Blocks===
+* What Are Blocks?
+* Basic Block Definition and Invocation
+* Variable Scope and Capturing Variables In Blocks
+* Argument Type Inference Shortcut In Certain Cases
+* Block Type Literals
+* Blocks and Collections
+* Blocks as Shortcuts for Anonymous Classes
+
+===Gosu Generics===
+* Gosu Generics Overview
+* Using Gosu Generics
+** Parameterized Classes
+** Parameterized Methods
+* Other Unbounded Generics Wildcards
+* Generics and Blocks
+* How Generics Help Define Collection APIs
+* Multiple Dimensionality Generics
+* Generics With Custom 'Containers'
+** Generics with Non-Containers
+
+===Collections===
+* Basic Lists
+** Creating a List
+** Type Inference and List Initialization
+** Getting and Setting List Values
+** Special Behavior of List Interface in Gosu
+* Basic Hash Maps
+** Creating a Hash Map
+** Getting and Setting Values in a Hash Map
+** Creating a Hash Map with Type Inference 
+** Special Enhancements on Maps
+*** Map Properties for Keys and Values
+*** Each Key and Value
+** Wrapped Maps with Default Values
+* List and Array Expansion (*.)
+** Array Flattening to Single Dimensional Array
+* Enhancement Reference for Collections and Related Types
+** Collections Enhancement Methods
+*** Enhancement Methods on Iterable<T>
+*** Enhancement Methods on Collection<T>
+*** Methods on List<T>
+*** Methods on Map<K,V>
+*** Methods on Set<T>
+** Finding Data in Collections
+** Sorting Collections
+** Mapping Data in Collections
+** Iterating Across Collections
+** Partitioning Collections
+** Converting Lists, Arrays, and Sets
+** Flat Mapping a Series of Collections or Arrays
+** Sizes and Length of Collections and Strings are Equivalent
+
+===Gosu and XML===
+* Manipulating XML Overview
+* Introduction to the XML Element in Gosu
+** Dollar Sign Prefix for Properties that Are XSD Types
+* Exporting XML Data
+** Export-related Methods on an XML Element
+** XML Serialization Options Reference and Examples
+*** Serialization Performance and Element Sorting
+* Parsing XML Data into an XML Element
+*** Referencing Additional Schemas During Parsing
+* Creating Many Qualified Names in the Same Namespace
+* XSD-based Properties and Types
+** Important Concepts in XSD Properties and Types
+*** Reference of XSD Properties and Types
+*** Normalization of Gosu Generated XSD-based Names
+** XSD Generated Type Examples
+*** XSD Generated Type Examples 1
+*** XSD Generated Types: Element Type Instances Compared to Backing Type Instances
+** Automatic Insertion into Lists
+** XSD List Property Example
+* Getting Data From an XML Element
+** Manipulating Elements and Values (Works With or Without XSD)
+*** Getting Child Elements By Name
+*** Removing Child Elements By Name
+** Attributes
+* Simple Values
+** Methods to Create XML Simple Values
+** XSD to Gosu Simple Type Mappings
+** Facet Validation
+* Access the Nillness of an Element
+* Automatic Creation of Intermediary Elements
+* Default and Fixed Attribute Values
+* Substitution Group Hierarchies
+* Element Sorting for XSD-based Elements
+*** If Element Order Is Already Correct
+*** Multiple Correct Sort Order Matches
+* Built-in Schemas
+** The XSD that Defines an XSD (The Metaschema)
+* Schema Access Type
+** XML Serialization Performance and Element Sorting
+
+===Calling WS-I Web Services from Gosu===
+* Consuming WS-I Web Service Overview
+** Loading WS-I WSDL Directly into the File System
+*** Security and Authentication
+*** Types of WS-I Client Connections
+** How Does Gosu Process WSDL?
+** Learning Gosu XML APIs
+** What Gosu Creates from Your WSDL
+*** Special Behavior For Multiple Ports
+** A Real Example: Weather
+** Request XML Complexity Affects Appearance of Method Arguments
+* Adding WS-I Configuration Options
+*** Directly Modifying the WSDL Configuration Object for a Service
+** HTTP Authentication
+** Setting a Timeout
+** Custom SOAP Headers
+** Server Override URL
+** Setting XML Serialization Options
+** Implementing Advanced Web Service Security with WSS4J
+* One-Way Methods
+* Asynchronous Methods
+* MTOM Attachments
+
+===Calling Java from Gosu===
+* Overview of Writing Gosu Code that Calls Java
+** Many Java Classes are Core Classes for Gosu
+** Java Packages in Scope
+** Static Members and Static Import in Gosu
+** Java Get and Set Methods Convert to Gosu Properties
+** Interfaces
+** Enumerations
+** Annotations
+** Java Primitives
+** Java Generics
+* Deploying Your Java for Command Line Use
+** Tutorial - Custom Gosu That Calls Custom Java
+
+===Gosu Templates===
+* Template Overview
+** Template Expressions
+** When to Escape Special Characters for Templates
+* Using Template Files
+** Creating and Running a Template File
+** Template Scriptlet Tags
+** Template Parameters
+** Extending a Template From a Class
+** Template Comments
+* Template Export Formats
+
+===Type System===
+* The Type of All Types
+* Basic Type Coercion
+* Basic Type Checking
+** Automatic Downcasting for 'typeis' and 'typeof'
+* Using Reflection
+** Type Object Properties
+** Java Type Reflection
+** Type System Class
+* Compound Types
+* Type Loaders
+
+===Running Local Shell Commands===
+* Running Command Line Tools from Gosu
+
+===Checksums===
+* Overview of Checksums
+* Creating Fingerprints
+** How to Output Data Inside a Fingerprint
+* Extending Fingerprints
+
+===Concurrency===
+* Overview of Thread Safety and Concurrency
+* Gosu Scoping Classes (Pre-scoped Maps)
+* Concurrent Lazy Variables
+* Concurrent Cache
+* Concurrency with Monitor Locks and Reentrant Objects
+
+===Properties Files===
+* Reading Properties Files
+
+===Coding Style===
+* General Coding Guidelines
+** Omit Semicolons
+** Type Declarations
+** The == and != Operator Recommendations and Warnings
+** Capitalization Conventions
+** Class Variable and Class Property Recommendations
+** Use 'typeis' Inference
+

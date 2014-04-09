@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Schema Access Type</title>
+    <link rel="StyleSheet" href="css/xml.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="xml.22.01.html#1679792">Gosu and XML</a> : Schema Access Type</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1679792">Schema Access Type</a></h3>
+      <div class="B_-_Body"><a name="1542114">For each XSD that Gosu loads, it creates a </a><span class="cv_-_computer_voice">SchemaAccess</span> object that represents the loaded XSD. The most important reason to load XSDs is to provide Gosu with additional schemas during XML parsing. Additionally, <span class="cv_-_computer_voice">SchemaAccess</span> objects have a <span class="cv_-_computer_voice">Schema</span> property, which is the Gosu XML representation of the XSD. In technical terms, the <span class="cv_-_computer_voice">Schema</span> property contains the <span class="cv_-_computer_voice">gw.xsd.w3c.xmlschema.Schema</span> object that represents the XSD.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1729197">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.06.html#1539638', '');" title="Parsing XML Data into an XML Element" name="1729149">“Parsing XML Data into an XML Element”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.16.html#1541995', '');" title="Built-in Schemas" name="1729192">“The XSD that Defines an XSD (The Metaschema)”</a> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="1542116">Example XSD</a></h6>
+      <div class="B_-_Body"><a name="1729088">Suppose you have this XSD loaded as </a><span class="cv_-_computer_voice">schema.util.SchemaAccess.Schema</span>:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1542118">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1542119">&nbsp;&nbsp;&lt;xsd:element name="Element1"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1542120">&nbsp;&nbsp;&lt;xsd:element name="Element2"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1542121">&nbsp;&nbsp;&lt;xsd:element name="Element3"/&gt;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1542122">&lt;/xsd:schema&gt;</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1542123">Code</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1542124">var schema = schema.util.SchemaAccess.Schema</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1542125">schema.Element.each(\ el -&gt;print(el.Name))</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1542192">Output</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1542193">Element1</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1542194">Element2</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1542195">Element3</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1594055">Code</a></h6>
+      <div class="B_-_Body"><a name="1729137">The following example uses the XSD of XSDs to print a list of primitive schema types:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1594056">var schema = gw.xsd.w3c.xmlschema.util.SchemaAccess.Schema</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1594057">print(schema.SimpleType.where(\ s -&gt;s.Restriction.Base.LocalPart == "anySimpleType").map( </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1623329">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ s -&gt;s.Name))</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1542138">Output</a></h6>
+      <PRE class="CF_-_Code_First_Line"><a name="1542140">[string, boolean, float, double, decimal, duration, dateTime, time, date, gYearMonth, </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1542410">gYear, gMonthDay, gDay, gMonth, hexBinary, base64Binary, anyURI, QName, NOTATION]</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1931305">XML Serialization Performance and Element Sorting</a></h4>
+      <div class="B_-_Body"><a name="1931379">For large XML objects with many nested layers, sorting requires a lot of computer resources. See </a><a href="javascript:WWHClickedPopup('gosu', 'xml.22.05.html#1916198', '');" title="Exporting XML Data">“Serialization Performance and Element Sorting”</a>.</div>
+      <div class="B_-_Body"><a name="1892817">The APIs described in this topic generate the entire XML graph.</a></div>
+      <div class="B_-_Body"><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt"><a name="1517365">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

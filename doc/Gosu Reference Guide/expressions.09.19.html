@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Handling Null Values In Expressions</title>
+    <link rel="StyleSheet" href="css/expressions.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="expressions.09.01.html#1655838">Gosu Operators and Expressions</a> : Handling Null Values In Expressions</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1655838">Handling Null Values In Expressions</a></h3>
+      <h4 class="H2_-_Heading_2"><a name="1655840">Null-safe Property Access</a></h4>
+      <div class="B_-_Body"><a name="1655841">A property path expression in Gosu is a series of property accesses in series, for example </a><span class="cv_-_computer_voice">x.P1.P2.P3</span>. There are two different operators you can use in Gosu to get property values:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1601235">The standard period operator “</a><span class="cv_-_computer_voice">.</span>”, which can access properties or invoke methods.The null-safe period operator “<span class="cvt_-_computer_voice_table">?.</span>”, which can access properties or invoke methods in a null-safe way. For properties, this is the same as the standard period operator.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1601236">How the Standard Period Operator Handles Null</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1657980">The standard “.” operator is not null-safe. </a></div>
+      <div class="B_-_Body"><a name="1657981">For example, suppose that you have an expression similar to the following: </a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1657982">var groupType = claim.AssignedGroup.GroupType </a></div>
+      <div class="B_-_Body"><a name="1657983">At run time, if </a><span class="cv_-_computer_voice">claim</span> or <span class="cv_-_computer_voice">claim.AssignedGroup</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws a <span class="cv_-_computer_voice">NullPointerException</span> exception. </div>
+      <div class="B_-_Body"><a name="1657984">If the expression contains a method call, the rules are similar. For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1657985">var groupType = claim.myAction()</a></div>
+      <div class="B_-_Body"><a name="1657986">At run time, if </a><span class="cv_-_computer_voice">claim</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws a <span class="cv_-_computer_voice">NullPointerException</span> exception. </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1597755">How the Null-Safe Period Operator Handles Null</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1597694">In contrast to the standard period character operator, the null-safe period operator </a><span class="cv_-_computer_voice">?.</span> always returns <span class="cv_-_computer_voice">null</span> if the left side of the operator is <span class="cv_-_computer_voice">null</span>. This works both for accessing properties and for invoking methods. If the left side of the operator is <span class="cv_-_computer_voice">null</span>, Gosu does not evaluate the right side of the expression.</div>
+      <div class="B_-_Body"><a name="1657991">The following example uses the null-safe period operator:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1657992">var s : String = null;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1657993">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1657994">var result = s?.length</a></PRE>
+      <div class="B_-_Body"><a name="1657995">Although the variable called </a><span class="cv_-_computer_voice">result</span> has the value <span class="cv_-_computer_voice">null</span>, the code does not throw any exception. If you use the regular period operator instead, Gosu throws a null pointer exception.</div>
+      <h4 class="H2_-_Heading_2"><a name="1606622">Null-safe Default Operator</a></h4>
+      <div class="B_-_Body"><a name="1598062">Sometimes you might need to return a different value based on whether some expression evaluates to </a><span class="cv_-_computer_voice">null</span>. The Gosu operator <span class="cv_-_computer_voice">?:</span> results in the value of the left-hand-side if it is non-null, avoiding evaluation of the right-hand-side. If the left-hand side expression is <span class="cv_-_computer_voice">null</span>, Gosu evaluates the right-hand-side and returns that result.</div>
+      <div class="B_-_Body"><a name="1598150">For example, suppose there is a variable </a><span class="cv_-_computer_voice">str</span> of type <span class="cv_-_computer_voice">String</span>. At run time the value contains either a <span class="cv_-_computer_voice">String</span> or <span class="cv_-_computer_voice">null</span>. Perhaps you want to pass the input to a display routine. However, if the value of <span class="cv_-_computer_voice">str</span> is <span class="cv_-_computer_voice">null</span>, you want to use a default value rather than <span class="cv_-_computer_voice">null</span>. Use the <span class="cv_-_computer_voice">?:</span> operator as follows:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1598161">var result = str ?: "(empty)" &nbsp;&nbsp;// return str, but if the value is null return a default string</a></div>
+      <h4 class="H2_-_Heading_2"><a name="1598052">Null-safe Indexing for Arrays, Lists, and Maps</a></h4>
+      <div class="B_-_Body"><a name="1598273">For objects such as arrays and lists, you can access items by index number, such as </a><span class="cv_-_computer_voice">myArray[2]</span>. Similarly, with maps (<span class="cv_-_computer_voice">java.util.Map</span> objects), you can pass the key value to obtain the value. For example with a <span class="cv_-_computer_voice">Map&lt;String, Integer&gt;</span>, you could use the expression <span class="cv_-_computer_voice">myMap["myvalue"]</span>. The challenge with indexes is that if the object at run time has the value null, code like this throws a null pointer exception. </div>
+      <div class="B_-_Body"><a name="1621225">Gosu provides an alternative version of the indexing operator that is null-safe. Instead of simply typing the indexing subexpression, such as </a><span class="cv_-_computer_voice">[2]</span> after an object, prefix the expression with a question mark character. For example:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1621226">var v = myArray</a><span class="s_-_strong">?</span>[2]</div>
+      <div class="B_-_Body"><a name="1621227">If the value to the left of the question mark is </a><span class="cv_-_computer_voice">null</span>, the entire expression for the operator returns <span class="cv_-_computer_voice">null</span>. If the left-hand-operand is not <span class="cv_-_computer_voice">null</span>, Gosu looks inside the index subexpression and evaluates it and indexes the array, list or map. Finally, Gosu returns the result, just like the regular use of the angled brackets for indexing lists, arrays, and maps.</div>
+      <h4 class="H2_-_Heading_2"><a name="1597472">Null-safe Math Operators</a></h4>
+      <div class="B_-_Body"><a name="1597533">Gosu provides null-safe versions of common math operators. </a></div>
+      <div class="B_-_Body"><a name="1597534">For example, the standard operators for addition, subtraction, multiplication, division, and modulo are as follows: </a><span class="cv_-_computer_voice">+</span>, <span class="cv_-_computer_voice">-</span>, <span class="cv_-_computer_voice">*</span>, <span class="cv_-_computer_voice">/</span>, and <span class="cv_-_computer_voice">%</span>. If you use these standard operators and either side of the operator is <span class="cv_-_computer_voice">null</span>, Gosu throws a <span class="cv_-_computer_voice">NullPointerException</span> exception.</div>
+      <div class="B_-_Body"><a name="1597618">In contrast, the null-safe operators are the same symbols but with a question mark (</a><span class="cv_-_computer_voice">?</span>) character preceding it. In other words, the null-safe operators are: <span class="cv_-_computer_voice">?+</span>, <span class="cv_-_computer_voice">?-</span>, <span class="cv_-_computer_voice">?*</span>, <span class="cv_-_computer_voice">?/</span>, and <span class="cv_-_computer_voice">?%.</span></div>
+      <div class="B_-_Body"><a name="1597661">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

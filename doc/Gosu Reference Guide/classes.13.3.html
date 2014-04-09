@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Creating and Instantiating Classes</title>
+    <link rel="StyleSheet" href="css/classes.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="classes.13.1.html#2447712">Classes</a> : Creating and Instantiating Classes</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2447712">Creating and Instantiating Classes</a></h3>
+      <div class="B_-_Body"><a name="2475518">After creating a new class, add additional class variables, properties, and functions to the class. Within a class, functions are also called </a><span class="e_-_emphasis">methods</span>. This is standard object-oriented terminology. This documentation refers to functions as methods in contexts in which the functions are part of classes.</div>
+      <div class="B_-_Body"><a name="2475302">If you create a new class, the editor creates a template for a class upon which you can build. The editor creates the package name, class definition, and class constructor. You can add class variables, properties, and functions to the class. Within a class, functions are also called </a><span class="e_-_emphasis">methods</span>.</div>
+      <div class="B_-_Body"><a name="2449814">Add variables to a class with the </a><span class="cv_-_computer_voice">var</span> keyword:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2449816">&nbsp;&nbsp;var myStringInstanceVariable : String</a></PRE>
+      <div class="B_-_Body"><a name="2449822">You can optionally initialize the variable:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2449827">&nbsp;&nbsp;var myStringInstanceVariable = "Butter"</a></PRE>
+      <div class="B_-_Body"><a name="2450773">Define methods with the keyword </a><span class="cv_-_computer_voice">function</span> followed by the method name and the argument list in parentheses, or an empty argument list if there are no arguments to the method. The parameter list is a list of arguments, separated by commas, and of the format:</div>
+      <div class="CS_-_Code_Single_Line"><span class="pc_-_parameter_in_code"><a name="2450790">parameterName</a></span> : <span class="pc_-_parameter_in_code">typeName</span></div>
+      <div class="B_-_Body"><a name="2450794">For example, the following is a simple method:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2450778">function doAction(arg1 : String)</a></PRE>
+      <div class="B_-_Body"><a name="2447715">A simple Gosu class with one instance variable and one public method looks like the following:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2447716">class MyClass</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447717">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447718">&nbsp;&nbsp;var myStringInstanceVariable : String</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447719">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447720">  public function doAction(arg1 : String)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2448949">  {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2448950">    print("Someone just called the doAction method with arg " + arg1)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2448951">  }</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447724">}</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="2447726">Constructors</a></h6>
+      <div class="B_-_Body"><a name="2465119">A Gosu class can have a </a><span class="e_-_emphasis">constructor</span>, which is like a special method within the class that Gosu calls after creating an instance of that type. For example, if Gosu uses code like “<span class="cv_-_computer_voice">new&nbsp;MyClass()</span>”, Gosu calls the <span class="cv_-_computer_voice">MyClass</span> class’s constructor for initialization or other actions. To create a constructor, name the method simply <span class="cv_-_computer_voice">construct</span>. For example:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2447728">class Tree</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447729">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447730">  construct()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447731">  {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447732">    print("I just created a a Tree object!")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447733">  }</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2447734">}</a></PRE>
+      <div class="B_-_Body"><a name="2447735">If desired, you can delete the class constructor if you do not need it.</a></div>
+      <div class="B_-_Body"><a name="2482073">Your class might extend another class. If so, it is often appropriate for your constructor to call its superclass constructor. To do this, use the </a><span class="cv_-_computer_voice">super</span> keyword, followed by parentheses. This statement must be the first statement in the subclass constructor. For example</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2465180">class Tree extends Plant</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2465181">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2465182">  construct()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2465183">  {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2465197">&nbsp;&nbsp;&nbsp;&nbsp;super()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2483056">print("I just created a a Tree object!")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2465185">}</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2465186">}</a></PRE>
+      <div class="B_-_Body"><a name="2465139">If you call </a><span class="cv_-_computer_voice">super()</span> with no arguments between the parentheses, Gosu calls the superclass no-argument constructor. </div>
+      <div class="B_-_Body"><a name="2482129">If you call </a><span class="cv_-_computer_voice">super(</span><span class="pst_-_parameter_in_code_snippets_table">parameter_list</span><span class="cv_-_computer_voice">)</span>, Gosu calls the superclass constructor that matches the matching parameter list. You can call a superclass constructor with different number of arguments or different types than the current constructor.</div>
+      <div class="B_-_Body"><a name="2482312">For every constructor you write, Gosu always calls some version of the superclass constructor, even if you omit an explicit reference to </a><span class="cv_-_computer_voice">super()</span>. If your class does not call the superclass constructor explicitly:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2482468">If a no-argument constructor exists in the supertype, Gosu calls it, equivalent to the code </a><span class="cv_-_computer_voice">super()</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2482471">If a no-argument constructor does not exist, it is a compilation syntax error. (</a><span class="cv_-_computer_voice">"no default constructor"</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="2447737">Static Methods and Variables</a></h6>
+      <div class="B_-_Body"><a name="2465129">If you want to call the method directly on the class itself rather than an instance of the class, you can do this. This feature is called creating a </a><span class="e_-_emphasis">static method</span>. Add the keyword <span class="cv_-_computer_voice">static</span> before functions that you declare to make them static methods. For example, instead of writing:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447739">public function doAction(arg1 : String)</a></PRE>
+      <div class="B_-_Body"><a name="2447740">Instead use this:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2447741">static public function doAction(arg1 : String)</a></PRE>
+      <div class="B_-_Body"><a name="2447742">For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'classes.13.5.html#2446412', '');" title="Modifiers">“Static Modifier”</a>.</div>
+      <div class="B_-_Body"><a name="2451137">Although Gosu supports public variables for compatibility with other languages, it is best to always use </a><span class="e_-_emphasis">public&nbsp;properties backed by private variables</span> instead of using public variables. </div>
+      <div class="B_-_Body"><a name="2451138">In other words, in your new Gosu classes use this style of variable declaration:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2451139">private var _firstName : String as FirstName</a></div>
+      <div class="B_-_Body"><a name="2451140">Do not do this:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2451141">public var FirstName : String &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// do not do this. Public variables are not standard Gosu style</a></div>
+      <div class="B_-_Body"><a name="2451147">For more information about defining properties, see </a><a href="javascript:WWHClickedPopup('gosu', 'classes.13.4.html#2447772', '');" title="Properties">“Properties”</a>.</div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2451142">The standard Gosu style is to use public properties backed by private variables instead of using public variables. Do not use public variables in new Gosu classes. See </a><a href="javascript:WWHClickedPopup('gosu', 'classes.13.4.html#2447772', '');" title="Properties">“Properties”</a> for more information.</div>
+      <h4 class="H2_-_Heading_2"><a name="2449212">Creating a New Instance of a Class</a></h4>
+      <div class="B_-_Body"><a name="2449216">Typically you want to create an instance of a class. Each instance (in-memory copy) has its own set of data associated with it. The process of constructing a new in-memory instance is called </a><span class="e_-_emphasis">instantiating a class</span>. To instantiate a class, use the <span class="cv_-_computer_voice">new</span> operator:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2483082">var e = </a><span class="s_-_strong">new</span> <span class="cvt_-_computer_voice_table">smithco.messaging.QueueUtils()&nbsp;&nbsp;// Instantiate a new instance of QueueUtils.</span></div>
+      <div class="B_-_Body"><a name="2483084">You can also use object initializers to set properties on an object immediately after a </a><span class="cv_-_computer_voice">new</span> expression. Use object initializers for compact and clear object declarations. They are especially useful if combined with data structure syntax and nested objects. A simple version looks like the following:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2460701">var sampleClaim = new Claim() </a><span class="s_-_strong">{:ClaimId = "TestID"}</span>&nbsp;&nbsp;//&nbsp;Initialize the ClaimID on the new claim.</div>
+      <div class="B_-_Body"><a name="2449229">For more information on </a><span class="cv_-_computer_voice">new</span> expressions and object initializers, see <a href="javascript:WWHClickedPopup('gosu', 'expressions.09.10.html#1595812', '');" title="New Object Expressions">“New Object Expressions”</a>.</div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="2460727">You can use Gosu classes without creating a new instance of the class using static methods, static variables, and static properties. For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'classes.13.5.html#2446412', '');" title="Modifiers">“Static Modifier”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2447745">Naming Conventions for Packages and Classes</a></h4>
+      <div class="B_-_Body"><a name="2447746">The package name is the namespace for the class, interface, enhancement, enumeration, or other type. Defining a package prevents ambiguity about what class is accessed. </a></div>
+      <div class="B_-_Body"><a name="2449195">Package names must consist completely of lowercase characters. To access classes or other types in another package namespace, see </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.09.13.html#1560097', '');" title="Importing Types and Package Namespaces">“Importing Types and Package Namespaces”</a>. Class names or other type names must always start with an initial capital letter. However, the names may contain additional capital letters later in the name for clarity.</div>
+      <div class="B_-_Body"><a name="2449136">Use the following standard package naming conventions:</a></div>
+      <div class="T_-_Table"><a name="2447766">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="2449115">Type of class</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="2449117">Package</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="2449119">Example of fully qualified class name</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="2449207">Classes you define</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: italic; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="pst_-_parameter_in_code_snippets_table"><a name="2449209">customername.subpackage</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="2449211">smithco.messaging.QueueUtils</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

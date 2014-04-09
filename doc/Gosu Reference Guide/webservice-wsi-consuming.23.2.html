@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Adding WS-I Configuration Options</title>
+    <link rel="StyleSheet" href="css/webservice-wsi-consuming.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="webservice-wsi-consuming.23.1.html#2042841">Calling WS-I Web Services from Gosu</a> : Adding WS-I Configuration Options</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2042841">Adding WS-I Configuration Options</a></h3>
+      <div class="B_-_Body"><a name="2042842">If a web service does not need encryption, authentication, or digital signatures, you can just instantiate the service object and call methods on it:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014530">// get a reference to the service in the package namespace of the WSDL</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014531">var api = new example.gosu.wsi.myservice.SayHello()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014532">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014533">// call a method on the service</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2014534">api.helloWorld()</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2065148">Directly Modifying the WSDL Configuration Object for a Service</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2064570">To add authentication or security settings to a web service you can do so by modifying the options on the service object. To access the options from the API object (in the previous example, the object in the variable called </a><span class="cv_-_computer_voice">api</span>), use the syntax <span class="cv_-_computer_voice">api.Config</span>. That property contains the API options object, which has the type <span class="cv_-_computer_voice">gw.xml.ws.WsdlConfig</span>.</div>
+      <div class="B_-_Body"><a name="2055811">The WSDL configuration object has properties that add or change authentication and security settings. The </a><span class="cv_-_computer_voice">WsdlConfig</span> object itself is not an XML object (it is not based on <span class="cv_-_computer_voice">XmlElement</span>), but some of its subobjects are defined as XML objects. Fortunately, in typical code you do not need to really think about that difference. Instead, simply use a straightforward syntax to set authentication and security parameters. The following subtopics describe <span class="cv_-_computer_voice">WsdlConfig</span> object properties that you can set on the WSDL configuration object. </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="2055812">For XSD-generated types, if you set a property several levels down in the hierarchy, Gosu adds any intermediate XML elements if they did not already exist. This makes your XML-related code look concise. See also </a><a href="javascript:WWHClickedPopup('gosu', 'xml.22.12.html#1540977', '');" title="Automatic Creation of Intermediary Elements">“Automatic Creation of Intermediary Elements” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.12.html#1540977', '');" title="Automatic Creation of Intermediary Elements">Gosu Reference Guide</a></span>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2064831">HTTP Authentication</a></h4>
+      <div class="B_-_Body"><a name="2052128">To add simple HTTP authentication to an API request, use the basic HTTP authentication object at the path as follows. Suppose </a><span class="pc_-_parameter_in_code">api</span> is a reference to a SOAP API that you have already instantiated with the <span class="cv_-_computer_voice">new</span> operator. The properties on which to set the name and password are on the object:</div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="p_-_parameter"><a name="2055272">api</a></span><span class="cv_-_computer_voice">.Config.Http.Authentication.Basic</span></div>
+      <div class="B_-_Body"><a name="2027197">That object has a </a><span class="cv_-_computer_voice">Username</span> property for the user name and a <span class="cv_-_computer_voice">Password</span> property for the password. Set those two values with the desired user name and password.</div>
+      <div class="B_-_Body"><a name="2052249">For example:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052207">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052036">// Get a reference to the service in the package namespace of the WSDL.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052037">var service = new example.gosu.wsi.myservice.SayHello()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052038">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052283">service.Config.Http.Authentication.Basic.Username = "jms"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052295">service.Config.Http.Authentication.Basic.Password = "b5"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052065">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052039">// Call a method on the service.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2055320">service.helloWorld()</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="2093406">Setting a Timeout</a></h4>
+      <div class="B_-_Body"><a name="2093407">To set the timeout value (in milliseconds), set the </a><span class="cv_-_computer_voice">CallTimeout</span> property on the <span class="cv_-_computer_voice">WsdlConfig</span> object for that API reference. </div>
+      <div class="B_-_Body"><a name="2052768">For example:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052783">// get a reference to the service in the package namespace of the WSDL</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052784">var service = new example.gosu.wsi.myservice.SayHello()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052785">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052786">service.Config.CallTimeout = 30000 // 30 seconds</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052789">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052821">// call a method on the service</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2052790">service.helloWorld()</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="2052743">Custom SOAP Headers</a></h4>
+      <div class="B_-_Body"><a name="2052548">SOAP HTTP headers are essentially XML elements attached to the SOAP envelope for the web service request or its response. Your code might need to send additional SOAP headers to the external system, such as custom headers for authentication or digital signatures. You also might want to read additional SOAP headers on the response from the external system.</a></div>
+      <div class="B_-_Body"><a name="2052549">To add SOAP HTTP headers to a request that you initiate, first construct an XML element using the Gosu XML APIs (</a><span class="cv_-_computer_voice">XmlElement</span>). Next, add that <span class="cv_-_computer_voice">XmlElement</span> object to the list in the location <span class="p_-_parameter">api</span><span class="cv_-_computer_voice">.Config.RequestSoapHeaders</span>. That property contains a list of <span class="cv_-_computer_voice">XmlElement</span> objects, which in generics notation is the type <span class="cv_-_computer_voice">java.util.ArrayList&lt;XmlElement&gt;</span>.</div>
+      <div class="B_-_Body"><a name="2052655">To read (get) SOAP HTTP headers from a response, it only works if you use the asynchronous SOAP request APIs described in </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.23.4.html#2003179', '');" title="Asynchronous Methods">“Asynchronous Methods”</a>. There is no equivalent API to get just the SOAP headers on the response, but you can get the response envelope, and access the headers through that. You can access the response envelope from the result of the asynchronous API call. This is an <span class="cv_-_computer_voice">gw.xml.ws.AsyncResponse</span> object. On this object, get the <span class="cv_-_computer_voice">ResponseEnvelope</span> property. For SOAP 1.2 envelopes, the type of that response is type <span class="cv_-_computer_voice">gw.xsd.w3c.soap12_envelope.Envelope</span>. For SOAP 1.1, the type is the same except with <span class="cv_-_computer_voice">"soap11"</span> instead of <span class="cv_-_computer_voice">"soap12"</span> in the name.</div>
+      <div class="B_-_Body"><a name="2055557">From that object, get the headers in the </a><span class="cv_-_computer_voice">Header</span> property. That property contains a list of XML objects that represent all the headers.</div>
+      <h4 class="H2_-_Heading_2"><a name="2056586">Server Override URL</a></h4>
+      <div class="B_-_Body"><a name="2056587">To override the server URL, for example for a test-only configuration, set the </a><span class="cv_-_computer_voice">ServerOverrideUrl</span> property on the <span class="cv_-_computer_voice">WsdlConfig</span> object for your API reference. It takes a <span class="cv_-_computer_voice">java.net.URI</span> object for the URL.</div>
+      <div class="B_-_Body"><a name="2056588">For example:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2056589">// get a reference to the service in the package namespace of the WSDL</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2056590">var service = new example.gosu.wsi.myservice.SayHello()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2056591">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2056592">service.Config.ServerOverrideUrl = new URI("http://testingserver/xx")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2056594">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2056595">// call a method on the service</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2056596">service.helloWorld()</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="2091456">Setting XML Serialization Options</a></h4>
+      <div class="B_-_Body"><a name="2091529">To send a SOAP request to the SOAP server, Gosu takes an internal representation of XML and serializes the data to actual XML data as bytes. For typical use, the default XML serialization settings are sufficient. If you need to customize these settings, you can do so. </a></div>
+      <div class="B_-_Body"><a name="2091858">The most common serialization option to set is changing the character encoding to something other than the default, which is UTF-8. </a></div>
+      <div class="B_-_Body"><a name="2092869">You can change serialization settings by getting the </a><span class="cv_-_computer_voice">XmlSerializationOptions</span> property on the <span class="cv_-_computer_voice">WsdlConfig</span> object, which has type <span class="cv_-_computer_voice">gw.xml.XmlSerializationOptions</span>. Modify properties on that object to set various serialization settings.</div>
+      <div class="B_-_Body"><a name="2093157">For full information about XML serialization options, such as encoding, indent levels, pretty printing, line separators, and element sorting, see </a><a href="javascript:WWHClickedPopup('gosu', 'xml.22.05.html#1539076', '');" title="Exporting XML Data">“Exporting XML Data” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('gosu', 'xml.22.05.html#1539076', '');" title="Exporting XML Data">Gosu Reference Guide</a></span>.</div>
+      <div class="B_-_Body"><a name="2093245">The easiest way to get the appropriate character set object for the encoding is to use the </a><span class="cv_-_computer_voice">Charset.forName(</span><span class="ps_-_parameter_in_code_snippets">ENCODING_NAME</span><span class="cv_-_computer_voice">)</span> static method. That method returns the desired static instance of the character set object. </div>
+      <div class="B_-_Body"><a name="2093308">For example, to change the encoding to the Chinese encoding Big5:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="2092784">uses java.nio.charset.Charset</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2092808">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2092793">// get a reference to the service in the package namespace of the WSDL</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2092785">var service = new example.gosu.wsi.myservice.SayHello()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2092786">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2092779">service.Config.XmlSerializationOptions.Encoding = Charset.forName( "Big5" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2092780">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2092781">// call a method on the service</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2092155">service.helloWorld()</a></PRE>
+      <div class="B_-_Body"><a name="2092131">This API sets the encoding on the outgoing request only. The SOAP server is not obligated to return the response XML in the same character encoding. </a></div>
+      <h4 class="H2_-_Heading_2"><a name="2052910">Implementing Advanced Web Service Security with WSS4J</a></h4>
+      <div class="B_-_Body"><a name="2052911">For security options beyond HTTP Basic authentication and optional SOAP header authentication, you can use an additional set of APIs to implement whatever additional security layers.</a></div>
+      <div class="B_-_Body"><a name="2052876">For example, you might want to add additional layers of encryption, digital signatures, or other types of authentication or security. </a></div>
+      <div class="B_-_Body"><a name="2052937">From the SOAP client side, the way to add advanced security layers to outgoing requests is to apply transformations of the stream of data for the request. You can transform the data stream incrementally as you process bytes in the stream. For example, you might implement encryption this way. Alternatively, some transformations might require getting all the bytes in the stream before you can begin to output any transformed bytes. Digital signatures would be an example of this approach. You may you use multiple types of transformations. Remember that the order of them is important. For example, an encryption layer followed by a digital signature is a different output stream of bytes than applying the digital signature and then the encryption.</a></div>
+      <div class="B_-_Body"><a name="2052925">Similarly, getting a response from a SOAP client request might require transformations to understand the response. If the external system added a digital signature and then encrypted the XML response, you need to first decrypt the response, and then validate the digital signature with your keystore.</a></div>
+      <div class="B_-_Body"><a name="2053043">The standard approach for implementing these additional security layers is the Java utility WSS4J, but you can use other utilities as needed. The WSS4J utility includes support for the WSS security standard.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2053032">Outbound Security</a></h6>
+      <div class="B_-_Body"><a name="2053078">To add a transformation to your outgoing request, set the </a><span class="cv_-_computer_voice">RequestTransform</span> property on the <span class="cv_-_computer_voice">WsdlConfig</span> object for your API reference. The value of this property is a Gosu block that takes an input stream (<span class="cv_-_computer_voice">InputStream</span>) as an argument and returns another input stream. Your block can do anything it needs to do to transform the data.</div>
+      <div class="B_-_Body"><a name="2053105">Similarly, to transform the response, set the </a><span class="cv_-_computer_voice">ResponseTransform</span> property on the <span class="cv_-_computer_voice">WsdlConfig</span> object for your API reference. </div>
+      <div class="B_-_Body"><a name="2066278">The following simple example shows you could implement a transform of the byte stream. In this example, the transform is an XOR (exclusive OR) transformation on each byte. In this simple example, simply running the transformation again decodes the request. </a></div>
+      <div class="B_-_Body"><a name="2066279">The following code implements a service that applies the transform to any input stream. The code that actually implements the transform is as follows. This is a web service that you can use to test this request. </a></div>
+      <div class="B_-_Body"><a name="2071824">The class defines a static variable that contains a field called </a><span class="cv_-_computer_voice">_xorTransform</span> that does the transformation. </div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071825">package gw.xml.ws</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071826">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071827">uses java.io.ByteArrayInputStream</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071828">uses gw.util.StreamUtil</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071829">uses java.io.InputStream</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071830">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071831">class WsiTransformService {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071832">  </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071833">&nbsp;&nbsp;// THE FOLLOWING DECLARES A GOSU BLOCK THAT IMPLEMENTS THE TRANSFORM</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071834">&nbsp;&nbsp;public static var _xorTransform( is : InputStream ) : InputStream = \ is -&gt;{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071835">    var bytes = StreamUtil.getContent( is )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071836">    for ( b in bytes index idx ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071837">      bytes[ idx ] = ( b ^ 17 ) as byte // xor encryption</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071838">    }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071839">    return new ByteArrayInputStream( bytes )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071840">  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071842">}</a></PRE>
+      <div class="B_-_Body"><a name="2071843">The following code connects to the web service and applies this transform on outgoing requests and the reply.</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071844">package gw.xml.ws</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071845">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071846">uses gw.testharness.TestBase</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071847">uses gw.testharness.RunLevel</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071848">uses org.xml.sax.SAXParseException</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071849">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071850">@RunLevel( NONE )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071851">class WsiTransform {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071852">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071853">  function testTransform() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line" style="font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="s_-_strong"><a name="2071854">    var ws = new wsi.MyService.WsiTransformTestService()</a></span></PRE>
+      <PRE class="CM_-_Code_Middle_Line" style="font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="s_-_strong"><a name="2071855">    ws.Config.RequestTransform = WsiTransformTestService._xorTransform</a></span></PRE>
+      <PRE class="CM_-_Code_Middle_Line" style="font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="s_-_strong"><a name="2071856">    ws.Config.ResponseTransform = WsiTransformTestService._xorTransform</a></span></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071857">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071858">    ws.add( 3, 5 ) // call some method, and the transform is automatic</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071859">  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2071860">}</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

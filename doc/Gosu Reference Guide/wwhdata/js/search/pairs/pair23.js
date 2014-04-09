@@ -1,0 +1,26 @@
+function FileData_Pairs(x)
+{
+x.t("community","release");
+x.t("text_val.select","link");
+x.t("what\u2019s","new");
+x.t("new","changed");
+x.t("link","directly");
+x.t("messsage","gosu");
+x.t("guide","what\u2019s");
+x.t("directly","page");
+x.t("text_val.focus","text_val.select");
+x.t("changed","gosu");
+x.t("gosu","community");
+x.t("gosu","reference");
+x.t("text_val=eval","document.linktothisurlform.urlfield");
+x.t("error","occurred");
+x.t("guidewire_selectall","var");
+x.t("function","guidewire_selectall");
+x.t("release","what\u2019s");
+x.t("release","function");
+x.t("reference","guide");
+x.t("occurred","messsage");
+x.t("document.linktothisurlform.urlfield","text_val.focus");
+x.t("page","error");
+x.t("var","text_val=eval");
+}

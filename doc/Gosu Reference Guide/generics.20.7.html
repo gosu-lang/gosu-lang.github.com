@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Multiple Dimensionality Generics</title>
+    <link rel="StyleSheet" href="css/generics.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="generics.20.1.html#1446985">Gosu Generics</a> : Multiple Dimensionality Generics</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1446985">Multiple Dimensionality Generics</a></h3>
+      <div class="B_-_Body"><a name="1446061">Typical use of generics is with one-dimensional objects, such as lists of a certain type of object, such as a list of </a><span class="cv_-_computer_voice">String</span> objects, or a collection of <span class="cv_-_computer_voice">Address</span> objects. However, generics are flexible in Gosu as well as Java to include multiple dimensionality. </div>
+      <div class="B_-_Body"><a name="1445676">For example, a </a><span class="cv_-_computer_voice">Map</span> stores a set of key/value pairs. Depending on what kind of information you are storing in the <span class="cv_-_computer_voice">Map</span>, it may be useful to define APIs that work with certain types of maps. For example, maps that have keys that have type <span class="cv_-_computer_voice">Long</span>, and values that have type <span class="cv_-_computer_voice">String</span>. In some sense, a <span class="cv_-_computer_voice">Map</span> is a two-dimensional collection, and you can define a map to have a specific type:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1445568">Map&lt;Long, String&gt; contacts = new HashMap&lt;Long, String&gt;()</a></div>
+      <div class="B_-_Body"><a name="1445691">Suppose you want to define an API that worked with multiple types of maps. However, the API would return a value from the map and it would be ideal if the return value was strongly typed based on the type of the map. You could use a 2-dimensional generics with wildcards, to define the method signature:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1445762">public function GetHighestValue( themap : Map&lt;K,V&gt;) : V</a></div>
+      <div class="B_-_Body"><a name="1445889">The argument </a><span class="cv_-_computer_voice">themap</span> has type <span class="cv_-_computer_voice">Map</span> and specifies two type wildcards (single capital letter) separated by commas. In this case, assume the first one represents the type of the key (K) and the second one represents the type of the value (<span class="cv_-_computer_voice">V</span>). Because it uses the <span class="cv_-_computer_voice">V</span> again in the return value type, the Gosu compiler makes assumptions about relationships between the type of map passed in and the return value. </div>
+      <div class="B_-_Body"><a name="1446801">For example, suppose you pass the earlier example map of type </a><span class="cv_-_computer_voice">&lt;Long, String&gt;</span> to this API. The compiler knows that the method returns a <span class="cv_-_computer_voice">String</span> value. It knows this because of the two uses of <span class="cv_-_computer_voice">V</span> in the method signature, both as parameter and as return value. </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

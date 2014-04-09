@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Concurrent Lazy Variables</title>
+    <link rel="StyleSheet" href="css/concurrency.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="concurrency.29.1.html#1443154">Concurrency</a> : Concurrent Lazy Variables</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1443154">Concurrent Lazy Variables</a></h3>
+      <div class="B_-_Body"><a name="1444944">In addition to using the Java native concurrency classes, Gosu includes utility classes that add additional concurrency functionality. The </a><span class="cv_-_computer_voice">LazyVar</span> class implements what some people call a <span class="e_-_emphasis">lazy variable</span>. This means Gosu constructs it only the first time some code uses it. Because the <span class="cv_-_computer_voice">LazyVar</span> class uses the Java concurrency libraries, access to the lazy variable is thread-safe. The <span class="cv_-_computer_voice">LazyVar</span> class wraps the double-checked locking pattern in a typesafe holder. </div>
+      <div class="B_-_Body"><a name="1453347">In Gosu, you will see the </a><span class="cv_-_computer_voice">make</span> method signature <span class="cv_-_computer_voice">LazyVar.make</span>(<span class="cv_-_computer_voice">gw.util.concurrent.LazyVar.LazyVarInit</span>) method signature, which returns the lazy variable object. This method requires a Gosu block that creates an object. Gosu runs this block on the first <span class="s_-_strong">access</span> of the <span class="cv_-_computer_voice">LazyVar</span> value. An example is easier to understand than the method signature. The following example passes a block as an argument to <span class="cv_-_computer_voice">LazyVar.make(...)</span>. That block creates a new <span class="cv_-_computer_voice">ArrayList</span> parameterized to the <span class="cv_-_computer_voice">String</span> class:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1453348">var _lazy = LazyVar.make( \-&gt; new ArrayList&lt;String&gt;() )</a></div>
+      <div class="B_-_Body"><a name="1453380">As you can see, the parameter is a block that creates a new object. In this case, it returns a new </a><span class="cv_-_computer_voice">ArrayList</span>. You can create any object. In real world cases this block might be very resource-intensive to create (or load) this object.</div>
+      <div class="B_-_Body"><a name="1453381">It is best to let Gosu infer the proper type of the block type or the result of the make method, as shown in this example. This simplifies your code so that you do not need to use explicit Gosu generics syntax to define the type of the block itself, such as the following verbose version:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1453355">var _lazy : LazyVar&lt;List&lt;String&gt;&gt; = LazyVar.make( \-&gt; new ArrayList&lt;String&gt;() )</a></div>
+      <div class="B_-_Body"><a name="1447715">To use the lazy variable, just call its </a><span class="cv_-_computer_voice">get</span> method:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1447734">var i = _lazy.get()</a></PRE>
+      <div class="B_-_Body"><a name="1447716">If the Gosu has not yet run the block, it does when you access it. If Gosu has run the block, it simply returns the cached value and does not rerun the block.</a></div>
+      <div class="B_-_Body"><a name="1447767">A good approach to using lazy variables is to define it as a static variable and then define a property accessor function to abstract away the implementation of the variable. The following is an example inside a Gosu class definition:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449230">class MyClass {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449231">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449232">&nbsp;&nbsp;// lazy variable using a block that calls a resource-intensive operation that retuns a String</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449233">&nbsp;&nbsp;var _lazy = LazyVar.make( \-&gt; veryExpensiveMethodThatRetunsAString() )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449234">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449235">&nbsp;&nbsp;// define a property get function that gets this value</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449236">&nbsp;&nbsp;property get MyLazyString() : String {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449237">    return _lazy.get()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1449238">  }</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1449239">}</a></PRE>
+      <div class="B_-_Body"><a name="1444162">If any code accesses the property </a><span class="cv_-_computer_voice">MyLazyString</span>, Gosu calls its property accessor function. The property accessor always calls the get method on the object. However, Gosu only runs the very expensive method once, the first time someone accesses the lazy variable value. If any code accesses this property again, the cached value is used. Gosu does not execute the block again. This is useful in cases where you want some system to come up quickly and only pay incremental costs for resource-intensive value calculations. </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>
