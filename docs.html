@@ -56,7 +56,7 @@ layout: main
       <p>The <code>for</code> loop in Gosu allows you to iterate over both arrays and anything that implements
         the <code>java.lang.Iterable</code> interface.</p>
 
-      <pre class="prettyprint eval">
+      <pre class="prettyprint eval-gs">
  var list = { "one", "two", "three" } // Creates a java.lang.List&lt;String>
  for ( num in list ) {
    print( num )
@@ -64,7 +64,7 @@ layout: main
 
       <p>You can also get access to the zero-based index of the loop by including an <code>index</code> variable:</p>
 
-   <pre class="prettyprint eval">
+   <pre class="prettyprint eval-gs">
  var list = { "one", "two", "three" }
  for ( num in list index i ) {
    print ( "${i} : ${num}" ) // i is an int, and num is still of type String
@@ -73,7 +73,7 @@ layout: main
       <p>And, if you need access to the iterator for the loop (assuming you are looping over an <code>Iterable</code>)
       you can use the <code>iterator</code> keyword:</p>
 
-      <pre class="prettyprint eval">
+      <pre class="prettyprint eval-gs">
  var list = { "one", "two", "three" }
  for ( num in list iterator iter ) {
    iter.remove()
