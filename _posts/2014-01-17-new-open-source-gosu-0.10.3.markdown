@@ -35,6 +35,7 @@ print(b) // it prints 123
   The extra flexibility to use a type based on its capability, not its name, it&#39;s especially useful when dealing with third party libraries.
   The type checking is performed at compile time and this features enables a form of &quot;static duck typing&quot;.
   For more information about its usage and design decisions please refer to the a future blog post.
+  
 <pre class="prettyprint">
 structure Quacker{
   function quack();
