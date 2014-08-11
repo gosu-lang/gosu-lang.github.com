@@ -1,6 +1,7 @@
 ---
 layout: post
 title: New Open Source Gosu 0.10.2
+author: Gosu Team
 ---
 
 The Gosu team is happy to announce  the official release of Gosu 0.10.2 and Gosu Plugin 3.2 for IntelliJ 12.

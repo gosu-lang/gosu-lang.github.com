@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Welcome to the new gosu-lang.org Website!
+author: Gosu Team
 ---
 
 Alrighty! Time for a relaunch! We have ported the Gosu web infrastructure over to the wonderful web hosting

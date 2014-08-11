@@ -1,6 +1,7 @@
 ---
 layout: post
 title: New Open Source Gosu 1.1
+author: Gosu Team
 ---
 
 The Gosu team is happy to announce the official release of Gosu 1.1!

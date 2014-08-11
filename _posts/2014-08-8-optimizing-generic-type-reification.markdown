@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Optimizing Generic Type Reification
+author: Scott McKinney
 ---
 
 _Type parameters defined on Gosu generic types are reified, meaning their types are fully recoverable at runtime like other first-class types. Since the JVM does not support this feature, Gosu's compiler is forced to implement it indirectly.  This poses a performance problem I'll address here along with a recent solution we're currently experimenting with._
@@ -56,7 +57,7 @@ There’s another more critical issue to consider, however.  _Performance_.  Sup
 2. A method
 3. An enhancement 
 
-For a class the compiler passes the type arguments into constructors as implicit parameters and then stores them in special fields corresponding with type variables on the class.  For example, a hollow Foo<T> class looks something like this in its compiled form:
+For a class the compiler passes the type arguments into constructors as implicit parameters and then stores them in special fields corresponding with type variables on the class.  For example, a hollow Foo&lt;T&gt; class looks something like this in its compiled form:
 
     class Foo<T> {
       private final typeparam$T: IType
@@ -90,7 +91,7 @@ An alternative to preserving type arguments involves type _specialization_ where
 
 So where exactly is the performance problem with Gosu reification?  Can passing extra type arguments be all that expensive?  Well, the cost isn't so much in passing extra arguments as it is creating (or reifying) them at the call site.  Before we get into the details I'd like to point out that of the three generic contexts enhancement methods are especially offensive with respect to performance degradation as it relates to reification.  Consider the numerous and frequently used methods Gosu provides as enhancements to Iterable and Map.  They all involve reification of the type parameters at the call site's Iterable or Map.  For example, the reification overhead involved with a simple access to the Map#Count property amounts to at least two TypeSystem#getXxx() calls, one for each type parameter on the call site's Map (we'll cover this process in detail next).  While it's great that Gosu can reify otherwise erased Java generic types while in the scope of an enhancement, the expense can be significant.  Of course it all depends on the performance heat at the call site, most of the time it doesn't matter, but when it does, it does.  
 
-Let's consider a simple example with a basic generic class, say Foo<T>, to explain how the compiler reifies a type argument.  Recall a generic constructor call site requires type arguments as implicit parameters to the constructor:
+Let's consider a simple example with a basic generic class, say Foo&lt;T&gt;, to explain how the compiler reifies a type argument.  Recall a generic constructor call site requires type arguments as implicit parameters to the constructor:
 
     class Foo<T> {
       construct() { ... }
@@ -101,7 +102,7 @@ Let's consider a simple example with a basic generic class, say Foo<T>, to expla
     // compiles to...
     new Foo( TypeSystem.get( String.class ) )
     
-The compiler must reify the type argument for Foo<String> so that Foo's constructor can preserve it in its typeparam$T field.  The TypeSystem.getXxx() set of methods do most of the reification for us, for a price. This particular call to TypeSystem.get() is relatively cheap because the String class is a "frequently used" Java type and is directly accessible in our type system's "special" cache, but it's still not free and is more expensive than the new operation enclosing it.   Other less frequently used classes are resolved by name and cost considerably more.  For example:
+The compiler must reify the type argument for Foo&lt;String&gt; so that Foo's constructor can preserve it in its typeparam$T field.  The TypeSystem.getXxx() set of methods do most of the reification for us, for a price. This particular call to TypeSystem.get() is relatively cheap because the String class is a "frequently used" Java type and is directly accessible in our type system's "special" cache, but it's still not free and is more expensive than the new operation enclosing it.   Other less frequently used classes are resolved by name and cost considerably more.  For example:
 
     new Foo<Bar>()
      
@@ -115,7 +116,7 @@ getByFullName() is costly, it entails several method calls, hash lookups, and at
     // compiles to...
     new Foo( TypeSystem.get( List.class ).getParameterizedType( TypeSystem.get( String.class ) ) )   
     
-We simply can't represent List<String> as a Java Class constant, so we still have to generate code to reify the type in a form the type system can digest.  And as you can imagine this particular form of parametric reification comes at a hefty price.  It seems we are at an impasse...
+We simply can't represent List&lt;String&gt; as a Java Class constant, so we still have to generate code to reify the type in a form the type system can digest.  And as you can imagine this particular form of parametric reification comes at a hefty price.  It seems we are at an impasse...
 
 On Demand Reification
 ---------------------
@@ -141,7 +142,7 @@ What's really frustrating about all of this is that _most of the time type argum
 
 LazyTypeResolver extends a typical lazy access implementation.  Basically, LocklessLazyVar provides a get() method to lazily initialize our IType via a call to our init() implementation, which calls through to the ITypeResolver functional interface the first time get() is called.  With the LazyTypeResolver in hand we can pass along type arguments much more efficiently because we simply avoid the comparatively expensive reification.
 
-Revising our simple Foo<T> bytecode we have the following.
+Revising our simple Foo&lt;T&gt; bytecode we have the following.
 
     class Foo<T> {
       private final typeparam$T: LazyTypeResolver
@@ -210,7 +211,7 @@ But what about a more complicated use-case, like one involving a type variable a
      }
     }
     
-The constructor call to MyMap involves type variables as type parameters; their types are not known at compile-time, therefore the compiler can't directly reify a type with one of them as a type parameter e.g., Thing<E>.  What to do?
+The constructor call to MyMap involves type variables as type parameters; their types are not known at compile-time, therefore the compiler can't directly reify a type with one of them as a type parameter e.g., Thing&lt;E&gt;.  What to do?
 
 Without LazyTypeResolver the compiler generates code to reify the type directly like this:
 
