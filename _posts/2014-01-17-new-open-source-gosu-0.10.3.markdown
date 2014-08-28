@@ -14,7 +14,6 @@ New Gosu features
 Changes to the language in this release:
 
 * Support for dynamic typing in a similar fashion to C#.
-
   For those rare circumstances dynamic typing may be more desirable than static typing, Gosu allows you to use the Dynamic type.
   In essence a variable of Dynamic type can be assigned to/from any other variable. The type checking will be deferred from compile time to run time.
   This feature is mainly useful where you need that extra flexibility in order to easily integrate with other code.
@@ -29,7 +28,6 @@ Changes to the language in this release:
         print(b) // it prints 123
 
 * Support for structural typing, similar Go's interfaces.
-
   Gosu is a statically typed language employing a Nominal type system, which generally means type assignability is based on declared type names.  For instance, in Gosu a type is assignable to interface, Foo, only if it declares Foo in its hierarchy.  Another form of static typing, called Structural Typing, determines assignability based on declared type features.  Roughly a type is structurally assignable to Foo if compatible versions of all Foo's methods and properties exist in the type -- the type doesn't have to formally declare that it implements Foo. 
   The extra flexibility to use a type based on its capability, not its name, it's especially useful when dealing with third party libraries.
   The type checking is performed at compile time and this features enables a form of "static duck typing".
@@ -53,7 +51,6 @@ Changes to the language in this release:
         animal.quack()  // it prints Qu..Woof!
 
 * The logical compound assignment operators: &&= and ||=.
-  
   They work with boolean types (boolean and Boolean).
   
         var b = false
