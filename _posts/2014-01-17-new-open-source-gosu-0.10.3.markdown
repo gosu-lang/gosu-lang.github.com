@@ -20,67 +20,57 @@ Changes to the language in this release:
   This feature is mainly useful where you need that extra flexibility in order to easily integrate with other code.
   For more information about its usage and design decisions please refer to the a future blog post.
   
-<pre class="prettyprint">
-uses dynamic.Dynamic
+        uses dynamic.Dynamic
 
-var a : Dynamic = &quot;Hello world&quot;
-print(a) // it prints Hello world
-a = 123
-var b : int = a
-print(b) // it prints 123
-</pre>
+        var a : Dynamic = "Hello world"
+        print(a) // it prints Hello world
+        a = 123
+        var b : int = a
+        print(b) // it prints 123
 
-* Support for structural typing, similar Go&#39;s interfaces.
+* Support for structural typing, similar Go's interfaces.
 
-  Gosu is a statically typed language employing a Nominal type system, which generally means type assignability is based on declared type names.  For instance, in Gosu a type is assignable to interface, Foo, only if it declares Foo in its hierarchy.  Another form of static typing, called Structural Typing, determines assignability based on declared type features.  Roughly a type is structurally assignable to Foo if compatible versions of all Foo&#39;s methods and properties exist in the type &dash;&dash; the type doesn&#39;t have to formally declare that it implements Foo. 
-  The extra flexibility to use a type based on its capability, not its name, it&#39;s especially useful when dealing with third party libraries.
-  The type checking is performed at compile time and this features enables a form of &quot;static duck typing&quot;.
+  Gosu is a statically typed language employing a Nominal type system, which generally means type assignability is based on declared type names.  For instance, in Gosu a type is assignable to interface, Foo, only if it declares Foo in its hierarchy.  Another form of static typing, called Structural Typing, determines assignability based on declared type features.  Roughly a type is structurally assignable to Foo if compatible versions of all Foo's methods and properties exist in the type -- the type doesn't have to formally declare that it implements Foo. 
+  The extra flexibility to use a type based on its capability, not its name, it's especially useful when dealing with third party libraries.
+  The type checking is performed at compile time and this features enables a form of "static duck typing".
   For more information about its usage and design decisions please refer to the a future blog post.
   
-<pre class="prettyprint">
-structure Quacker{
-  function quack();
-}
+        structure Quacker{
+          function quack();
+        }
 
-class Duck {
-  function quack() { print(&quot;Quack!&quot;) }
-}
+        class Duck {
+          function quack() { print("Quack!") }
+        }
 
-class Dog {
-  function quack() { print(&quot;Qu..Woof!&quot;) }
-}
+        class Dog {
+          function quack() { print("Qu..Woof!") }
+        }
 
-var animal : Quacker = new Duck()
-animal.quack()  // it prints Quack!
-animal = new Dog()
-animal.quack()  // it prints Qu..Woof!
-</pre>
+        var animal : Quacker = new Duck()
+        animal.quack()  // it prints Quack!
+        animal = new Dog()
+        animal.quack()  // it prints Qu..Woof!
 
-* The logical compound assignment operators: &amp;&amp;= and ||=.
+* The logical compound assignment operators: &&= and ||=.
   
   They work with boolean types (boolean and Boolean).
   
-<pre class="prettyprint"> 
-var b = false
-b &amp;&amp;= true // same as b = b &amp;&amp; true and it evaluates to false
-</pre>
+        var b = false
+        b &&= true // same as b = b && true and it evaluates to false
+    
+* Nested comments: it's now possible to write a comment inside  another comment. It is manly useful when you comment out a block of code that includes comments. 
+ 
+        /*
+            // if x is true
+            if(x) {
+              print("Hello!") /* print */
+            } else {
+              /* x is not true
+                 let's print world
+               */
+              print("world")
+            }
+        */
 
-* Nested comments: it&#39;s now possible to write a comment inside  another comment.
-  
-  It is manly useful when you comment out a block of code that includes comments.
-  
-<pre class="prettyprint"> 
-/*
-    // if x is true
-    if(x) {
-      print(&quot;Hello!&quot;) /* print */
-    } else {
-      /* x is not true
-         let's print world
-       */
-      print(&quot;world&quot;)
-    }
-*/
-</pre>
-
-The plugin is available from the JetBrains repository, which is directly accessible from your IntelliJ 12 plugins setup dialog.  Select &quot;Gosu&quot;, right click and install (see <a href="http://gosu-lang.github.io/downloads.html">this page</a> more detailed instructions). 
+The plugin is available from the JetBrains repository, which is directly accessible from your IntelliJ 12 plugins setup dialog. Select "Gosu", right click and install (see [this](http://gosu-lang.github.io/downloads.html) page more detailed instructions). 

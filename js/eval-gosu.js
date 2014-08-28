@@ -1,3 +1,11 @@
+
+var escapeElement = document.createElement('textarea');
+
+function unEscape(html) {
+  escapeElement.innerHTML = html;
+  return escapeElement.textContent;
+}
+
 if($) {
   $(function(){
 
@@ -43,6 +51,7 @@ if($) {
       $("#eval-spinner").show();
       $(".eval-results").fadeIn('fast');
       var txt = $($(".eval-ui").data('target')).children('span').text();
+      txt = unEscape(txt)
       setTimeout(function(){
         $.get("http://gosu-eval-service.herokuapp.com/eval", {
           "script" : txt
