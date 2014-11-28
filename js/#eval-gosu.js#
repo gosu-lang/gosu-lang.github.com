@@ -54,7 +54,7 @@ if($) {
       txt = unEscape(txt)
       setTimeout(function(){
         $.get("https://gosu-eval-service.herokuapp.com/eval", {
-          "script" : txt
+          "Script" : txt
         }, function(results){
           $("#eval-spinner").fadeOut('fast');
           $("#eval-target").hide().html(results).fadeIn('fast');
