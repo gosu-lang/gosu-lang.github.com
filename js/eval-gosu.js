@@ -53,7 +53,7 @@ if($) {
       var txt = $($(".eval-ui").data('target')).children('span').text();
       txt = unEscape(txt)
       setTimeout(function(){
-        $.get("http://gosu-eval-service.herokuapp.com/eval", {
+        $.get("https://gosu-eval-service.herokuapp.com/eval", {
           "script" : txt
         }, function(results){
           $("#eval-spinner").fadeOut('fast');
