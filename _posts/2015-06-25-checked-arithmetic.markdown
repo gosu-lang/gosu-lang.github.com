@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Checked Arithmetic in Gosu
-author: Luca Boasso
+authors:
+- Luca Boasso
 ---
 
 A type safe language must enforce the invariants of its types. For example in a declaration like this one:

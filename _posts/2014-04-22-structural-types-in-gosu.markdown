@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Structural Types in Gosu
-author: Scott McKinney
+authors:
+- Scott McKinney
 ---
 
 Gosu is a statically typed language employing a [Nominal type system](http://en.wikipedia.org/wiki/Nominative_type_system), which generally means type assignability is based on declared type _names_.  For instance, in Gosu a type is assignable to interface, Foo, only if it declares Foo in its hierarchy.  Another form of static typing, called [Structural Typing](http://en.wikipedia.org/wiki/Structural_type_system), determines assignability based on declared type _features_.  Roughly a type is structurally assignable to Foo if compatible versions of all Foo's methods and properties exist in the type -- the type doesn't have to formally declare that it implements Foo.  While this method of type comparison is more involved and carries with it performance penalties, it is much less rigid than nominal typing because it measures a type based on its capability, not its name.  Several newer languages acknowledge this flexibility and now incorporate structural typing into their type systems, among them are [Go](http://golang.org/), [Scala](http://docs.scala-lang.org/style/types.html), and [TypeScript](http://blogs.msdn.com/b/typescript/archive/2013/01/24/interfaces-walkthrough.aspx).  The Gosu team is inspired by their efforts and is motivated by recent demand to integrate structural typing into the language.

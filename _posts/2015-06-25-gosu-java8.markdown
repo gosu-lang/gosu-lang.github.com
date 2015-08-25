@@ -1,7 +1,8 @@
 ---
 layout: post
 title: What's New with Gosu's Java 8 Support (so far)
-author: Scott McKinney
+authors:
+- Scott McKinney
 ---
 
 Our current platform is moving to the brave new world of Java 8, which is the Java a lot of us have been waiting for. Of course all the excitement over this release is focused on the long awaited Lambda Expression; most of the other new language features serve Java 8's more general goal of supporting functional-style programming via lambdas. As avid Gosu programmers we're all preconditioned to these "new" concepts. Here we compare lambdas with blocks and cover Gosu's support of Java 8's new language features. Please note we don't intend to provide a tutorial for Java 8 language features here, please read [What's New in JDK 8](http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html) for comprehensive coverage of Java 8 features if you aren't already familiar with them.

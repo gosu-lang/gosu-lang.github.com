@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Optimizing Generic Type Reification
-author: Scott McKinney
+authors:
+- Scott McKinney
 ---
 
 Type parameters defined on Gosu generic types are reified, meaning their types are fully recoverable at runtime like other first-class types. Since the JVM does not support this feature, Gosu's compiler is forced to implement it indirectly.  This poses a performance problem I'll address here along with a recent solution we're currently experimenting with.

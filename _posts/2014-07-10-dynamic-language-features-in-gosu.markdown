@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Dynamic Language Features in Gosu
-author: Scott McKinney
+authors:
+- Scott McKinney
 ---
 
 Static typing is the lifeblood of Gosu.  But in rare situations it gets in the way or just isn't appropriate for the problem at hand.  For those _rare_ circumstances dynamic typing may be more desirable. To that end we introduced rich dynamic typing features in Gosu.
