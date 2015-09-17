@@ -3,7 +3,6 @@ layout: post
 title: New Open Source Gosu 1.8 And IntelliJ 14 support
 authors:
 - Gosu Team
-date: 2015-09-16 17:00:00 -0700
 ---
 
 The Gosu team is happy to announce the official release of Gosu 1.8. A new IntelliJ IDEA editor plugin, [OS Gosu v4.0.2.11a](https://plugins.jetbrains.com/plugin/download?pr=&updateId=21368), is also released to the Jetbrains repository.

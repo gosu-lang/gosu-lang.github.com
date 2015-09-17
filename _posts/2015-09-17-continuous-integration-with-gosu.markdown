@@ -3,7 +3,6 @@ layout: post
 title: Continuous Integration with Gosu
 authors:
 - Kyle Moore
-date: 2015-09-17 16:00:00 -0700
 ---
 
 One of Gosu's many advantages over other JVM languages is that sources are dynamically compiled to bytecode at runtime - no need to run javac, make/rebuild the project or waste time troubleshooting why sources and class files were somehow out of sync.
