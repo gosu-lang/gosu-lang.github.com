@@ -7,11 +7,19 @@ layout: main
         <h1>Getting Started</h1>
       </div>
 
-      <p>The <a href="downloads.html">Gosu Plugin for IntelliJ</a> is the recommended way to use Gosu. 
-      The plugin is hosted on the IntelliJ IDEA Plugin Repository and you can download it directly from within 
+      <p>The <a href="downloads.html">Gosu Plugin for IntelliJ</a> is the recommended way to use Gosu.
+      The plugin is hosted on the IntelliJ IDEA Plugin Repository and you can download it directly from within
       IntelliJ IDEA.
-       
-      <p>For the truly impatient, you can do some evaluate some simple gosu expressions online over on the
+
+      <p>Alternatively, a downloadable archive of simple command-line examples is available <a href="https://github.com/gosu-lang/example-commandline/archive/master.zip">here</a>.  Check the README file for instructions or view the <a href="https://github.com/gosu-lang/example-commandline">source</a>.
+
+      <p>If Maven is your thing, here is a simple <a href="https://github.com/gosu-lang/example-gosuc-simple/archive/master.zip">starter project</a>. Run <code>mvn test</code> to execute the JUnit tests contained within.
+
+      <p>Gosu also plays nicely with Gradle - here is another simple <a href="https://github.com/gosu-lang/example-gradle/archive/master.zip">starter project</a>. Run <code>gradlew test</code> to execute the JUnit tests contained within.
+
+      <p>It's worth nothing that Maven and Gradle do not require a local Gosu installation - the respective dependency resolution strategies will download the appropriate Gosu JARs from Maven Central.
+
+      <p>For the truly impatient, you can evaluate some simple gosu expressions online over on the
         <a href="/play.html">Play</a> page.</p>
 
     </section>
@@ -130,7 +138,7 @@ layout: main
 
 <pre class="prettyprint">
  public class Foo {
-  var _bar : String as readonly Bar = "bar" 
+  var _bar : String as readonly Bar = "bar"
  }</pre>
 
       <p>If you want to add some logic to the get or set of a propery, you can use this longer syntax:</p>
@@ -286,11 +294,11 @@ layout: main
 
       <pre class="prettyprint">
  someMethod(true, false, null, false, true)  //bwah?
- 
- someMethod( :enableLogging = true, :debug = false, 
-             :contextObject = null, :trace = false, 
+
+ someMethod( :enableLogging = true, :debug = false,
+             :contextObject = null, :trace = false,
              :summarizeTiming = true)  //Oh, I see
-</pre>    
+</pre>
 
       <h3>Superclasses, Interfaces and Delegates</h3>
 
@@ -309,11 +317,11 @@ layout: main
  class MyRunnable implements Runnable {
    //A delegate, exposed as the Impl property
    delegate _runnable represents Runnable
-  
+
    property get Impl : Runnable {
      return _runnable
    }
-  
+
    property set Impl( r : Runnable ) {
      _runnable = r
    }
@@ -346,7 +354,7 @@ layout: main
  try {
    conn.execute( "Some advanced SQL" )
  } finally {
-   conn.close() 
+   conn.close()
  }
 </pre>
 
@@ -400,7 +408,7 @@ layout: main
       <pre class="prettyprint">
  #! /path/to/gosu
  classpath "../src,../lib/lib1.jar"
-  
+
  print( "Here is a library object: ${new SweetLibraryObject()}")
 </pre>
 
@@ -486,13 +494,13 @@ layout: main
  List&lt;String> lstOfStrings = Arrays.asList("This", "is", "a", "list");
 
  List&lt;String> longStrings = new ArrayList&lt;String>();
-  
+
  for( String s : lstOfStrings ) {
    if( s.length() > 2 ) {
      longStrings.add( s.toUpperCase() );
    }
  }
-  
+
  Collections.sort(longStrings, new Comparator&lt;String>() {
    public int compare( String s, String s2 ) {
      return s.compareTo( s2 );
@@ -591,9 +599,9 @@ layout: main
 
       <pre class="prettyprint">
  package example
- 
+
  uses java.util.List
- 
+
  enhancement MyListEnhancement&lt;T> : List&lt;T> {
    function firstAndLast() : List&lt;T> {
      return {this.first(), this.last()}
@@ -615,8 +623,8 @@ layout: main
       <pre class="prettyprint">
  var lstOfStrings : List&lt;String> = {"a", "b", "c"}
  var arrOfStrings = lstOfStrings.toTypedArray() //returns a String[]
-  
- var lstOfObjs : List&lt;Object> = lstOfStrings //type variables are covariant in Gosu, see <a href="generics.html">generics</a>        
+
+ var lstOfObjs : List&lt;Object> = lstOfStrings //type variables are covariant in Gosu, see <a href="generics.html">generics</a>
  var arrOfObjs = lstOfObjs.toTypedArray() //returns an Object[]
 </pre>
 
@@ -630,9 +638,9 @@ layout: main
 
       <pre class="prettyprint">
  package example
-  
+
  uses java.util.*
-  
+
  enhancement MyListOfDatesEnhancement : List&lt;Date> {
    function allBetween( start : Date, end : Date ) : List&lt;Date>{
      this.where( \ d -> start &lt;= d and d &lt;= end )
@@ -708,7 +716,7 @@ layout: main
       <pre class="prettyprint">
  &lt;%@ params( names : String[] ) %>
  All Names: &lt;% for( name in names ) { %>
-   * ${name} 
+   * ${name}
  &lt;% } %>
 </pre>
       <p>The template explicitly declares the names and types of its arguments using the <code>params()</code> directive</p>
