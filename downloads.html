@@ -47,6 +47,19 @@ layout: main
   <li>Right click on the Gosu plugin and select <em>Download and Install</em></li>
   <li>After the plugin has been installed, restart IntelliJ</li>
 </ol>
+
+<div class="alert alert-info" role="alert">
+<p><b>A special note for Mac OS X users</b>
+<br>Per this <a href="https://intellij-support.jetbrains.com/hc/en-us/articles/206827547-Selecting-the-JDK-version-the-IDE-will-run-under">discussion</a> on the Jetbrains forums, IJ on OS X executes using JRE 6 by default.  Our plugin requires Java 8.
+<br>
+To force IDEA to use Java 8, please check the JVMVersion property in <code>/Applications/Intellij\ 14\ CE.app/Contents/Info.plist</code>:
+<pre>
+    &lt;key&gt;JVMVersion&lt;/key&gt;
+    &lt;string&gt;1.8*&lt;/string&gt;
+</pre>
+</p>
+</div>
+
 <p>Alternatively, the plugin may be manually downloaded from the <a href="https://plugins.jetbrains.com/plugin/7140?pr=">Jetbrains plugin repository</a>.
 <ol>
   <li>Install IntelliJ IDEA 14.1 (either the Ultimate or Community editions) to your machine</li>
