@@ -101,3 +101,13 @@ code {
 .index-btns a {
   margin-top: 8px;
 }
+
+textarea#script {
+  height: 12em;
+}
+
+@media(max-width:756px){
+  textarea#script {
+    height: 3em;
+  }
+}
