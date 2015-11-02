@@ -8,25 +8,36 @@ layout: main
 
 <div class="row">
   <div class="col-md-8">
-    <h3><i class="fa fa-coffee"></i> Hey look!  It's a pragmatic language for the JVM...</h3>
+    <h3>
+      <i class="fa fa-coffee"></i>
+      <span class="hidden-xs">
+        Hey look!  It's a pragmatic language for the JVM...
+      </span>
+      <span class="visible-xs-inline">
+        A simple JVM language
+      </span>
+    </h3>
       	<pre class="prettyprint eval-gs">
 
-    var aString = "Hello Gosu!" // Type inference keeps things clean
+  // Type inference <span class="hidden-xs">keeps things clean</span>
+  var aString = "Hello Gosu!"
 
-    // Simple literal syntax for Lists & Maps
-    var strings = { "red", "green", "blue" }
+  // Lists & Maps literals <span class="hidden-xs"> for easy use</span>
+  var strings = { "red",
+                  "green",
+                  "blue" }
 
-    // Closures make data structures fun
-    print( strings.where( \ s -> s.length() > 3 ).sort() )
+  // Closures <span class="hidden-xs">make data structures fun</span>
+  strings.where( \ s -> s.length() > 3 ).sort()
 
-    // You can use familiar Java classes
-    var aFile = java.io.File.createTempFile("temp","txt");
+  // Full Java Interop<span class="hidden-xs">erability</span>
+  var f = new File("Tmp.txt")
 
-    // And they've been enhanced for your pleasure
-    aFile.write( strings.join( ", " ) )
-    print( aFile.read() )
+  // With <span class="hidden-xs">make data structures fun</span>
+  f.write(strings.join(", "))
+  print( aFile.read() )
       	</pre>
-    <p>
+    <p class="index-btns">
       <a class="btn btn-lg btn-primary" href="downloads.html"><i class="fa fa-cloud-download"></i> Download</a>
       <a class="btn btn-lg btn-default" href="docs.html"><i class="fa fa-book"></i> Learn</a>
       <a class="btn btn-lg btn-success" href="play.html"><i class="fa fa-play"></i> Play</a>

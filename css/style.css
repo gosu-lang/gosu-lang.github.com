@@ -97,3 +97,7 @@ code {
   margin-top: 6px;
   margin-bottom: 6px;
 }
+
+.index-btns a {
+  margin-top: 8px;
+}
