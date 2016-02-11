@@ -6,21 +6,32 @@ layout: main
       <div class="page-header">
         <h1>Getting Started</h1>
       </div>
+      <p>There are several options to get started with Gosu depending on your needs</p>
+      <h2>Gosu Editor</h2>
+      <p>The Gosu editor is the easiest way to experiment with Gosu:</p>
+      <ul>
+        <li><a href="downloads.html">Download</a>  the latest Gosu distribution</li>
+        <li><a href="https://www.google.com/search?q=how+to+set+java_home+on+windows">Set </a>the <code>JAVA_HOME</code>environment variable to JDK 1.8's home, if needed</li>
+        <li>Unzip the distribution zip, go to the bin folder and double click on gosu.cmd (or gosu if you are using Linux/Mac)</li>
+      </ul>
+      <p>You can try the bundled example projects like the Match 3 game. Just select Match3 from the Examples pane and run the game by pressing F5.</p>
 
-      <p>The <a href="downloads.html">Gosu Plugin for IntelliJ</a> is the recommended way to use Gosu.
+
+      <h2>Gosu Plugin for IntelliJ</h2>
+      <p>The <a href="intellij.html">Gosu Plugin for IntelliJ</a> is the recommended way to use Gosu.
       The plugin is hosted on the IntelliJ IDEA Plugin Repository and you can download it directly from within
-      IntelliJ IDEA. If you installed the old 3.X plugin, delete the plugin and remove the Gosu SDK (File > Project Structure > SDKs), the new plugin does not need it.
+      IntelliJ IDEA. If you installed the old 3.X plugin, delete the plugin and remove the Gosu SDK (File > Project Structure > SDKs), the new plugin does not need it.</p>
 
-      <p>Alternatively, a downloadable archive of simple command-line examples is available <a href="https://github.com/gosu-lang/example-commandline/archive/master.zip">here</a>.  Check the README file for instructions or view the <a href="https://github.com/gosu-lang/example-commandline">source</a>.
+      <h2>Maven and Gradle</h2>
+      <p>If Maven is your thing, here is a simple <a href="https://github.com/gosu-lang/example-gosuc-simple/archive/master.zip">starter project</a>. Run <code>mvn test</code> to execute the JUnit tests contained within.</p>
 
-      <p>If Maven is your thing, here is a simple <a href="https://github.com/gosu-lang/example-gosuc-simple/archive/master.zip">starter project</a>. Run <code>mvn test</code> to execute the JUnit tests contained within.
+      <p>Gosu also plays nicely with Gradle - here is another simple <a href="https://github.com/gosu-lang/example-gradle-simple/archive/master.zip">starter project</a>. Run <code>gradlew test</code> to execute the JUnit tests contained within.</p>
 
-      <p>Gosu also plays nicely with Gradle - here is another simple <a href="https://github.com/gosu-lang/example-gradle-simple/archive/master.zip">starter project</a>. Run <code>gradlew test</code> to execute the JUnit tests contained within.
+      <p>It is noteworthy that Maven and Gradle projects do not require a local Gosu installation - the respective dependency resolution strategies will download the appropriate Gosu JARs from Maven Central.</p>
 
-      <p>It is noteworthy that Maven and Gradle projects do not require a local Gosu installation - the respective dependency resolution strategies will download the appropriate Gosu JARs from Maven Central.
-
-      <p>For the truly impatient, you can evaluate some simple gosu expressions online over on the
-        <a href="/play.html">Play</a> page.</p>
+      <h2>...and More</h2>
+      <p>Alternatively, a downloadable archive of simple command-line examples is available <a href="https://github.com/gosu-lang/example-commandline/archive/master.zip">here</a>.  Check the README file for instructions or view the <a href="https://github.com/gosu-lang/example-commandline">source</a>.</p>
+      <p>For the truly impatient, you can evaluate some simple gosu expressions online over on the  <a href="/play.html">Play</a> page.</p>
 
     </section>
 

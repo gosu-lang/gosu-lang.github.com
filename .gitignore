@@ -2,4 +2,5 @@ _site
 .idea
 main.iml
 .jekyll-metadata
-
+serve
+server
