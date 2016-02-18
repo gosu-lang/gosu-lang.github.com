@@ -45,11 +45,18 @@ layout: main
   <div class="col-md-4">
     <h3> <i class="fa fa-bullhorn"></i> Latest News</h3>
     <ul>
-      {% for post in site.posts limit: 3 %}
+      {% for post in site.posts limit: 2 %}
       <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
       {% endfor %}
+      <li><a href="/2015/11/22/threading-the-needle.html">Threading the Needle with Functional Programming, Structural Typing, and Generics</a></li>
+      <li><a href="/2015/09/17/continuous-integration-with-gosu.html">Continuous Integration with Gosu</a></li>
+      <li><a href="/2015/06/25/gosu-java8.html">What's New with Gosu's Java 8 Support (so far)</a></li>
+      <li><a href="/2015/06/25/checked-arithmetic.html">Checked Arithmetic in Gosu</a></li>
+      <li><a href="/2014/08/08/optimizing-generic-type-reification.html">Optimizing Generic Type Reification</a></li>
+      <li><a href="/2014/07/10/dynamic-language-features-in-gosu.html">Dynamic Language Features in Gosu</a></li>
+      <li><a href="/2014/04/22/structural-types-in-gosu.html">Structural Types in Gosu</a></li>
     </ul>
   </div>
 </div>

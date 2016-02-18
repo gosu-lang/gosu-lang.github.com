@@ -11,21 +11,24 @@ But this advantage quickly erodes when considered from the rich ecosystem of tes
 
 So what if Maven could be told how to compile Gosu down to class files, if only for the sake of running tests? It turns out it can - via the pluggable 'compilerId' parameter of the [Maven compiler plugin](http://maven.apache.org/plugins/maven-compiler-plugin/). I have created a compiler component for Plexus - Maven's dependency injection container. With a little bit of XML configuration any project with Gosu-based tests can now compiled and executed from the command line.
 
-###Examples
+Examples
+--------
 
 Three sample repositories demonstrate example configuration for the plugin:
 
-  * #####[example-gosuc-simple](https://github.com/gosu-lang/example-gosuc-simple) A simple project, only Gosu sources and no Java
-  * #####[example-gosuc-hybrid](https://github.com/gosu-lang/example-gosuc-hybrid) Combines Java and Gosu sources; Gosu depends on Java
-  * #####[example-gosuc-inverted](https://github.com/gosu-lang/example-gosuc-inverted) Combines Java and Gosu sources; but in an unusual step, Java depends on Gosu
+* [example-gosuc-simple](https://github.com/gosu-lang/example-gosuc-simple) A simple project, only Gosu sources and no Java
+* [example-gosuc-hybrid](https://github.com/gosu-lang/example-gosuc-hybrid) Combines Java and Gosu sources; Gosu depends on Java
+* [example-gosuc-inverted](https://github.com/gosu-lang/example-gosuc-inverted) Combines Java and Gosu sources; but in an unusual step, Java depends on Gosu
 
 More technical details are available in the README and pom.xml files of the above repositories.
 
-###Continuous Integration
+Continuous Integration
+----------------------
 
 Perhaps the greatest benefit of the the compiler plugin is enablement of automated testing. The Gosu language specification has over 15,000 tests (and growing), but until now relied on our IDE to execute. No longer. Thanks to GitHub's seamless integration with [CircleCI](https://circleci.com/about), all tests found in the gosu-test module are now running "in the cloud": [https://circleci.com/gh/gosu-lang/gosu-lang/tree/master](https://circleci.com/gh/gosu-lang/gosu-lang/tree/master)
 
-###Next Steps and Future Functionality
+Next Steps and Future Functionality
+-----------------------------------
 
 The compiler component is available beginning from Gosu release [1.8]({{ site.url }}/2015/09/16/new-open-source-gosu-1.8.html), but the work does not end here. [Gradle](http://gradle.org/) is increasing in popularity and is the likely successor to Maven as a build platform. Choice is always good, so I look forward to duplicating the Maven compilation capability in Gradle.
 
