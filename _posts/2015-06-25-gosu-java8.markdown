@@ -10,7 +10,7 @@ Our current platform is moving to the brave new world of Java 8, which is the Ja
 Lambda Expressions
 ------------------
 
-###Just Syntax
+### Just Syntax
 
 A Java lambda expression is really just lighter-weight syntax for Java's existing anonymous class expression, beyond syntax it doesn't provide any additional capabilities. For instance, compare the following two code samples.
 
@@ -20,22 +20,22 @@ A Java lambda expression is really just lighter-weight syntax for Java's existin
         System.exit( 1 );
       }
     } );
-     
+
     // lambda
     invokeLater( ()-> System.exit( 1 ) );
-    
+
 The Lambda expression is clearly easier on the eye. Kudos to Java for finally adding this feature!
 
 Compared with Gosu blocks, the two are nearly identical in appearance:
 
     invokeLater( \-> System.exit( 1 ) )
-    
+
 The only significant syntactical difference: Java uses parenthesis for parameter declaration and Gosu uses the backslash. As a consequence your eyes are well prepared for reading functional-style Java 8 code!
 
 Functional Interfaces
 ---------------------
 
-###Lamdas Are Posers
+### Lamdas Are Posers
 
 Beyond syntax there are some significant differences between Java lambdas and Gosu blocks. Foremost is typing. Unlike a block, a lambda doesn't really have a type of it's own, instead its type is inferred from the context in which it is used. So in the previous example the lambda expression's type is inferred from the Runnable parameter of `invokeLater()`. This is legal because the structure of the zero-argument lambda matches the zero-argument `run()` method. The inferred type must always be an interface with exactly one abstract method. Such an interface is referred to as a *Functional Interface* in Java 8 parlance. Thus, Runnable is considered "functional" because it has one abstract method, `run()`. In essence a functional interface models the single function represented by a lambda, thereby bridging Java's exclusively nominal type system with the purely structural lambda function type. What this means however is that Java lambdas lack *type identity*. For example, the following assignment is illegal in Java because the lambda expression has no type of its own and cannot be inferred from `Object`.
 
@@ -50,7 +50,7 @@ Gosu blocks on the other hand have type identity via the *function type*. So the
 
 Indeed, run's type is inferred from the block's type, which is function type, `block():void`, or just `block()`, which, among other things, allows run to be invoked directly as `run()`. With Java because lambdas don't have type identity and instead pose as interfaces where they're used, they're invoked indirectly via interfaces e.g., `run.run()`.
 
-###A Small Rant
+### A Small Rant
 
 So why exactly did Oracle choose not to support function types with Java 8 lambdas? Java language architect, Brian Goetz, explains (from [State of the Lambda](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)):
 
@@ -66,7 +66,7 @@ The Gosu team disagrees with this reasoning. We ar srs!
 3. Here we agree. Once again Java's design decision with checked exceptions bites back. In our view a healthier attitude would involve taking steps to relax (or outright remove) checked exceptions in Java, THE SCIENCE IS SETTLED!! ;)
 4. This is reaching. The Gosu team has been pretty [vocal](http://devblog.guidewire.com/2009/05/22/i-am-hate-method-overloading-and-so-can-you/) regarding its displeasure with method overloading. Mostly this stems from the complexity involved with supporting it internally, which is not only a developer time sink, it also has a direct impact on both compile-time and runtime performance -- we're not whining only because we're lazy. In any case it would be perfectly acceptable to not support method overloading for methods having one or more function-type parameters, similar to Gosu's behavior with default parameters. But, honestly, at this point the Javalords add insult to injury using overloading as an excuse while they still haven't added support for default parameters and such. But I digress.
 
-###Lambdas Are Not Closures
+### Lambdas Are Not Closures
 
 Blocks have another advantage over lambdas: they are true closures. What this means essentially is that a closure (or block) can reference non-final local variables, while a lambda is restricted to final locals. Again a lambda is not the same thing as a closure; a lambda is just an anonymous function, and just like an anonymous class an anonymous function can only reference final locals. So that thing you do when you turn your local variable into a one-element array to make your anonymous class work in Java, well you still have to do that with lambdas. Java 8 does, however, relax the requirement that you explicitly declare a local as final even if it's effectively final -- bone thrown. For example, Java is cool with the following lambda.
 
@@ -85,18 +85,18 @@ As you can see this example clearly demonstrates Java lambdas are *not* closures
     run()
     print( i )
 
-This example does exactly what it appears to do; it increments and prints the local variable's value. It achieves this by closing over it's local variable usage. Basically, the compiler does that one-element array thing for you. 
+This example does exactly what it appears to do; it increments and prints the local variable's value. It achieves this by closing over it's local variable usage. Basically, the compiler does that one-element array thing for you.
 
 Default Methods
 ---------------
 
 As Gosu programmers we are predisposed to the benefits of functional-style programming. For instance, we all know `Iterable#map()` is notably block-o-licious as are most of the other Gosu-provided enhancement methods to collections. At long last, Java 8 has its own way of bolting on methods to existing classes called, *Default Methods* (formerly Defender Methods). Essentially a default method is a Java *interface* method with a direct implementation right there in the interface. The idea is that a non-abstract method can be added to an interface without breaking existing implementations because the method's default behavior is provided. This may sound counter-intuitive because an interface is supposed to be purely virtual; it's supposed to define a contract, not behavior... or so we're told. But the reality is it doesn't matter, so long as the interface remains stateless, which it does by definition, and so long as the implementing class's instance remains the only instance of the interface, which it is. Without getting tangled in the [dreaded diamond problem](https://www.google.com/?q=dreaded+diamond+problem&gws_rd=ssl), suffice it say the integrity of existing class hierarchies is largely unaffected by the addition of default methods. This isn't to say the feature won't be abused in unspeakable ways, because it will be, but it's a reasonable way for Java to jack in new functional-style methods to bring the Collections library into the 21st century, mainly via [`Collection#stream()`](http://www.drdobbs.com/jvm/lambdas-and-streams-in-java-8-libraries/240166818), which is the primary purpose of default methods.
 
-###Not Enhancements
+### Not Enhancements
 
 Unfortunately default methods fall far short of Gosu enhancements in terms of flexibility. First, default methods are an all-or-nothing proposition. Meaning a default method is a direct part of the interface it embellishes, whereas an enhancement method is part of a project or module and does not directly modify the enhanced type's declared structure; you can restrict an enhancement's availability to the project or module level (and soon to the file level a la C# extension methods). Further, enhancements are more flexible with respect to type granularity. For example, it's possible to enhance just `List<Person>` and not other List types. This is impossible with default methods. Above all, the most critical difference is that default methods can only be added to interfaces and only the ones *you own*. For instance, default methods are of no use if you need to add a method to Java library classes such as `java.lang.String`. This is a serious limitation and rules out an entire class of extremely useful customization/specialization use-cases to which Gosu programmers are now happily addicted. The good news is that default methods and enhancements aren't mutually exclusive features, as we'll cover later.
 
-###Gosu's Support for Java
+### Gosu's Support for Java
 
 Back to Java default methods in terms of Gosu's support for them. Basically Gosu adapts to this feature in a couple of ways. First, Gosu changes some assumptions it makes in places where it assumes interfaces are purely virtual and/or have only one abstract method. Generally this is a simple matter of checking whether or not an interface method is abstract. Second, Gosu needs to handle multiple inheritance more strictly. Specifically, it must guard against a Gosu type from directly inheriting a default method from two or more unrelated interfaces. The following unsafe GMO example illustrates the problem.
 
@@ -105,16 +105,16 @@ Back to Java default methods in terms of Gosu's support for them. Basically Gosu
         System.out.println( "ruff" );
       }
     }
-     
+
     interface ITree {
       default void bark() {
         System.out.println( "rough" );
       }
     }
-     
+
     class DogWood implements ITree, IDog { // Error: inherits unrelated defaults for bark()
     }
-    
+
 Here, since `IDog` and `ITree` aren't related, the `DogWood` class doesn't know which `bark()` to inherit. Gosu's parser needs to detect this situation and report the error accordingly. But what if instead `DogWood` derives from a class providing an implementation, and also inherits a default implementation?
 
     public class Tree {
@@ -122,7 +122,7 @@ Here, since `IDog` and `ITree` aren't related, the `DogWood` class doesn't know 
         System.out.println( "rough" );
       }
     }
-     
+
     class DogWood extends Tree implements IDog {
     }
 
@@ -131,7 +131,7 @@ This is OK. The general rule is a default method is... *a default*, it's only me
     public abstract class Tree {
       public abstract void bark();
     }
-     
+
     class DogWood extends Tree implements IDog { // Error: function bark() not implemented
     }
 
@@ -150,7 +150,7 @@ One last detail regarding Gosu's support for Java default methods. How can, say,
 
 Considering this follows the same pattern as Java's syntax for accessing an enclosing class, this makes sense.
 
-###Gosu Has Default Methods Too
+### Gosu Has Default Methods Too
 
 Default methods are worthwhile in their own right apart from enhancement methods. Not only is the feature useful for the same reason Java designers added them (interface evolution), but even for new interfaces it can be advantageous to provide default behavior where you might otherwise create a utility or stateless abstract class. And Gosu can follow the same rules and utilize Java 8 JVM support for the feature. The syntax is similar, but we ditched the `default` keyword because it doesn't really seem useful -- an implementation inside an interface is inherently default.
 
@@ -167,7 +167,7 @@ Another minor syntactical detail. If a class has directly implements interfaces,
         super[IDog].bark()
       }
     }
-    
+
 Considering Gosu does not share Java's enclosing type syntax, in our judgment this syntax makes more sense -- it follows Gosu's existing map-access operator syntax. And for those insane Scala fans out there, this is your bone.
 
 Static Interface Methods
@@ -180,15 +180,15 @@ Interfaces got all the attention in Java 8. So not only did default methods make
         ...
       }
     }
-     
-     
+
+
     class BernankeBuck implements IUsDollar {
      ...
     }
-     
+
     BernankeBuck.print( 80 ) // error: cannot find symbol method print()
     IUsDollar.print( 80 )    // ok
-    
+
 Since `BernankeBuck` does not inheret the static `print()` method it can't be called from the class, instead it must be called directly from the interface. This makes good sense; conflicting static interface methods could otherwise render a pair of interfaces incompatible. Continuing with our `DogWood` example we have:
 
     interface ITree {
@@ -196,24 +196,24 @@ Since `BernankeBuck` does not inheret the static `print()` method it can't be ca
         return years
       }
     }
-     
+
     interface IDog {
       static function age( years: int ) : int {
         return years * 7
       }
     }
-     
-     
+
+
     class DogWood implements ITree, IDog {
     }
-    
+
 If `DogWood` inherits static methods from its interfaces, there would be a conflict -- which `age()` should it inherit? The net effect is that `ITree` and `IDog` can't be implemented together by any class, thereby denying the market very useful Dog-Tree products. Therefore, static interface methods are not inherited and must always be accessed directly from the declaring interface.
 
 
 Annotation Changes
 -------------------
 
-###Repeatable Annotations
+### Repeatable Annotations
 
 One annoying feature that has finally been remedied is Java's restriction on using the same annotation more than once on a given target. For example, the following code used to be illegal because `@Author` is used twice on the class.
 
@@ -221,30 +221,30 @@ One annoying feature that has finally been remedied is Java's restriction on usi
     @Author("Fred Garvin") // error: can only appear once
     class Foo {
     }
-    
+
 
 In the past to get around this we would create a "container" annotation for multiple `Authors`:
 
-    @Authors( 
+    @Authors(
       @Author("Hugo First"),
       @Author("Fred Garvin") )
     class Foo {
     }
-    
+
 Java 8 formalizes this idiom with the use of the new `java.lang.annotation.Repeatable` annotation.  Basically `@Repeatable` is a meta-annotation to declare that an annotation is repeatable via a specified container annotation. We can make Author repeatable like so:
 
     @Repeatable(Authors.class)
     @interface Author {
       String value();
     }
-     
+
     @interface Authors {
       Author[] value();
     }
-    
+
 Now the first example is perfectly legal, albeit without shenanigans via direct use of the `@Authors` container -- Java 8 basically does that for you.
 
-###Java Annotations in Gosu
+### Java Annotations in Gosu
 
 Gosu recognizes the new `Repeatable` annotation and accepts repeatable Java annotations just the same. To boot in the coming release Gosu adds support for conventional Java annotation type definition. The syntax is similar to Java's, but follows more along the lines of Gosu sensibilities. Here's an example:
 
@@ -256,7 +256,7 @@ Gosu recognizes the new `Repeatable` annotation and accepts repeatable Java anno
 
 As you can see we add the new `annotation` keyword to declare an annotation type.  Not a big deal, but we feel annotations are special enough to not have to put a `@` nose on `interface`. You'll notice another syntax difference where we use `=` instead of `default` to assign the default value to parameter methods. The `=` operator is more consistent with Gosu's use of it elsewhere in the grammar, notably with default parameter values on methods. Other than that, Gosu's annotations are structurally identical to Java's. It's also worth mentioning that all the compile-time constant restrictions on Java annotations also apply to Gosu, both in terms of default values and argument values at annotation call sites.
 
-###IAnnotation
+### IAnnotation
 
 Now that Gosu has conventional annotations we're happily deprecating Gosu's custom `gw.lang.IAnnotation` based annotations, henceforth called *legacy* annotations. There are a couple of significant problems with legacy annotations that explain our distaste for them. First, they aren't real Java annotations, they're just regular classes, so they can't be associated with their targets as annotations via conventional bytecode. Instead Gosu has a special way of encoding these non-annotations that entails significant overhead in both compile-time and runtime, not to mention supporting them adds a non-small amount of complexity to our internal compiler. In addition, unlike a conventional annotation, a legacy annotation puts no compile-time constant restrictions on argument values at the call site. This means the Gosu parser ends up *compiling* and **executing** arbitrary project source at compile-time -- not good, man. This has been a thorn in the side of Gosu's type system since we've compiled to bytecode and has been the source of countless headaches in the form of `ClassCastExceptions` and the like. Needless to say we are happy to see them go in favor of conventional annotations.
 
@@ -267,7 +267,7 @@ There are other Java 8 features Gosu has yet to address. These include:
 
 * [Stream API](http://docs.oracle.com/javase/tutorial/collections/streams/index.html). While Gosu fully supports the API and the new default methods on Collections, we haven't fully digested the new API in terms of enhancements. For instance, should our existing collection enhancements coexist with the API? Or should we merge the two somehow? Streams are most useful for performing parallel collection operations, but how often will doing that matter? These are questions we'll be attempting to answer in the coming months.
 * [Date-Time Package](http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html). Third time's a charm? Java 8 adds yet another date-time library to the mix, this time based on a time-tested, quality library, namely [Joda-Time](http://www.joda.org/joda-time/). Why not just use Joda-Time instead of building a similar one in the JDK? [Here's why](http://blog.joda.org/2009/11/why-jsr-310-isn-joda-time_4941.html), basically the library has some pretty significant holes, so consider Java 8's Data-Time package a useful upgrade. Regarding Gosu's support for it, as with the Stream API, it's a matter of whether or not to consolidate old and new. Gosu provides enhancements to Java's Date and Calendar, but since the Date-Time package is the new standard we ought to move in that direction. This will involve a more cooperative effort including members outside the Gosu team.
-* [Type Annotations](http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html). Starting in Java 8 you can annotate a type literal wherever one is used. This isn't particularly useful without a compile-time analysis tool to discover annotated types and provide feedback, such as the case with marking a variable's type with `@NotNull`. 
+* [Type Annotations](http://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html). Starting in Java 8 you can annotate a type literal wherever one is used. This isn't particularly useful without a compile-time analysis tool to discover annotated types and provide feedback, such as the case with marking a variable's type with `@NotNull`.
 
 
 Miscellany
