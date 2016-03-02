@@ -1,0 +1,19 @@
+---
+layout: post
+title: New Gosu 1.13 And More!
+authors:
+- Gosu Team
+---
+
+The Gosu team is happy to announce the official release of Gosu 1.13.
+With this release we decided to rename the Gosu Editor to Gosu Lab, this way it is more obvious that this editor is mainly designed for quick experimentation with Gosu. For full application development the IntelliJ Gosu Plugin is the way to go.
+
+Gosu appeared in the last edition of the Java Magazine (January/February 2016), you can find our article [here](http://www.javamagazine.mozaicreader.com/JanFeb2016#&pageSet=65).
+
+Changes in this release
+-----------------------
+
+- We added JSON support into the language, this nice [article]({{ site.url }}/2016/03/01/new-json-support-in-gosu.html) will show you all the details of this new feature.
+- Gosu Lab improvements: auto-import, in editor navigation, better auto completion and project support.
+- Numerous bug fixes.
+

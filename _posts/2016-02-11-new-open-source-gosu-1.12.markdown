@@ -15,4 +15,4 @@ Several internal improvements to our Gradle plugin and overall stability of the 
 
 The Gosu Editor is bundled in our Gosu distribution, please have a look to our [Quickstart]({{ site.url }}/quickstart.html) page to know how to lunch it.
 
-![Gosu editor]({{ site.url }}/img/quickstart/GosuEditor.png)
+![Gosu editor]({{ site.url }}/img/quickstart/GosuLab.png)
