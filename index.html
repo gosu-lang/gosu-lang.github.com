@@ -28,13 +28,13 @@ layout: main
                   "blue" }
 
   // Closures <span class="hidden-xs">make data structures fun</span>
-  strings.where( \ s -> s.length() > 3 ).sort()
+  var l = strings.where( \ s -> s.length() > 3 ).sort()
 
   // Full Java Interop<span class="hidden-xs">erability</span>
   var f = new File("Tmp.txt")
 
   // With new features<span class="hidden-xs"> that make java fun again</span>
-  f.write(strings.join(", "))
+  f.write(l.join(", "))
   print( f.read() )
       	</pre>
     <p class="index-btns">
