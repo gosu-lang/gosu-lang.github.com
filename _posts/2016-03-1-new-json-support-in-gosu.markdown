@@ -45,7 +45,7 @@ Sample Person JSON:
 
 And the dynamic Gosu code to access it:
 
-    var personUrl = new URL( "https://dl.dropboxusercontent.com/u/10642488/person.json" )
+    var personUrl = new URL( "http://gosu-lang.github.io/data/person.json" )
     var person: Dynamic = personUrl.JsonContent
     print( person.Name )
 
