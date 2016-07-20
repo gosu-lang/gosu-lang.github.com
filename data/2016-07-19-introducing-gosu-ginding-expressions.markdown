@@ -14,6 +14,19 @@ authors:
 > You only need to run the editor.RunMe class.
 > We'll write more about Gosu Lab in a separate post.
 
+Basic Mechanics
+Unit Grouping
+Bidirectional Flexibility 
+Binder Separators
+Enhancements 
+New Libraries
+  Money
+  Science
+  Time
+Static Imports
+Rational Numbers
+Conclusion
+
 Gosu has long supported the concept of dimensions via `gw.lang.IDimension`.  A dimension can be physical like Length, Time, Weight, etc.  A dimension can also be abstract or intangible such as Money or Memory.  Basically a dimension represents something that can be measured in specific units, like: 9 ft, 150 mph, 9.8 m/s/s, 49.99 USD, etc.
 
 Because we reference dimensions as measurable quantities, they can also participate directly as operands in arithmetic expressions.  For instance, you can add, subtract, and divide dimensions directly.  Further, a dimension can provide custom implementations of arithmetic operators (+ - * / %) for any operand type.  A `Velocity` dimension, for example, can define a `multiply()` method with a `Time` dimension resulting in a `Length` dimension:
