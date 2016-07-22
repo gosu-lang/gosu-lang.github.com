@@ -53,7 +53,7 @@ In the previous example we have an expression of Time representing 3 hours:
       }
     }
 
-This method tells the parser that an expression with type, `TimeUnit`, following an expression of type, `Number`, combines with that expression to form a single expression of type, Time.  In our example, the hr identifier is defined elsewhere as an alias for `TimeUnit.HOUR`, thus the expression is a valid binding expression of type, `Time`.  Note there is nothing special about `TimeUnit` other than its `postfixBind()` method; any type can be a binder type.
+This method tells the parser that an expression with type, `TimeUnit`, following an expression of type, `Number`, combines with that expression to form a single expression of type, `Time`.  In our example, the hr identifier is defined elsewhere as an alias for `TimeUnit.HOUR`, thus the expression is a valid binding expression of type, `Time`.  Note there is nothing special about `TimeUnit` other than its `postfixBind()` method; any type can be a binder type.
 
 Unit Grouping
 -------------
