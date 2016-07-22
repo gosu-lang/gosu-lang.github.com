@@ -12,6 +12,11 @@ authors:
 > ![benchmark]({{ site.url }}/data/labconfig.png)
 >
 > You only need to run the editor.RunMe class.
+>
+> Or, if you aren't using IntelliJ, you can simply launch Gosu Lab from the command line using the `gosu` command:
+>
+>   `C:/gosu-1.14/bin>gosu`
+>
 > We'll write more about Gosu Lab in a separate post.
 
 
