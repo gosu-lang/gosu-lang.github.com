@@ -7,7 +7,7 @@ authors:
 
 > **Note:**
 >
-> New language features take time to find their way into Studio's IntelliJ plugin. To address this the Gosu team has an editor of their own for this kind of work aptly named, Gosu Lab. Please use this editor when experimenting with new Gosu features or if you just want a lighter weight editor. After you clone the repo you can load the Gosu project in Intellij then run the Gosu Lab editor from a new IJ configuration like this:
+> New language features take time to find their way into the Gosu IntelliJ plugin. To address this the Gosu team has an editor of their own for this kind of work aptly named, Gosu Lab. Please use this editor when experimenting with new Gosu features or if you just want a lighter weight editor. After you clone the repo you can load the Gosu project in Intellij then run the Gosu Lab editor from a new IJ configuration like this:
 >
 > ![benchmark]({{ site.url }}/data/labconfig.png)
 >
