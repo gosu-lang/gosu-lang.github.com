@@ -43,7 +43,7 @@ This is exactly what the new _Binding Expressions_ language feature accomplishes
 Basic Mechanics
 ---------------
 
-Normally with most programming languages expressions are connected together with operators like dot or * or method names or what have you. A _binding expression_, however, consists of two adjacent expressions where the type of one expression supports a binding relationship with the type of the other expression. The expression type providing the binding relationship is called a binder type; it implements `IPostfixBinder#postfixBind()` and/or `IPrefixBinder#prefixBind()`. The return types of these methods determines the type of the resulting binding expression. As such the result of evaluating a binding expression is the result of either method call.
+Normally with most programming languages expressions are connected together with operators like dot or * or method names or what have you. A _binding expression_, however, consists of two adjacent expressions where the type of one expression supports a binding relationship with the type of the other expression. The expression type providing the binding relationship is called a binder type; it implements `IPostfixBinder#postfixBind()` and/or `IPrefixBinder#prefixBind()`. The return type of a bind method determines the type of the resulting binding expression. As such the result of evaluating a binding expression is the result of either method call.
 
 In the previous example we have an expression of Time representing 3 hours:
 
