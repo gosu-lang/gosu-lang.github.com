@@ -163,13 +163,13 @@ As most of the examples illustrate so far binding expressions are especially use
 
 I'll cover each of these in greater detail in separate posts. Here I'll provide a quick summary of each them and how they are intended to be used.
 
-###Money
+### Money
 
 Many software applications today need some common foundation for money and currency.  Java provides a decent abstraction for currency via `java.util.Currency`. But, surprisingly, Java's core libraries don't provide any support for money or amounts of money.  Gosu's money library attempts to fill the void with its `gw.util.money.Money` class and supporting classes.  Basically, Money makes it easy for you to work with amounts of money in any currency.  You can easily perform arithmetic on `Money` amounts using normal arithmetic expressions.  In addition you can easily mix currencies in single amounts of `Money`:
 
     var investment = 5000 EUR + 10000 USD
 
-###Science
+### Science
 
 It's not meant to be comprehensive – it ain't Mathematica – but the science library is fun to play with and it may even help you model physical attributes of your application a little better.  Generally, the science library is composed of a bunch of physical dimensions like `Length`, `Time`, `Mass`, and even something called, `MagneticFluxDensity`.  As you probably guessed each of these classes implements Gosu's `IDimension` interface, which among other things allows them to work in normal arithmetic expressions like this:
 
@@ -188,7 +188,7 @@ Here we enter different values to compute work.  We can do this in any number of
 
 There's a ton more to cover in the science lib.  I'll save that for another post.
 
-###Time
+### Time
 
 Java finally got it pretty much correct in Java 8 with its latest crack at time via the `java.time` package of classes.  Gosu's `gw.util.time` package takes it a bit further by making it easier to express standard Java dates and times as binding expressions:
 
