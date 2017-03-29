@@ -4,3 +4,4 @@ main.iml
 .jekyll-metadata
 serve
 server
+.DS_Store
