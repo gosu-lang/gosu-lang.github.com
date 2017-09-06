@@ -11,8 +11,7 @@
 	<script src="/js/eval-gosu.js"></script>
 
   <link rel="shortcut icon" href="/img/logo-gs-only.png" />
-	<link href='//fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 	<link href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -34,11 +33,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/"><img src="/img/logo-no-gs.png" style="width:75px"></a>
+				<a class="navbar-brand" href="/"><img src="/img/logo-smallg.png" style="width:45px; margin-top: -12px;"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/quickstart.html">Quickstart</a></li>
+
+					</ul>
+        			<ul class="nav navbar-nav navbar-right">
+        								<li><a href="/quickstart.html">Quickstart</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -49,8 +51,8 @@
 							<li><a href="/docs.html#enhancements">Enhancements</a></li>
 							<li><a href="/docs.html#strings">Strings</a></li>
 							<li><a href="/docs.html#collections">Collections</a></li>
-              <li class="divider"></li>
-              <li><a href="/grammar.html">Grammar</a></li>
+              				<li class="divider"></li>
+              				<li><a href="/grammar.html">Grammar</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -60,25 +62,28 @@
 							<li><a href="/intellij.html">IntelliJ IDEA Plugin</a></li>
 						</ul>
 					</li>
-					<li><a href="/resources.html">Resources</a></li>
-          <li><a href="/play.html">Play</a></li>
-				</ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/blog.html">Blog</a></li>
-					<li><a href="/feed.xml"><i class="fa fa-rss"></i></a></li>
-          <li><a href="https://github.com/gosu-lang/gosu-lang"><i class="fa fa-github"></i></a></li>
-        </ul>
+					<li>
+					<a href="/resources.html">Resources</a></li>
+          			<li><a href="/play.html">Play</a></li>
+          				<li><a href="/blog.html">Blog</a></li>
+						<li><a href="/feed.xml"><i class="fa fa-rss"></i></a></li>
+          				<li><a href="https://github.com/gosu-lang/gosu-lang"><i class="fa fa-github"></i></a></li>
+        			</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
 
-	<div class="container content">
+	<div class="content">
 		{{ content }}
 
     <hr/>
-
-		<footer>
-			<p>&copy; <a href="http://www.guidewire.com">Guidewire Software</a> 2016</p>
+		
+		<footer class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p>&copy; <a href="http://www.guidewire.com">Guidewire Software</a> 2016</p>
+				</div>
+			</div>
 		</footer>
 
 	</div> <!-- /container -->
