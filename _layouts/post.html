@@ -2,7 +2,6 @@
 layout: main
 ---
 
-<div class="container">
 <div class="page-header">
   <h2>{{ page.title }}</h2>
   <div class="text-muted">Posted {{ page.date | date_to_long_string }} by {{ page.authors | array_to_sentence_string }}
@@ -14,11 +13,6 @@ layout: main
 <hr/>
 
 <div id="disqus_thread"></div>
-
-</div>
-
-
-
 <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.

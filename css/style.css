@@ -1,5 +1,5 @@
 body {
-  font-family: font-family: 'Roboto', sans-serif;
+  font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
   padding-top: 32px;
 }
@@ -12,8 +12,12 @@ li {
   margin-top: 32px;
 }
 
+p {
+  line-height: 24px;
+}
+
 a.navbar-brand {
-  font-family: Helvetica-neue, sans-serif;
+  font-family: 'Russo One', sans-serif;
   font-weight: bold;
   font-size: 25px;
   color: #504849 !important;
@@ -107,198 +111,3 @@ textarea#script {
     height: 3em;
   }
 }
-
-
-
-
-
-
-
-.navbar-default {
-	background-color: #ffffff;
-	border: none;
-}
-
-#intro-bg {
-	position: fixed;
-	width: 100%;
-}
-
-#poly1, #poly2, #poly4, #poly5, #poly6 {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	width: 61vw;	
-}
-
-p {
-  line-height: 24px;
-  opacity: 0.65;
-  letter-spacing: 1px;
-  font-size: 18px;
-  -webkit-font-smoothing: antialiased;
-}
-
-.container {
-	padding-left: 6vw;
-	padding-right: 6vw;
-}
-
-section {
-	padding-top: 80px;
-	padding-bottom: 80px;
-}
-
-
-.line  {
-	position: fixed;
-	margin: 0 auto; 
-	width: 11px;
-	height: 1000px;
-	color: red;
-}
-
-h1 {
-font-size: 68px;
-letter-spacing: -0.06em;
-font-family: helvetica neue;
-}
-
-h2, h3 {
-font-family: helvetica neue;
-}
-
-h4 {
-letter-spacing: 0.87px;
-line-height: 26px;
-padding-bottom: 36px;
-opacity: 0.8;
-font-family: helvetica neue;
-}
-
-h5 {
-Font-family: Helvetica !important;
-letter-spacing: -0.04em;
-font-size: 23px;
-font-weight: bold;
--webkit-font-smoothing: antialiased; 
-}
-
-#first-section {
-	background-image: linear-gradient(-15deg, #6D42EF 0%, #24B3F5 100%);
-	color: #fff;
-	margin-top: -36px;
-}
-
-#first-section h4{
-	padding-left: 12vw;
-	padding-right: 12vw;
-}
-
-#second-section {
-	background-color: #fff;
-}
-
-#second-section .container {
-	margin-top: -20px;
-	margin-bottom: -20px;
-}
-
-#third-section {
-	background-image: linear-gradient(15deg, #2BC390 34%, #2AC491 34%, #13ECB8 96%);
-	padding-top: 300px;
-}
-
-#third-section a {
-	color: #fff;
-}
-
-#third-section ul {
-	margin-top: 200px;
-}
-
-#third-section li {
-	list-style: none;
-}
-
-.diagonal {
-	position: relative;
-}
-
-
-
-.diagonal:before {
-	content: '';
-	position: absolute;
-	width: 100%;
-	border-bottom: 300px solid #ffffff;
-	border-left: 98.8vw solid transparent;
-	top: -300px;
-	left: 0px;
-	z-index:1;
-}
-
-.diagonal:after {
-	content: '';
-	position: absolute;
-	width: 100%;
-	border-top: 300px solid #ffffff;
-    border-right: 98.8vw solid transparent;
-	left: 0px;
-	bottom: -300px;
-	z-index:1;
-}
-
-.ghost-button {
-white-space: nowrap;
-display: inline-block;
-height: 40px;
-line-height: 40px;
-padding: 0 14px;
-box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-background: #fff;
-border-radius: 4px;
-font-size: 15px;
-font-weight: 600;
-text-transform: uppercase;
-letter-spacing: .025em;
-color: #6772e5;
-text-decoration: none;
-transition: all .15s ease;
-font-family: Inconsolata;
-cursor: pointer;
-text-decoration: none;
-}
-
-.ghost-button:hover {
-	position: relative;
-	top: -1px;
-	text-decoration: none;
-}
-
-.bottom-spacer-40 {
-	margin-bottom: 40px;
-}
-
-.bottom-spacer-120 {
-	margin-bottom: 120px;
-}
-
-.top-spacer-20 {
-	margin-top: 20px;
-}
-
-.seperator {
-width: 300px;
-height: 4px;
-background-image: linear-gradient(-90deg, #1A93EF 0%, #81BA3C 100%);
-border-radius: 2px;
-}
-
-.page-header {
-padding-bottom: none;
-border-bottom: none;
-}
-
-
-

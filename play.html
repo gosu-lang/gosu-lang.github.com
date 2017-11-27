@@ -15,10 +15,8 @@ layout: main
   })
 </script>
 
-<section class="container">
 <div class="page-header">
-  <h1>Have A Play</h1>
-  <div class="seperator"></div>
+  <h2>Have A Play</h2>
 </div>
 
 <h4>
@@ -47,7 +45,7 @@ print(new MyClass().spoon())">Simple Class</option>
   </textarea>
 </p>
 
-<span>
+<p>
   <button class="btn btn-primary"
           ic-include="#script"
           ic-target="#results"
@@ -56,7 +54,7 @@ print(new MyClass().spoon())">Simple Class</option>
     <i class="fa fa-play"></i> Evaluate
   </button>
   <button onclick="$('#script').val(''); $('#results').text(''); " class="btn btn-warning"><i class="fa fa-rotate-left"></i> Clear</button>
-</span>
+</p>
 
 <hr/>
 <h4>Results <span id="eval-indicator" class="text-info" style="display:none"><i class="fa fa-spinner fa-spin"></i> Evaluating...</span> </h4>
@@ -66,4 +64,3 @@ print(new MyClass().spoon())">Simple Class</option>
     3.  No wait!  2!
   </div>
 </div>
-</section>
