@@ -1028,6 +1028,17 @@ layout: main
                   given type
                 </td>
               </tr>
+              <tr>
+	      <td class="function">zip&lt;R&gt;( other : Iterable&lt;R&gt;) : List&lt;Pair&lt;T,R&gt;&gt;
+                </td>
+		<td>
+			Returns a list of <code>gw.util.Pair</code>s of elements from matching
+			indices of <code>this</code> and the <code>other</code> Iterables. If one
+			Iterable contains more elements than the other then
+			only return a list of the same length as the shortest
+			of the two Iterables.
+                </td>
+              </tr>
               </tbody>
             </table>
 
