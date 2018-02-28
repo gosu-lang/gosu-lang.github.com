@@ -1,0 +1,16 @@
+---
+layout: post
+title: IntelliJ 2017.3 Plugin Support
+authors:
+- Gosu Team
+---
+
+The Gosu team is happy to announce that our Gosu plugin now supports IntelliJ 2017.3.
+To install it the new **4.2.0.0** version:
+
+
+1. With IntelliJ 2017.3 running, open the *Settings* menu and select *Plugins*
+2. Click the *Browse Repositories...* button, and search for *Gosu*
+3. Right click on the **OS Gosu** entry and select *Download and Install*
+4. After the plugin has been installed, restart IntelliJ
+
