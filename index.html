@@ -17,25 +17,30 @@ layout: main
         A simple JVM language. 
       </span>
     </h3>
-      	<pre class="prettyprint eval-gs">
+    <br>
+      	<pre class="prettyprint">
+Gosu is designed with **Java** developers in mind by providing a set of features that allows 
+them to be more productive without sacrificing the benefits of Java's simplicity and type-safety.
 
-  // Type inference <span class="hidden-xs">keeps things clean</span>
-  var aString = "Hello Gosu!"
-
-  // Lists & Maps literals <span class="hidden-xs"> for easy use</span>
-  var strings = { "red",
-                  "green",
-                  "blue" }
-
-  // Closures <span class="hidden-xs">make data structures fun</span>
-  var l = strings.where( \ s -> s.length() > 3 ).sort()
-
-  // Full Java Interop<span class="hidden-xs">erability</span>
-  var f = new File("Tmp.txt")
-
-  // With new features<span class="hidden-xs"> that make java fun again</span>
-  f.write(l.join(", "))
-  print( f.read() )
+Features:
+- Open Type System
+- Advanced type inference
+- Program files (scripts containing statements, functions, and classes at the same level)
+- Structural typing (similar TypeScript's interfaces)
+- Extension methods (aka enhancements)
+- Java interoperability
+- Lambda expressions
+- Classes/Interfaces/Enums
+- Generics (reified, covariant type parameters and no wildcards)
+- Composition (with the delegate keyword)
+- Properties
+- Null Safety (supports operator ?. etc.)
+- Named Arguments and Default Parameter Values
+- A powerful for each statement with user-defined intervals types
+- Member Literals
+- Object Initializers
+- Classpath Statement and Shebang (useful when you use Gosu as a scripting language)
+...and more
       	</pre>
     <p class="index-btns">
       <a class="btn btn-lg btn-success" href="quickstart.html"><i class="fa fa-cogs"></i> Quickstart</a>
