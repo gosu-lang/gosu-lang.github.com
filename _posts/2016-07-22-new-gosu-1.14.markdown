@@ -1,68 +1,15 @@
 ---
 layout: post
-title: New Gosu 1.14
+title: New Gosu 1.14.16
 authors:
 - Gosu Team
 ---
 
-The Gosu team is happy to announce the official release of **Gosu 1.14**.
-
-This release includes major feature work, performance tweaks, and bug fixes.
+The Gosu team is happy to announce the official release of **Gosu 1.14.16**.
 
 Changes in this release
 -----------------------
 
-### Binding Expressions
-
-The Gosu team continues to innovate with the introduction of an exciting new language feature we call _Binding Expressions_.  
-
-For instance, you can now express Dates, Times, Money, Lengths, Velocity, etc. directly in Gosu using standard (and non-standard) units and formatting.  All the following are legal Gosu expressions:
-
-    65 mph
-    65 mi/hr
-    50mph * 3hr    // 150 miles
-    5 inch + 4 cm  // always computed internally in terms of SI units (in this case, meters)
-    49 kg m/s/s * 10m  // 490 Joules
-    490 J              // 490 Joules
-    1 day - 1 s
-    9.8 m/s/s
-    2:35 PM
-    2016-July-22
-    2016-July-22 2:35:53:909 PM PST
-    Heisei 28-May-18
-    50M USD  // 50 million US dollars
-    5m North + 6m NNE  // Vector math!
-    
-
-Discover more about the feature in this [blog post]({{ site.url }}/2016/07/19/introducing-gosu-binding-expressions.html).
-
-### Science Library
-
-Leveraging Gosu Dimensions, the science library adds direct support for base and derived quantities listed in the International System of Units.  These include dimensions such as Length, Mass, Time, Temperature, Current, Angle, Area, Volume, Density, etc.  Quantities of these dimensions are represented directly in Gosu as classes having type-safe physical units.  You can safely combine measures of Inches and Centimeters, Pounds and Kilograms, or what have you, with no opportunity for unit-related error. Moreover, because they leverage Gosu Dimensions, all of the physical classes can be used directly and type-safely in arithmetic expressions.  Read more in this [blog post]({{ site.url }}/2016/07/19/introducing-gosu-binding-expressions.html).
-
-### Rational Number
-
-We've added support for Rational numbers via the new Number subclass, `Rational`.  As with BigDecimal, Rational is immutable and maintains arbitrary precision and scale.  But unlike BigDecimal, Rational preserves repeating decimal values exactly, avoiding rounding errors often involved with BigDecimal division.  For instance the expression `(1r / 3r) * 3r` evaluates to exactly `1r`, not `0.9999999999999999999999999999999999` as is the case with BigDecimal.  Read more [here]({{ site.url }}/2016/07/19/introducing-gosu-binding-expressions.html).
-
-### Static Imports
-
-An example is worth a thousand words:
-
-    uses gw.util.money.IMoneyConstants#*   // imports all static features from IMoneyConstants
-    uses org.junit.Assert#assertEquals(String, Object, Object)  // imports a specific method from junit's Assert
-
-Basically static imports in Gosu works much like Java's, but we leverage our Feature Literal syntax for more concise syntax.
-
-### Lab Features
-- Support authoring and running JUnit tests including support for @Before, @After, @BeforeClass, @AfterClass (also method naming conventions: beforeMethod(), afterMethod(), beforeClass(), afterClass())
-- Add dependencies on other jars, directories, etc. and add additional source paths
-- Hyperlinked stack traces
-- Select File in Tree (Alt+F1)
-
-### Several Performance improvements
-- TableSwitch support
-- Lots more
-
-### Lots of Bug Fixes
+### Dual support for Java 8 & Java 11
 
 
